@@ -3,7 +3,7 @@
 
   </a>
   <p align="center">
-   <img width="150" height="150" src="img/favicon.png" alt="Logo">
+   <img width="150" height="150" src="img/bubblegum2out.png" alt="Logo">
   </p>
   <h1 align="center"><b>Devast.io</b></h1>
   <p align="center">
