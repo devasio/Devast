@@ -4,32 +4,25 @@ var lowerCase = window.navigator.userAgent.toLowerCase(),
   .indexOf("kindle") || -1 !== lowerCase.indexOf("silk/") ? 1 : 0;
 if (1 === isTouchScreen) {
   var _meta = window.document.createElement("meta");
-  _meta.name = "viewport", _meta.content = "initial-scale=1.0 maximum-scale=1.0",
-    window.document.getElementsByTagName("head")[0].appendChild(_meta)
+  _meta.name = "viewport", _meta.content = "initial-scale=1.0 maximum-scale=1.0", window.document.getElementsByTagName(
+    "head")[0].appendChild(_meta)
 }
 localStorage2 = null;
 try {
-  localStorage2 = window.localStorage,
-    localStorage2.setItem("LapaMauve", "1"), localStorage2.getItem("LapaMauve")
+  localStorage2 = window.localStorage, localStorage2.setItem("LapaMauve", "1"), localStorage2.getItem("LapaMauve")
 } catch (e) {
-  storage = {}, localStorage2 = {},
-    localStorage2.setItem = function (e, i) {
-      storage[e] = i
-    }, localStorage2.getItem = function (e) {
-      return storage[e] === window.undefined ? null : storage[e]
-    }
+  storage = {}, localStorage2 = {}, localStorage2.setItem = function (e, i) {
+    storage[e] = i
+  }, localStorage2.getItem = function (e) {
+    return storage[e] === window.undefined ? null : storage[e]
+  }
 }
-for (var setx, sety, rowx, rowy, canvas,
-    canw, canh, canw2, canh2, canw4,
-    canh4, canwns, canhns, canw2ns,
-    canh2ns, canw4ns, canh4ns, ctx,
-    AutoLoot = !1, AutoLootLabel = null,
-    AutoEat = !1, AutoEatLabel = null,
-    setHungryLevel = 100, drawLines = !1, pworld = [
+for (var setx, sety, rowx, rowy, canvas, canw, canh, canw2, canh2, canw4, canh4, canwns, canhns, canw2ns, canh2ns,
+    canw4ns, canh4ns, ctx, AutoLoot = !1, AutoLootLabel = null, AutoEat = !1, AutoEatLabel = null, setHungryLevel = 100,
+    drawLines = !1, pworld = [
       []
-    ], pworldWidth = 150, pworldHeight = 150, pathStart = [pworldWidth,
-      pworldHeight
-    ], pathEnd = [0, 0], pathFinder = !1, x = 0; x < pworldWidth; x++) {
+    ], pworldWidth = 150, pworldHeight = 150, pathStart = [pworldWidth, pworldHeight], pathEnd = [0, 0], pathFinder = !
+    1, x = 0; x < pworldWidth; x++) {
   pworld[x] = [];
   for (var y = 0; y < pworldHeight; y++) pworld[x][y] = 0
 }
@@ -66,20 +59,18 @@ var delta = 0,
       var e, i, a;
       d.resizeMethod === __RESIZE_METHOD_CSS__ ? window.innerWidth > window.innerHeight ? (e = window.innerHeight /
           window.innerWidth, i = d.size, a = window.Math.floor(i * e)) : (e = window.innerWidth / window.innerHeight,
-          a = d.size, i = window.Math.floor(a * e)) : (i = window.innerWidth, a = window.innerHeight), canw = i,
-        canh = a, canw2 = window.Math.floor(canw / 2), canh2 = window.Math.floor(canh / 2), canw4 = window.Math.floor(
-          canw / 4),
-        canh4 = window.Math.floor(canh / 4), d.ratioX = canw / window.innerWidth, d.ratioY = canh / window.innerHeight,
-        e = d.scheduledRatio / d.backingStoreRatio, 0 !== d.ratio && (e *= d.ratio), canvas.width = canw * e, canvas
-        .height = canh * e, d.resizeMethod === __RESIZE_METHOD_SCALE__ && (scaleby = window.Math.max(a / (11 * d.size /
-          16), i / d.size), canvas.style.width = i + "px", canvas.style.height = a + "px"), canwns = canw / scaleby,
-        canhns = canh / scaleby, canw2ns = canw2 / scaleby, canh2ns = canh2 / scaleby, canw4ns = canw4 / scaleby,
-        canh4ns = canh4 / scaleby, ctx.scale(e, e), s(ctx, d.aliasing), g.update()
+          a = d.size, i = window.Math.floor(a * e)) : (i = window.innerWidth, a = window.innerHeight), canw = i, canh =
+        a, canw2 = window.Math.floor(canw / 2), canh2 = window.Math.floor(canh / 2), canw4 = window.Math.floor(canw /
+        4), canh4 = window.Math.floor(canh / 4), d.ratioX = canw / window.innerWidth, d.ratioY = canh / window
+        .innerHeight, e = d.scheduledRatio / d.backingStoreRatio, 0 !== d.ratio && (e *= d.ratio), canvas.width = canw *
+        e, canvas.height = canh * e, d.resizeMethod === __RESIZE_METHOD_SCALE__ && (scaleby = window.Math.max(a / (11 *
+          d.size / 16), i / d.size), canvas.style.width = i + "px", canvas.style.height = a + "px"), canwns = canw /
+        scaleby, canhns = canh / scaleby, canw2ns = canw2 / scaleby, canh2ns = canh2 / scaleby, canw4ns = canw4 /
+        scaleby, canh4ns = canh4 / scaleby, ctx.scale(e, e), s(ctx, d.aliasing), g.update()
     }
 
     function r(l) {
-      window.requestAnimationFrame(r),
-        l !== window.undefined && (delta = l - previousTimestamp, previousTimestamp = l),
+      window.requestAnimationFrame(r), l !== window.undefined && (delta = l - previousTimestamp, previousTimestamp = l),
         function () {
           if (a++, (i += delta) >= 1e3) {
             if (_ = 1e3 * a / i, t[o] = _, ++o === e) {
@@ -104,8 +95,7 @@ var delta = 0,
     }
 
     function s(e, i) {
-      window.document.getElementById(d.can).style.imageRendering = !1 === i ? "pixelated" : "auto",
-        l(e, i)
+      window.document.getElementById(d.can).style.imageRendering = !1 === i ? "pixelated" : "auto", l(e, i)
     }
     var g = window.undefined;
 
@@ -133,10 +123,9 @@ var delta = 0,
       options: d,
       initAnimatedCanvas: function (e, i, a, _, o, t, l) {
         m(e), i !== window.undefined && (d.resizeMethod = i), a !== window.undefined && (d.can = a), _ !== window
-          .undefined && (d.bod = _),
-          o !== window.undefined && (d.size = o), t !== window.undefined && (d.ratio = t),
-          l !== window.undefined && (d.aliasing = l), canvas = window.document.getElementById(d.can),
-          ctx = canvas.getContext("2d"), d.backingStoreRatio = ctx.webkitBackingStorePixelRatio || ctx
+          .undefined && (d.bod = _), o !== window.undefined && (d.size = o), t !== window.undefined && (d.ratio = t),
+          l !== window.undefined && (d.aliasing = l), canvas = window.document.getElementById(d.can), ctx = canvas
+          .getContext("2d"), d.backingStoreRatio = ctx.webkitBackingStorePixelRatio || ctx
           .mozBackingStorePixelRatio || ctx.msBackingStorePixelRatio || ctx.oBackingStorePixelRatio || ctx
           .backingStorePixelRatio || 1,
           function () {
@@ -172,8 +161,7 @@ var delta = 0,
       },
       canvasToImage: function (e) {
         var i = new window.Image;
-        return i.src = e.toDataURL("image/png"), i.width = e.width, i.height = e.height,
-          i
+        return i.src = e.toDataURL("image/png"), i.width = e.width, i.height = e.height, i
       },
       rect: function (e, i, a, _, o) {
         e.beginPath(), e.rect(i * scaleby, a * scaleby, _ * scaleby, o * scaleby)
@@ -211,8 +199,8 @@ var delta = 0,
         e.beginPath(), e.moveTo(i * scaleby, a * scaleby), e.lineTo(_ * scaleby, o * scaleby)
       },
       drawPath: function (e, i, a, _) {
-        i !== window.undefined && (e.fillStyle = i, e.fill()),
-          a !== window.undefined && (_ !== window.undefined && (e.lineWidth = _), e.strokeStyle = a, e.stroke())
+        i !== window.undefined && (e.fillStyle = i, e.fill()), a !== window.undefined && (_ !== window.undefined && (e
+          .lineWidth = _), e.strokeStyle = a, e.stroke())
       },
       setRenderer: m,
       loadImage: function (e, i) {
@@ -237,8 +225,7 @@ var delta = 0,
       drawImageHd: function (e, i, a, _, o, t, d) {
         var n = e.img;
         if (1 === n.isLoaded) {
-          d *= scaleby, i *= scaleby,
-            a *= scaleby;
+          d *= scaleby, i *= scaleby, a *= scaleby;
           var r = n.wh * d,
             l = n.h2 * d,
             s = -r / 2 + o * d,
@@ -253,8 +240,8 @@ var delta = 0,
           d *= scaleby;
           var g = s.wh * d,
             m = s.h2 * d;
-          ctx.save(), ctx.translate(i * scaleby, a * scaleby), ctx.rotate(_), ctx.translate(o * d, t * d),
-            ctx.rotate(n), ctx.drawImage(s, -g / 2 + r * d, -m / 2 + l * d, g, m), ctx.restore()
+          ctx.save(), ctx.translate(i * scaleby, a * scaleby), ctx.rotate(_), ctx.translate(o * d, t * d), ctx.rotate(
+            n), ctx.drawImage(s, -g / 2 + r * d, -m / 2 + l * d, g, m), ctx.restore()
         } else e.img = CanvasUtils.loadImage(e.src, e.img)
       },
       drawImageHdCrop: function (e, i, a, _, o, t, d, n, r) {
@@ -355,8 +342,7 @@ var delta = 0,
         return e.toString()
       },
       beautifyNumber: function (e) {
-        for (var i = e + "", a = "",
-            _ = i.length - 1, o = 0; _ >= 0; _--, o++) {
+        for (var i = e + "", a = "", _ = i.length - 1, o = 0; _ >= 0; _--, o++) {
           var t = i[_];
           o > 2 && "-" !== t && (o = 0, a = "," + a), a = t + a
         }
@@ -378,10 +364,8 @@ var delta = 0,
   Mouse = function () {
     function e(e, i) {
       i !== Mouse.__MOUSE_MOVE__ && (Mouse.state = i), Mouse.sx = window.Math.floor(e.clientX * CanvasUtils.options
-          .ratioX),
-        Mouse.sy = window.Math.floor(e.clientY * CanvasUtils.options.ratioY), Mouse.x = window.Math.floor(Mouse.sx /
-          scaleby),
-        Mouse.y = window.Math.floor(Mouse.sy / scaleby)
+        .ratioX), Mouse.sy = window.Math.floor(e.clientY * CanvasUtils.options.ratioY), Mouse.x = window.Math.floor(
+        Mouse.sx / scaleby), Mouse.y = window.Math.floor(Mouse.sy / scaleby)
     }
 
     function i() {
@@ -508,9 +492,8 @@ var delta = 0,
       }
     },
     renderText: function (e, i, a, _, o, t, d, n, r, l, s, g, m, c, I) {
-      0 === e.length && (e = " "),
-        d === window.undefined && (d = 0), n === window.undefined && (n = 0), r === window.undefined && (r = 0),
-        c === window.undefined && (c = 0);
+      0 === e.length && (e = " "), d === window.undefined && (d = 0), n === window.undefined && (n = 0), r === window
+        .undefined && (r = 0), c === window.undefined && (c = 0);
       var E = window.document.createElement("canvas"),
         u = E.getContext("2d");
       return u.textBaseline = "middle", u.font = (I !== window.undefined ? I + " " : "") + _ + "px " + i, o = o !==
@@ -563,8 +546,8 @@ function onFull() {
 
 function onPlayerDie(e) {
   var i = Entitie.findEntitie(__ENTITIE_PLAYER__, World.PLAYER.id, 0);
-  null !== i && Entitie.remove(i.pid, i.id, i.uid, i.type, 1), World.PLAYER.kill = (e[1] << 8) + e[2],
-    Client.closeClient()
+  null !== i && Entitie.remove(i.pid, i.id, i.uid, i.type, 1), World.PLAYER.kill = (e[1] << 8) + e[2], Client
+    .closeClient()
 }
 
 function onOtherDie(e) {
@@ -594,11 +577,11 @@ function onHandshake(e, i) {
   World.PLAYER.id = i[1];
   var a = new window.Uint16Array(e),
     _ = a[3] << 5;
-  World.initDayCycle(_ >= World.__DAY__ ? 1 : 0, _), Client.handshake(), Render.reset(),
-    Entitie.unitsPerPlayer = a[1], World.playerNumber = i[4], World.gameMode = i[5], World.PLAYER.lastScore = -1, World
-    .PLAYER.exp = 0, World.PLAYER.click = 0, World.PLAYER.notification = [], World.PLAYER.notificationLevel = [],
-    World.PLAYER.drag.begin = 0, World.PLAYER.interaction = -1, World.PLAYER.interactionDelay = 0, World.PLAYER.WMnWv =
-    0, World.PLAYER.blueprint = 0, World.PLAYER.buildRotate = 0, World.PLAYER.hintRotate = 0, World.PLAYER.grid = 0;
+  World.initDayCycle(_ >= World.__DAY__ ? 1 : 0, _), Client.handshake(), Render.reset(), Entitie.unitsPerPlayer = a[1],
+    World.playerNumber = i[4], World.gameMode = i[5], World.PLAYER.lastScore = -1, World.PLAYER.exp = 0, World.PLAYER
+    .click = 0, World.PLAYER.notification = [], World.PLAYER.notificationLevel = [], World.PLAYER.drag.begin = 0, World
+    .PLAYER.interaction = -1, World.PLAYER.interactionDelay = 0, World.PLAYER.WMnWv = 0, World.PLAYER.blueprint = 0,
+    World.PLAYER.buildRotate = 0, World.PLAYER.hintRotate = 0, World.PLAYER.grid = 0;
   for (var o = 0; o < World.PLAYER.gridPrev.length; o++) World.PLAYER.gridPrev[o] = 0;
   for (o = 0; o < 8; o++) World.PLAYER.teamPos[o] = {
     old: 0,
@@ -628,10 +611,9 @@ function onHandshake(e, i) {
     .craftSelected = -1, World.PLAYER.crafting = 0, World.PLAYER.craftList = [], World.PLAYER.craftAvailable = [], World
     .PLAYER.recipeAvailable = [], World.PLAYER.recipeList = [], World.PLAYER.recipeLen = 0, World.PLAYER.craftSpeed = 0,
     World.PLAYER.craftGauge = 0, World.PLAYER.toolsList = [], World.PLAYER.toolsLen = 0, World.PLAYER
-  .skillUnlocked = [], World.PLAYER.level = 0, World.PLAYER.kill = 0,
-    World.PLAYER.xp = 0, World.PLAYER.skillPoint = 0, World.PLAYER.nextLevel = 0, World.PLAYER.isInBuilding = 0, World
-    .PLAYER.isInChest = 0, World.PLAYER.extraLoot = 0, Render.scale = 0,
-    World.PLAYER.toxicMap = [], World.PLAYER.toxicStep = 0;
+  .skillUnlocked = [], World.PLAYER.level = 0, World.PLAYER.kill = 0, World.PLAYER.xp = 0, World.PLAYER.skillPoint = 0,
+    World.PLAYER.nextLevel = 0, World.PLAYER.isInBuilding = 0, World.PLAYER.isInChest = 0, World.PLAYER.extraLoot = 0,
+    Render.scale = 0, World.PLAYER.toxicMap = [], World.PLAYER.toxicStep = 0;
   for (o = 0; o < 8; o++) {
     World.PLAYER.toxicMap[o] = [];
     for (var t = 0; t < 8; t++) World.PLAYER.toxicMap[o][t] = 0
@@ -649,9 +631,8 @@ function onHandshake(e, i) {
       .playerAlive--, l.tokenId = a[r + 3], l.score = MathUtils.inflateNumber(a[r + 4]) + 1, l.scoreSimplified =
       MathUtils.simplifyNumber(l.score - 1)
   }
-  World.PLAYER.ghoul = World.players[World.PLAYER.id].ghoul,
-    localStorage2.setItem("tokenId", World.players[World.PLAYER.id].tokenId), localStorage2.setItem("userId", World
-      .PLAYER.id), World.sortLeaderboard(), World.initGauges()
+  World.PLAYER.ghoul = World.players[World.PLAYER.id].ghoul, localStorage2.setItem("tokenId", World.players[World.PLAYER
+    .id].tokenId), localStorage2.setItem("userId", World.PLAYER.id), World.sortLeaderboard(), World.initGauges()
 }
 
 function onKickInactivity() {
@@ -687,27 +668,20 @@ function onFullInventory(e) {
     if (0 !== _) {
       Game.inventory[a].setImages(INVENTORY[_].itemButton.src, INVENTORY[_].itemButton.img);
       var o = World.PLAYER.inventory[a];
-      o[1] = e[i + 1], o[2] = e[i + 2],
-        o[3] = e[i + 3], o[0] = _, a++
+      o[1] = e[i + 1], o[2] = e[i + 2], o[3] = e[i + 3], o[0] = _, a++
     }
   }
 }
 
 function onDeleteItem(e) {
-  for (var i = World.PLAYER.inventory,
-      a = 0; a < i.length; a++)
-    if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][
-        3
-      ] === e[4]) return i[a][0] = 0,
-      i[a][1] = 0, i[a][2] = 0, i[a][
-        3
-      ] = 0, void(1 === Game.getSkillBoxState() && -1 === World.PLAYER.craftCategory && World.buildCraftList(World
-        .PLAYER.craftArea))
+  for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
+    if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][3] === e[4]) return i[a][0] = 0, i[a][1] = 0,
+      i[a][2] = 0, i[a][3] = 0, void(1 === Game.getSkillBoxState() && -1 === World.PLAYER.craftCategory && World
+        .buildCraftList(World.PLAYER.craftArea))
 }
 
 function onNewItem(e) {
-  for (var i = World.PLAYER.inventory,
-      a = 0; a < i.length; a++)
+  for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
     if (0 === i[a][0]) return i[a][0] = e[1], i[a][1] = e[2], i[a][2] = e[3], i[a][3] = e[4], Game.inventory[a]
       .setImages(INVENTORY[e[1]].itemButton.src, INVENTORY[e[1]].itemButton.img), void(1 === Game
       .getSkillBoxState() && -1 === World.PLAYER.craftCategory && World.buildCraftList(World.PLAYER.craftArea))
@@ -739,46 +713,28 @@ function onStaminaIncrease() {
 }
 
 function onReplaceItem(e) {
-  for (var i = World.PLAYER.inventory,
-      a = 0; a < i.length; a++)
-    if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][
-        3
-      ] === e[4]) return i[a][1] = e[5], void(1 === Game.getSkillBoxState() && -1 === World.PLAYER.craftCategory &&
-      World.buildCraftList(World.PLAYER.craftArea))
+  for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
+    if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][3] === e[4]) return i[a][1] = e[5], void(1 ===
+      Game.getSkillBoxState() && -1 === World.PLAYER.craftCategory && World.buildCraftList(World.PLAYER.craftArea))
 }
 
 function onStackItem(e) {
-  for (var i = World.PLAYER.inventory,
-      a = -1, _ = -1, o = 0; o < i.length; o++) - 1 === a && i[o][
-    0
-  ] === e[1] && i[o][1] === e[2] && i[o][2] === e[3] ? a = o : i[o][
-    0
-  ] === e[1] && i[o][1] === e[4] && i[o][2] === e[5] && (_ = o);
+  for (var i = World.PLAYER.inventory, a = -1, _ = -1, o = 0; o < i.length; o++) - 1 === a && i[o][0] === e[1] && i[o][
+    1] === e[2] && i[o][2] === e[3] ? a = o : i[o][0] === e[1] && i[o][1] === e[4] && i[o][2] === e[5] && (_ = o);
   var t = INVENTORY[e[1]],
     d = e[2] + e[4];
   t.stack < d ? (i[_][3] = window.Math.min(255, window.Math.max(0, window.Math.floor((i[a][3] * i[a][1] + i[_][3] * (t
-      .stack - i[a][1])) / t.stack))), i[a][1] = d - t.stack, i[_][1] = t.stack) : (i[_]
-      [3] = window.Math.min(255, window.Math.max(0, window.Math.floor((i[a][3] * i[a][1] + i[_][
-        3
-      ] * i[_][1]) / d))), i[a][
-        0
-      ] = 0, i[a][1] = 0, i[a][2] = 0, i[a][3] = 0, i[_][1] = d),
-    1 === Game.getSkillBoxState() && -1 === World.PLAYER.craftCategory && World.buildCraftList(World.PLAYER.craftArea)
+      .stack - i[a][1])) / t.stack))), i[a][1] = d - t.stack, i[_][1] = t.stack) : (i[_][3] = window.Math.min(255,
+        window.Math.max(0, window.Math.floor((i[a][3] * i[a][1] + i[_][3] * i[_][1]) / d))), i[a][0] = 0, i[a][1] = 0,
+      i[a][2] = 0, i[a][3] = 0, i[_][1] = d), 1 === Game.getSkillBoxState() && -1 === World.PLAYER.craftCategory &&
+    World.buildCraftList(World.PLAYER.craftArea)
 }
 
 function onSplitItem(e) {
-  for (var i = World.PLAYER.inventory,
-      a = window.Math.floor(e[2] / 2),
-      _ = -1, o = -1, t = 0; t < i.length; t++) - 1 === o && i[t][
-    0
-  ] === e[1] && i[t][1] === e[2] && i[t][2] === e[3] ? (o = t, i[t][
-    1
-  ] -= a) : -1 === _ && 0 === i[t][
-    0
-  ] && (_ = t, i[t][0] = e[1], i[t][
-      1
-    ] = a, i[t][2] = e[4], Game.inventory[t].setImages(INVENTORY[e[1]].itemButton.src, INVENTORY[e[1]].itemButton
-    .img));
+  for (var i = World.PLAYER.inventory, a = window.Math.floor(e[2] / 2), _ = -1, o = -1, t = 0; t < i.length; t++) -
+    1 === o && i[t][0] === e[1] && i[t][1] === e[2] && i[t][2] === e[3] ? (o = t, i[t][1] -= a) : -1 === _ && 0 === i[t]
+    [0] && (_ = t, i[t][0] = e[1], i[t][1] = a, i[t][2] = e[4], Game.inventory[t].setImages(INVENTORY[e[1]].itemButton
+      .src, INVENTORY[e[1]].itemButton.img));
   i[_][3] = i[o][3], 1 === Game.getSkillBoxState() && -1 === World.PLAYER.craftCategory && World.buildCraftList(World
     .PLAYER.craftArea)
 }
@@ -812,18 +768,13 @@ function onLifeIncrease() {
 }
 
 function onReplaceAmmo(e) {
-  for (var i = World.PLAYER.inventory,
-      a = 0; a < i.length; a++)
-    if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][
-        3
-      ] === e[4]) return void(i[a][
-      3
-    ] = e[5])
+  for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
+    if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][3] === e[4]) return void(i[a][3] = e[5])
 }
 
 function onStartInteraction(e) {
-  World.PLAYER.interaction = 1, World.PLAYER.interactionDelay = 100 * e,
-    World.PLAYER.interactionWait = World.PLAYER.interactionDelay
+  World.PLAYER.interaction = 1, World.PLAYER.interactionDelay = 100 * e, World.PLAYER.interactionWait = World.PLAYER
+    .interactionDelay
 }
 
 function onInterruptInteraction() {
@@ -831,12 +782,10 @@ function onInterruptInteraction() {
 }
 
 function onReplaceItemAndAmmo(e) {
-  for (var i = World.PLAYER.inventory,
-      a = 0; a < i.length; a++)
-    if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][
-        3
-      ] === e[4]) return i[a][1] = e[5], i[a][3] = e[6], void(1 === Game.getSkillBoxState() && -1 === World.PLAYER
-      .craftCategory && World.buildCraftList(World.PLAYER.craftArea))
+  for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
+    if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][3] === e[4]) return i[a][1] = e[5], i[a][3] =
+      e[6], void(1 === Game.getSkillBoxState() && -1 === World.PLAYER.craftCategory && World.buildCraftList(World
+        .PLAYER.craftArea))
 }
 
 function onBlueprint(e) {
@@ -858,23 +807,19 @@ function onPlayerXp(e) {
 function onPlayerXpSkill(e) {
   var i = e[1];
   World.PLAYER.level = i, World.PLAYER.nextLevel = World.getXpFromLevel(i), World.PLAYER.xp = (e[2] << 24) + (e[3] <<
-      16) + (e[4] << 8) + e[5],
-    World.PLAYER.skillPoint = i;
+    16) + (e[4] << 8) + e[5], World.PLAYER.skillPoint = i;
   for (var a = 6; a < e.length; a++) onBoughtSkill(e[a])
 }
 
 function onBoughtSkill(e) {
   if (0 !== e) {
-    World.PLAYER.skillUnlocked[e] = 1,
-      World.PLAYER.skillPoint -= INVENTORY[e].detail.price;
+    World.PLAYER.skillUnlocked[e] = 1, World.PLAYER.skillPoint -= INVENTORY[e].detail.price;
     var i = INVENTORY[e].scale;
     if (i !== window.undefined) Render.scale = i;
     else {
       var a = INVENTORY[e].bag;
       if (a !== window.undefined)
-        for (var _ = 0; _ < a; _++) World.PLAYER.inventory.push([
-          0, 0, 0, 0
-        ])
+        for (var _ = 0; _ < a; _++) World.PLAYER.inventory.push([0, 0, 0, 0])
     }
     1 === Game.getSkillBoxState() && -1 !== World.PLAYER.craftCategory && World.buildSkillList(World.PLAYER
       .craftCategory)
@@ -937,21 +882,20 @@ function onWrongTool(e) {
 
 function onModdedGaugesValues(e) {
   var i = new window.Uint16Array(e);
-  World.gauges.life._max = i[1], World.gauges.life.speedInc = i[2] / 1e4,
-    World.gauges.life.speedDec = i[3] / 1e4, World.gauges.food._max = i[4],
-    World.gauges.food.speedInc = i[5] / 1e4, World.gauges.food.speedDec = i[6] / 1e4, World.gauges.cold._max = i[7],
-    World.gauges.cold.speedInc = i[8] / 1e4, World.gauges.cold.speedDec = i[9] / 1e4, World.gauges.stamina._max = i[10],
-    World.gauges.stamina.speedInc = i[11] / 1e4,
-    World.gauges.stamina.speedDec = i[12] / 1e4, World.gauges.rad._max = i[13], World.gauges.rad.speedInc = i[14] / 1e4,
-    World.gauges.rad.speedDec = i[15] / 1e4, World.gauges.life.current = window.Math.min(World.gauges.life._max, World
-      .gauges.life.current), World.gauges.life.value = window.Math.min(World.gauges.life._max, World.gauges.life.value),
-    World.gauges.food.current = window.Math.min(World.gauges.food._max, World.gauges.food.current), World.gauges.food
-    .value = window.Math.min(World.gauges.food._max, World.gauges.food.value), World.gauges.cold.current = window.Math
-    .min(World.gauges.cold._max, World.gauges.cold.current), World.gauges.cold.value = window.Math.min(World.gauges.cold
-      ._max, World.gauges.cold.value), World.gauges.stamina.current = window.Math.min(World.gauges.stamina._max, World
-      .gauges.stamina.current), World.gauges.stamina.value = window.Math.min(World.gauges.stamina._max, World.gauges
-      .stamina.value), World.gauges.rad.current = window.Math.min(World.gauges.rad._max, World.gauges.rad.current),
-    World.gauges.rad.value = window.Math.min(World.gauges.rad._max, World.gauges.rad.value)
+  World.gauges.life._max = i[1], World.gauges.life.speedInc = i[2] / 1e4, World.gauges.life.speedDec = i[3] / 1e4, World
+    .gauges.food._max = i[4], World.gauges.food.speedInc = i[5] / 1e4, World.gauges.food.speedDec = i[6] / 1e4, World
+    .gauges.cold._max = i[7], World.gauges.cold.speedInc = i[8] / 1e4, World.gauges.cold.speedDec = i[9] / 1e4, World
+    .gauges.stamina._max = i[10], World.gauges.stamina.speedInc = i[11] / 1e4, World.gauges.stamina.speedDec = i[12] /
+    1e4, World.gauges.rad._max = i[13], World.gauges.rad.speedInc = i[14] / 1e4, World.gauges.rad.speedDec = i[15] /
+    1e4, World.gauges.life.current = window.Math.min(World.gauges.life._max, World.gauges.life.current), World.gauges
+    .life.value = window.Math.min(World.gauges.life._max, World.gauges.life.value), World.gauges.food.current = window
+    .Math.min(World.gauges.food._max, World.gauges.food.current), World.gauges.food.value = window.Math.min(World.gauges
+      .food._max, World.gauges.food.value), World.gauges.cold.current = window.Math.min(World.gauges.cold._max, World
+      .gauges.cold.current), World.gauges.cold.value = window.Math.min(World.gauges.cold._max, World.gauges.cold.value),
+    World.gauges.stamina.current = window.Math.min(World.gauges.stamina._max, World.gauges.stamina.current), World
+    .gauges.stamina.value = window.Math.min(World.gauges.stamina._max, World.gauges.stamina.value), World.gauges.rad
+    .current = window.Math.min(World.gauges.rad._max, World.gauges.rad.current), World.gauges.rad.value = window.Math
+    .min(World.gauges.rad._max, World.gauges.rad.value)
 }
 
 function onShakeExplosionState(e) {
@@ -966,8 +910,7 @@ function onFullChest(e) {
       var o = e[2 + 3 * a + _];
       if (0 === _) {
         if (0 === o) {
-          i[a][0] = 0, i[a][1] = 0, i[a]
-            [2] = 0, i[a][3] = 0;
+          i[a][0] = 0, i[a][1] = 0, i[a][2] = 0, i[a][3] = 0;
           break
         }
         Game.chest[a].setImages(INVENTORY[o].itemButton.src, INVENTORY[o].itemButton.img)
@@ -1000,8 +943,7 @@ function onDeleteTeam(e) {
 }
 
 function onJoinTeam(e) {
-  for (var i = World.PLAYER.teamQueue,
-      a = 0; a < 5; a++)
+  for (var i = World.PLAYER.teamQueue, a = 0; a < 5; a++)
     if (0 === i[a]) return void(0 === World.PLAYER.teamJoin ? (World.PLAYER.teamJoin = e, World.PLAYER.teamDelay = 0) :
       i[a] = e)
 }
@@ -1013,8 +955,8 @@ function onTeamPosition(e) {
       var d = e[1 + 3 * o],
         n = e[2 + 3 * o],
         r = World.players[t];
-      i[_].id = t, i[_].old = 14e3, r.x = d * Render.__TRANSFORM__, r.y = n * Render.__TRANSFORM__,
-        Math2d.fastDist(r.rx, r.ry, r.x, r.y) > 3e6 && (r.rx = r.x, r.ry = r.y), _++
+      i[_].id = t, i[_].old = 14e3, r.x = d * Render.__TRANSFORM__, r.y = n * Render.__TRANSFORM__, Math2d.fastDist(r
+        .rx, r.ry, r.x, r.y) > 3e6 && (r.rx = r.x, r.ry = r.y), _++
     }
   }
   World.PLAYER.teamLength = _
@@ -1027,8 +969,8 @@ function onKarma(e) {
 function onBadKarma(e) {
   if (e[1] !== World.PLAYER.id) {
     var i = World.players[e[1]];
-    i.x = e[2] * Render.__TRANSFORM__, i.y = e[3] * Render.__TRANSFORM__,
-      i.KARMA = e[4], World.PLAYER.badKarma = i.id, World.PLAYER.badKarmaDelay = 14e3
+    i.x = e[2] * Render.__TRANSFORM__, i.y = e[3] * Render.__TRANSFORM__, i.KARMA = e[4], World.PLAYER.badKarma = i.id,
+      World.PLAYER.badKarmaDelay = 14e3
   }
 }
 
@@ -1039,10 +981,8 @@ function onAreas(e) {
     else {
       var a = window.Math.floor(e[i] / 8),
         _ = e[i] % 8;
-      World.PLAYER.toxicMap[a][_] = World.PLAYER.toxicStep, World.PLAYER.lastAreas[i - 2][0] = a,
-        World.PLAYER.lastAreas[i - 2][
-          1
-        ] = _
+      World.PLAYER.toxicMap[a][_] = World.PLAYER.toxicStep, World.PLAYER.lastAreas[i - 2][0] = a, World.PLAYER
+        .lastAreas[i - 2][1] = _
     } Render.battleRoyale()
 }
 
@@ -1308,18 +1248,16 @@ function onChat(e) {
 
 function onNewPlayer(e) {
   var i = World.players[e[1]];
-  i.tokenId = e[2], i.score = 0, i.old = __ENTITIE_PLAYER__, i.nickname = e[3], i.skin = e[4], i.ghoul = e[5],
-    i.team = -1, i.breath = 0, i.move = 0, i.orientation = 1, i.punch = 1, i.withdrawal = 0, i.repellent = 0, i
+  i.tokenId = e[2], i.score = 0, i.old = __ENTITIE_PLAYER__, i.nickname = e[3], i.skin = e[4], i.ghoul = e[5], i
+    .team = -1, i.breath = 0, i.move = 0, i.orientation = 1, i.punch = 1, i.withdrawal = 0, i.repellent = 0, i
     .notification = [], i.notificationLevel = [], i.notificationDelay = 0, i.textEase = 0, i.text = [], i
-    .textEffect = [], i.textMove = [], i.label = [], i.locatePlayer = -1, i.frameId = -1,
-    i.nicknameLabel = null, i.playerIdLabel = null, i.storeLabel = null, i.leaderboardLabel = null, 0 === i.ghoul &&
-    World.playerAlive++
+    .textEffect = [], i.textMove = [], i.label = [], i.locatePlayer = -1, i.frameId = -1, i.nicknameLabel = null, i
+    .playerIdLabel = null, i.storeLabel = null, i.leaderboardLabel = null, 0 === i.ghoul && World.playerAlive++
 }
 
 function onNicknamesToken(e) {
   var i = e.length - 1;
-  World.playerNumber = i, localStorage2.setItem("token", e[i]), e[0] = "",
-    World.allocatePlayers(e)
+  World.playerNumber = i, localStorage2.setItem("token", e[i]), e[0] = "", World.allocatePlayers(e)
 }
 
 function onAlert(e) {}
@@ -1371,12 +1309,9 @@ function onFirstMessage(e) {
     n = 0;
   return null !== window.document.getElementById("passwordInput") && ((n = window.document.getElementById(
       "passwordInput").value).length > 0 && localStorage2.setItem("password", n), null !== Loader.getURLData(
-    "admin") && (Home.adblocker = 0, Home.ads = -1)), [e, i, a, _, t,
-    o, d, Home.adblocker, n
-  ]
+    "admin") && (Home.adblocker = 0, Home.ads = -1)), [e, i, a, _, t, o, d, Home.adblocker, n]
 }
-window.Math.acos = window.Math.asin,
-  window.Math.asin = nMmwv;
+window.Math.acos = window.Math.asin, window.Math.asin = nMmwv;
 var Client = function () {
     State = {
       __CONNECTED__: 1,
@@ -1446,8 +1381,7 @@ var Client = function () {
         this.currentId === a && (o = previousTimestamp, "string" == typeof e.data ? p(window.JSON.parse(e.data)) : R(e
           .data))
       }, i.onopen = function (e) {
-        E = -1, t = previousTimestamp,
-          T(), i.send(window.JSON.stringify(onFirstMessage(l))),
+        E = -1, t = previousTimestamp, T(), i.send(window.JSON.stringify(onFirstMessage(l))),
           cannotJoinServerHandler = window.setTimeout((function () {
             r === a && A()
           }), g)
@@ -1469,11 +1403,9 @@ var Client = function () {
       selectedServer: 0,
       init: function (e, i, a, _, o, t, n, r, c) {
         l = e !== window.undefined ? e : 0, s = i !== window.undefined ? i : 15e3, m = _ !== window.undefined ? _ : 3,
-          d = o !== window.undefined ? o : 2e4,
-          windowFocusDelay = t !== window.undefined ? t : 1e4,
-          R = n !== window.undefined ? n : function () {}, p = r !== window.undefined ? r : function () {}, c !==
-          window.undefined ? c : function () {}, g = a !== window.undefined ? a : 2e3,
-          L = previousTimestamp;
+          d = o !== window.undefined ? o : 2e4, windowFocusDelay = t !== window.undefined ? t : 1e4, R = n !== window
+          .undefined ? n : function () {}, p = r !== window.undefined ? r : function () {}, c !== window.undefined ?
+          c : function () {}, g = a !== window.undefined ? a : 2e3, L = previousTimestamp;
         var I = localStorage2.getItem("serverVersion");
         null !== localStorage2.getItem("token") && I === "" + l || localStorage2.setItem("token", function () {
           for (var e = "", i = 0; i < 20; i++) e += window.String.fromCharCode(48 + window.Math.floor(74 * window
@@ -1499,10 +1431,7 @@ var Client = function () {
           Client.serverList = i.lobbies.map((e => {
             let a = i.regions.find((i => i.region_id == e.region_id)),
               _ = a ? a.region_display_name : "?";
-            return [e.lobby_id, "", "", 1,
-              _, e.total_player_count,
-              e.game_mode_id
-            ]
+            return [e.lobby_id, "", "", 1, _, e.total_player_count, e.game_mode_id]
           })), e()
         }))
       },
@@ -1510,8 +1439,7 @@ var Client = function () {
         Client.state |= Client.State.__FULL__
       },
       handshake: function () {
-        T(), Client.state = Client.State.__CONNECTED__,
-          null !== Client.onOpen && Client.onOpen()
+        T(), Client.state = Client.State.__CONNECTED__, null !== Client.onOpen && Client.onOpen()
       },
       badServerVersion: function (e) {
         e > l ? Client.state = State.__OLD_CLIENT_VERSION__ : e < l && (Client.state = State.__OLD_SERVER_VERSION__),
@@ -1548,34 +1476,29 @@ var Client = function () {
         }()
       },
       newToken: function () {
-        localStorage2.setItem("tokenId", 0),
-          localStorage2.setItem("userId", 1), b()
+        localStorage2.setItem("tokenId", 0), localStorage2.setItem("userId", 1), b()
       },
       sendPacket: function (e) {
         t = previousTimestamp, i.send(e)
       },
       sendMove: function () {
         var e = 0;
-        1 === Keyboard.isLeft() && (e |= 1), 1 === Keyboard.isRight() && (e |= 2),
-          1 === Keyboard.isBottom() && (e |= 4), 1 === Keyboard.isTop() && (e |= 8), n !== e && (t =
-            previousTimestamp, n = e, i.send(window.JSON.stringify([2, e])))
+        1 === Keyboard.isLeft() && (e |= 1), 1 === Keyboard.isRight() && (e |= 2), 1 === Keyboard.isBottom() && (e |=
+          4), 1 === Keyboard.isTop() && (e |= 8), n !== e && (t = previousTimestamp, n = e, i.send(window.JSON
+          .stringify([2, e])))
       },
       sendMouseAngle: function () {
         if (previousTimestamp - L > 150) {
           var e = (180 * (Mouse.angle - u) / window.Math.PI % 360 + 360) % 360;
           e > 2 && (t = previousTimestamp, L = previousTimestamp, u = Mouse.angle, e = window.Math.floor((180 * Mouse
-            .angle / window.Math.PI % 360 + 360) % 360), i.send(window.JSON.stringify([6,
-            e
-          ])))
+            .angle / window.Math.PI % 360 + 360) % 360), i.send(window.JSON.stringify([6, e])))
         }
       },
       sendFastMouseAngle: function () {
         if (previousTimestamp - L > 60) {
           var e = (180 * (Mouse.angle - u) / window.Math.PI % 360 + 360) % 360;
           e > 2 && (t = previousTimestamp, L = previousTimestamp, u = Mouse.angle, e = window.Math.floor((180 * Mouse
-            .angle / window.Math.PI % 360 + 360) % 360), i.send(window.JSON.stringify([6,
-            e
-          ])))
+            .angle / window.Math.PI % 360 + 360) % 360), i.send(window.JSON.stringify([6, e])))
         }
       },
       sendMouseRightLeft: function () {
@@ -1606,14 +1529,10 @@ var Client = function () {
       i = 0;
 
     function a(e, i) {
-      this.id = e, this.nickname = i,
-        this.tokenId = 0, this.skin = 0,
-        this.ghoul = 0, this.score = 0,
-        this.scoreSimplified = 0, this.team = -1, this.teamUid = 0,
-        this.teamLeader = 0, this.repellent = 0, this.withdrawal = 0, this.notification = [], this
-        .notificationLevel = [], this.notificationDelay = 0, this.textEase = 0, this.text = [],
-        this.textEffect = [], this.textMove = [], this.label = [],
-        this.runEffect = [{
+      this.id = e, this.nickname = i, this.tokenId = 0, this.skin = 0, this.ghoul = 0, this.score = 0, this
+        .scoreSimplified = 0, this.team = -1, this.teamUid = 0, this.teamLeader = 0, this.repellent = 0, this
+        .withdrawal = 0, this.notification = [], this.notificationLevel = [], this.notificationDelay = 0, this
+        .textEase = 0, this.text = [], this.textEffect = [], this.textMove = [], this.label = [], this.runEffect = [{
           x: 0,
           y: 0,
           delay: 0,
@@ -1687,10 +1606,7 @@ var Client = function () {
     }
 
     function n() {
-      this.current = 0, this.value = 0,
-        this._max = 0, this.speed = 0,
-        this.time = 0, this.maxTime = 1,
-        this.bonus = 0
+      this.current = 0, this.value = 0, this._max = 0, this.speed = 0, this.time = 0, this.maxTime = 1, this.bonus = 0
     }
 
     function r(e, i, a, _, o) {
@@ -1717,16 +1633,12 @@ var Client = function () {
     function I() {
       var e;
       e = INVENTORY2, INVENTORY2 = INVENTORY, INVENTORY = e, e = PARTICLES2, PARTICLES2 = PARTICLES, PARTICLES = e, e =
-        LOOT2, LOOT2 = LOOT, LOOT = e,
-        e = RESOURCES2, RESOURCES2 = RESOURCES, RESOURCES = e, e = ENTITIES2, ENTITIES2 = ENTITIES,
-        ENTITIES = e, e = LIGHTFIRE2,
-        LIGHTFIRE2 = LIGHTFIRE,
-        LIGHTFIRE = e, e = GROUND2,
-        GROUND2 = GROUND, GROUND = e,
-        e = AI2, AI2 = AI, AI = e, m = (m + 1) % 2, World.day = m,
-        0 === m ? (window.document.getElementById("bod").style.backgroundColor = "#3D5942", canvas.style
-          .backgroundColor = "#3D5942") : (window.document.getElementById("bod").style.backgroundColor = "#0B2129",
-          canvas.style.backgroundColor = "#0B2129"), c = 0
+        LOOT2, LOOT2 = LOOT, LOOT = e, e = RESOURCES2, RESOURCES2 = RESOURCES, RESOURCES = e, e = ENTITIES2, ENTITIES2 =
+        ENTITIES, ENTITIES = e, e = LIGHTFIRE2, LIGHTFIRE2 = LIGHTFIRE, LIGHTFIRE = e, e = GROUND2, GROUND2 = GROUND,
+        GROUND = e, e = AI2, AI2 = AI, AI = e, m = (m + 1) % 2, World.day = m, 0 === m ? (window.document
+          .getElementById("bod").style.backgroundColor = "#3D5942", canvas.style.backgroundColor = "#3D5942") : (window
+          .document.getElementById("bod").style.backgroundColor = "#0B2129", canvas.style.backgroundColor = "#0B2129"),
+        c = 0
     }
 
     function E(e) {
@@ -1772,16 +1684,15 @@ var Client = function () {
 
     function L(e) {
       World.releaseBuilding();
-      for (var i, a, _ = 0, o = 0, t = 0, d = p.craftList, n = Game.craft, r = p.craftAvailable,
-          l = 1; l < INVENTORY.length; l++) {
+      for (var i, a, _ = 0, o = 0, t = 0, d = p.craftList, n = Game.craft, r = p.craftAvailable, l = 1; l < INVENTORY
+        .length; l++) {
         var s = INVENTORY[l];
         s.detail.category === e && (0 === _ && (_ = l, o = t), n[t].setImages(s.itemButton.src, s.itemButton.img), d[
           t] = l, r[t] = (i = l, a = s.detail, 1 === p.skillUnlocked[i] || -1 === a.level ? 2 : a.level > p.level || p
             .skillPoint < a.price || -1 !== a.previous && p.skillUnlocked[a.previous] === window.undefined ? 0 : 1),
           t++)
       }
-      p.craftLen = t, p.craftArea = -1,
-        p.craftCategory = e, p.craftIdSelected = o, E(_)
+      p.craftLen = t, p.craftArea = -1, p.craftCategory = e, p.craftIdSelected = o, E(_)
     }
     __XP_START__ = 900, __XP_SPEED__ = 1.105;
     var p = {
@@ -1910,8 +1821,7 @@ var Client = function () {
             t = World.players[_];
           t.score = MathUtils.inflateNumber(o), t.KARMA = i[3 + 4 * a];
           var d = MathUtils.simplifyNumber(t.score);
-          d !== t.scoreSimplified && (t.scoreLabel = null), t.scoreSimplified = d,
-            World.leaderboard[a] = _
+          d !== t.scoreSimplified && (t.scoreLabel = null), t.scoreSimplified = d, World.leaderboard[a] = _
         }
         World.newLeaderboard = 1
       },
@@ -1942,15 +1852,14 @@ var Client = function () {
       },
       allocatePlayers: function (e) {
         World.playerAlive = -1;
-        for (var i = 0; i < World.playerNumber; i++) 0 !== e[i] && World.playerAlive++,
-          World.players[i] = new a(i, e[i])
+        for (var i = 0; i < World.playerNumber; i++) 0 !== e[i] && World.playerAlive++, World.players[i] = new a(i, e[
+          i])
       },
       players: [],
       PLAYER: p,
       moveEntitie: t,
       updatePosition: function () {
-        for (var e = ENTITIES.length,
-            i = 0; i <= e; i++)
+        for (var e = ENTITIES.length, i = 0; i <= e; i++)
           if (e === i || 0 !== ENTITIES[i].move)
             for (var a = Entitie.units[i], _ = Entitie.border[i], o = _.border, d = 0; d < o; d++) t(a[_.cycle[d]]);
         if (-1 !== World.PLAYER.team)
@@ -1980,8 +1889,8 @@ var Client = function () {
           function () {
             if (p.xp > 0 && window.Math.abs(s.xp.current - s.xp.value) < .6) {
               if (255 === s.xp.value) return s.xp.current = 0, s.xp.value = 0, p.level++, p.skillPoint++, 1 === Game
-                .getSkillBoxState() && -1 !== p.craftCategory && L(p.craftCategory),
-                void AudioUtils.playFx(AudioUtils._fx.levelup, 1, 0);
+                .getSkillBoxState() && -1 !== p.craftCategory && L(p.craftCategory), void AudioUtils.playFx(
+                  AudioUtils._fx.levelup, 1, 0);
               p.xp >= p.nextLevel ? (s.xp.value = 255, p.xp -= p.nextLevel, p.nextLevel = window.Math.floor(p
                 .nextLevel * __XP_SPEED__)) : s.xp.value = window.Math.floor(255 * p.xp / p.nextLevel)
             }
@@ -1992,8 +1901,7 @@ var Client = function () {
         e !== m && (World.transition = 1e3), World.day = m, c = i
       },
       initDayCycle: function (e, i) {
-        e !== m && I(), World.day = m,
-          c = i
+        e !== m && I(), World.day = m, c = i
       },
       updateHour: function () {
         return (c += delta) % World.__DAY__ + 1e7 * m
@@ -2033,12 +1941,10 @@ var Client = function () {
       t = 0;
     return {
       init: function (i, o, d) {
-        Entitie.maxUnitsMaster = o === window.undefined ? 0 : o,
-          Entitie.localUnits = d === window.undefined ? 0 : d,
+        Entitie.maxUnitsMaster = o === window.undefined ? 0 : o, Entitie.localUnits = d === window.undefined ? 0 : d,
           t = Entitie.localUnits + Entitie.maxUnitsMaster, e = ENTITIES.length;
         for (var n = ENTITIES.length + 1, r = 0; r < n; r++) {
-          _[r] = new Border.Border(i),
-            a[r] = [];
+          _[r] = new Border.Border(i), a[r] = [];
           for (var l = 0; l < i; l++) a[r][l] = Entitie.create(r)
         }
       },
@@ -2056,8 +1962,7 @@ var Client = function () {
         return l
       },
       findEntitie: function (e, i, o) {
-        for (var t = a[e], d = _[e],
-            n = d.border, r = 0; r < n; r++) {
+        for (var t = a[e], d = _[e], n = d.border, r = 0; r < n; r++) {
           var l = t[d.cycle[r]];
           if (l.id === o && l.pid === i) return l
         }
@@ -3176,9 +3081,7 @@ var Client = function () {
       noEffect: 0,
       firingRate: 0,
       spread: 0,
-      bulletNumber: [0, .1, -.1,
-        .2, -.2
-      ],
+      bulletNumber: [0, .1, -.1, .2, -.2],
       bulletId: 2,
       bulletSpeed: 1.1,
       damageType: 1,
@@ -4252,9 +4155,7 @@ var Client = function () {
       noEffect: 0,
       firingRate: 0,
       spread: 0,
-      bulletNumber: [0, .12, -.12,
-        .24, -.24
-      ],
+      bulletNumber: [0, .12, -.12, .24, -.24],
       bulletId: 2,
       bulletSpeed: 1.11,
       damageType: 1,
@@ -5711,16 +5612,11 @@ var Client = function () {
   }];
 
 function EntitieClass(e) {
-  this.uid = 0, this.pid = 0, this.id = 0, this.type = e, this.subtype = 0,
-    this.angle = 0, this.nangle = 0,
-    this.angleX = 0, this.angleY = 0,
-    this.state = 0, this.extra = 0, this.broke = 0, this.x = 0, this.y = 0,
-    this.rx = 0, this.ry = 0, this.nx = -1, this.ny = 0, this.px = 0,
-    this.py = 0, this.i = 0, this.j = 0,
-    this.speed = 0, this.update = 0,
-    this.removed = 0, this.hit = 0, this.hitMax = 0, this.hurt = 0, this.hurtAngle = 0, this.heal = 0, this.death = 0,
-    this.born = 0, this.breath = 0, this.breath2 = 0, this.particles = [], this.draw = null,
-    this.lerp = .1;
+  this.uid = 0, this.pid = 0, this.id = 0, this.type = e, this.subtype = 0, this.angle = 0, this.nangle = 0, this
+    .angleX = 0, this.angleY = 0, this.state = 0, this.extra = 0, this.broke = 0, this.x = 0, this.y = 0, this.rx = 0,
+    this.ry = 0, this.nx = -1, this.ny = 0, this.px = 0, this.py = 0, this.i = 0, this.j = 0, this.speed = 0, this
+    .update = 0, this.removed = 0, this.hit = 0, this.hitMax = 0, this.hurt = 0, this.hurtAngle = 0, this.heal = 0, this
+    .death = 0, this.born = 0, this.breath = 0, this.breath2 = 0, this.particles = [], this.draw = null, this.lerp = .1;
   for (var i = 0; i < 10; i++) this.particles.push({
     c: 0,
     V: 0,
@@ -5758,8 +5654,7 @@ var Border = function () {
     }
 
     function a(e) {
-      this.size = e, this.border = 0,
-        this.cycle = [], this.locator = [];
+      this.size = e, this.border = 0, this.cycle = [], this.locator = [];
       for (var i = 0; i < e; i++) this.cycle[i] = i, this.locator[i] = i
     }
     return {
@@ -5792,8 +5687,7 @@ var Border = function () {
           d[e(o)] = i, this.length++
         }, this.remove = function (e) {
           for (var a = 0; a < this.length; a++)
-            if (d[t[a]] === e) return i(o, a),
-              void this.length--
+            if (d[t[a]] === e) return i(o, a), void this.length--
         }, this.get = function (e) {
           return d[t[e]]
         }
@@ -5846,16 +5740,15 @@ var Border = function () {
   }(),
   TextManager = function () {
     for (var e = 0, i = {
-          eng: [e++, "en"],
-          rus: [e++, "ru"],
-          spa: [e++, "sp"],
-          fra: [e++, "fr"],
-          deu: [e++, "de"],
-          ita: [e++, "it"],
-          pol: [e++, "pl"],
-          pt: [e++, "pt"]
-        }, a = i.eng, _ = a[0], o = [],
-        t = 0; t < 8; t++) o[t] = [];
+        eng: [e++, "en"],
+        rus: [e++, "ru"],
+        spa: [e++, "sp"],
+        fra: [e++, "fr"],
+        deu: [e++, "de"],
+        ita: [e++, "it"],
+        pol: [e++, "pl"],
+        pt: [e++, "pt"]
+      }, a = i.eng, _ = a[0], o = [], t = 0; t < 8; t++) o[t] = [];
     var d = i.eng;
 
     function n(e) {
@@ -5864,8 +5757,7 @@ var Border = function () {
 
     function r(e, i) {
       if (function (e) {
-          a = e, TextManager.lang = a,
-            _ = a[0], localStorage2.setItem("lang", window.JSON.stringify(a))
+          a = e, TextManager.lang = a, _ = a[0], localStorage2.setItem("lang", window.JSON.stringify(a))
         }(e), 0 === o[e[0]].length) {
         var t = new window.XMLHttpRequest;
         t.open("GET", "json/lang" + e[1] + ".json", !0), t.onreadystatechange = function () {
@@ -5878,14 +5770,10 @@ var Border = function () {
       languages: i,
       lang: a,
       get: function (e) {
-        return o[_] === window.undefined || o[_][e] === window.undefined ? o[d[0]][
-          e
-        ] : o[_][e]
+        return o[_] === window.undefined || o[_][e] === window.undefined ? o[d[0]][e] : o[_][e]
       },
       getFormatted: function (e) {
-        o[_] === window.undefined || o[_][e] === window.undefined ? wmwww = o[d][
-          e
-        ] : wmwww = o[_][e];
+        o[_] === window.undefined || o[_][e] === window.undefined ? wmwww = o[d][e] : wmwww = o[_][e];
         for (var i = 1; i < arguments.length; i++) wmwww[0] = wmwww[0].replace("%d", arguments[i]);
         return wmwww
       },
@@ -5940,13 +5828,11 @@ var Border = function () {
       g = null;
 
     function m() {
-      a = 81, _ = 68, o = 90, t = 83,
-        localStorage2.setItem("keyboardMap", e), g = e
+      a = 81, _ = 68, o = 90, t = 83, localStorage2.setItem("keyboardMap", e), g = e
     }
 
     function c() {
-      a = 65, _ = 68, o = 87, t = 83,
-        localStorage2.setItem("keyboardMap", "0"), g = "0"
+      a = 65, _ = 68, o = 87, t = 83, localStorage2.setItem("keyboardMap", "0"), g = "0"
     }
     if (null === (g = localStorage2.getItem("keyboardMap"))) {
       var I = window.navigator.language || window.navigator.userLanguage;
@@ -5965,8 +5851,7 @@ var Border = function () {
           g === l ? (s[o] = i, s[r] = i) : g !== _ && g !== n || (s[a] = i, s[d] = i), s[g] = 1, g
       },
       clearDirectionnal: function () {
-        s[_] = i, s[n] = i, s[a] = i,
-          s[d] = i, s[o] = i, s[r] = i, s[t] = i, s[l] = i
+        s[_] = i, s[n] = i, s[a] = i, s[d] = i, s[o] = i, s[r] = i, s[t] = i, s[l] = i
       },
       isLeft: function () {
         return s[a] || s[d]
@@ -6001,18 +5886,16 @@ var Border = function () {
     var e = 3e4;
     window.AudioContext = window.AudioContext || window.webkitAudioContext;
     var i = new window.AudioContext;
-    i.createGain || (i.createGain = i.createGainNode), stream = null,
-      mediaRecorder = null, chunks = [],
-      record = null, blob = null;
+    i.createGain || (i.createGain = i.createGainNode), stream = null, mediaRecorder = null, chunks = [], record = null,
+      blob = null;
     var a = {
       isFx: 1,
       isAudio: 1
     };
     try {
       var _ = localStorage2.getItem("isFx");
-      null !== _ ? a.isFx = window.Number(_) : 1 === isTouchScreen && (a.isFx = 0),
-        null !== (_ = localStorage2.getItem("isAudio")) ? a.isAudio = window.Number(_) : 1 === isTouchScreen && (a
-          .isAudio = 0)
+      null !== _ ? a.isFx = window.Number(_) : 1 === isTouchScreen && (a.isFx = 0), null !== (_ = localStorage2.getItem(
+        "isAudio")) ? a.isAudio = window.Number(_) : 1 === isTouchScreen && (a.isAudio = 0)
     } catch (e) {
       1 === isTouchScreen && (a.isFx = 0, a.isAudio = 0)
     }
@@ -6054,20 +5937,19 @@ var Border = function () {
     function n(e) {
       if (2 !== e.isLoaded) {
         var a = new window.XMLHttpRequest;
-        a.open("GET", e.url, !0), a.responseType = "arraybuffer",
-          a.onload = function () {
-            i.decodeAudioData(a.response, (function (i) {
-              e.buffer = i, e.isLoaded = 1, e.durationMs = 1e3 * i.duration
-            }))
-          }, e.isLoaded = 2, a.send()
+        a.open("GET", e.url, !0), a.responseType = "arraybuffer", a.onload = function () {
+          i.decodeAudioData(a.response, (function (i) {
+            e.buffer = i, e.isLoaded = 1, e.durationMs = 1e3 * i.duration
+          }))
+        }, e.isLoaded = 2, a.send()
       }
     }
     return {
       Sound: function (e, i, a, _) {
-        this.url = e, this.buffer = null, this.source = null,
-          this.isLoaded = 0, this.run = 0, this.gainNode = null, this.loop = a, this.volume = 1, this.volume0 = -1,
-          i !== window.undefined && (this.volume = i), this.fadingVolume = -1, this._fx = 0, 1 === _ && (this._fx =
-          1), this.fade = 0, this.fadeMax = 0, this.fadeEffect = 0, this.start = 0, this.durationMs = 0
+        this.url = e, this.buffer = null, this.source = null, this.isLoaded = 0, this.run = 0, this.gainNode = null,
+          this.loop = a, this.volume = 1, this.volume0 = -1, i !== window.undefined && (this.volume = i), this
+          .fadingVolume = -1, this._fx = 0, 1 === _ && (this._fx = 1), this.fade = 0, this.fadeMax = 0, this
+          .fadeEffect = 0, this.start = 0, this.durationMs = 0
       },
       loadSound: n,
       playSound: d,
@@ -6076,8 +5958,7 @@ var Border = function () {
       },
       stopSound: t,
       fadeSound: function (e, i, a) {
-        -1 !== e.fadingVolume && (e.volume = e.fadingVolume),
-          e.fade = 0, e.fadeMax = i, e.fadeEffect = a
+        -1 !== e.fadingVolume && (e.volume = e.fadingVolume), e.fade = 0, e.fadeMax = i, e.fadeEffect = a
       },
       changeVolume: o,
       options: a,
@@ -6096,8 +5977,8 @@ var Border = function () {
         a.isFx = e, localStorage2.setItem("isFx", "" + e)
       },
       initStream: function () {
-        stream = i.createMediaStreamDestination(),
-          mediaRecorder = new window.MediaRecorder(stream.stream), mediaRecorder.ondataavailable = function (e) {
+        stream = i.createMediaStreamDestination(), mediaRecorder = new window.MediaRecorder(stream.stream),
+          mediaRecorder.ondataavailable = function (e) {
             chunks.push(e.data)
           }, mediaRecorder.onstop = function (e) {
             var i = window.JSON.parse('{ "type" : "audio/ogg; codecs=opus" }');
@@ -6105,8 +5986,7 @@ var Border = function () {
           }
       },
       startRecordStream: function () {
-        blob = null, record = null,
-          chunks = [], mediaRecorder.start()
+        blob = null, record = null, chunks = [], mediaRecorder.start()
       },
       stopRecordStream: function () {
         mediaRecorder.stop()
@@ -6120,8 +6000,7 @@ var Border = function () {
   }(),
   Loader = function () {
     var e, i;
-    new Mouse.LocalMouseEvent,
-      new Keyboard.LocalKeyboardEvent;
+    new Mouse.LocalMouseEvent, new Keyboard.LocalKeyboardEvent;
     var a = 0,
       _ = function (e) {
         return MathUtils.Ease.speedLimit(e, MathUtils.Ease.inQuart, .05)
@@ -6153,33 +6032,26 @@ var Border = function () {
         e = GUI.createBackground(423, 276, "img/loading1.png")
       },
       run: function () {
-        CanvasUtils.setRenderer(Loader), n = 800, d = 800,
-          r = t, o = 1, l()
+        CanvasUtils.setRenderer(Loader), n = 800, d = 800, r = t, o = 1, l()
       },
       update: l,
       draw: function () {
         0 !== function () {
           if (1 === a) {
-            if (l(), n < 0) return a = 0, i.run(),
-              0;
+            if (l(), n < 0) return a = 0, i.run(), 0;
             n -= delta
           } else if (1 === o) {
             if (l(), n < 0) {
               function e() {
                 var e = Client.serverList;
-                Home.regions = [],
-                  Home.privateServer = [],
-                  Home.ghoulServer = [];
-                for (var i = [],
-                    a = [], _ = '<select id="servers">',
-                    o = 0; o < e.length; o++) {
+                Home.regions = [], Home.privateServer = [], Home.ghoulServer = [];
+                for (var i = [], a = [], _ = '<select id="servers">', o = 0; o < e.length; o++) {
                   var t = e[o][4],
                     d = e[o][5];
                   if (d, "ghoul" !== e[o][6]) {
                     for (var n = 0; n < i.length; n++)
                       if (i[n] === t) {
-                        a[n] += d,
-                          n = -1;
+                        a[n] += d, n = -1;
                         break
                       } - 1 !== n && (i.push(t), a.push(d))
                   } else Home.ghoulServer.push(o)
@@ -6193,26 +6065,19 @@ var Border = function () {
                     '<option value="' + e[n][0] + '">' + i[o] + " " + s++, Client.selectedServer === n && (l = r),
                     r++)
                 }
-                for (var o in Home.htmlBattleRoyale = '<select id="servers">',
-                    Home.regions) {
+                for (var o in Home.htmlBattleRoyale = '<select id="servers">', Home.regions) {
                   r = 0;
                   for (var g = 0; g < Home.regions[o].length; g++) r += e[Home.regions[o][g]][5]
                 }
                 for (var o in Home.privateServer = Home.privateServer.sort((function (i, a) {
-                      return window.Number(e[a][
-                        5
-                      ]) - window.Number(e[i][
-                        5
-                      ])
-                    })), Home.htmlPrivateServer = '<select id="servers">',
-                    Home.privateServer) Home.htmlPrivateServer += '<option value="' + o + '">' + e[Home
-                    .privateServer[o]][4].replace("PRIV", "") + "  - " + e[Home.privateServer[o]][5] +
-                  "  players</option>";
-                for (var o in Home.htmlGhoulServer = '<select id="servers">',
-                    Home.ghoulServer) Home.htmlGhoulServer += '<option value="' + e[Home.ghoulServer[o]]
-                  [0] + '">' + e[Home.ghoulServer[o]]
-                  [4].replace("ghoul", "") + "  - " + e[Home.ghoulServer[o]]
-                  [5] + "  players</option>";
+                    return window.Number(e[a][5]) - window.Number(e[i][5])
+                  })), Home.htmlPrivateServer = '<select id="servers">', Home.privateServer) Home
+                  .htmlPrivateServer += '<option value="' + o + '">' + e[Home.privateServer[o]][4].replace("PRIV",
+                    "") + "  - " + e[Home.privateServer[o]][5] + "  players</option>";
+                for (var o in Home.htmlGhoulServer = '<select id="servers">', Home.ghoulServer) Home
+                  .htmlGhoulServer += '<option value="' + e[Home.ghoulServer[o]][0] + '">' + e[Home.ghoulServer[o]][
+                    4
+                  ].replace("ghoul", "") + "  - " + e[Home.ghoulServer[o]][5] + "  players</option>";
                 if (_ += "</select>", Home.htmlBattleRoyale += "</select>", Home.htmlPrivateServer += "</select>",
                   Home.htmlGhoulServer += "</select>", window.document.getElementById("serverList").innerHTML = _,
                   window.document.getElementById("servers").selectedIndex = l, World.PLAYER.admin = 1, null !==
@@ -6230,29 +6095,14 @@ var Border = function () {
                 if (null !== I) {
                   I = I.replace(/\./g, "-");
                   var E = window.Number(window.document.getElementById("servers").value);
-                  Client.serverList[E][0] = I,
-                    Client.serverList[E][
-                      1
-                    ] = I + ".devast.io",
-                    Client.serverList[E][
-                      2
-                    ] = null === c ? "443" : c,
-                    Client.serverList[E][
-                      3
-                    ] = 1
+                  Client.serverList[E][0] = I, Client.serverList[E][1] = I + ".devast.io", Client.serverList[E][2] =
+                    null === c ? "443" : c, Client.serverList[E][3] = 1
                 }
                 if (null !== (I = Loader.getURLData("ip"))) {
                   I = I.replace(/\./g, "-");
                   E = window.Number(window.document.getElementById("servers").value);
-                  Client.serverList[E][0] = I,
-                    Client.serverList[E][
-                      1
-                    ] = I, Client.serverList[E][
-                      2
-                    ] = null === c ? "8080" : c,
-                    Client.serverList[E][
-                      3
-                    ] = 0
+                  Client.serverList[E][0] = I, Client.serverList[E][1] = I, Client.serverList[E][2] = null === c ?
+                    "8080" : c, Client.serverList[E][3] = 0
                 }
               }
               o = 0, Loader.getURLData = function (e) {
@@ -6263,10 +6113,9 @@ var Border = function () {
               }, Client.types = ["BR", "PRIV", "HIDDEN", "GHOUL"], Client.getServerList((function () {
                 e(), Loader.quit(Home)
               }));
-              for (var _ = ENTITIES[__ENTITIE_EXPLOSION__].explosions,
-                  t = ENTITIES2[__ENTITIE_EXPLOSION__].explosions,
-                  d = 0; d < _.length; d++) _[d].img = CanvasUtils.loadImage(_[d].src, _[d].img), t[d].img =
-                CanvasUtils.loadImage(t[d].src, t[d].img)
+              for (var _ = ENTITIES[__ENTITIE_EXPLOSION__].explosions, t = ENTITIES2[__ENTITIE_EXPLOSION__]
+                  .explosions, d = 0; d < _.length; d++) _[d].img = CanvasUtils.loadImage(_[d].src, _[d].img), t[d]
+                .img = CanvasUtils.loadImage(t[d].src, t[d].img)
             }
             n -= delta
           }
@@ -6311,89 +6160,80 @@ var Border = function () {
     function i(e) {}
 
     function a() {
-      q(Game)
+      Z(Game)
     }
     var _ = 0;
 
     function o(e, i, a, o, t, d) {
-      setEntitie(Entitie.get(0, _, _, e), 0, _, _, e, i, a, i, a, (t << 5) + (d << 10), o, 1),
-        _++
+      setEntitie(Entitie.get(0, _, _, e), 0, _, _, e, i, a, i, a, (t << 5) + (d << 10), o, 1), _++
     }
 
     function t(e, i, a, o, t, d) {
-      setEntitie(Entitie.get(0, _, _, e), 0, _, _, e, i, a, i, a, (d << 7) + (o << 5), 0, t),
-        _++
+      setEntitie(Entitie.get(0, _, _, e), 0, _, _, e, i, a, i, a, (d << 7) + (o << 5), 0, t), _++
     }
-    var d, n, r, l, s, g, m, c, I, E, u,
-      L, p, R, w, T, O, A, b, y, S, U,
-      h, f, D, v, N, M, W, C, F, P, x,
-      V, B = 0,
-      k = {
+    var d, n, r, l, s, g, m, c, I, E, u, L, p, R, w, T, O, A, b, y, S, U, h, f, D, v, N, M, W, C, F, P, x, V, B, k = 0,
+      H = {
         img: null
       };
-    var H = new Mouse.LocalMouseEvent,
-      Y = (new Keyboard.LocalKeyboardEvent, 800),
-      G = 0,
-      K = function (e) {
+    var Y = new Mouse.LocalMouseEvent,
+      G = (new Keyboard.LocalKeyboardEvent, 800),
+      K = 0,
+      z = function (e) {
         return MathUtils.Ease.speedLimit(e, MathUtils.Ease.inQuart, .05)
       },
-      z = 0,
-      J = function (e) {
+      J = 0,
+      X = function (e) {
         return MathUtils.Ease.speedLimit(e, MathUtils.Ease.outQuart, .05)
       },
-      X = 0,
       j = 0,
-      Q = window.undefined;
+      Q = 0,
+      q = window.undefined;
 
-    function q(e) {
-      V = e,
+    function Z(e) {
+      B = e,
         function () {
-          0 === isTouchScreen && window.removeEventListener("mousedown", $, !1);
-          0 === isTouchScreen && window.removeEventListener("mouseup", ee, !1);
-          0 === isTouchScreen && window.removeEventListener("mousemove", ie, !1);
-          1 === isTouchScreen && window.removeEventListener("touchstart", ae, !1);
-          1 === isTouchScreen && window.removeEventListener("touchend", _e, !1);
-          1 === isTouchScreen && window.removeEventListener("touchcancel", oe, !1);
-          1 === isTouchScreen && window.removeEventListener("touchmove", te, !1)
-        }(), j = Y, X = Y, Q = K, G = 1
+          0 === isTouchScreen && window.removeEventListener("mousedown", ee, !1);
+          0 === isTouchScreen && window.removeEventListener("mouseup", ie, !1);
+          0 === isTouchScreen && window.removeEventListener("mousemove", ae, !1);
+          1 === isTouchScreen && window.removeEventListener("touchstart", _e, !1);
+          1 === isTouchScreen && window.removeEventListener("touchend", oe, !1);
+          1 === isTouchScreen && window.removeEventListener("touchcancel", te, !1);
+          1 === isTouchScreen && window.removeEventListener("touchmove", de, !1)
+        }(), Q = G, j = G, q = z, K = 1
     }
 
-    function Z() {
+    function $() {
       var e = 0,
         i = 0;
-      if (j > 0) {
+      if (Q > 0) {
         i = canh;
-        var a = Q(1 - j / X);
-        1 === a && (j = 0), 1 === z && (a = 1 - window.Math.abs(a)),
-          e *= a, i *= a
+        var a = q(1 - Q / j);
+        1 === a && (Q = 0), 1 === J && (a = 1 - window.Math.abs(a)), e *= a, i *= a
       }
       d.pos.x = canw2 - window.Math.floor(325 * scaleby) + window.Math.floor((0 === isTouchScreen ? -30 : -70) *
           scaleby) - e, d.pos.y = window.Math.max(0, canh2 - window.Math.floor(156 * scaleby) + window.Math.floor(-150 *
           scaleby)) - i, l.x = canw2 - window.Math.floor(91 * scaleby) + window.Math.floor((0 === isTouchScreen ? -6.8 :
           -47.5) * scaleby) - e, r.left = l.x + "px", l.y = d.pos.y + window.Math.floor(143 * scaleby), r.top = l.y +
         "px", s.pos.x = d.pos.x + window.Math.floor(290 * scaleby), s.pos.y = d.pos.y + window.Math.floor(235 *
-        scaleby), g.x = canw - 85 + e, g.y = canh - 17 + window.Math.floor(-10 * scaleby) + i,
-        I.x = canw2 - window.Math.floor(100 * scaleby) + window.Math.floor((0 === isTouchScreen ? 12.8 : -26.5) *
-          scaleby) - e,
-        c.left = I.x + "px", I.y = l.y + window.Math.floor(45 * scaleby),
-        c.top = I.y + "px", E.pos.x = canw - window.Math.floor(230 * scaleby) + window.Math.floor(7 * scaleby) - e, E
-        .pos.y = -i, p.x = canw - 200 + window.Math.floor(-10 * scaleby) - e,
-        L.left = p.x + "px", p.y = window.Math.floor(20 * scaleby) - i, L.top = p.y + "px", R.pos.x = E.pos.x, R.pos.y =
-        E.pos.y + window.Math.floor(230 * scaleby), O.x = canw - 200 + window.Math.floor(-10 * scaleby) - e, T.left = O
-        .x + "px", O.y = p.y + window.Math.floor(215 * scaleby), T.top = O.y + "px", A.pos.x = window.Math.floor(15 *
-          scaleby) - e, A.pos.y = window.Math.floor(5 * scaleby) - i, b.pos.x = A.pos.x + window.Math.floor(-5 *
-          scaleby), b.pos.y = A.pos.y + window.Math.floor(55 * scaleby), y.pos.x = b.pos.x + window.Math.floor(45 *
-          scaleby),
-        y.pos.y = b.pos.y, S.pos.x = y.pos.x + window.Math.floor(45 * scaleby), S.pos.y = b.pos.y, U.pos.x = d.pos.x +
-        window.Math.floor(26 * scaleby), U.pos.y = d.pos.y + window.Math.floor(36 * scaleby), h.pos.x = U.pos.x + window
-        .Math.floor(83.5 * scaleby), h.pos.y = U.pos.y, f.pos.x = s.pos.x + window.Math.floor(213 * scaleby), f.pos.y =
-        s.pos.y + window.Math.floor(-98 * scaleby), D.pos.x = f.pos.x, D.pos.y = f.pos.y + window.Math.floor(60 *
-          scaleby), v.pos.x = f.pos.x, v.pos.y = f.pos.y + window.Math.floor(60 * scaleby), N.pos.x = s.pos.x + window
-        .Math.floor(-126 * scaleby), N.pos.y = s.pos.y + window.Math.floor(-58 * scaleby), M.pos.x = N.pos.x, M.pos.y =
-        N.pos.y + window.Math.floor(-37 * scaleby), W.pos.x = M.pos.x + window.Math.floor(-120 * scaleby), W.pos.y = M
-        .pos.y + window.Math.floor(41 * scaleby), C.pos.x = W.pos.x + window.Math.floor(-8.5 * scaleby), C.pos.y = W.pos
-        .y + window.Math.floor(-53 * scaleby), P.x = canw2 - window.Math.floor(150 * scaleby), P.y = l.y + window.Math
-        .floor(130 * scaleby);
+        scaleby), g.x = canw - 85 + e, g.y = canh - 17 + window.Math.floor(-10 * scaleby) + i, I.x = canw2 - window.Math
+        .floor(100 * scaleby) + window.Math.floor((0 === isTouchScreen ? 12.8 : -26.5) * scaleby) - e, c.left = I.x +
+        "px", I.y = l.y + window.Math.floor(45 * scaleby), c.top = I.y + "px", E.pos.x = canw - window.Math.floor(230 *
+          scaleby) + window.Math.floor(7 * scaleby) - e, E.pos.y = -i, p.x = canw - 200 + window.Math.floor(-10 *
+          scaleby) - e, L.left = p.x + "px", p.y = window.Math.floor(20 * scaleby) - i, L.top = p.y + "px", R.pos.x = E
+        .pos.x, R.pos.y = E.pos.y + window.Math.floor(230 * scaleby), O.x = canw - 200 + window.Math.floor(-10 *
+          scaleby) - e, T.left = O.x + "px", O.y = p.y + window.Math.floor(215 * scaleby), T.top = O.y + "px", A.pos.x =
+        window.Math.floor(15 * scaleby) - e, A.pos.y = window.Math.floor(5 * scaleby) - i, b.pos.x = A.pos.x + window
+        .Math.floor(-5 * scaleby), b.pos.y = A.pos.y + window.Math.floor(55 * scaleby), y.pos.x = b.pos.x + window.Math
+        .floor(45 * scaleby), y.pos.y = b.pos.y, S.pos.x = y.pos.x + window.Math.floor(45 * scaleby), S.pos.y = b.pos.y,
+        U.pos.x = d.pos.x + window.Math.floor(26 * scaleby), U.pos.y = d.pos.y + window.Math.floor(36 * scaleby), h.pos
+        .x = U.pos.x + window.Math.floor(83.5 * scaleby), h.pos.y = U.pos.y, f.pos.x = s.pos.x + window.Math.floor(213 *
+          scaleby), f.pos.y = s.pos.y + window.Math.floor(-98 * scaleby), D.pos.x = f.pos.x, D.pos.y = f.pos.y + window
+        .Math.floor(60 * scaleby), v.pos.x = f.pos.x, v.pos.y = f.pos.y + window.Math.floor(60 * scaleby), N.pos.x = s
+        .pos.x + window.Math.floor(-126 * scaleby), N.pos.y = s.pos.y + window.Math.floor(-58 * scaleby), M.pos.x = N
+        .pos.x, M.pos.y = N.pos.y + window.Math.floor(-37 * scaleby), W.pos.x = M.pos.x + window.Math.floor(-120 *
+          scaleby), W.pos.y = M.pos.y + window.Math.floor(41 * scaleby), C.pos.x = W.pos.x + window.Math.floor(-8.5 *
+          scaleby), C.pos.y = W.pos.y + window.Math.floor(-53 * scaleby), P.x = canw2 - window.Math.floor(150 *
+        scaleby), P.y = l.y + window.Math.floor(130 * scaleby);
       window.Math.min(scaleby, 1), l.y;
       var _ = window.document.getElementById("nicknameInput").style,
         o = window.Math.floor(220 * scaleby),
@@ -6410,56 +6250,50 @@ var Border = function () {
           "px", n.width = o, n.height = t, n.fontSize = window.Math.floor(18 * scaleby) + "px", n.marginTop = window
           .Math.floor(4 * scaleby) + "px"
       }
-      o = window.Math.floor(200 * scaleby), t = window.Math.floor(28 * scaleby), t += "px",
-        o += "px", c.width = o, c.height = t, c.backgroundSize = window.Math.floor(17 * scaleby) + "px";
+      o = window.Math.floor(200 * scaleby), t = window.Math.floor(28 * scaleby), t += "px", o += "px", c.width = o, c
+        .height = t, c.backgroundSize = window.Math.floor(17 * scaleby) + "px";
       var u = window.document.getElementById("servers").style;
       o = window.Math.floor(230 * scaleby) + "px", t = window.Math.floor(28 * scaleby) + "px", u.width = o, u.height =
-        t,
-        u.fontSize = window.Math.floor(13 * scaleby) + "px", o = window.Math.floor(185 * scaleby), t = window.Math
+        t, u.fontSize = window.Math.floor(13 * scaleby) + "px", o = window.Math.floor(185 * scaleby), t = window.Math
         .floor(17 * scaleby), m = window.Math.floor(canw - o) + "px", t += "px", o += "px", _top = window.Math.floor(
           canh - 18 * scaleby) + i + "px", o = window.Math.floor(197 * scaleby), t = window.Math.floor(250 * scaleby),
-        m = window.Math.floor(canw - 205 * scaleby) + "px",
-        t += "px", o += "px", L.width = o, L.height = t, L.left = m, L.fontSize = window.Math.floor(11 * scaleby) +
-        "px", L.borderRadius = window.Math.floor(5 * scaleby) + "px", L.paddingTop = window.Math.floor(18 * scaleby) +
-        "px";
+        m = window.Math.floor(canw - 205 * scaleby) + "px", t += "px", o += "px", L.width = o, L.height = t, L.left = m,
+        L.fontSize = window.Math.floor(11 * scaleby) + "px", L.borderRadius = window.Math.floor(5 * scaleby) + "px", L
+        .paddingTop = window.Math.floor(18 * scaleby) + "px";
       var w = window.document.getElementById("changelogTitle").style;
       o = window.Math.floor(197 * scaleby) + "px", t = window.Math.floor(23 * scaleby) + "px", w.width = o, w.height =
-        t,
-        w.fontSize = window.Math.floor(16 * scaleby) + "px", w.paddingTop = window.Math.floor(8 * scaleby) + "px", w
+        t, w.fontSize = window.Math.floor(16 * scaleby) + "px", w.paddingTop = window.Math.floor(8 * scaleby) + "px", w
         .paddingBottom = window.Math.floor(0 * scaleby) + "px", w.marginBottom = window.Math.floor(-2 * scaleby) + "px",
         w.marginTop = window.Math.floor(-22 * scaleby) + "px", w.borderRadius = window.Math.floor(5 * scaleby) + "px " +
         window.Math.floor(5 * scaleby) + "px " + window.Math.floor(0 * scaleby) + "px " + window.Math.floor(0 *
         scaleby) + "px";
       var x = window.document.getElementById("changelogImg").style;
       o = window.Math.floor(175 * scaleby) + "px", t = window.Math.floor(80 * scaleby) + "px", x.width = o, x.height =
-        t,
-        x.wnwNW = window.Math.floor(10 * scaleby) + "px";
+        t, x.wnwNW = window.Math.floor(10 * scaleby) + "px";
       var V = window.document.getElementById("changelogText").style;
       V.fontSize = window.Math.floor(10 * scaleby) + "px", V.padding = window.Math.floor(15 * scaleby) + "px", V
         .paddingTop = window.Math.floor(5 * scaleby) + "px", o = window.Math.floor(197 * scaleby), t = window.Math
         .floor(347 * scaleby), m = window.Math.floor(canw - 205 * scaleby) + "px", MVvmn = window.Math.floor(canh -
-          105 * scaleby) + "px", t += "px",
-        o += "px", T.width = o, T.height = t, T.left = m, T.bottom = MVvmn, T.fontSize = window.Math.floor(13 *
-        scaleby) + "px", T.marginTop = window.Math.floor(0 * scaleby) + "px", T.paddingTop = window.Math.floor(18 *
-          scaleby) + "px",
-        window.document.getElementById("mainCommands").style.marginTop = window.Math.floor(55 * scaleby) + "px", window
-        .document.getElementById("secondCommands").style.marginTop = window.Math.floor(55 * scaleby) + "px", window
-        .document.getElementById("moveCommand").style.paddingLeft = window.Math.floor(20 * scaleby) + "px",
-        window.document.getElementById("moveCommand").style.paddingRight = window.Math.floor(20 * scaleby) + "px",
-        window.document.getElementById("hitCommands").style.paddingLeft = window.Math.floor(10 * scaleby) + "px",
-        window.document.getElementById("hitCommands").style.paddingRight = window.Math.floor(10 * scaleby) + "px",
-        window.document.getElementById("runCommands").style.paddingLeft = window.Math.floor(0 * scaleby) + "px",
-        window.document.getElementById("runCommands").style.paddingRight = window.Math.floor(20 * scaleby) + "px",
-        window.document.getElementById("interactCommands").style.paddingLeft = window.Math.floor(7 * scaleby) + "px",
-        window.document.getElementById("interactCommands").style.paddingRight = window.Math.floor(0 * scaleby) + "px",
-        window.document.getElementById("craftCommands").style.paddingLeft = window.Math.floor(5 * scaleby) + "px",
-        window.document.getElementById("craftCommands").style.paddingRight = window.Math.floor(18 * scaleby) + "px",
-        window.document.getElementById("mapCommands").style.paddingLeft = window.Math.floor(6 * scaleby) + "px",
-        window.document.getElementById("mapCommands").style.paddingRight = window.Math.floor(12 * scaleby) + "px";
+          105 * scaleby) + "px", t += "px", o += "px", T.width = o, T.height = t, T.left = m, T.bottom = MVvmn, T
+        .fontSize = window.Math.floor(13 * scaleby) + "px", T.marginTop = window.Math.floor(0 * scaleby) + "px", T
+        .paddingTop = window.Math.floor(18 * scaleby) + "px", window.document.getElementById("mainCommands").style
+        .marginTop = window.Math.floor(55 * scaleby) + "px", window.document.getElementById("secondCommands").style
+        .marginTop = window.Math.floor(55 * scaleby) + "px", window.document.getElementById("moveCommand").style
+        .paddingLeft = window.Math.floor(20 * scaleby) + "px", window.document.getElementById("moveCommand").style
+        .paddingRight = window.Math.floor(20 * scaleby) + "px", window.document.getElementById("hitCommands").style
+        .paddingLeft = window.Math.floor(10 * scaleby) + "px", window.document.getElementById("hitCommands").style
+        .paddingRight = window.Math.floor(10 * scaleby) + "px", window.document.getElementById("runCommands").style
+        .paddingLeft = window.Math.floor(0 * scaleby) + "px", window.document.getElementById("runCommands").style
+        .paddingRight = window.Math.floor(20 * scaleby) + "px", window.document.getElementById("interactCommands").style
+        .paddingLeft = window.Math.floor(7 * scaleby) + "px", window.document.getElementById("interactCommands").style
+        .paddingRight = window.Math.floor(0 * scaleby) + "px", window.document.getElementById("craftCommands").style
+        .paddingLeft = window.Math.floor(5 * scaleby) + "px", window.document.getElementById("craftCommands").style
+        .paddingRight = window.Math.floor(18 * scaleby) + "px", window.document.getElementById("mapCommands").style
+        .paddingLeft = window.Math.floor(6 * scaleby) + "px", window.document.getElementById("mapCommands").style
+        .paddingRight = window.Math.floor(12 * scaleby) + "px";
       var B = window.document.getElementById("howtoplayTitle").style;
       o = window.Math.floor(197 * scaleby) + "px", t = window.Math.floor(23 * scaleby) + "px", B.width = o, B.height =
-        t,
-        B.fontSize = window.Math.floor(16 * scaleby) + "px", B.paddingTop = window.Math.floor(0 * scaleby) + "px", B
+        t, B.fontSize = window.Math.floor(16 * scaleby) + "px", B.paddingTop = window.Math.floor(0 * scaleby) + "px", B
         .paddingBottom = window.Math.floor(13 * scaleby) + "px", B.marginBottom = window.Math.floor(6 * scaleby) + "px",
         B.marginTop = window.Math.floor(0 * scaleby) + "px", B.borderRadius = window.Math.floor(5 * scaleby) + "px " +
         window.Math.floor(5 * scaleby) + "px " + window.Math.floor(0 * scaleby) + "px " + window.Math.floor(0 *
@@ -6469,19 +6303,18 @@ var Border = function () {
         window.Math.floor(52 * scaleby) + "px";
       var H = window.document.getElementById("howtoplayCommands").style;
       o = window.Math.floor(197 * scaleby) + "px", t = window.Math.floor(23 * scaleby) + "px", H.width = o, H.height =
-        t,
-        H.fontSize = window.Math.floor(16 * scaleby) + "px", H.paddingTop = window.Math.floor(13 * scaleby) + "px", H
+        t, H.fontSize = window.Math.floor(16 * scaleby) + "px", H.paddingTop = window.Math.floor(13 * scaleby) + "px", H
         .paddingBottom = window.Math.floor(13 * scaleby) + "px", H.marginBottom = window.Math.floor(6 * scaleby) + "px",
         H.marginTop = window.Math.floor(11 * scaleby) + "px"
     }
 
-    function $(e) {
+    function ee(e) {
       Mouse.updateAll(e, Mouse.__MOUSE_DOWN__);
       s.trigger(), b.trigger(), y.trigger(), S.trigger(), U.trigger(), h.trigger(), f.trigger(), D.trigger(), v
       .trigger(), N.trigger(), M.trigger(), W.trigger(), C.trigger()
     }
 
-    function ee(i) {
+    function ie(i) {
       Mouse.updateAll(i, Mouse.__MOUSE_UP__);
       if (1 === s.trigger() && (1, e(), AudioUtils.playFx(AudioUtils._fx.play, 1, 0)), 1 === b.trigger()) {
         1;
@@ -6506,27 +6339,26 @@ var Border = function () {
       1 === f.trigger() && (1, 0 !== Home.gameMode && 0 == (Client.state & State.__PENDING__) && 0 == (Client.state &
         State.__CONNECTED__) && (Home.gameMode = 0, AudioUtils.playFx(AudioUtils._fx.button, 1, 0), M.show(), N
         .show(), window.document.getElementById("serverList").innerHTML = Home.survivalHtml, window.document
-        .getElementById("servers").selectedIndex = Home.survivalIndex, Z())), D.trigger();
+        .getElementById("servers").selectedIndex = Home.survivalIndex, $())), D.trigger();
       if (1 === v.trigger() && (1, 1 !== Home.gameMode && 1 === Home.publicMode && 0 == (Client.state & State
           .__PENDING__) && 0 == (Client.state & State.__CONNECTED__))) {
-        Home.serverTest = 0, Home.gameMode = World.__GHOUL__,
-          AudioUtils.playFx(AudioUtils._fx.button, 1, 0), M.hide(), N.hide(), Home.survivalHtml = window.document
-          .getElementById("serverList").innerHTML,
-          Home.survivalIndex = window.document.getElementById("servers").selectedIndex,
-          window.document.getElementById("serverList").innerHTML = Home.htmlGhoulServer;
+        Home.serverTest = 0, Home.gameMode = World.__GHOUL__, AudioUtils.playFx(AudioUtils._fx.button, 1, 0), M.hide(),
+          N.hide(), Home.survivalHtml = window.document.getElementById("serverList").innerHTML, Home.survivalIndex =
+          window.document.getElementById("servers").selectedIndex, window.document.getElementById("serverList")
+          .innerHTML = Home.htmlGhoulServer;
         var a = window.Math.floor(1 * window.Math.random());
-        window.document.getElementById("servers").selectedIndex = a, Z()
+        window.document.getElementById("servers").selectedIndex = a, $()
       }
       if (1 === N.trigger() && (1, 0 !== Home.publicMode && 0 === Home.gameMode && 0 == (Client.state & State
           .__PENDING__) && 0 == (Client.state & State.__CONNECTED__) && (Home.serverTest = 0, Home.publicMode = 0,
           AudioUtils.playFx(AudioUtils._fx.button, 1, 0), f.hide(), D.hide(), v.hide(), Home.survivalHtml = window
           .document.getElementById("serverList").innerHTML, Home.survivalIndex = window.document.getElementById(
             "servers").selectedIndex, window.document.getElementById("serverList").innerHTML = Home.htmlPrivateServer,
-          Home.serverTest = 0, window.document.getElementById("servers").selectedIndex = 0, Z())), 1 === M.trigger() &&
+          Home.serverTest = 0, window.document.getElementById("servers").selectedIndex = 0, $())), 1 === M.trigger() &&
         (1, 1 !== Home.publicMode && 0 === Home.gameMode && 0 == (Client.state & State.__PENDING__) && 0 == (Client
           .state & State.__CONNECTED__) && (Home.publicMode = 1, Home.gameMode = 0, AudioUtils.playFx(AudioUtils._fx
             .button, 1, 0), f.show(), v.show(), window.document.getElementById("serverList").innerHTML = Home
-          .survivalHtml, window.document.getElementById("servers").selectedIndex = Home.survivalIndex, Z())), 1 === W
+          .survivalHtml, window.document.getElementById("servers").selectedIndex = Home.survivalIndex, $())), 1 === W
         .trigger()) {
         1;
         window.open("https://discord.gg/eWJzDYeuhG", "_blank")
@@ -6534,29 +6366,29 @@ var Border = function () {
       1 === C.trigger() && (1, Home.quit(Editor), AudioUtils.playFx(AudioUtils._fx.play, 1, 0))
     }
 
-    function ie(e) {
+    function ae(e) {
       Mouse.updateAll(e, Mouse.__MOUSE_MOVE__);
       s.trigger(), b.trigger(), y.trigger(), S.trigger(), U.trigger(), h.trigger(), f.trigger(), D.trigger(), v
       .trigger(), N.trigger(), M.trigger(), W.trigger(), C.trigger()
     }
 
-    function ae(e) {
-      e.touches.length > 0 && (Mouse.touchToMouseEvent(H, e, e.touches[0]), $(H))
-    }
-
     function _e(e) {
-      ee(H)
+      e.touches.length > 0 && (Mouse.touchToMouseEvent(Y, e, e.touches[0]), ee(Y))
     }
 
     function oe(e) {
-      e.touches.length > 0 && (Mouse.touchToMouseEvent(H, e, e.touches[0]), ee(H))
+      ie(Y)
     }
 
     function te(e) {
-      e.touches.length > 0 && (Mouse.touchToMouseEvent(H, e, e.touches[0]), ie(H))
+      e.touches.length > 0 && (Mouse.touchToMouseEvent(Y, e, e.touches[0]), ie(Y))
+    }
+
+    function de(e) {
+      e.touches.length > 0 && (Mouse.touchToMouseEvent(Y, e, e.touches[0]), ae(Y))
     }
     return {
-      quit: q,
+      quit: Z,
       init: function () {
         Home.joinServer = e, Home.ads = 1, Home.waitAds = 0, -1 === window.String(window.document.createElement)
           .indexOf("createElement") && (Home.adblocker = 1), Home.gameMode = 0, Home.publicMode = 1, Home.alertId = 0,
@@ -6586,13 +6418,12 @@ var Border = function () {
             __ENTITIE_RESOURCES_STOP__, 100, 800, 10, RESID.LEAFTREE, 0), o(__ENTITIE_RESOURCES_STOP__, 400, 800, 10,
             RESID.LEAFTREE, 1), o(__ENTITIE_RESOURCES_STOP__, 700, 800, 10, RESID.LEAFTREE, 2), o(
             __ENTITIE_RESOURCES_DOWN__, 900, 700, 50, RESID.WOOD, 4), d = 1 === isTouchScreen ? GUI.createBackground(
-            650, 312, "img/logo-homepage-mobile2.png") : GUI.createBackground(650, 312, "img/logo-homepage4.png"),
-          n = window.document.getElementById("nickname"),
-          r = n.style, l = {
+            650, 312, "img/logo-homepage-mobile2.png") : GUI.createBackground(650, 312, "img/logo-homepage4.png"), n =
+          window.document.getElementById("nickname"), r = n.style, l = {
             x: 0,
             y: 0
           }, n.addEventListener("keyup", (function (i) {
-            1 != (G | z) && 13 === i.keyCode && e()
+            1 != (K | J) && 13 === i.keyCode && e()
           }), !1), s = GUI.createButton(136, 57, ["img/play-button-out.png", "img/play-button-in.png",
             "img/play-button-click.png"
           ]), g = {
@@ -6602,16 +6433,13 @@ var Border = function () {
             x: 0,
             y: 0
           }, m.addEventListener("mouseover", (function (e) {}), !1), m.addEventListener("mousedown", (function (
-            e) {}), !1), m.addEventListener("mouseup",
-            (function (e) {}), !1), E = 1 === isTouchScreen ? GUI.createBackground(0, 0) : GUI.createBackground(230,
-            235, "img/changelogBox.png"),
-          u = window.document.getElementById("changelog"), L = u.style,
-          p = {
+            e) {}), !1), m.addEventListener("mouseup", (function (e) {}), !1), E = 1 === isTouchScreen ? GUI
+          .createBackground(0, 0) : GUI.createBackground(230, 235, "img/changelogBox.png"), u = window.document
+          .getElementById("changelog"), L = u.style, p = {
             x: 0,
             y: 0
           }, R = 1 === isTouchScreen ? GUI.createBackground(0, 0) : GUI.createBackground(230, 355,
-            "img/commandsBox.png"), w = window.document.getElementById("howtoplay"), T = w.style,
-          O = {
+            "img/commandsBox.png"), w = window.document.getElementById("howtoplay"), T = w.style, O = {
             x: 0,
             y: 0
           }, A = 1 === isTouchScreen ? GUI.createBackground(0, 0) : GUI.createBackground(123, 55, "img/gameMade.png"),
@@ -6643,7 +6471,7 @@ var Border = function () {
           ]), P = {
             x: 0,
             y: 0
-          }, {
+          }, x = window.document.getElementById("preroll"), V = x.style, {
             x: 0,
             y: 0
           }
@@ -6651,63 +6479,47 @@ var Border = function () {
       run: function () {
         Client.onError = i, Client.onOpen = a, World.PLAYER.isBuilding = 0, World.PLAYER.id = 0, Render.setDetection(
             0), Render.stopPoisonEffect(), 1 === Home.gameMode && (M.hide(), N.hide()), 1 === isTouchScreen && C
-          .hide(),
-          CanvasUtils.setRenderer(Home), j = 2e3, X = 2e3,
-          Q = J, z = 1, Z(), r.display = "inline-block", c.display = "inline-block",
-          0 === isTouchScreen && (L.display = "inline-block"), 0 === isTouchScreen && (T.display = "inline-block")
+          .hide(), CanvasUtils.setRenderer(Home), Q = 2e3, j = 2e3, q = X, J = 1, $(), r.display = "inline-block", c
+          .display = "inline-block", 0 === isTouchScreen && (L.display = "inline-block"), 0 === isTouchScreen && (T
+            .display = "inline-block")
       },
-      update: Z,
+      update: $,
       draw: function () {
         0 !== function () {
-          if (1 === G) {
-            if (Z(), j < 0) return G = 0, r.display = "none", s.setState(GUI.__BUTTON_OUT__),
-              c.display = "none",
-              L.display = "none",
-              T.display = "none",
-              b.setState(GUI.__BUTTON_OUT__),
-              y.setState(GUI.__BUTTON_OUT__),
-              S.setState(GUI.__BUTTON_OUT__),
-              U.setState(GUI.__BUTTON_OUT__),
-              h.setState(GUI.__BUTTON_OUT__),
-              f.setState(GUI.__BUTTON_OUT__),
-              D.setState(GUI.__BUTTON_OUT__),
-              v.setState(GUI.__BUTTON_OUT__),
-              N.setState(GUI.__BUTTON_OUT__),
-              M.setState(GUI.__BUTTON_OUT__),
-              W.setState(GUI.__BUTTON_OUT__),
-              C.setState(GUI.__BUTTON_OUT__),
-              x.display = "none",
-              V.run(), 0;
-            j -= delta
-          } else 1 === z && (Z(), j < 0 && (z = 0, window.document.getElementById("bod").style.backgroundColor =
+          if (1 === K) {
+            if ($(), Q < 0) return K = 0, r.display = "none", s.setState(GUI.__BUTTON_OUT__), c.display = "none", L
+              .display = "none", T.display = "none", b.setState(GUI.__BUTTON_OUT__), y.setState(GUI
+                .__BUTTON_OUT__), S.setState(GUI.__BUTTON_OUT__), U.setState(GUI.__BUTTON_OUT__), h.setState(GUI
+                .__BUTTON_OUT__), f.setState(GUI.__BUTTON_OUT__), D.setState(GUI.__BUTTON_OUT__), v.setState(GUI
+                .__BUTTON_OUT__), N.setState(GUI.__BUTTON_OUT__), M.setState(GUI.__BUTTON_OUT__), W.setState(GUI
+                .__BUTTON_OUT__), C.setState(GUI.__BUTTON_OUT__), V.display = "none", B.run(), 0;
+            Q -= delta
+          } else 1 === J && ($(), Q < 0 && (J = 0, window.document.getElementById("bod").style.backgroundColor =
             "#46664d",
             function () {
-              0 === isTouchScreen && window.addEventListener("contextmenu",
-                (function (e) {
-                  return e.preventDefault(),
-                    setx = rowx,
-                    sety = rowy, !1
-                }), !1);
-              0 === isTouchScreen && window.addEventListener("mousedown", $, !1);
-              0 === isTouchScreen && window.addEventListener("mouseup", ee, !1);
-              0 === isTouchScreen && window.addEventListener("mousemove", ie, !1);
-              1 === isTouchScreen && window.addEventListener("touchstart", ae, !1);
-              1 === isTouchScreen && window.addEventListener("touchend", _e, !1);
-              1 === isTouchScreen && window.addEventListener("touchcancel", oe, !1);
-              1 === isTouchScreen && window.addEventListener("touchmove", te, !1)
-            }()), j -= delta);
+              0 === isTouchScreen && window.addEventListener("contextmenu", (function (e) {
+                return e.preventDefault(), setx = rowx, sety = rowy, !1
+              }), !1);
+              0 === isTouchScreen && window.addEventListener("mousedown", ee, !1);
+              0 === isTouchScreen && window.addEventListener("mouseup", ie, !1);
+              0 === isTouchScreen && window.addEventListener("mousemove", ae, !1);
+              1 === isTouchScreen && window.addEventListener("touchstart", _e, !1);
+              1 === isTouchScreen && window.addEventListener("touchend", oe, !1);
+              1 === isTouchScreen && window.addEventListener("touchcancel", te, !1);
+              1 === isTouchScreen && window.addEventListener("touchmove", de, !1)
+            }()), Q -= delta);
           return 1
-        }() && (ctx.clearRect(0, 0, canw, canh), Render.world(), j > 0 && (B = Q(1 - j / X), 1 === z && (B = 1 -
-            window.Math.abs(B)), B = 1 - B), ctx.globalAlpha = .3 * B, ctx.fillStyle = "#000000", ctx.fillRect(0, 0,
+        }() && (ctx.clearRect(0, 0, canw, canh), Render.world(), Q > 0 && (k = q(1 - Q / j), 1 === J && (k = 1 -
+            window.Math.abs(k)), k = 1 - k), ctx.globalAlpha = .3 * k, ctx.fillStyle = "#000000", ctx.fillRect(0, 0,
             canw, canh), ctx.globalAlpha = 1, Home.gameMode === World.__SURVIVAL__ ? f.setState(GUI
             .__BUTTON_CLICK__) : Home.gameMode === World.__BR__ ? D.setState(GUI.__BUTTON_CLICK__) : Home
           .gameMode === World.__GHOUL__ && v.setState(GUI.__BUTTON_CLICK__), 0 === Home.publicMode ? N.setState(GUI
             .__BUTTON_CLICK__) : 1 === Home.publicMode && M.setState(GUI.__BUTTON_CLICK__), d.draw(), s.draw(), E
           .draw(), R.draw(), A.draw(), b.draw(), y.draw(), S.draw(), U.draw(), h.draw(), f.draw(), v.draw(), N
-          .draw(), M.draw(), W.draw(), C.draw(), null === k.img && (k.img = GUI.renderText("0." + versionInf[0] +
+          .draw(), M.draw(), W.draw(), C.draw(), null === H.img && (H.img = GUI.renderText("0." + versionInf[0] +
             "." + versionInf[1], "'Viga', sans-serif", "#d6ddde", 24, 400, window.undefined, 16, 25, window
-            .undefined, window.undefined, window.undefined, window.undefined, "#2b3c3e", 8), k.img.isLoaded = 1),
-          CanvasUtils.drawImageHd(k, d.pos.x / scaleby + 484.5, d.pos.y / scaleby + 124, 0, 0, 0, 1), Render
+            .undefined, window.undefined, window.undefined, window.undefined, "#2b3c3e", 8), H.img.isLoaded = 1),
+          CanvasUtils.drawImageHd(H, d.pos.x / scaleby + 484.5, d.pos.y / scaleby + 124, 0, 0, 0, 1), Render
           .alertServer(), AudioManager.scheduler())
       }
     }
@@ -6777,32 +6589,26 @@ var Border = function () {
       D = [CanvasUtils.loadImage("img/high-particules-out.png"), CanvasUtils.loadImage("img/high-particules-in.png"),
         CanvasUtils.loadImage("img/high-particules-click.png")
       ],
-      v = [CanvasUtils.loadImage("img/join-button-out.png"),
-        CanvasUtils.loadImage("img/join-button-in.png"),
+      v = [CanvasUtils.loadImage("img/join-button-out.png"), CanvasUtils.loadImage("img/join-button-in.png"),
         CanvasUtils.loadImage("img/join-button-click.png")
       ],
-      N = [CanvasUtils.loadImage("img/remove-button-out.png"),
-        CanvasUtils.loadImage("img/remove-button-in.png"),
+      N = [CanvasUtils.loadImage("img/remove-button-out.png"), CanvasUtils.loadImage("img/remove-button-in.png"),
         CanvasUtils.loadImage("img/remove-button-click.png")
       ],
       M = GUI.createButton(54, 42, null, D),
-      W = [CanvasUtils.loadImage("img/low-particules-out.png"),
-        CanvasUtils.loadImage("img/low-particules-in.png"),
+      W = [CanvasUtils.loadImage("img/low-particules-out.png"), CanvasUtils.loadImage("img/low-particules-in.png"),
         CanvasUtils.loadImage("img/low-particules-click.png")
       ],
       C = GUI.createButton(54, 42, null, W),
-      F = [CanvasUtils.loadImage("img/no-particules-out.png"),
-        CanvasUtils.loadImage("img/no-particules-in.png"),
+      F = [CanvasUtils.loadImage("img/no-particules-out.png"), CanvasUtils.loadImage("img/no-particules-in.png"),
         CanvasUtils.loadImage("img/no-particules-click.png")
       ],
       P = GUI.createButton(54, 42, null, F),
-      x = [CanvasUtils.loadImage("img/fuel-button-out.png"),
-        CanvasUtils.loadImage("img/fuel-button-in.png"),
+      x = [CanvasUtils.loadImage("img/fuel-button-out.png"), CanvasUtils.loadImage("img/fuel-button-in.png"),
         CanvasUtils.loadImage("img/fuel-button-click.png")
       ],
       V = GUI.createButton(46, 46, null, x),
-      B = [CanvasUtils.loadImage("img/fuel1-button-out.png"),
-        CanvasUtils.loadImage("img/fuel1-button-in.png"),
+      B = [CanvasUtils.loadImage("img/fuel1-button-out.png"), CanvasUtils.loadImage("img/fuel1-button-in.png"),
         CanvasUtils.loadImage("img/fuel1-button-click.png")
       ],
       k = GUI.createButton(46, 46, null, B),
@@ -6817,28 +6623,23 @@ var Border = function () {
         "img/medium-resolution-in.png"), CanvasUtils.loadImage("img/medium-resolution-click.png")
       ],
       J = GUI.createButton(54, 42, null, z),
-      X = [CanvasUtils.loadImage("img/low-resolution-out.png"),
-        CanvasUtils.loadImage("img/low-resolution-in.png"),
+      X = [CanvasUtils.loadImage("img/low-resolution-out.png"), CanvasUtils.loadImage("img/low-resolution-in.png"),
         CanvasUtils.loadImage("img/low-resolution-click.png")
       ],
       j = GUI.createButton(54, 42, null, X),
-      Q = [CanvasUtils.loadImage("img/azerty-button-out.png"),
-        CanvasUtils.loadImage("img/azerty-button-in.png"),
+      Q = [CanvasUtils.loadImage("img/azerty-button-out.png"), CanvasUtils.loadImage("img/azerty-button-in.png"),
         CanvasUtils.loadImage("img/azerty-button-click.png")
       ],
       q = GUI.createButton(81, 33, null, Q),
-      Z = [CanvasUtils.loadImage("img/qwerty-button-out.png"),
-        CanvasUtils.loadImage("img/qwerty-button-in.png"),
+      Z = [CanvasUtils.loadImage("img/qwerty-button-out.png"), CanvasUtils.loadImage("img/qwerty-button-in.png"),
         CanvasUtils.loadImage("img/qwerty-button-click.png")
       ],
       $ = GUI.createButton(87, 33, null, Z),
-      ee = [CanvasUtils.loadImage("img/sound-on-out.png"),
-        CanvasUtils.loadImage("img/sound-on-in.png"),
-        CanvasUtils.loadImage("img/sound-on-click.png")
+      ee = [CanvasUtils.loadImage("img/sound-on-out.png"), CanvasUtils.loadImage("img/sound-on-in.png"), CanvasUtils
+        .loadImage("img/sound-on-click.png")
       ],
-      ie = [CanvasUtils.loadImage("img/sound-off-out.png"),
-        CanvasUtils.loadImage("img/sound-off-in.png"),
-        CanvasUtils.loadImage("img/sound-off-click.png")
+      ie = [CanvasUtils.loadImage("img/sound-off-out.png"), CanvasUtils.loadImage("img/sound-off-in.png"), CanvasUtils
+        .loadImage("img/sound-off-click.png")
       ],
       ae = GUI.createButton(51, 36, null, ee),
       _e = GUI.createButton(51, 36, null, ie),
@@ -6880,9 +6681,7 @@ var Border = function () {
           h = 0, World.PLAYER.click = 0, Client.sendMouseUp()) : 1 === h && (World.PLAYER.click = 1, World
           .interaction = -1, Client.sendMouseDown()))
     }
-    var ve, Ne, Me, We, Ce, Fe, Pe, xe,
-      Ve, Be, ke, He, Ye, Ge, Ke, ze,
-      Je, Xe, je, Qe, qe = [];
+    var ve, Ne, Me, We, Ce, Fe, Pe, xe, Ve, Be, ke, He, Ye, Ge, Ke, ze, Je, Xe, je, Qe, qe = [];
     var Ze = new Mouse.LocalMouseEvent,
       $e = new Keyboard.LocalKeyboardEvent,
       ei = 2e3,
@@ -6907,8 +6706,7 @@ var Border = function () {
           1 === isTouchScreen && window.removeEventListener("touchend", ui, !1);
           1 === isTouchScreen && window.removeEventListener("touchcancel", Li, !1);
           1 === isTouchScreen && window.removeEventListener("touchmove", pi, !1)
-        }(), di = ei, ti = ei, ni = ai,
-        ii = 1
+        }(), di = ei, ti = ei, ni = ai, ii = 1
     }
 
     function li() {
@@ -6917,8 +6715,7 @@ var Border = function () {
       if (di > 0) {
         i = canh;
         var a = ni(1 - di / ti);
-        1 === a && (di = 0), 1 === _i && (a = 1 - window.Math.abs(a)),
-          e *= a, i *= a
+        1 === a && (di = 0), 1 === _i && (a = 1 - window.Math.abs(a)), e *= a, i *= a
       }
       ve.pos.x = window.Math.floor(5 * scaleby) + e, ve.pos.y = canh - window.Math.floor(174 * scaleby) + window.Math
         .floor(-7 * scaleby) + i, Ne.pos.x = canw2 - window.Math.floor(134 * scaleby) + e, Ne.pos.y = window.Math.max(0,
@@ -6928,24 +6725,23 @@ var Border = function () {
         window.Math.floor(206 * scaleby) + e, Ce.pos.y = window.Math.max(0, canh2 - window.Math.floor(206 * scaleby)) +
         i, Fe.pos.x = window.Math.floor(5 * scaleby) - e, Fe.pos.y = window.Math.floor(5 * scaleby) - i, Pe.pos.x =
         canw - window.Math.floor(233 * scaleby) + window.Math.floor(-6 * scaleby) - e, Pe.pos.y = window.Math.floor(5 *
-          scaleby) - i, xe.pos.x = canw2 - window.Math.floor(258 * scaleby) - e,
-        xe.pos.y = window.Math.max(0, canh2 - window.Math.floor(137 * scaleby)) - i, Ve.pos.x = canw2 - window.Math
-        .floor(256 * scaleby) - e, Ve.pos.y = window.Math.max(0, canh2 - window.Math.floor(75 * scaleby)) - i, Be.pos
-        .x = Fe.pos.x + window.Math.floor(126 * scaleby), Be.pos.y = Fe.pos.y,
-        ke.pos.x = Be.pos.x + window.Math.floor(50 * scaleby), ke.pos.y = Be.pos.y, He.pos.x = Be.pos.x, He.pos.y = Be
-        .pos.y + window.Math.floor(44.5 * scaleby), Ye.pos.x = He.pos.x,
-        Ye.pos.y = He.pos.y + window.Math.floor(44.5 * scaleby), Ge.pos.x = Fe.pos.x, Ge.pos.y = Fe.pos.y + window.Math
-        .floor(127 * scaleby), Ke.pos.x = canw - window.Math.floor(34 * scaleby) + window.Math.floor(-7 * scaleby) - e,
-        Ke.pos.y = window.Math.floor(5 * scaleby) - i, ze.pos.x = Ke.pos.x, ze.pos.y = Ke.pos.y, je.x = canw2 - window
-        .Math.floor(150 * scaleby) + e, Xe.left = je.x + "px", je.y = window.Math.max(0, canh2 - 12) + window.Math
-        .floor(150 * scaleby) + i, Xe.top = je.y + "px";
+          scaleby) - i, xe.pos.x = canw2 - window.Math.floor(258 * scaleby) - e, xe.pos.y = window.Math.max(0, canh2 -
+          window.Math.floor(137 * scaleby)) - i, Ve.pos.x = canw2 - window.Math.floor(256 * scaleby) - e, Ve.pos.y =
+        window.Math.max(0, canh2 - window.Math.floor(75 * scaleby)) - i, Be.pos.x = Fe.pos.x + window.Math.floor(126 *
+          scaleby), Be.pos.y = Fe.pos.y, ke.pos.x = Be.pos.x + window.Math.floor(50 * scaleby), ke.pos.y = Be.pos.y, He
+        .pos.x = Be.pos.x, He.pos.y = Be.pos.y + window.Math.floor(44.5 * scaleby), Ye.pos.x = He.pos.x, Ye.pos.y = He
+        .pos.y + window.Math.floor(44.5 * scaleby), Ge.pos.x = Fe.pos.x, Ge.pos.y = Fe.pos.y + window.Math.floor(127 *
+          scaleby), Ke.pos.x = canw - window.Math.floor(34 * scaleby) + window.Math.floor(-7 * scaleby) - e, Ke.pos.y =
+        window.Math.floor(5 * scaleby) - i, ze.pos.x = Ke.pos.x, ze.pos.y = Ke.pos.y, je.x = canw2 - window.Math.floor(
+          150 * scaleby) + e, Xe.left = je.x + "px", je.y = window.Math.max(0, canh2 - 12) + window.Math.floor(150 *
+          scaleby) + i, Xe.top = je.y + "px";
       var _ = window.document.getElementById("chatInput").style,
         o = window.Math.floor(250 * scaleby),
         t = window.Math.floor(20 * scaleby),
         d = window.Math.floor(canw2 - o / 2) + "px",
         n = window.Math.floor(canh2 - t / 2 + 85 * scaleby + i) + "px";
-      t += "px", o += "px", Xe.width = o, Xe.height = t, Xe.left = d,
-        Xe.top = n, _.width = o, _.height = t, _.fontSize = window.Math.floor(14 * scaleby) + "px"
+      t += "px", o += "px", Xe.width = o, Xe.height = t, Xe.left = d, Xe.top = n, _.width = o, _.height = t, _
+        .fontSize = window.Math.floor(14 * scaleby) + "px"
     }
 
     function si(e) {
@@ -6982,8 +6778,7 @@ var Border = function () {
             0 === t.begin && (t.begin = 1, t.x = Mouse.x, t.y = Mouse.y, t.id = a)
           }
         } else if (1 === s)
-        for (var n = World.PLAYER.chest,
-            m = 0; m < 4; m++) 0 !== n[m][0] && Le[m].trigger();
+        for (var n = World.PLAYER.chest, m = 0; m < 4; m++) 0 !== n[m][0] && Le[m].trigger();
       else if (1 === g)
         if (-1 === World.PLAYER.team) {
           E.trigger();
@@ -7011,28 +6806,20 @@ var Border = function () {
           0))), 1 === ke.trigger() && (1, 0 === World.PLAYER.ghoul)) return 0 === l ? (I(), d = 1, l = 1, World
         .buildCraftList(AREAS.__PLAYER__), void AudioUtils.playFx(AudioUtils._fx.open, 1, 0)) : (I(),
         void AudioUtils.playFx(AudioUtils._fx.open, 1, 0));
-      if (1 === He.trigger()) return 1,
-        0 === r ? (I(), d = 1, r = 1, void AudioUtils.playFx(AudioUtils._fx.open, 1, 0)) : (I(), void AudioUtils
-          .playFx(AudioUtils._fx.open, 1, 0));
-      if (1 === Ye.trigger()) return 1,
-        0 === n ? (I(), d = 1, n = 1, void AudioUtils.playFx(AudioUtils._fx.open, 1, 0)) : (I(), void AudioUtils
-          .playFx(AudioUtils._fx.open, 1, 0));
-      if (1 === Ge.trigger()) return 1,
-        0 === g ? (I(), d = 1, g = 1, void AudioUtils.playFx(AudioUtils._fx.open, 1, 0)) : (I(), void AudioUtils
-          .playFx(AudioUtils._fx.open, 1, 0));
-      if (1 === Ke.trigger()) return 1,
-        Ke.hide(), ze.show(),
-        localStorage2.setItem("showLeaderboard", "0"),
+      if (1 === He.trigger()) return 1, 0 === r ? (I(), d = 1, r = 1, void AudioUtils.playFx(AudioUtils._fx.open, 1,
+        0)) : (I(), void AudioUtils.playFx(AudioUtils._fx.open, 1, 0));
+      if (1 === Ye.trigger()) return 1, 0 === n ? (I(), d = 1, n = 1, void AudioUtils.playFx(AudioUtils._fx.open, 1,
+        0)) : (I(), void AudioUtils.playFx(AudioUtils._fx.open, 1, 0));
+      if (1 === Ge.trigger()) return 1, 0 === g ? (I(), d = 1, g = 1, void AudioUtils.playFx(AudioUtils._fx.open, 1,
+        0)) : (I(), void AudioUtils.playFx(AudioUtils._fx.open, 1, 0));
+      if (1 === Ke.trigger()) return 1, Ke.hide(), ze.show(), localStorage2.setItem("showLeaderboard", "0"),
         void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-      if (1 === ze.trigger()) return 1,
-        ze.hide(), Ke.show(),
-        localStorage2.setItem("showLeaderboard", "1"),
+      if (1 === ze.trigger()) return 1, ze.hide(), Ke.show(), localStorage2.setItem("showLeaderboard", "1"),
         void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
       var i = World.PLAYER.drag;
       if (0 !== World.PLAYER.teamJoin) {
-        if (1 === T.trigger()) return Client.sendPacket(window.JSON.stringify([31,
-          World.PLAYER.teamJoin
-        ])), AudioUtils.playFx(AudioUtils._fx.button, 1, 0), void World.nextInvitation();
+        if (1 === T.trigger()) return Client.sendPacket(window.JSON.stringify([31, World.PLAYER.teamJoin])), AudioUtils
+          .playFx(AudioUtils._fx.button, 1, 0), void World.nextInvitation();
         if (1 === w.trigger()) return AudioUtils.playFx(AudioUtils._fx.button, 1, 0), void World.nextInvitation()
       }
       if (1 === d) {
@@ -7042,22 +6829,18 @@ var Border = function () {
             .setState(GUI.__BUTTON_OUT__), j.setState(GUI.__BUTTON_OUT__), ae.setState(GUI.__BUTTON_OUT__), _e.setState(
               GUI.__BUTTON_OUT__), oe.setState(GUI.__BUTTON_OUT__), te.setState(GUI.__BUTTON_OUT__), M.setState(GUI
               .__BUTTON_OUT__), C.setState(GUI.__BUTTON_OUT__), P.setState(GUI.__BUTTON_OUT__), 1 === q.trigger())
-            return Keyboard.setAzerty(),
-              void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === $.trigger()) return Keyboard.setQwert(),
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === K.trigger()) return CanvasUtils.setResolution(1),
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === J.trigger()) return CanvasUtils.setResolution(2),
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === j.trigger()) return CanvasUtils.setResolution(3),
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+            return Keyboard.setAzerty(), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+          if (1 === $.trigger()) return Keyboard.setQwert(), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+          if (1 === K.trigger()) return CanvasUtils.setResolution(1), void AudioUtils.playFx(AudioUtils._fx.button, 1,
+            0);
+          if (1 === J.trigger()) return CanvasUtils.setResolution(2), void AudioUtils.playFx(AudioUtils._fx.button, 1,
+            0);
+          if (1 === j.trigger()) return CanvasUtils.setResolution(3), void AudioUtils.playFx(AudioUtils._fx.button, 1,
+            0);
           if (1 === ae.trigger()) return AudioUtils.setAudio(1), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
           if (1 === _e.trigger()) return AudioUtils.setAudio(0), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === oe.trigger()) return AudioUtils.setFx(1),
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === te.trigger()) return AudioUtils.setFx(0),
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+          if (1 === oe.trigger()) return AudioUtils.setFx(1), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+          if (1 === te.trigger()) return AudioUtils.setFx(0), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
           if (1 === C.trigger()) return Render.setParticles(1), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
           if (1 === M.trigger()) return Render.setParticles(2), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
           if (1 === P.trigger()) return Render.setParticles(0), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
@@ -7072,17 +6855,14 @@ var Border = function () {
           if (-1 === World.PLAYER.craftCategory ? 0 === World.PLAYER.crafting || 1 === World.PLAYER.isInBuilding ? 1 ===
             World.PLAYER.craftAvailable[World.PLAYER.craftIdSelected] && 1 === O.trigger() && (1 === World.PLAYER
               .isInBuilding ? 0 !== World.PLAYER.building.fuel && World.PLAYER.building.len < 4 && (Client.sendPacket(
-                window.JSON.stringify(
-                  [18, World.PLAYER.craftSelected])), AudioUtils.playFx(AudioUtils._fx.craft, .8, 0)) : (Client
-                .sendPacket(window.JSON.stringify([22,
-                  World.PLAYER.craftSelected
-                ])), AudioUtils.playFx(AudioUtils._fx.craft, .8, 0)), O.setState(GUI.__BUTTON_OUT__)) : 1 === A
-            .trigger() && (Client.sendPacket(window.JSON.stringify([23])), World.PLAYER.crafting = 0, A.setState(GUI
-              .__BUTTON_OUT__), AudioUtils.playFx(AudioUtils._fx.button, 1, 0)) : 1 === b.trigger() && 1 === World
-            .PLAYER.craftAvailable[World.PLAYER.craftIdSelected] && (Client.sendPacket(window.JSON.stringify([
-              21, World.PLAYER.craftSelected
-            ])), AudioUtils.playFx(AudioUtils._fx.skill, 1, 0)), 1 === S[SKILLS.__SKILL__].trigger()) World
-            .buildSkillList(SKILLS.__SKILL__), AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+                window.JSON.stringify([18, World.PLAYER.craftSelected])), AudioUtils.playFx(AudioUtils._fx.craft, .8,
+                0)) : (Client.sendPacket(window.JSON.stringify([22, World.PLAYER.craftSelected])), AudioUtils.playFx(
+                AudioUtils._fx.craft, .8, 0)), O.setState(GUI.__BUTTON_OUT__)) : 1 === A.trigger() && (Client
+              .sendPacket(window.JSON.stringify([23])), World.PLAYER.crafting = 0, A.setState(GUI.__BUTTON_OUT__),
+              AudioUtils.playFx(AudioUtils._fx.button, 1, 0)) : 1 === b.trigger() && 1 === World.PLAYER.craftAvailable[
+              World.PLAYER.craftIdSelected] && (Client.sendPacket(window.JSON.stringify([21, World.PLAYER
+              .craftSelected])), AudioUtils.playFx(AudioUtils._fx.skill, 1, 0)), 1 === S[SKILLS.__SKILL__].trigger())
+            World.buildSkillList(SKILLS.__SKILL__), AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
           else if (1 === S[SKILLS.__BUILDING__].trigger()) World.buildSkillList(SKILLS.__BUILDING__), AudioUtils.playFx(
           AudioUtils._fx.button, 1, 0);
         else if (1 === S[SKILLS.__CLOTHE__].trigger()) World.buildSkillList(SKILLS.__CLOTHE__), AudioUtils.playFx(
@@ -7104,15 +6884,14 @@ var Border = function () {
         else if (1 === U[AREAS.__PLAYER__].trigger()) World.buildCraftList(AREAS.__PLAYER__), AudioUtils.playFx(
           AudioUtils._fx.button, 1, 0);
         else if (1 === U[AREAS.__FIRE__].trigger() || 1 === U[AREAS.__BBQ__].trigger() || 1 === U[AREAS.__COMPOST__]
-          .trigger()) Client.sendPacket(window.JSON.stringify([World.PLAYER.packetId, World.PLAYER.buildingId,
-          World.PLAYER.buildingPid
+          .trigger()) Client.sendPacket(window.JSON.stringify([World.PLAYER.packetId, World.PLAYER.buildingId, World
+          .PLAYER.buildingPid
         ])), AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
         else if (1 === U[AREAS.__WORKBENCH__].trigger()) Client.sendPacket(window.JSON.stringify([World.PLAYER.packetId,
           World.PLAYER.buildingId, World.PLAYER.buildingPid
         ])), AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
         else if (1 === U[AREAS.__WELDING_MACHINE__].trigger()) Client.sendPacket(window.JSON.stringify([World.PLAYER
-          .packetId, World.PLAYER.buildingId,
-          World.PLAYER.buildingPid
+          .packetId, World.PLAYER.buildingId, World.PLAYER.buildingPid
         ])), AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
         else if (1 === U[AREAS.__WEAVING__].trigger()) Client.sendPacket(window.JSON.stringify([World.PLAYER.packetId,
           World.PLAYER.buildingId, World.PLAYER.buildingPid
@@ -7129,41 +6908,32 @@ var Border = function () {
         ])), AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
         else {
           for (var o = World.PLAYER.craftLen, t = 0; t < o; t++)
-            if (1 === ge[t].trigger()) return World.PLAYER.craftIdSelected = t,
-              World.selectRecipe(World.PLAYER.craftList[t]),
-              void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+            if (1 === ge[t].trigger()) return World.PLAYER.craftIdSelected = t, World.selectRecipe(World.PLAYER
+              .craftList[t]), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
           for (o = World.PLAYER.recipeLen, t = 0; t < o; t++)
             if (1 === me[t].trigger()) return;
           if (1 === World.PLAYER.isInBuilding) {
             for (t = 0; t < World.PLAYER.building.len; t++)
-              if (1 === ce[t].trigger()) return Client.sendPacket(window.JSON.stringify([19,
-                t
-              ])), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+              if (1 === ce[t].trigger()) return Client.sendPacket(window.JSON.stringify([19, t])), void AudioUtils
+                .playFx(AudioUtils._fx.button, 1, 0);
             if (World.PLAYER.craftArea === AREAS.__FIRE__ || World.PLAYER.craftArea === AREAS.__BBQ__ || World.PLAYER
               .craftArea === AREAS.__COMPOST__) {
               if (255 !== World.PLAYER.building.fuel && 1 === V.trigger()) return Client.sendPacket(window.JSON
-                  .stringify([
-                    24
-                  ])),
-                void AudioUtils.playFx(AudioUtils._fx.button, 1, 0)
+                .stringify([24])), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0)
             } else if (World.PLAYER.craftArea === AREAS.__SMELTER__ || World.PLAYER.craftArea === AREAS.__EXTRACTOR__ ||
               World.PLAYER.craftArea === AREAS.__AGITATOR__) {
               if (255 !== World.PLAYER.building.fuel && 1 === k.trigger()) return Client.sendPacket(window.JSON
-                  .stringify([
-                    24
-                  ])),
-                void AudioUtils.playFx(AudioUtils._fx.button, 1, 0)
+                .stringify([24])), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0)
             } else if (World.PLAYER.craftArea === AREAS.__TESLA__ && 255 !== World.PLAYER.building.fuel && 1 === Y
-              .trigger()) return Client.sendPacket(window.JSON.stringify([24])),
-              void AudioUtils.playFx(AudioUtils._fx.button, 1, 0)
+              .trigger()) return Client.sendPacket(window.JSON.stringify([24])), void AudioUtils.playFx(AudioUtils._fx
+              .button, 1, 0)
           }
           var c = We.pos;
           if (1 !== i.begin && !e.ctrlKey && (Mouse.sx < c.x || Mouse.sx > c.x + 595 * scaleby || Mouse.sy < c.y ||
               Mouse.sy > c.y + 325 * scaleby)) return I(), void AudioUtils.playFx(AudioUtils._fx.open, 1, 0)
         } else if (1 === s) {
           for (var h = World.PLAYER.chest, D = 0; D < 4; D++)
-            if (0 !== h[D][0] && 1 === Le[D].trigger()) return Client.sendPacket(window.JSON.stringify(
-                [27, D])),
+            if (0 !== h[D][0] && 1 === Le[D].trigger()) return Client.sendPacket(window.JSON.stringify([27, D])),
               void AudioUtils.playFx(AudioUtils._fx.drag, 1, 0)
         } else if (1 === g)
           if (-1 === World.PLAYER.team) {
@@ -7173,39 +6943,29 @@ var Border = function () {
               .now() - World.PLAYER.teamDelay > 10500) {
               var v = 0;
               for (t = 0; t < Ee.length; t++) 0 !== World.teams[t].leader && (1 === Ee[v].trigger() && (Client
-                  .sendPacket(window.JSON.stringify([
-                    30, t
-                  ])), AudioUtils.playFx(AudioUtils._fx.button, 1, 0), World.PLAYER.teamDelay = window.Date.now()),
-                v++)
+                .sendPacket(window.JSON.stringify([30, t])), AudioUtils.playFx(AudioUtils._fx.button, 1, 0), World
+                .PLAYER.teamDelay = window.Date.now()), v++)
             }
           } else if (1 === World.PLAYER.teamLeader) {
-          if (1 === L.trigger() && 0 === World.PLAYER.teamLocked) return Client.sendPacket(window.JSON.stringify([
-              33
-            ])), World.PLAYER.teamLocked = 1,
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === p.trigger() && 1 === World.PLAYER.teamLocked) return Client.sendPacket(window.JSON.stringify([
-              34
-            ])), World.PLAYER.teamLocked = 0,
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === R.trigger()) return Client.sendPacket(window.JSON.stringify([
-            29
-          ])), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+          if (1 === L.trigger() && 0 === World.PLAYER.teamLocked) return Client.sendPacket(window.JSON.stringify([33])),
+            World.PLAYER.teamLocked = 1, void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+          if (1 === p.trigger() && 1 === World.PLAYER.teamLocked) return Client.sendPacket(window.JSON.stringify([34])),
+            World.PLAYER.teamLocked = 0, void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+          if (1 === R.trigger()) return Client.sendPacket(window.JSON.stringify([29])), void AudioUtils.playFx(
+            AudioUtils._fx.button, 1, 0);
           v = 0;
           var N = World.teams[World.PLAYER.team];
           for (t = 0; t < World.players.length; t++)
             if (t !== World.PLAYER.id) {
               var W = World.players[t];
               if (W.team === N.id && W.teamUid === N.uid) {
-                if (1 === ue[v].trigger()) return Client.sendPacket(window.JSON.stringify([
-                    32, W.id
-                  ])),
-                  void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+                if (1 === ue[v].trigger()) return Client.sendPacket(window.JSON.stringify([32, W.id])), void AudioUtils
+                  .playFx(AudioUtils._fx.button, 1, 0);
                 v++
               }
             } else v++
-        } else if (1 === u.trigger()) return Client.sendPacket(window.JSON.stringify([35,
-          World.PLAYER.id
-        ])), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0)
+        } else if (1 === u.trigger()) return Client.sendPacket(window.JSON.stringify([35, World.PLAYER.id])),
+          void AudioUtils.playFx(AudioUtils._fx.button, 1, 0)
       }
       var F = World.PLAYER.inventory,
         x = 0;
@@ -7220,31 +6980,22 @@ var Border = function () {
             z = F[t][3],
             X = INVENTORY[B];
           if (1 === i.begin) {
-            if (i.id !== t) return F[t][
-              0
-            ] === F[i.id][0] && X.stack > F[t][1] && X.stack > F[i.id][1] ? (Client.sendPacket(window.JSON
-              .stringify([10, F[i.id][0], F[i.id][1], F[i.id][2], F[t][
-                1
-              ], F[t][2]])), World.PLAYER.drag.begin = 0, void AudioUtils.playFx(AudioUtils._fx.drag, 1, 0)) : (F[t]
-              [0] = F[i.id][0], F[t][1] = F[i.id][1], F[t][2] = F[i.id][2], F[t][3] = F[i.id][3], F[i.id][0] = B, F[
-                i.id][1] = H, F[i.id]
-              [2] = G, F[i.id][3] = z, 0 !== B && Game.inventory[i.id].setImages(INVENTORY[B].itemButton.src,
-                INVENTORY[B].itemButton.img), Game.inventory[t].setImages(INVENTORY[F[t][0]].itemButton.src,
-                INVENTORY[F[t][0]].itemButton.img), World.PLAYER.drag.begin = 0, void AudioUtils.playFx(AudioUtils
-                ._fx.drag, 1, 0));
+            if (i.id !== t) return F[t][0] === F[i.id][0] && X.stack > F[t][1] && X.stack > F[i.id][1] ? (Client
+              .sendPacket(window.JSON.stringify([10, F[i.id][0], F[i.id][1], F[i.id][2], F[t][1], F[t][2]])), World
+              .PLAYER.drag.begin = 0, void AudioUtils.playFx(AudioUtils._fx.drag, 1, 0)) : (F[t][0] = F[i.id][0], F[
+              t][1] = F[i.id][1], F[t][2] = F[i.id][2], F[t][3] = F[i.id][3], F[i.id][0] = B, F[i.id][1] = H, F[i
+              .id][2] = G, F[i.id][3] = z, 0 !== B && Game.inventory[i.id].setImages(INVENTORY[B].itemButton.src,
+              INVENTORY[B].itemButton.img), Game.inventory[t].setImages(INVENTORY[F[t][0]].itemButton.src,
+              INVENTORY[F[t][0]].itemButton.img), World.PLAYER.drag.begin = 0, void AudioUtils.playFx(AudioUtils
+              ._fx.drag, 1, 0));
             World.PLAYER.drag.begin = 0
           }
-          0 !== B && (1 === s && 3 !== e.which ? (Client.sendPacket(window.JSON.stringify([26, B, H,
+          0 !== B && (1 === s && 3 !== e.which ? (Client.sendPacket(window.JSON.stringify([26, B, H, G, z])), AudioUtils
+            .playFx(AudioUtils._fx.drag, 1, 0)) : 3 === e.which ? (Client.sendPacket(window.JSON.stringify([9, B, H,
             G, z
-          ])), AudioUtils.playFx(AudioUtils._fx.drag, 1, 0)) : 3 === e.which ? (Client.sendPacket(window.JSON
-            .stringify([9, B, H,
-              G, z
-            ])), AudioUtils.playFx(AudioUtils._fx.throwLoot, 1, 0)) : e.ctrlKey ? (AudioUtils.playFx(AudioUtils._fx
-            .drag, .6, 0), Client.sendPacket(window.JSON.stringify([11, B, H,
-            G
-          ]))) : Client.sendPacket(window.JSON.stringify([8, B, H, G,
-            z
-          ])))
+          ])), AudioUtils.playFx(AudioUtils._fx.throwLoot, 1, 0)) : e.ctrlKey ? (AudioUtils.playFx(AudioUtils._fx
+            .drag, .6, 0), Client.sendPacket(window.JSON.stringify([11, B, H, G]))) : Client.sendPacket(window.JSON
+            .stringify([8, B, H, G, z])))
         } if (1 === s && 0 === x) {
         var Q = Me.pos;
         (Mouse.sx < Q.x || Mouse.sx > Q.x + 161 * scaleby || Mouse.sy < Q.y || Mouse.sy > Q.y + 165 * scaleby) && (I(),
@@ -7252,9 +7003,8 @@ var Border = function () {
       }
       if (1 === i.begin) {
         t = i.id;
-        Client.sendPacket(window.JSON.stringify([9, F[t][0], F[t]
-          [1], F[t][2], F[t][3]
-        ])), AudioUtils.playFx(AudioUtils._fx.throwLoot, 1, 0)
+        Client.sendPacket(window.JSON.stringify([9, F[t][0], F[t][1], F[t][2], F[t][3]])), AudioUtils.playFx(AudioUtils
+          ._fx.throwLoot, 1, 0)
       }
       i.begin = 0
     }
@@ -7284,8 +7034,7 @@ var Border = function () {
         for (a = World.PLAYER.toolsLen, i = 0; i < a; i++) Ie[i].trigger();
         Re.trigger()
       } else if (1 === s)
-        for (var _ = World.PLAYER.chest,
-            o = 0; o < 4; o++) 0 !== _[o][0] && Le[o].trigger();
+        for (var _ = World.PLAYER.chest, o = 0; o < 4; o++) 0 !== _[o][0] && Le[o].trigger();
       else if (1 === g)
         if (-1 === World.PLAYER.team) {
           E.trigger();
@@ -7304,15 +7053,13 @@ var Border = function () {
       var c = World.PLAYER.inventory;
       a = c.length;
       de = -1, a > 10 && y.trigger();
-      for (i = 0; i < a && !(i > 9 && 0 === y.open); i++) 0 !== c[i]
-        [0] && 1 === se[i].trigger() && (de = i)
+      for (i = 0; i < a && !(i > 9 && 0 === y.open); i++) 0 !== c[i][0] && 1 === se[i].trigger() && (de = i)
     }
 
     function ci(e) {
       if (Keyboard.keyup(e), 1 === g && -1 === World.PLAYER.team) {
         if (8 === e.keyCode && Game.teamName.length > 0) return Game.teamName = Game.teamName.substring(0, Game.teamName
-            .length - 1),
-          void e.preventDefault();
+          .length - 1), void e.preventDefault();
         (e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode >= 48 && e.keyCode <= 57) && Game.teamName.length < 5 && (Game
           .teamName += window.String.fromCharCode(e.keyCode))
       } else if (1 === t && 27 === e.keyCode) t = 0, Xe.display = "none";
@@ -7322,8 +7069,7 @@ var Border = function () {
             if (1 === World.PLAYER.admin && "!" === chatinput.value[0])
               for (var i = chatinput.value.split("!"), a = 1; a < i.length; a++) {
                 var _ = "!" + i[a]; - 1 === _.indexOf("public") && (_ = _.split(" ").join("")), Client.sendChatMessage(
-                    _),
-                  a <= 20 && World.players[World.PLAYER.id].text.push(_)
+                  _), a <= 20 && World.players[World.PLAYER.id].text.push(_)
               } else if ("[" === chatinput.value[0]) Client.sendWSmsg(chatinput.value);
               else {
                 var o = Client.sendChatMessage(chatinput.value);
@@ -7336,13 +7082,11 @@ var Border = function () {
           AudioUtils.playFx(AudioUtils._fx.open, 1, 0));
         else if (69 === e.keyCode || 32 === e.keyCode) switch (World.PLAYER.interaction) {
         case 0:
-          Client.sendPacket(window.JSON.stringify([12,
-            World.PLAYER.lootId
-          ]));
+          Client.sendPacket(window.JSON.stringify([12, World.PLAYER.lootId]));
           break;
         case 2:
-          Client.sendPacket(window.JSON.stringify([World.PLAYER.packetId,
-            World.PLAYER.buildingId, World.PLAYER.buildingPid
+          Client.sendPacket(window.JSON.stringify([World.PLAYER.packetId, World.PLAYER.buildingId, World.PLAYER
+            .buildingPid
           ]))
         } else if (70 === e.keyCode) 1 === World.PLAYER.extraLoot && Client.sendPacket(window.JSON.stringify([12, World
           .PLAYER.lootId
@@ -7358,14 +7102,9 @@ var Border = function () {
               m = r[a][1],
               c = r[a][2],
               E = r[a][3];
-            e.altKey ? (Client.sendPacket(window.JSON.stringify([9, s, m,
-              c, E
-            ])), AudioUtils.playFx(AudioUtils._fx.throwLoot, 1, 0)) : e.ctrlKey ? (AudioUtils.playFx(AudioUtils._fx
-              .drag, .6, 0), Client.sendPacket(window.JSON.stringify([11, s, m,
-              c
-            ]))) : Client.sendPacket(window.JSON.stringify([8, s, m, c,
-              E
-            ]))
+            e.altKey ? (Client.sendPacket(window.JSON.stringify([9, s, m, c, E])), AudioUtils.playFx(AudioUtils._fx
+              .throwLoot, 1, 0)) : e.ctrlKey ? (AudioUtils.playFx(AudioUtils._fx.drag, .6, 0), Client.sendPacket(
+              window.JSON.stringify([11, s, m, c]))) : Client.sendPacket(window.JSON.stringify([8, s, m, c, E]))
           }
         }
       } else 67 === e.keyCode && 0 === World.PLAYER.ghoul ? 0 === l ? (I(), d = 1, l = 1, World.buildCraftList(AREAS
@@ -7399,15 +7138,13 @@ var Border = function () {
           case 2:
             if (1 === World.PLAYER.extraLoot && r > Game.xInteract2 && l > Game.yInteract2 && r < Game.xInteract2 + Game
               .widthInteract && l < Game.yInteract2 + Game.heightInteract) {
-              fe = 1, $e.keyCode = 70,
-                $e.charCode = 70, ci($e);
+              fe = 1, $e.keyCode = 70, $e.charCode = 70, ci($e);
               continue
             }
           case 0:
             if (r > Game.xInteract && l > Game.yInteract && r < Game.xInteract + Game.widthInteract && l < Game
               .yInteract + Game.heightInteract) {
-              fe = 1, $e.keyCode = 69,
-                $e.charCode = 69, ci($e);
+              fe = 1, $e.keyCode = 69, $e.charCode = 69, ci($e);
               continue
             }
           }
@@ -7416,11 +7153,11 @@ var Border = function () {
               g = canw4 / 4;
             if (r < canw2) {
               var m = 30 * scaleby;
-              Ae = Math2d.angle(canw2 - s, canh2 + g, r, l),
-                be = window.Math.min(Math2d.dist(r, l, canw2 - s, canh2 + g), 25), r < canw2 - s - m ? (Oe |= 1, $e
-                  .charCode = 37, $e.keyCode = 37, Ii($e)) : r > canw2 - s + m && (Oe |= 2, $e.charCode = 39, $e
-                  .keyCode = 39, Ii($e)), l < canh2 + g - m ? (Oe |= 4, $e.charCode = 38, $e.keyCode = 38, Ii($e)) : l >
-                canh2 + g + m && (Oe |= 8, $e.charCode = 40, $e.keyCode = 40, Ii($e))
+              Ae = Math2d.angle(canw2 - s, canh2 + g, r, l), be = window.Math.min(Math2d.dist(r, l, canw2 - s, canh2 +
+                  g), 25), r < canw2 - s - m ? (Oe |= 1, $e.charCode = 37, $e.keyCode = 37, Ii($e)) : r > canw2 - s +
+                m && (Oe |= 2, $e.charCode = 39, $e.keyCode = 39, Ii($e)), l < canh2 + g - m ? (Oe |= 4, $e.charCode =
+                  38, $e.keyCode = 38, Ii($e)) : l > canh2 + g + m && (Oe |= 8, $e.charCode = 40, $e.keyCode = 40, Ii(
+                  $e))
             } else if (r < canw - 40 * scaleby || l > 40 * scaleby)
               if (i = 1, Ze.clientX -= s / CanvasUtils.options.ratioX, Ze.clientY -= g / CanvasUtils.options.ratioX,
                 1 === World.PLAYER.isBuilding) {
@@ -7440,8 +7177,7 @@ var Border = function () {
       if (1 === fe) fe = 0;
       else if (1 === d) gi(Ze);
       else {
-        if (1 === Se && i >= canw2) return Se = 0, Ze.clientX = Ue, Ze.clientY = he,
-          void gi(Ze);
+        if (1 === Se && i >= canw2) return Se = 0, Ze.clientX = Ue, Ze.clientY = he, void gi(Ze);
         0 === World.PLAYER.drag.begin && i < canw2 && a < canh - 70 * scaleby ? i < 240 * scaleby && a < 160 *
           scaleby && gi(Ze) : gi(Ze)
       }
@@ -7473,14 +7209,14 @@ var Border = function () {
               a = 1;
               var m = 0,
                 c = 30 * scaleby;
-              Ae = Math2d.angle(canw2 - s, canh2 + g, r, l),
-                be = window.Math.min(Math2d.dist(r, l, canw2 - s, canh2 + g), 25), r < canw2 - s - c ? m |= 1 : r >
-                canw2 - s + c && (m |= 2), l < canh2 + g + -c ? m |= 4 : l > canh2 + g + c && (m |= 8), 1 == (1 & m) &&
-                1 != (1 & Oe) ? ($e.charCode = 37, Ii($e)) : 1 != (1 & m) && 1 == (1 & Oe) && ($e.charCode = 37, ci(
-                $e)), 2 == (2 & m) && 2 != (2 & Oe) ? ($e.charCode = 39, Ii($e)) : 2 != (2 & m) && 2 == (2 & Oe) && ($e
-                  .charCode = 39, ci($e)), 4 == (4 & m) && 4 != (4 & Oe) ? ($e.charCode = 38, Ii($e)) : 4 != (4 & m) &&
-                4 == (4 & Oe) && ($e.charCode = 38, ci($e)), 8 == (8 & m) && 8 != (8 & Oe) ? ($e.charCode = 40, Ii(
-                $e)) : 8 != (8 & m) && 8 == (8 & Oe) && ($e.charCode = 40, ci($e)), Oe = m;
+              Ae = Math2d.angle(canw2 - s, canh2 + g, r, l), be = window.Math.min(Math2d.dist(r, l, canw2 - s, canh2 +
+                  g), 25), r < canw2 - s - c ? m |= 1 : r > canw2 - s + c && (m |= 2), l < canh2 + g + -c ? m |= 4 : l >
+                canh2 + g + c && (m |= 8), 1 == (1 & m) && 1 != (1 & Oe) ? ($e.charCode = 37, Ii($e)) : 1 != (1 & m) &&
+                1 == (1 & Oe) && ($e.charCode = 37, ci($e)), 2 == (2 & m) && 2 != (2 & Oe) ? ($e.charCode = 39, Ii(
+                $e)) : 2 != (2 & m) && 2 == (2 & Oe) && ($e.charCode = 39, ci($e)), 4 == (4 & m) && 4 != (4 & Oe) ? ($e
+                  .charCode = 38, Ii($e)) : 4 != (4 & m) && 4 == (4 & Oe) && ($e.charCode = 38, ci($e)), 8 == (8 & m) &&
+                8 != (8 & Oe) ? ($e.charCode = 40, Ii($e)) : 8 != (8 & m) && 8 == (8 & Oe) && ($e.charCode = 40, ci(
+                $e)), Oe = m;
               continue
             }(r < canw - 40 * scaleby || l > 40 * scaleby) && (i = 1, Ze.clientX -= s / CanvasUtils.options.ratioX, Ze
               .clientY -= g / CanvasUtils.options.ratioX, Ue = Ze.clientX, he = Ze.clientY, mi(Ze))
@@ -7500,8 +7236,7 @@ var Border = function () {
       quit: ri,
       init: function () {
         VWWvn = GUI.renderText("Copied to clipboard", "'Viga', sans-serif", "#FFFFFF", 40, 350, "#000000", 18, 18,
-            window.undefined, window.undefined, .2),
-          chatinput = window.document.getElementById("chatInput");
+          window.undefined, window.undefined, .2), chatinput = window.document.getElementById("chatInput");
         var e = 68,
           a = ENTITIES[__ENTITIE_PLAYER__].inventorySize + 8;
         for (i = 0; i < a; i++) se.push(GUI.createButton(e, e, null, le));
@@ -7515,14 +7250,12 @@ var Border = function () {
         for (e = 30, i = 0; i < 171; i++) pe.push(GUI.createButton(e, e, null, le));
         Game.autoloot = pe, Game.BUTTON_CLOSE_BOX = I, Game.openBox = c, Game.inventory = se, Game.craft = ge, Game
           .recipe = me, Game.preview = Re, Game.queue = ce, Game.tools = Ie, Game.chest = Le, Game.kick = ue, Game
-          .join = Ee,
-          Game.getSkillBoxState = o,
-          Game.getBoxState = _, Game.teamName = "", Game.acceptMember = T, Game.refuseMember = w, Game
-          .inventoryItemNumber = we,
-          Game.inventoryAmmoNumber = Te, Game.xInteract = 0, Game.yInteract = 0, Game.widthInteract = 0, Game
-          .heightInteract = 0, Game.xInteract2 = 0, Game.yInteract2 = 0, S[SKILLS.__BUILDING__] = GUI.createButton(42,
-            42, ["img/building-button-out.png", "img/building-button-in.png", "img/building-button-click.png"]), S[
-            SKILLS.__SKILL__] = GUI.createButton(42, 42, ["img/skill-button-out.png", "img/skill-button-in.png",
+          .join = Ee, Game.getSkillBoxState = o, Game.getBoxState = _, Game.teamName = "", Game.acceptMember = T, Game
+          .refuseMember = w, Game.inventoryItemNumber = we, Game.inventoryAmmoNumber = Te, Game.xInteract = 0, Game
+          .yInteract = 0, Game.widthInteract = 0, Game.heightInteract = 0, Game.xInteract2 = 0, Game.yInteract2 = 0,
+          S[SKILLS.__BUILDING__] = GUI.createButton(42, 42, ["img/building-button-out.png",
+            "img/building-button-in.png", "img/building-button-click.png"
+          ]), S[SKILLS.__SKILL__] = GUI.createButton(42, 42, ["img/skill-button-out.png", "img/skill-button-in.png",
             "img/skill-button-click.png"
           ]), S[SKILLS.__CLOTHE__] = GUI.createButton(42, 42, ["img/clothe-button-out.png",
             "img/clothe-button-in.png", "img/clothe-button-click.png"
@@ -7565,16 +7298,13 @@ var Border = function () {
           ]), U[AREAS.__EXTRACTOR__] = GUI.createButton(42, 42, ["img/extractor-button-out.png",
             "img/extractor-button-in.png", "img/extractor-button-click.png"
           ]), ve = GUI.createBackground(255, 174, "img/profile-player2.png"), Ne = GUI.createBackground(269, 267,
-            "img/settings-box.png"),
-          Me = GUI.createBackground(162, 165, "img/chest-box4.png"),
-          We = GUI.createBackground(595, 405, "img/craftbox2.png"), Ce = GUI.createBackground(412, 412,
+            "img/settings-box.png"), Me = GUI.createBackground(162, 165, "img/chest-box4.png"), We = GUI
+          .createBackground(595, 405, "img/craftbox2.png"), Ce = GUI.createBackground(412, 412,
             "img/borderBigMinimap2.png"), Fe = GUI.createBackground(128, 128, "img/minimap.png"), Pe = GUI
           .createBackground(233, 246, "img/leaderboard.png"), xe = GUI.createBackground(516, 275,
-            "img/jointeam-box.png"),
-          Ve = GUI.createBackground(513, 150, "img/memberteam-box.png"),
-          Be = GUI.createButton(40, 40, ["img/full-screen-out.png", "img/full-screen-in.png",
-            "img/full-screen-click.png"
-          ]), ke = GUI.createButton(64, 63, ["img/craftbox-button-out.png", "img/craftbox-button-in.png",
+            "img/jointeam-box.png"), Ve = GUI.createBackground(513, 150, "img/memberteam-box.png"), Be = GUI
+          .createButton(40, 40, ["img/full-screen-out.png", "img/full-screen-in.png", "img/full-screen-click.png"]),
+          ke = GUI.createButton(64, 63, ["img/craftbox-button-out.png", "img/craftbox-button-in.png",
             "img/craftbox-button-click.png"
           ]), He = GUI.createButton(40, 40, ["img/settings-out.png", "img/settings-in.png",
           "img/settings-click.png"]), Ye = GUI.createButton(40, 40, ["img/minimap-button-out.png",
@@ -7585,35 +7315,25 @@ var Border = function () {
             "img/close-leaderboard-click.png"
           ]), ze = GUI.createButton(34, 33, ["img/open-leaderboard-out.png", "img/open-leaderboard-in.png",
             "img/open-leaderboard-click.png"
-          ]), Je = window.document.getElementById("chat"),
-          Xe = Je.style, je = {
+          ]), Je = window.document.getElementById("chat"), Xe = Je.style, je = {
             x: 0,
             y: 0
           }
       },
       run: function () {
         Client.onError = e, Client.onOpen = a, "0" === localStorage2.getItem("showLeaderboard") ? (Ke.hide(), ze
-          .show()) : (ze.hide(), Ke.show()),
-          window.document.getElementById("bod").style.backgroundColor = "#46664D", h = 0, Home.ads++, Game.teamName =
-          "",
-          Game.teamNameValid = 0,
-          AudioManager.startGame(),
-          World.gameMode === World.__BR__ ? (Ge.hide(), ke.show()) : World.PLAYER.ghoul > 0 ? (Ge.hide(), ke.hide()) :
-          (Ge.show(), ke.show()), CanvasUtils.setRenderer(Game), di = 1e3, ti = 1e3, ni = oi, _i = 1, li()
+          .show()) : (ze.hide(), Ke.show()), window.document.getElementById("bod").style.backgroundColor = "#46664D",
+          h = 0, Home.ads++, Game.teamName = "", Game.teamNameValid = 0, AudioManager.startGame(), World.gameMode ===
+          World.__BR__ ? (Ge.hide(), ke.show()) : World.PLAYER.ghoul > 0 ? (Ge.hide(), ke.hide()) : (Ge.show(), ke
+            .show()), CanvasUtils.setRenderer(Game), di = 1e3, ti = 1e3, ni = oi, _i = 1, li()
       },
       update: li,
       draw: function () {
         if (0 !== function () {
             if (1 === ii) {
-              if (li(), di < 0) return ii = 0, Be.setState(GUI.__BUTTON_OUT__),
-                ke.setState(GUI.__BUTTON_OUT__),
-                He.setState(GUI.__BUTTON_OUT__),
-                Ye.setState(GUI.__BUTTON_OUT__),
-                Ge.setState(GUI.__BUTTON_OUT__),
-                Ke.setState(GUI.__BUTTON_OUT__),
-                ze.setState(GUI.__BUTTON_OUT__),
-                Xe.display = "none",
-                Qe.run(), 0;
+              if (li(), di < 0) return ii = 0, Be.setState(GUI.__BUTTON_OUT__), ke.setState(GUI.__BUTTON_OUT__), He
+                .setState(GUI.__BUTTON_OUT__), Ye.setState(GUI.__BUTTON_OUT__), Ge.setState(GUI.__BUTTON_OUT__), Ke
+                .setState(GUI.__BUTTON_OUT__), ze.setState(GUI.__BUTTON_OUT__), Xe.display = "none", Qe.run(), 0;
               di -= delta
             } else 1 === _i && (li(), di < 0 && (_i = 0, World.PLAYER.timePlayed = window.Date.now(), function () {
               0 === isTouchScreen && window.addEventListener("wheel", Ri, !1);
@@ -7636,15 +7356,13 @@ var Border = function () {
               if (drawLines) {
                 var e = 0;
                 e > 0 && ((e -= delta) > 2500 ? ctx.globalAlpha = MathUtils.Ease.inOutQuad((3e3 - e) / 500) : e <
-                    500 && (ctx.globalAlpha = MathUtils.Ease.inOutQuad(e / 500)), ctx.drawImage(VWWvn, editorCopy.pos
-                      .x - 85 * scaleby, editorCopy.pos.y - 40 * scaleby, VWWvn.wh * scaleby, VWWvn.h2 * scaleby), ctx
-                    .globalAlpha = 1),
-                  qe[World.PLAYER._j] === window.undefined && (qe[World.PLAYER._j] = []), qe[World.PLAYER._j][
-                    World.PLAYER._i
-                  ] === window.undefined && (qe[World.PLAYER._j]
-                    [World.PLAYER._i] = GUI.renderText("(" + World.PLAYER._j + "," + World.PLAYER._i + ")",
-                      "'Viga', sans-serif", "#FFFFFF", 30, 300, "#000000", 22, 22, window.undefined, window.undefined,
-                      .4, window.undefined, "#000000", 15.6));
+                  500 && (ctx.globalAlpha = MathUtils.Ease.inOutQuad(e / 500)), ctx.drawImage(VWWvn, editorCopy.pos
+                    .x - 85 * scaleby, editorCopy.pos.y - 40 * scaleby, VWWvn.wh * scaleby, VWWvn.h2 * scaleby), ctx
+                  .globalAlpha = 1), qe[World.PLAYER._j] === window.undefined && (qe[World.PLAYER._j] = []), qe[
+                  World.PLAYER._j][World.PLAYER._i] === window.undefined && (qe[World.PLAYER._j][World.PLAYER._i] =
+                  GUI.renderText("(" + World.PLAYER._j + "," + World.PLAYER._i + ")", "'Viga', sans-serif",
+                    "#FFFFFF", 30, 300, "#000000", 22, 22, window.undefined, window.undefined, .4, window.undefined,
+                    "#000000", 15.6));
                 var i = qe[World.PLAYER._j][World.PLAYER._i];
                 ctx.drawImage(i, 5 * scaleby, Be.pos.y, i.wh * scaleby, i.h2 * scaleby)
               }
@@ -7658,19 +7376,15 @@ var Border = function () {
               ctx.globalAlpha = .3;
               var e = canw2ns - 1.5 * canw4ns,
                 i = canh2ns + canw4ns / 4;
-              CanvasUtils.circle(ctx, e, i, 60),
-                CanvasUtils.drawPath(ctx, "#000000"),
-                CanvasUtils.circle(ctx, e + window.Math.cos(Ae) * be * scaleby, i + window.Math.sin(Ae) * be *
-                  scaleby, 30),
-                CanvasUtils.drawPath(ctx, "#FFFFFF"), ctx.globalAlpha = 1
+              CanvasUtils.circle(ctx, e, i, 60), CanvasUtils.drawPath(ctx, "#000000"), CanvasUtils.circle(ctx, e +
+                  window.Math.cos(Ae) * be * scaleby, i + window.Math.sin(Ae) * be * scaleby, 30), CanvasUtils
+                .drawPath(ctx, "#FFFFFF"), ctx.globalAlpha = 1
             }
             if (1 === Se) {
               ctx.globalAlpha = .3;
               e = canw2ns + 1.5 * canw4ns, i = canh2ns + canw4ns / 4;
-              CanvasUtils.circle(ctx, e, i, 60),
-                CanvasUtils.drawPath(ctx, "#000000"),
-                CanvasUtils.circle(ctx, e + 25 * window.Math.cos(Mouse.angle) * scaleby, i + 25 * window.Math.sin(
-                  Mouse.angle) * scaleby, 30),
+              CanvasUtils.circle(ctx, e, i, 60), CanvasUtils.drawPath(ctx, "#000000"), CanvasUtils.circle(ctx, e +
+                  25 * window.Math.cos(Mouse.angle) * scaleby, i + 25 * window.Math.sin(Mouse.angle) * scaleby, 30),
                 CanvasUtils.drawPath(ctx, "#FFFFFF"), ctx.globalAlpha = 1
             }
           }
@@ -7746,15 +7460,13 @@ var Border = function () {
       if (h > 0) {
         i = canh;
         var a = f(1 - h / U);
-        1 === a && (h = 0), 1 === y && (a = 1 - window.Math.abs(a)),
-          e *= a, i *= a
+        1 === a && (h = 0), 1 === y && (a = 1 - window.Math.abs(a)), e *= a, i *= a
       }
       u.pos.x = canw2 - window.Math.floor(270 * scaleby) - e, u.pos.y = window.Math.max(0, canh2 - window.Math.floor(
           162 * scaleby) + window.Math.floor(-135 * scaleby)) - i, L.pos.x = canw2 - window.Math.floor(61 * scaleby) +
-        window.Math.floor(-100 * scaleby) - e,
-        L.pos.y = window.Math.max(0, canh2 - window.Math.floor(17 * scaleby) + window.Math.floor(-35 * scaleby)) - i, p
-        .pos.x = canw2 - window.Math.floor(99 * scaleby) + window.Math.floor(100 * scaleby) - e,
-        p.pos.y = L.pos.y;
+        window.Math.floor(-100 * scaleby) - e, L.pos.y = window.Math.max(0, canh2 - window.Math.floor(17 * scaleby) +
+          window.Math.floor(-35 * scaleby)) - i, p.pos.x = canw2 - window.Math.floor(99 * scaleby) + window.Math.floor(
+          100 * scaleby) - e, p.pos.y = L.pos.y;
       window.Math.min(scaleby, 1)
     }
 
@@ -7793,39 +7505,33 @@ var Border = function () {
     return {
       quit: D,
       init: function () {
-        u = GUI.createBackground(541, 324, "img/scoreboardnew.png"),
-          L = GUI.createButton(123, 35, ["img/play-again-button-out.png", "img/play-again-button-in.png",
-            "img/play-again-button-click.png"
-          ]), p = GUI.createButton(198, 35, ["img/back-main-page-button-out.png", "img/back-main-page-button-in.png",
-            "img/back-main-page-button-click.png"
-          ])
+        u = GUI.createBackground(541, 324, "img/scoreboardnew.png"), L = GUI.createButton(123, 35, [
+          "img/play-again-button-out.png", "img/play-again-button-in.png", "img/play-again-button-click.png"
+        ]), p = GUI.createButton(198, 35, ["img/back-main-page-button-out.png", "img/back-main-page-button-in.png",
+          "img/back-main-page-button-click.png"
+        ])
       },
       run: function () {
         Client.onError = e, Client.onOpen = i, World.PLAYER.isBuilding = 0, World.PLAYER.id = 0, Render.setDetection(
           0), Render.stopPoisonEffect();
         for (var a = 0; a < World.PLAYER.inventory.length; a++)
-          for (var _ = 0; _ < 4; _++) World.PLAYER.inventory[a][
-            _
-          ] = 0;
+          for (var _ = 0; _ < 4; _++) World.PLAYER.inventory[a][_] = 0;
         var o = KIT[window.Math.min(KIT.length - 1, World.PLAYER.level)];
         for (a = 0; a < o.length; a++) {
           var t = o[a];
           0 !== t.id && Game.inventory[a].setImages(INVENTORY[t.id].itemButton.src, INVENTORY[t.id].itemButton.img);
           var d = World.PLAYER.inventory[a];
-          d[1] = t.amount, d[2] = 0,
-            d[3] = t.life, d[0] = t.id
+          d[1] = t.amount, d[2] = 0, d[3] = t.life, d[0] = t.id
         }
-        w = 5e3, null === Loader.getURLData("admin") && window.YMPB.refresh(),
-          CanvasUtils.setRenderer(Score), h = 500, U = 500,
-          f = S, y = 1, v()
+        w = 5e3, null === Loader.getURLData("admin") && window.YMPB.refresh(), CanvasUtils.setRenderer(Score), h =
+          500, U = 500, f = S, y = 1, v()
       },
       update: v,
       draw: function () {
         0 !== function () {
           if (1 === A) {
-            if (v(), h < 0) return A = 0, L.setState(GUI.__BUTTON_OUT__),
-              p.setState(GUI.__BUTTON_OUT__),
-              R.run(), 0;
+            if (v(), h < 0) return A = 0, L.setState(GUI.__BUTTON_OUT__), p.setState(GUI.__BUTTON_OUT__), R.run(),
+            0;
             h -= delta
           } else 1 === y && (v(), h < 0 && (y = 0, window.document.getElementById("bod").style.backgroundColor =
             "#46664d",
@@ -7875,9 +7581,8 @@ var Border = function () {
           }
           if (scaleby = b, 1 === Home.adblocker) {
             var U = MathUtils.Ease.inOutQuad(o > 500 ? (1e3 - o) / 500 : o / 500);
-            ctx.globalAlpha = .7,
-              CanvasUtils.drawImageHd(_, a + 288, L + 193, 0, 0, 0, 1 + .04 * U), ctx.globalAlpha = 1,
-              o = (o + delta) % 1e3
+            ctx.globalAlpha = .7, CanvasUtils.drawImageHd(_, a + 288, L + 193, 0, 0, 0, 1 + .04 * U), ctx
+              .globalAlpha = 1, o = (o + delta) % 1e3
           }
         }(), Render.alertServer(), AudioManager.scheduler(), w > 0 ? (w = window.Math.max(0, w - delta),
           CanvasUtils.drawImageHd(WAITADS[window.Math.floor(w / 1e3)], L.pos.x / scaleby + 61.5, L.pos.y /
@@ -7941,14 +7646,13 @@ var Border = function () {
       if (b > 0) {
         i = canh;
         var a = y(1 - b / A);
-        1 === a && (b = 0), 1 === T && (a = 1 - window.Math.abs(a)),
-          e *= a, i *= a
+        1 === a && (b = 0), 1 === T && (a = 1 - window.Math.abs(a)), e *= a, i *= a
       }
       m.pos.x = canw2 - window.Math.floor(207 * scaleby) - e, m.pos.y = window.Math.max(0, canh2 - window.Math.floor(
           103 * scaleby) + window.Math.floor(-135 * scaleby)) - i, c.pos.x = canw2 - window.Math.floor(61 * scaleby) +
-        window.Math.floor(-100 * scaleby) - e,
-        c.pos.y = window.Math.max(0, canh2 - window.Math.floor(17 * scaleby) + window.Math.floor(-70 * scaleby)) - i, I
-        .pos.x = canw2 - window.Math.floor(99 * scaleby) + window.Math.floor(70 * scaleby) - e, I.pos.y = c.pos.y
+        window.Math.floor(-100 * scaleby) - e, c.pos.y = window.Math.max(0, canh2 - window.Math.floor(17 * scaleby) +
+          window.Math.floor(-70 * scaleby)) - i, I.pos.x = canw2 - window.Math.floor(99 * scaleby) + window.Math.floor(
+          70 * scaleby) - e, I.pos.y = c.pos.y
     }
 
     function h(e) {
@@ -7986,26 +7690,23 @@ var Border = function () {
     return {
       quit: S,
       init: function () {
-        m = GUI.createBackground(414, 207, "img/scoreboard-br.png"),
-          c = GUI.createButton(123, 35, ["img/play-again-button-out.png", "img/play-again-button-in.png",
-            "img/play-again-button-click.png"
-          ]), I = GUI.createButton(198, 35, ["img/back-main-page-button-out.png", "img/back-main-page-button-in.png",
-            "img/back-main-page-button-click.png"
-          ])
+        m = GUI.createBackground(414, 207, "img/scoreboard-br.png"), c = GUI.createButton(123, 35, [
+          "img/play-again-button-out.png", "img/play-again-button-in.png", "img/play-again-button-click.png"
+        ]), I = GUI.createButton(198, 35, ["img/back-main-page-button-out.png", "img/back-main-page-button-in.png",
+          "img/back-main-page-button-click.png"
+        ])
       },
       run: function () {
         Client.onError = e, Client.onOpen = i, World.PLAYER.isBuilding = 0, World.PLAYER.id = 0, Render.setDetection(
-            0), Render.stopPoisonEffect(), u = 5e3, window.YMPB.refresh(),
-          CanvasUtils.setRenderer(Rank), b = 500, A = 500,
-          y = O, T = 1, U()
+            0), Render.stopPoisonEffect(), u = 5e3, window.YMPB.refresh(), CanvasUtils.setRenderer(Rank), b = 500, A =
+          500, y = O, T = 1, U()
       },
       update: U,
       draw: function () {
         0 !== function () {
           if (1 === R) {
-            if (U(), b < 0) return R = 0, c.setState(GUI.__BUTTON_OUT__),
-              I.setState(GUI.__BUTTON_OUT__),
-              E.run(), 0;
+            if (U(), b < 0) return R = 0, c.setState(GUI.__BUTTON_OUT__), I.setState(GUI.__BUTTON_OUT__), E.run(),
+            0;
             b -= delta
           } else 1 === T && (U(), b < 0 && (T = 0, window.document.getElementById("bod").style.backgroundColor =
             "#46664d",
@@ -8039,11 +7740,11 @@ var Border = function () {
               "#FFFFFF", 38, 400, window.undefined, 16, 25, window.undefined, window.undefined, window
               .undefined, window.undefined, "#000000", 12), t.img = o, t.img.isLoaded = 1
           }
-          CanvasUtils.drawImageHd(t, a + 110, c + 100, 0, 0, 0, 1),
-            null !== s && l === World.PLAYER.kill || (l = World.PLAYER.kill, s = GUI.renderText(l + "",
-              "'Viga', sans-serif", "#FFFFFF", 38, 400, window.undefined, 16, 25, window.undefined, window
-              .undefined, window.undefined, window.undefined, "#000000", 12), g.img = s, g.img.isLoaded = 1),
-            CanvasUtils.drawImageHd(g, a + 309, c + 100, 0, 0, 0, 1)
+          CanvasUtils.drawImageHd(t, a + 110, c + 100, 0, 0, 0, 1), null !== s && l === World.PLAYER.kill || (l =
+            World.PLAYER.kill, s = GUI.renderText(l + "", "'Viga', sans-serif", "#FFFFFF", 38, 400, window
+              .undefined, 16, 25, window.undefined, window.undefined, window.undefined, window.undefined,
+              "#000000", 12), g.img = s, g.img.isLoaded = 1), CanvasUtils.drawImageHd(g, a + 309, c + 100, 0, 0,
+            0, 1)
         }(), Render.alertServer(), AudioManager.scheduler(), u > 0 ? (u = window.Math.max(0, u - delta),
           CanvasUtils.drawImageHd(WAITADS[window.Math.floor(u / 1e3)], c.pos.x / scaleby + 61.5, c.pos.y /
             scaleby + 17.75, 0, 0, 0, 1)) : c.draw())
@@ -8077,31 +7778,27 @@ var Border = function () {
           [-1, -1]
         ], World.gauges.rad.value = World.gauges.rad._max, World.gauges.rad.decrease = -1, World.allocatePlayers([0,
           window.document.getElementById("nicknameInput").value
-        ]), World.initDayCycle(0, 0),
-        Render.reset(window.undefined, 0, .07), Render.scale = 0,
-        Entitie.removeAll(), World.PLAYER.buildRotate = 0, World.PLAYER.blueprint = 0, H = 0,
+        ]), World.initDayCycle(0, 0), Render.reset(window.undefined, 0, .07), Render.scale = 0, Entitie.removeAll(),
+        World.PLAYER.buildRotate = 0, World.PLAYER.blueprint = 0, H = 0,
         function (e, i, a, _, o, t) {
           setEntitie(Entitie.get(e, H, H, i), e, H, H, i, a, _, a, _, o, 0, t), H++
         }(1, __ENTITIE_PLAYER__, 550, 550, 5376, 0)
     }
 
     function s() {
-      e = 0, g.setState(GUI.__BUTTON_OUT__), a = 0, _ = 0, isCraftOpen = 0,
-        isChestOpen = 0, isTeamOpen = 0,
-        World.releaseBuilding()
+      e = 0, g.setState(GUI.__BUTTON_OUT__), a = 0, _ = 0, isCraftOpen = 0, isChestOpen = 0, isTeamOpen = 0, World
+        .releaseBuilding()
     }
     var g = GUI.createButton(43, 43, ["img/close-box-out.png", "img/close-box-in.png", "img/close-box-click.png"]),
       m = [CanvasUtils.loadImage("img/high-particules-out.png"), CanvasUtils.loadImage("img/high-particules-in.png"),
         CanvasUtils.loadImage("img/high-particules-click.png")
       ],
       c = GUI.createButton(54, 42, null, m),
-      I = [CanvasUtils.loadImage("img/low-particules-out.png"),
-        CanvasUtils.loadImage("img/low-particules-in.png"),
+      I = [CanvasUtils.loadImage("img/low-particules-out.png"), CanvasUtils.loadImage("img/low-particules-in.png"),
         CanvasUtils.loadImage("img/low-particules-click.png")
       ],
       E = GUI.createButton(54, 42, null, I),
-      u = [CanvasUtils.loadImage("img/no-particules-out.png"),
-        CanvasUtils.loadImage("img/no-particules-in.png"),
+      u = [CanvasUtils.loadImage("img/no-particules-out.png"), CanvasUtils.loadImage("img/no-particules-in.png"),
         CanvasUtils.loadImage("img/no-particules-click.png")
       ],
       L = GUI.createButton(54, 42, null, u),
@@ -8113,28 +7810,23 @@ var Border = function () {
         "img/medium-resolution-in.png"), CanvasUtils.loadImage("img/medium-resolution-click.png")
       ],
       T = GUI.createButton(54, 42, null, w),
-      O = [CanvasUtils.loadImage("img/low-resolution-out.png"),
-        CanvasUtils.loadImage("img/low-resolution-in.png"),
+      O = [CanvasUtils.loadImage("img/low-resolution-out.png"), CanvasUtils.loadImage("img/low-resolution-in.png"),
         CanvasUtils.loadImage("img/low-resolution-click.png")
       ],
       A = GUI.createButton(54, 42, null, O),
-      b = [CanvasUtils.loadImage("img/azerty-button-out.png"),
-        CanvasUtils.loadImage("img/azerty-button-in.png"),
+      b = [CanvasUtils.loadImage("img/azerty-button-out.png"), CanvasUtils.loadImage("img/azerty-button-in.png"),
         CanvasUtils.loadImage("img/azerty-button-click.png")
       ],
       y = GUI.createButton(81, 33, null, b),
-      S = [CanvasUtils.loadImage("img/qwerty-button-out.png"),
-        CanvasUtils.loadImage("img/qwerty-button-in.png"),
+      S = [CanvasUtils.loadImage("img/qwerty-button-out.png"), CanvasUtils.loadImage("img/qwerty-button-in.png"),
         CanvasUtils.loadImage("img/qwerty-button-click.png")
       ],
       U = GUI.createButton(87, 33, null, S),
-      h = [CanvasUtils.loadImage("img/sound-on-out.png"),
-        CanvasUtils.loadImage("img/sound-on-in.png"),
-        CanvasUtils.loadImage("img/sound-on-click.png")
+      h = [CanvasUtils.loadImage("img/sound-on-out.png"), CanvasUtils.loadImage("img/sound-on-in.png"), CanvasUtils
+        .loadImage("img/sound-on-click.png")
       ],
-      f = [CanvasUtils.loadImage("img/sound-off-out.png"),
-        CanvasUtils.loadImage("img/sound-off-in.png"),
-        CanvasUtils.loadImage("img/sound-off-click.png")
+      f = [CanvasUtils.loadImage("img/sound-off-out.png"), CanvasUtils.loadImage("img/sound-off-in.png"), CanvasUtils
+        .loadImage("img/sound-off-click.png")
       ],
       D = GUI.createButton(51, 36, null, h),
       v = GUI.createButton(51, 36, null, f),
@@ -8207,9 +7899,7 @@ var Border = function () {
       }
     }
     var z = window.Math.sqrt(2) / 2;
-    var J, X, j, Q, q, Z, $, ee, ie, ae,
-      _e, oe, te, de, ne, re, le, se,
-      ge = null,
+    var J, X, j, Q, q, Z, $, ee, ie, ae, _e, oe, te, de, ne, re, le, se, ge = null,
       me = (ge = null, 0),
       ce = [],
       Ie = 0;
@@ -8229,8 +7919,7 @@ var Border = function () {
       if (Oe > 0) {
         i = canh;
         var a = Ae(1 - Oe / Te);
-        1 === a && (Oe = 0), 1 === Re && (a = 1 - window.Math.abs(a)),
-          e *= a, i *= a
+        1 === a && (Oe = 0), 1 === Re && (a = 1 - window.Math.abs(a)), e *= a, i *= a
       }
       J.pos.x = canw2 - window.Math.floor(134 * scaleby) + e, J.pos.y = window.Math.max(0, canh2 - window.Math.floor(
           133 * scaleby)) + i, X.pos.x = canw2 - window.Math.floor(206 * scaleby) + e, X.pos.y = window.Math.max(0,
@@ -8272,12 +7961,10 @@ var Border = function () {
       if (1 === Q.trigger() && (1, 0 === o ? (o = 1, CanvasUtils.enableFullscreen(), 0 === World.day ? canvas.style
             .backgroundColor = "#3D5942" : canvas.style.backgroundColor = "#0B2129", AudioUtils.playFx(AudioUtils._fx
               .button, 1, 0)) : (o = 0, CanvasUtils.disableFullscreen(), AudioUtils.playFx(AudioUtils._fx.button, 1,
-          0))), 1 === q.trigger()) return 1,
-        0 === _ ? (s(), e = 1, _ = 1, void AudioUtils.playFx(AudioUtils._fx.open, 1, 0)) : (s(), void AudioUtils
-          .playFx(AudioUtils._fx.open, 1, 0));
-      if (1 === Z.trigger()) return 1,
-        0 === a ? (s(), e = 1, a = 1, void AudioUtils.playFx(AudioUtils._fx.open, 1, 0)) : (s(), void AudioUtils
-          .playFx(AudioUtils._fx.open, 1, 0));
+          0))), 1 === q.trigger()) return 1, 0 === _ ? (s(), e = 1, _ = 1, void AudioUtils.playFx(AudioUtils._fx.open,
+        1, 0)) : (s(), void AudioUtils.playFx(AudioUtils._fx.open, 1, 0));
+      if (1 === Z.trigger()) return 1, 0 === a ? (s(), e = 1, a = 1, void AudioUtils.playFx(AudioUtils._fx.open, 1,
+        0)) : (s(), void AudioUtils.playFx(AudioUtils._fx.open, 1, 0));
       if (1 === $.trigger()) {
         1,
         r = 0;
@@ -8302,9 +7989,7 @@ var Border = function () {
         var d = INVENTORY[IID.__ROAD__].subtype;
         for (t = 0; t < d.length; t++) {
           var m = d[t];
-          n[r].setImages(m.itemButton.src, m.itemButton.img),
-            n[r].itemId = IID.__ROAD__,
-            n[r].itemSubId = t, r++
+          n[r].setImages(m.itemButton.src, m.itemButton.img), n[r].itemId = IID.__ROAD__, n[r].itemSubId = t, r++
         }
         AudioUtils.playFx(AudioUtils._fx.button, 1, 0)
       }
@@ -8313,8 +7998,7 @@ var Border = function () {
         r = 0;
         for (d = INVENTORY[IID.__FURNITURE__].subtype, t = 0; t < d.length; t++) {
           m = d[t];
-          n[r].setImages(m.itemButton.src, m.itemButton.img),
-            n[r].itemId = IID.__FURNITURE__, n[r].itemSubId = t, r++
+          n[r].setImages(m.itemButton.src, m.itemButton.img), n[r].itemId = IID.__FURNITURE__, n[r].itemSubId = t, r++
         }
         AudioUtils.playFx(AudioUtils._fx.button, 1, 0)
       }
@@ -8346,12 +8030,11 @@ var Border = function () {
       if (1 === de.trigger() && (1, AudioUtils.playFx(AudioUtils._fx.button, 1, 0), function () {
           me <= 0 ? me = 3e3 : me <= 500 ? me = 3e3 - me : me <= 2500 && (me = 2500);
           var e = "";
-          e += G(__ENTITIE_BUILD_DOWN__),
-            e += G(__ENTITIE_BUILD_TOP__),
-            e += G(__ENTITIE_BUILD_GROUND2__), e += G(__ENTITIE_BUILD_GROUND__);
+          e += G(__ENTITIE_BUILD_DOWN__), e += G(__ENTITIE_BUILD_TOP__), e += G(__ENTITIE_BUILD_GROUND2__), e += G(
+            __ENTITIE_BUILD_GROUND__);
           var i = window.document.createElement("textarea");
-          i.value = e, window.document.body.appendChild(i), i.select(), window.document.execCommand("copy"),
-            window.document.body.removeChild(i)
+          i.value = e, window.document.body.appendChild(i), i.select(), window.document.execCommand("copy"), window
+            .document.body.removeChild(i)
         }()), 1 === ne.trigger() && (1, Editor.quit(Home), AudioUtils.playFx(AudioUtils._fx.play, 1, 0)), 1 === e) {
         if (1 === g.trigger()) return s(), void AudioUtils.playFx(AudioUtils._fx.open, 1, 0);
         if (1 === _) {
@@ -8359,22 +8042,18 @@ var Border = function () {
             .setState(GUI.__BUTTON_OUT__), A.setState(GUI.__BUTTON_OUT__), D.setState(GUI.__BUTTON_OUT__), v.setState(
               GUI.__BUTTON_OUT__), N.setState(GUI.__BUTTON_OUT__), M.setState(GUI.__BUTTON_OUT__), c.setState(GUI
               .__BUTTON_OUT__), E.setState(GUI.__BUTTON_OUT__), L.setState(GUI.__BUTTON_OUT__), 1 === y.trigger())
-            return Keyboard.setAzerty(),
-              void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === U.trigger()) return Keyboard.setQwert(),
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === R.trigger()) return CanvasUtils.setResolution(1),
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === T.trigger()) return CanvasUtils.setResolution(2),
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === A.trigger()) return CanvasUtils.setResolution(3),
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+            return Keyboard.setAzerty(), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+          if (1 === U.trigger()) return Keyboard.setQwert(), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+          if (1 === R.trigger()) return CanvasUtils.setResolution(1), void AudioUtils.playFx(AudioUtils._fx.button, 1,
+            0);
+          if (1 === T.trigger()) return CanvasUtils.setResolution(2), void AudioUtils.playFx(AudioUtils._fx.button, 1,
+            0);
+          if (1 === A.trigger()) return CanvasUtils.setResolution(3), void AudioUtils.playFx(AudioUtils._fx.button, 1,
+            0);
           if (1 === D.trigger()) return AudioUtils.setAudio(1), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
           if (1 === v.trigger()) return AudioUtils.setAudio(0), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === N.trigger()) return AudioUtils.setFx(1),
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
-          if (1 === M.trigger()) return AudioUtils.setFx(0),
-            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+          if (1 === N.trigger()) return AudioUtils.setFx(1), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+          if (1 === M.trigger()) return AudioUtils.setFx(0), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
           if (1 === E.trigger()) return Render.setParticles(1), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
           if (1 === c.trigger()) return Render.setParticles(2), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
           if (1 === L.trigger()) return Render.setParticles(0), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
@@ -8426,17 +8105,15 @@ var Border = function () {
               n = canw4 / 4;
             if (o < canw2) {
               var r = 30 * scaleby;
-              C = Math2d.angle(canw2 - d, canh2 + n, o, t),
-                F = window.Math.min(Math2d.dist(o, t, canw2 - d, canh2 + n), 25), o < canw2 - d - r ? (W |= 1, ue
-                  .charCode = 37, ue.keyCode = 37, fe(ue)) : o > canw2 - d + r && (W |= 2, ue.charCode = 39, ue
-                  .keyCode = 39, fe(ue)), t < canh2 + n - r ? (W |= 4, ue.charCode = 38, ue.keyCode = 38, fe(ue)) : t >
-                canh2 + n + r && (W |= 8, ue.charCode = 40, ue.keyCode = 40, fe(ue))
+              C = Math2d.angle(canw2 - d, canh2 + n, o, t), F = window.Math.min(Math2d.dist(o, t, canw2 - d, canh2 + n),
+                25), o < canw2 - d - r ? (W |= 1, ue.charCode = 37, ue.keyCode = 37, fe(ue)) : o > canw2 - d + r && (
+                W |= 2, ue.charCode = 39, ue.keyCode = 39, fe(ue)), t < canh2 + n - r ? (W |= 4, ue.charCode = 38, ue
+                .keyCode = 38, fe(ue)) : t > canh2 + n + r && (W |= 8, ue.charCode = 40, ue.keyCode = 40, fe(ue))
             } else if (o < canw - 40 * scaleby || t > 40 * scaleby)
               if (a = 1, Ee.clientX -= d / CanvasUtils.options.ratioX, Ee.clientY -= n / CanvasUtils.options.ratioX,
                 1 === World.PLAYER.isBuilding) {
                 var l = window.Date.now();
-                l - P < 1e3 && (x = 1, V = Ee.clientX, B = Ee.clientY, ye(Ee)),
-                  P = l
+                l - P < 1e3 && (x = 1, V = Ee.clientX, B = Ee.clientY, ye(Ee)), P = l
               } else x = 1, V = Ee.clientX, B = Ee.clientY, ye(Ee);
             continue
           }
@@ -8453,8 +8130,7 @@ var Border = function () {
       if (1 === k) k = 0;
       else if (1 === e) Se(Ee);
       else {
-        if (1 === x && a >= canw2) return x = 0, Ee.clientX = V,
-          Ee.clientY = B, void Se(Ee);
+        if (1 === x && a >= canw2) return x = 0, Ee.clientX = V, Ee.clientY = B, void Se(Ee);
         0 === World.PLAYER.drag.begin && a < canw2 && _ < canh - 70 * scaleby ? a < 240 * scaleby && _ < 160 *
           scaleby && Se(Ee) : Se(Ee)
       }
@@ -8474,14 +8150,14 @@ var Border = function () {
               _ = 1;
               var l = 0,
                 s = 30 * scaleby;
-              C = Math2d.angle(canw2 - n, canh2 + r, t, d),
-                F = window.Math.min(Math2d.dist(t, d, canw2 - n, canh2 + r), 25), t < canw2 - n - s ? l |= 1 : t >
-                canw2 - n + s && (l |= 2), d < canh2 + r + -s ? l |= 4 : d > canh2 + r + s && (l |= 8), 1 == (1 & l) &&
-                1 != (1 & W) ? (ue.charCode = 37, fe(ue)) : 1 != (1 & l) && 1 == (1 & W) && (ue.charCode = 37, he(ue)),
-                2 == (2 & l) && 2 != (2 & W) ? (ue.charCode = 39, fe(ue)) : 2 != (2 & l) && 2 == (2 & W) && (ue
-                  .charCode = 39, he(ue)), 4 == (4 & l) && 4 != (4 & W) ? (ue.charCode = 38, fe(ue)) : 4 != (4 & l) &&
-                4 == (4 & W) && (ue.charCode = 38, he(ue)), 8 == (8 & l) && 8 != (8 & W) ? (ue.charCode = 40, fe(ue)) :
-                8 != (8 & l) && 8 == (8 & W) && (ue.charCode = 40, he(ue)), W = l;
+              C = Math2d.angle(canw2 - n, canh2 + r, t, d), F = window.Math.min(Math2d.dist(t, d, canw2 - n, canh2 + r),
+                  25), t < canw2 - n - s ? l |= 1 : t > canw2 - n + s && (l |= 2), d < canh2 + r + -s ? l |= 4 : d >
+                canh2 + r + s && (l |= 8), 1 == (1 & l) && 1 != (1 & W) ? (ue.charCode = 37, fe(ue)) : 1 != (1 & l) &&
+                1 == (1 & W) && (ue.charCode = 37, he(ue)), 2 == (2 & l) && 2 != (2 & W) ? (ue.charCode = 39, fe(ue)) :
+                2 != (2 & l) && 2 == (2 & W) && (ue.charCode = 39, he(ue)), 4 == (4 & l) && 4 != (4 & W) ? (ue
+                  .charCode = 38, fe(ue)) : 4 != (4 & l) && 4 == (4 & W) && (ue.charCode = 38, he(ue)), 8 == (8 & l) &&
+                8 != (8 & W) ? (ue.charCode = 40, fe(ue)) : 8 != (8 & l) && 8 == (8 & W) && (ue.charCode = 40, he(ue)),
+                W = l;
               continue
             }(t < canw - 40 * scaleby || d > 40 * scaleby) && (a = 1, Ee.clientX -= n / CanvasUtils.options.ratioX, Ee
               .clientY -= r / CanvasUtils.options.ratioX, V = Ee.clientX, B = Ee.clientY, Ue(Ee))
@@ -8494,8 +8170,7 @@ var Border = function () {
     }
     return {
       quit: function (e) {
-        s(), AudioManager.quitGame(),
-          se = e,
+        s(), AudioManager.quitGame(), se = e,
           function () {
             0 === isTouchScreen && window.removeEventListener("mousedown", ye, !1);
             0 === isTouchScreen && window.removeEventListener("mouseup", Se, !1);
@@ -8506,18 +8181,16 @@ var Border = function () {
             1 === isTouchScreen && window.removeEventListener("touchend", ve, !1);
             1 === isTouchScreen && window.removeEventListener("touchcancel", Ne, !1);
             1 === isTouchScreen && window.removeEventListener("touchmove", Me, !1)
-          }(), Oe = 1e3, Te = 1e3,
-          Ae = pe, Le = 1
+          }(), Oe = 1e3, Te = 1e3, Ae = pe, Le = 1
       },
       init: function () {
         for (ge = GUI.renderText("Copied to clipboard", "'Viga', sans-serif", "#FFFFFF", 40, 350, "#000000", 18, 18,
             window.undefined, window.undefined, .6), i = 0; i < 64; i++) n.push(GUI.createButton(40, 40, null, d));
-        J = GUI.createBackground(269, 267, "img/settings-box.png"),
-          X = GUI.createBackground(412, 412, "img/borderBigMinimap2.png"), j = GUI.createBackground(128, 128,
-            "img/minimap.png"), Q = GUI.createButton(40, 40, ["img/full-screen-out.png", "img/full-screen-in.png",
-            "img/full-screen-click.png"
-          ]), q = GUI.createButton(40, 40, ["img/settings-out.png", "img/settings-in.png", "img/settings-click.png"]),
-          Z = GUI.createButton(40, 40, ["img/minimap-button-out.png", "img/minimap-button-in.png",
+        J = GUI.createBackground(269, 267, "img/settings-box.png"), X = GUI.createBackground(412, 412,
+            "img/borderBigMinimap2.png"), j = GUI.createBackground(128, 128, "img/minimap.png"), Q = GUI.createButton(
+            40, 40, ["img/full-screen-out.png", "img/full-screen-in.png", "img/full-screen-click.png"]), q = GUI
+          .createButton(40, 40, ["img/settings-out.png", "img/settings-in.png", "img/settings-click.png"]), Z = GUI
+          .createButton(40, 40, ["img/minimap-button-out.png", "img/minimap-button-in.png",
             "img/minimap-button-click.png"
           ]), $ = GUI.createButton(67, 67, ["img/logic-button-out.png", "img/logic-button-in.png",
             "img/logic-button-click.png"
@@ -8547,8 +8220,7 @@ var Border = function () {
         if (window.document.getElementById("bod").style.backgroundColor = "#46664D", 0, AudioManager.startGame(),
           0 === Ie) {
           Ie = 1;
-          for (var e = INVENTORY[IID.__ROAD__].subtype,
-              i = 0; i < e.length; i++) {
+          for (var e = INVENTORY[IID.__ROAD__].subtype, i = 0; i < e.length; i++) {
             (a = e[i]).itemButton = {
               src: [a.building.src, "img/useless.png", "img/useless.png"],
               img: [{
@@ -8580,21 +8252,12 @@ var Border = function () {
       draw: function () {
         if (0 !== function () {
             if (1 === Le) {
-              if (be(), Oe < 0) return Le = 0, Q.setState(GUI.__BUTTON_OUT__),
-                q.setState(GUI.__BUTTON_OUT__),
-                Z.setState(GUI.__BUTTON_OUT__),
-                $.setState(GUI.__BUTTON_OUT__),
-                ee.setState(GUI.__BUTTON_OUT__),
-                ie.setState(GUI.__BUTTON_OUT__),
-                ae.setState(GUI.__BUTTON_OUT__),
-                _e.setState(GUI.__BUTTON_OUT__),
-                re.setState(GUI.__BUTTON_OUT__),
-                le.setState(GUI.__BUTTON_OUT__),
-                oe.setState(GUI.__BUTTON_OUT__),
-                te.setState(GUI.__BUTTON_OUT__),
-                de.setState(GUI.__BUTTON_OUT__),
-                ne.setState(GUI.__BUTTON_OUT__),
-                se.run(), 0;
+              if (be(), Oe < 0) return Le = 0, Q.setState(GUI.__BUTTON_OUT__), q.setState(GUI.__BUTTON_OUT__), Z
+                .setState(GUI.__BUTTON_OUT__), $.setState(GUI.__BUTTON_OUT__), ee.setState(GUI.__BUTTON_OUT__), ie
+                .setState(GUI.__BUTTON_OUT__), ae.setState(GUI.__BUTTON_OUT__), _e.setState(GUI.__BUTTON_OUT__), re
+                .setState(GUI.__BUTTON_OUT__), le.setState(GUI.__BUTTON_OUT__), oe.setState(GUI.__BUTTON_OUT__), te
+                .setState(GUI.__BUTTON_OUT__), de.setState(GUI.__BUTTON_OUT__), ne.setState(GUI.__BUTTON_OUT__), se
+                .run(), 0;
               Oe -= delta
             } else 1 === Re && (be(), Oe < 0 && (Re = 0, function () {
               0 === isTouchScreen && window.addEventListener("mousedown", ye, !1);
@@ -8645,11 +8308,9 @@ var Border = function () {
                   scaleby, de.pos.y - 40 * scaleby, ge.wh * scaleby, ge.h2 * scaleby), ctx.globalAlpha = 1), ce[
                 World.PLAYER._j] === window.undefined && (ce[World.PLAYER._j] = []), ce[World.PLAYER._j][World
                 .PLAYER._i
-              ] === window.undefined && (ce[World.PLAYER._j][
-                World.PLAYER._i
-              ] = GUI.renderText("(" + World.PLAYER._j + "," + World.PLAYER._i + ")", "'Viga', sans-serif",
-                "#FFFFFF", 52, 455, "#000000", 22, 22, window.undefined, window.undefined, .4, window.undefined,
-                "#000000", 15.6));
+              ] === window.undefined && (ce[World.PLAYER._j][World.PLAYER._i] = GUI.renderText("(" + World.PLAYER
+                ._j + "," + World.PLAYER._i + ")", "'Viga', sans-serif", "#FFFFFF", 52, 455, "#000000", 22, 22,
+                window.undefined, window.undefined, .4, window.undefined, "#000000", 15.6));
               var e = ce[World.PLAYER._j][World.PLAYER._i];
               ctx.drawImage(e, 5 * scaleby, re.pos.y - 42 * scaleby, e.wh * scaleby, e.h2 * scaleby)
             }(),
@@ -8665,19 +8326,15 @@ var Border = function () {
               ctx.globalAlpha = .3;
               var i = canw2ns - 1.5 * canw4ns,
                 o = canh2ns + canw4ns / 4;
-              CanvasUtils.circle(ctx, i, o, 60),
-                CanvasUtils.drawPath(ctx, "#000000"),
-                CanvasUtils.circle(ctx, i + window.Math.cos(C) * F * scaleby, o + window.Math.sin(C) * F * scaleby,
-                  30),
-                CanvasUtils.drawPath(ctx, "#FFFFFF"), ctx.globalAlpha = 1
+              CanvasUtils.circle(ctx, i, o, 60), CanvasUtils.drawPath(ctx, "#000000"), CanvasUtils.circle(ctx, i +
+                window.Math.cos(C) * F * scaleby, o + window.Math.sin(C) * F * scaleby, 30), CanvasUtils.drawPath(
+                ctx, "#FFFFFF"), ctx.globalAlpha = 1
             }
             if (1 === x) {
               ctx.globalAlpha = .3;
               i = canw2ns + 1.5 * canw4ns, o = canh2ns + canw4ns / 4;
-              CanvasUtils.circle(ctx, i, o, 60),
-                CanvasUtils.drawPath(ctx, "#000000"),
-                CanvasUtils.circle(ctx, i + 25 * window.Math.cos(Mouse.angle) * scaleby, o + 25 * window.Math.sin(
-                  Mouse.angle) * scaleby, 30),
+              CanvasUtils.circle(ctx, i, o, 60), CanvasUtils.drawPath(ctx, "#000000"), CanvasUtils.circle(ctx, i +
+                  25 * window.Math.cos(Mouse.angle) * scaleby, o + 25 * window.Math.sin(Mouse.angle) * scaleby, 30),
                 CanvasUtils.drawPath(ctx, "#FFFFFF"), ctx.globalAlpha = 1
             }
           }
@@ -8688,21 +8345,11 @@ var Border = function () {
   }(),
   __COUNTER__ = 1,
   BID = {};
-BID.__ROAD_T0B0L0R1__ = __COUNTER__++,
-  BID.__ROAD_T0B0L1R0__ = __COUNTER__++,
-  BID.__ROAD_T0B0L1R1__ = __COUNTER__++,
-  BID.__ROAD_T0B1L0R0__ = __COUNTER__++,
-  BID.__ROAD_T0B1L0R1__ = __COUNTER__++,
-  BID.__ROAD_T0B1L1R0__ = __COUNTER__++,
-  BID.__ROAD_T0B1L1R1__ = __COUNTER__++,
-  BID.__ROAD_T1B0L0R1__ = __COUNTER__++,
-  BID.__ROAD_T1B0L1R0__ = __COUNTER__++,
-  BID.__ROAD_T1B0L1R0__ = __COUNTER__++,
-  BID.__ROAD_T1B0L1R1__ = __COUNTER__++,
-  BID.__ROAD_T1B1L0R0__ = __COUNTER__++,
-  BID.__ROAD_T1B1L0R1__ = __COUNTER__++,
-  BID.__ROAD_T1B1L1R0__ = __COUNTER__++,
-  BID.__ROAD_T1B1L1R1__ = __COUNTER__++;
+BID.__ROAD_T0B0L0R1__ = __COUNTER__++, BID.__ROAD_T0B0L1R0__ = __COUNTER__++, BID.__ROAD_T0B0L1R1__ = __COUNTER__++, BID
+  .__ROAD_T0B1L0R0__ = __COUNTER__++, BID.__ROAD_T0B1L0R1__ = __COUNTER__++, BID.__ROAD_T0B1L1R0__ = __COUNTER__++, BID
+  .__ROAD_T0B1L1R1__ = __COUNTER__++, BID.__ROAD_T1B0L0R1__ = __COUNTER__++, BID.__ROAD_T1B0L1R0__ = __COUNTER__++, BID
+  .__ROAD_T1B0L1R0__ = __COUNTER__++, BID.__ROAD_T1B0L1R1__ = __COUNTER__++, BID.__ROAD_T1B1L0R0__ = __COUNTER__++, BID
+  .__ROAD_T1B1L0R1__ = __COUNTER__++, BID.__ROAD_T1B1L1R0__ = __COUNTER__++, BID.__ROAD_T1B1L1R1__ = __COUNTER__++;
 var BUILDINGS = [{}, {
   id: BID.__ROAD_T0B0L0R1__,
   src: "img/road-T0B0L0R1.png",
@@ -9036,35 +8683,27 @@ var ent, inhandID, weapon, Render = function () {
         [],
         []
       ];
-    K[0][0] = 0, K[0][k] = 3, K[0][H] = 6, K[0][Y | G] = 9, K[0][Y] = 4,
-      K[0][G] = 5, K[0][k | Y] = 27, K[0][k | G] = 20, K[0][H | Y] = 7,
-      K[0][H | G] = 28, K[0][k | Y | G] = 24, K[0][H | Y | G] = 29, K[2][0] = 0, K[2][k] = 3, K[2][
+    K[0][0] = 0, K[0][k] = 3, K[0][H] = 6, K[0][Y | G] = 9, K[0][Y] = 4, K[0][G] = 5, K[0][k | Y] = 27, K[0][k | G] =
+      20, K[0][H | Y] = 7, K[0][H | G] = 28, K[0][k | Y | G] = 24, K[0][H | Y | G] = 29, K[2][0] = 0, K[2][k] = 3, K[2][
         H
-      ] = 6, K[2][Y | G] = 9, K[2][Y] = 4, K[2][G] = 5, K[2][k | Y] = 27,
-      K[2][k | G] = 20, K[2][H | Y] = 7,
-      K[2][H | G] = 28, K[2][k | Y | G] = 24, K[2][H | Y | G] = 29, K[1][0] = 11, K[1][k] = 12, K[1][
-        H
-      ] = 17, K[1][Y | G] = 10, K[1][
-        Y
-      ] = 19, K[1][G] = 18, K[1][k | Y] = 34, K[1][k | G] = 22, K[1][
-        H | Y
-      ] = 23, K[1][H | G] = 33, K[1][k | Y | G] = 35, K[1][H | Y | G] = 32, K[3]
-      [0] = 11, K[3][k] = 15, K[3][H] = 14, K[3][Y | G] = 10, K[3][Y] = 19, K[3][G] = 18, K[3][k | Y] = 37, K[3][k |
-      G] = 16, K[3][H | Y] = 23, K[3][H | G] = 38, K[3][
-        k | Y | G
-      ] = 36, K[3][H | Y | G] = 39;
+      ] = 6, K[2][Y | G] = 9, K[2][Y] = 4, K[2][G] = 5, K[2][k | Y] = 27, K[2][k | G] = 20, K[2][H | Y] = 7, K[2][H |
+      G] = 28, K[2][k | Y | G] = 24, K[2][H | Y | G] = 29, K[1][0] = 11, K[1][k] = 12, K[1][H] = 17, K[1][Y | G] = 10,
+      K[1][Y] = 19, K[1][G] = 18, K[1][k | Y] = 34, K[1][k | G] = 22, K[1][H | Y] = 23, K[1][H | G] = 33, K[1][k | Y |
+        G] = 35, K[1][H | Y | G] = 32, K[3][0] = 11, K[3][k] = 15, K[3][H] = 14, K[3][Y | G] = 10, K[3][Y] = 19, K[3][
+      G] = 18, K[3][k | Y] = 37, K[3][k | G] = 16, K[3][H | Y] = 23, K[3][H | G] = 38, K[3][k | Y | G] = 36, K[3][H |
+        Y | G
+      ] = 39;
     var z = [];
     z[0] = 0, z[M] = 3, z[W] = 4, z[C] = 2, z[F] = 1, z[M | C] = 17, z[M | W] = 5, z[M | F] = 18, z[W | C] = 16, z[W |
         F] = 19, z[C | F] = 6, z[M | C | F] = 10, z[M | C | W] = 9, z[F | C | W] = 11, z[M | F | W] = 8, z[M | C | W |
         F] = 7, z[F | W | P] = 12, z[F | M | x] = 13, z[C | M | B] = 14, z[C | W | V] = 15, z[C | F | W | P] = 20, z[C |
         F | W | M | P] = 21, z[M | F | W | P] = 22, z[C | F | W | M | V] = 23, z[M | C | W | V] = 24, z[C | F | W | V] =
-      25,
-      z[C | F | M | B] = 26, z[C | F | W | M | B] = 27, z[C | W | M | B] = 28, z[F | W | M | x] = 29,
-      z[C | F | W | M | x] = 30, z[C | F | M | x] = 31, z[C | F | W | M | x | P | B | V] = 32, z[C | F | W | M | x |
-      B] = 33, z[C | F | W | M | x | P] = 34, z[C | F | W | M | x | V] = 35, z[C | F | W | M | P | B] = 36, z[C | F |
-        W | M | V | P] = 37, z[C | F | W | M | V | B] = 38, z[C | F | W | V | P] = 39, z[C | F | M | B | x] = 40, z[W |
-        F | M | P | x] = 41, z[W | C | M | V | B] = 42, z[C | F | W | M | x | B | V] = 43, z[C | F | W | M | P | B |
-      V] = 44, z[C | F | W | M | x | P | V] = 45, z[C | F | W | M | x | P | B] = 46;
+      25, z[C | F | M | B] = 26, z[C | F | W | M | B] = 27, z[C | W | M | B] = 28, z[F | W | M | x] = 29, z[C | F | W |
+        M | x] = 30, z[C | F | M | x] = 31, z[C | F | W | M | x | P | B | V] = 32, z[C | F | W | M | x | B] = 33, z[C |
+        F | W | M | x | P] = 34, z[C | F | W | M | x | V] = 35, z[C | F | W | M | P | B] = 36, z[C | F | W | M | V |
+      P] = 37, z[C | F | W | M | V | B] = 38, z[C | F | W | V | P] = 39, z[C | F | M | B | x] = 40, z[W | F | M | P |
+      x] = 41, z[W | C | M | V | B] = 42, z[C | F | W | M | x | B | V] = 43, z[C | F | W | M | P | B | V] = 44, z[C |
+        F | W | M | x | P | V] = 45, z[C | F | W | M | x | P | B] = 46;
     var J = 600,
       X = 0,
       j = 0,
@@ -9304,8 +8943,7 @@ var ent, inhandID, weapon, Render = function () {
       mi = 0;
     var ci = window.document.createElement("canvas"),
       Ii = ci.getContext("2d");
-    ci.width = 699, ci.height = 738,
-      soundLimit = [];
+    ci.width = 699, ci.height = 738, soundLimit = [];
     for (var Ei = 0; Ei < 9; Ei++) soundLimit[Ei] = 0;
     var ui = 0;
     for (Ei = 0; Ei < 9; Ei++) {
@@ -9328,10 +8966,8 @@ var ent, inhandID, weapon, Render = function () {
     var hi = -1;
 
     function fi() {
-      this.wallFrame = 0, this.floorFrame = 0, this.drawFloor = 0, this.tile = 0,
-        this.wall = 0, this.frameId = 0,
-        this.ground = 0, this.pid = 0,
-        this.tilePid = 0, this.category = 0, this.i = 0, this.b = [], this.rotate = 0;
+      this.wallFrame = 0, this.floorFrame = 0, this.drawFloor = 0, this.tile = 0, this.wall = 0, this.frameId = 0, this
+        .ground = 0, this.pid = 0, this.tilePid = 0, this.category = 0, this.i = 0, this.b = [], this.rotate = 0;
       for (var e = 0; e < 3; e++) this.b.push({
         type: 0,
         cycle: 0
@@ -9405,10 +9041,8 @@ var ent, inhandID, weapon, Render = function () {
         Ti[e] = window.document.createElement("canvas"), Oi[e] = Ti[e].getContext("2d");
         var _ = Ti[e],
           o = Oi[e];
-        _.width = 400, _.height = 148, o.clearRect(0, 0, 400, 148),
-          CanvasUtils.roundRect(o, 0, 0, 400, 148, 10), o.fillStyle = "#000000", o.globalAlpha = .5,
-          o.fill(), o.globalAlpha = 1,
-          ki(Oi[e], e)
+        _.width = 400, _.height = 148, o.clearRect(0, 0, 400, 148), CanvasUtils.roundRect(o, 0, 0, 400, 148, 10), o
+          .fillStyle = "#000000", o.globalAlpha = .5, o.fill(), o.globalAlpha = 1, ki(Oi[e], e)
       }
       var t = 74 * scaleby;
       ctx.drawImage(Ti[e], i, a, 190 * scaleby, t)
@@ -9465,9 +9099,9 @@ var ent, inhandID, weapon, Render = function () {
         var t = "",
           d = ENTITIES[__ENTITIE_PLAYER__].weapons[a.idWeapon];
         d.damage !== window.undefined ? t = "Damage: " + (d.damageCac === window.undefined ? d.damage : d.damageCac) : (
-            0 !== d.food && (t += "Food: " + d.food + " "), d.heal < 0 ? t += "Damage: " + d.heal + " " : d.heal > 0 &&
-            (t += "Heal: " + d.heal + " "), 0 !== d.energy && (t += "Energy: " + d.energy)),
-          o = GUI.renderText(t, "'Viga', sans-serif", "#D3BB43", 24, 400), e.drawImage(o, 20, 101)
+          0 !== d.food && (t += "Food: " + d.food + " "), d.heal < 0 ? t += "Damage: " + d.heal + " " : d.heal > 0 &&
+          (t += "Heal: " + d.heal + " "), 0 !== d.energy && (t += "Energy: " + d.energy)), o = GUI.renderText(t,
+          "'Viga', sans-serif", "#D3BB43", 24, 400), e.drawImage(o, 20, 101)
       } else a.idClothe !== window.undefined || (o = GUI.renderText("Cannot be equipped", "'Viga', sans-serif",
         "#FFFFFF", 17, 400), e.drawImage(o, 20, 108))
     }
@@ -9561,11 +9195,10 @@ var ent, inhandID, weapon, Render = function () {
           ._j)) {
           for (var a = 0; a < World.PLAYER.gridPrev.length; a++)
             if (0 === World.PLAYER.gridPrev[a]) {
-              World.PLAYER.gridPrev[a] = World.PLAYER.grid, World.PLAYER.iGridPrev[a] = World.PLAYER.iGrid,
-                World.PLAYER.jGridPrev[a] = World.PLAYER.jGrid;
+              World.PLAYER.gridPrev[a] = World.PLAYER.grid, World.PLAYER.iGridPrev[a] = World.PLAYER.iGrid, World.PLAYER
+                .jGridPrev[a] = World.PLAYER.jGrid;
               break
-            } World.PLAYER.grid = 0,
-            World.PLAYER.iGrid = World.PLAYER._i, World.PLAYER.jGrid = World.PLAYER._j
+            } World.PLAYER.grid = 0, World.PLAYER.iGrid = World.PLAYER._i, World.PLAYER.jGrid = World.PLAYER._j
         }
         World.PLAYER.grid = window.Math.min(T, World.PLAYER.grid + delta);
         for (a = 0; a < World.PLAYER.gridPrev.length; a++) World.PLAYER.gridPrev[a] = window.Math.max(0, World.PLAYER
@@ -9591,8 +9224,7 @@ var ent, inhandID, weapon, Render = function () {
           if (World.PLAYER.gridPrev[a] > 0) {
             ctx.globalAlpha = World.PLAYER.gridPrev[a] / T;
             _ = scaleby * (World.PLAYER.iGridPrev[a] * e + j + i), o = scaleby * (World.PLAYER.jGridPrev[a] * e + X +
-              i), t = scaleby * We.width / 2,
-              d = scaleby * We.height / 2;
+              i), t = scaleby * We.width / 2, d = scaleby * We.height / 2;
             ctx.drawImage(We, o - t / 2, _ - d / 2, t, d), ctx.globalAlpha = 1
           }
       } else We = CanvasUtils.loadImage(E, We)
@@ -9624,8 +9256,7 @@ var ent, inhandID, weapon, Render = function () {
     }
 
     function Ji(e) {
-      for (var i = World.players[e.pid],
-          a = 0; a < i.runEffect.length; a++) {
+      for (var i = World.players[e.pid], a = 0; a < i.runEffect.length; a++) {
         var _ = i.runEffect[a];
         if (a > 0 && _.delay <= 0) {
           var o = i.runEffect[a - 1];
@@ -9641,8 +9272,7 @@ var ent, inhandID, weapon, Render = function () {
             r = scaleby * (_.size + 1) * n * d.width / 7,
             l = -r / 2;
           ctx.save(), ctx.translate((X + _.x) * scaleby, (j + _.y) * scaleby), ctx.rotate(_.angle), ctx.globalAlpha =
-            window.Math.max(0, n * n), ctx.drawImage(d, l, l, r, r),
-            ctx.restore()
+            window.Math.max(0, n * n), ctx.drawImage(d, l, l, r, r), ctx.restore()
         }
       }
     }
@@ -9658,8 +9288,8 @@ var ent, inhandID, weapon, Render = function () {
         e.death += delta;
         var t = MathUtils.Ease.outQuart(1 - (e.death - 500) / 400);
         ctx.globalAlpha = window.Math.min(window.Math.max(0, t), 1), CanvasUtils.drawImageHd(i.death, _, o, e.angle, 0,
-            0, 1), t = MathUtils.Ease.outQuart(1 - e.death / 400),
-          a = window.Math.min(1 + .5 * (1 - t), 1.5), ctx.globalAlpha = window.Math.max(0, t)
+            0, 1), t = MathUtils.Ease.outQuart(1 - e.death / 400), a = window.Math.min(1 + .5 * (1 - t), 1.5), ctx
+          .globalAlpha = window.Math.max(0, t)
       }
       16 == (16 & e.extra) && (e.extra &= -17, e.hurt = 250, e.hurtAngle = D * (e.extra >> 5 & 31) / 31), i.draw(i, e,
         _, o, a), 0 !== e.removed && (e.death > 900 && (e.removed = 2), ctx.globalAlpha = 1)
@@ -9679,8 +9309,8 @@ var ent, inhandID, weapon, Render = function () {
         e.death += delta;
         var l = MathUtils.Ease.outQuart(1 - (e.death - 500) / 400);
         ctx.globalAlpha = window.Math.min(window.Math.max(0, l), 1), CanvasUtils.drawImageHd(i.death, n, r, e.angle, 0,
-            0, 1), l = MathUtils.Ease.outQuart(1 - e.death / 400),
-          t = window.Math.min(1 + .5 * (1 - l), 1.5), ctx.globalAlpha = window.Math.max(0, l)
+            0, 1), l = MathUtils.Ease.outQuart(1 - e.death / 400), t = window.Math.min(1 + .5 * (1 - l), 1.5), ctx
+          .globalAlpha = window.Math.max(0, l)
       }
       if (2 === d) {
         if (e.state &= 65281, 0 !== AudioUtils._fx.shot[a]) {
@@ -9723,8 +9353,8 @@ var ent, inhandID, weapon, Render = function () {
             _.hurt2 -= delta;
             var T = 0;
             _.hurt2 > 150 ? T = MathUtils.Ease.inQuad((300 - _.hurt2) / 300) : w += .2 * (1 - (T = MathUtils.Ease
-                .outQuad(_.hurt2 / 150))), ctx.globalAlpha = window.Math.min(1, window.Math.max(0, T)),
-              CanvasUtils.drawImageHd(e.food, t, d, _.angle + m / 1.5, E, 0, w), ctx.globalAlpha = 1
+                .outQuad(_.hurt2 / 150))), ctx.globalAlpha = window.Math.min(1, window.Math.max(0, T)), CanvasUtils
+              .drawImageHd(e.food, t, d, _.angle + m / 1.5, E, 0, w), ctx.globalAlpha = 1
           }
           _.hurt > 0 && (w = 1, _.hurt -= delta, T = 0, _.hurt > 150 ? T = MathUtils.Ease.inQuad((300 - _.hurt) / 300) :
             w += .2 * (1 - (T = MathUtils.Ease.outQuad(_.hurt / 150))), t += window.Math.cos(_.hurtAngle) * T * 3,
@@ -9829,9 +9459,8 @@ var ent, inhandID, weapon, Render = function () {
             .leftArm === window.undefined ? g.leftArm : a.leftArm, CanvasUtils.drawImageHd(S, t, d, -L.angle + _.angle,
               L.x + y * n.orientation + m + b, L.y, o);
           var U = i.weapon;
-          E >= 0 && 0 === i.noEffect && (A = e.gunEffect[i.gunEffect][
-            E
-          ], CanvasUtils.drawImageHd(A, t, d, _.angle, U.x + y * n.orientation + b + c + i.distance, U.y, o));
+          E >= 0 && 0 === i.noEffect && (A = e.gunEffect[i.gunEffect][E], CanvasUtils.drawImageHd(A, t, d, _.angle, U
+            .x + y * n.orientation + b + c + i.distance, U.y, o));
           for (CanvasUtils.drawImageHd(U, t, d, _.angle, U.x + y * n.orientation + b + c, U.y, o), R = 0; R < p
             .length; R++) {
             var h;
@@ -9845,8 +9474,7 @@ var ent, inhandID, weapon, Render = function () {
             _.hurt -= delta, T = 0, _.hurt > 150 ? T = MathUtils.Ease.inQuad((300 - _.hurt) / 300) : f += .2 * (1 - (T =
                 MathUtils.Ease.outQuad(_.hurt / 150))), t += window.Math.cos(_.hurtAngle) * T * 3, d += window.Math.sin(
                 _.hurtAngle) * T * 3, ctx.globalAlpha = window.Math.min(1, window.Math.max(0, T)), CanvasUtils
-              .drawImageHd(e.hurt, t, d, _.angle, I, 0, f),
-              ctx.globalAlpha = 1
+              .drawImageHd(e.hurt, t, d, _.angle, I, 0, f), ctx.globalAlpha = 1
           }
           _.heal > 0 && (f = 1, _.heal -= delta, _.heal > 150 ? ctx.globalAlpha = window.Math.min(1, window.Math.max(0,
             MathUtils.Ease.inQuad((300 - _.heal) / 300))) : (f += .2 * (1 - (T = MathUtils.Ease.outQuad(_.heal /
@@ -9977,9 +9605,8 @@ var ent, inhandID, weapon, Render = function () {
               n.consumable = 0
             }
             1 === n.punch ? n.consumable = window.Math.max(0, n.consumable - delta) : n.consumable = window.Math.min(i
-                .consumableDelay, n.consumable + delta),
-              m = (A = n.consumable / i.consumableDelay) * i.recoil, 0 !== n.consumable && n.consumable !== i
-              .consumableDelay || (n.punch *= -1)
+                .consumableDelay, n.consumable + delta), m = (A = n.consumable / i.consumableDelay) * i.recoil, 0 !== n
+              .consumable && n.consumable !== i.consumableDelay || (n.punch *= -1)
           } else Math2d.fastDist(_.x, _.y, _.nx, _.ny) < 1 ? (n.consumable = -1, n.breath = (n.breath + delta) % 1500,
             0 !== n.move && (n.move < 400 && (n.move = 800 - n.move), n.move = n.move + delta, n.move > 800 && (n
               .move = 0))) : (n.consumable = -1, _.speed > ENTITIES[__ENTITIE_PLAYER__].speed ? n.move = n.move +
@@ -9998,8 +9625,8 @@ var ent, inhandID, weapon, Render = function () {
             _.hurt2 -= delta;
             var A = 0;
             _.hurt2 > 150 ? A = MathUtils.Ease.inQuad((300 - _.hurt2) / 300) : O += .2 * (1 - (A = MathUtils.Ease
-                .outQuad(_.hurt2 / 150))), ctx.globalAlpha = window.Math.min(1, window.Math.max(0, A)),
-              CanvasUtils.drawImageHd(e.food, t, d, _.angle, 0, 0, O), ctx.globalAlpha = 1
+                .outQuad(_.hurt2 / 150))), ctx.globalAlpha = window.Math.min(1, window.Math.max(0, A)), CanvasUtils
+              .drawImageHd(e.food, t, d, _.angle, 0, 0, O), ctx.globalAlpha = 1
           }
           _.hurt > 0 && (O = 1, _.hurt -= delta, A = 0, _.hurt > 150 ? A = MathUtils.Ease.inQuad((300 - _.hurt) / 300) :
             O += .2 * (1 - (A = MathUtils.Ease.outQuad(_.hurt / 150))), t += window.Math.cos(_.hurtAngle) * A * 3,
@@ -10040,16 +9667,14 @@ var ent, inhandID, weapon, Render = function () {
             _.hurt > 150 ? L = MathUtils.Ease.inQuad((300 - _.hurt) / 300) : u += .2 * (1 - (L = MathUtils.Ease.outQuad(
                 _.hurt / 150))), t += window.Math.cos(_.hurtAngle) * L * 3, d += window.Math.sin(_.hurtAngle) * L * 3,
               ctx.globalAlpha = window.Math.min(1, window.Math.max(0, L)), CanvasUtils.drawImageHd(e.hurt, t, d, _
-                .angle, 0, 0, u),
-              ctx.globalAlpha = 1
+                .angle, 0, 0, u), ctx.globalAlpha = 1
           }
           _.heal > 0 && (u = 1, _.heal -= delta, _.heal > 150 ? ctx.globalAlpha = window.Math.min(1, window.Math.max(0,
             MathUtils.Ease.inQuad((300 - _.heal) / 300))) : (u += .2 * (1 - (L = MathUtils.Ease.outQuad(_.heal /
             150))), ctx.globalAlpha = window.Math.min(1, window.Math.max(0, L))), CanvasUtils.drawImageHd(e.heal, t,
             d, _.angle, 0, 0, u), ctx.globalAlpha = 1);
           CanvasUtils.drawImageHd(g.head, t, d, _.angle, 0, 0, o), a.head !== window.undefined && CanvasUtils
-            .drawImageHd(a.head, t, d, _.angle, 0, 0, o),
-            CanvasUtils.drawImageHd(i.pencil, t, d, _.angle, 0, 0, o)
+            .drawImageHd(a.head, t, d, _.angle, 0, 0, o), CanvasUtils.drawImageHd(i.pencil, t, d, _.angle, 0, 0, o)
         }(i, _, o, e, t, n, r)
       }
       0 !== e.removed && (e.death > 900 && (e.removed = 2), ctx.globalAlpha = 1)
@@ -10079,8 +9704,8 @@ var ent, inhandID, weapon, Render = function () {
     function aa(e) {
       var i = PARTICLES[e.state][e.extra];
       if (e.death > 0) return e.death = window.Math.min(1, e.death + delta / 500), ctx.globalAlpha = 1 - e.death,
-        CanvasUtils.drawImageHd(i, X + e.x, j + e.y, e.angle, 0, 0, 1), ctx.globalAlpha = 1,
-        void(1 === e.death && (ea.id = e.id, ea.uid = e.uid));
+        CanvasUtils.drawImageHd(i, X + e.x, j + e.y, e.angle, 0, 0, 1), ctx.globalAlpha = 1, void(1 === e.death && (ea
+          .id = e.id, ea.uid = e.uid));
       Math2d.fastDist(e.x, e.y, e.nx, e.ny) < .01 && (e.death = .001), CanvasUtils.drawImageHd(i, X + e.x, j + e.y, e
         .angle, 0, 0, 1)
     }
@@ -10090,10 +9715,9 @@ var ent, inhandID, weapon, Render = function () {
           World.PLAYER.id || -1 !== World.PLAYER.team && World.PLAYER.team === World.players[i.pid].team && World
           .players[i.pid].teamUid === World.teams[World.PLAYER.team].uid)) {
         var _ = Math2d.fastDist(Q, q, i.x, i.y);
-        if (_ < Be) return World.PLAYER.packetId = e.packetId,
-          World.PLAYER.buildingId = i.id, World.PLAYER.buildingPid = i.pid, World.PLAYER.buildingArea = e.area, Be =
-          _, 0 === World.PLAYER.interaction && (World.PLAYER.extraLoot = 1), World.PLAYER.interaction = 2, World
-          .PLAYER.eInteract = e.interact, 1
+        if (_ < Be) return World.PLAYER.packetId = e.packetId, World.PLAYER.buildingId = i.id, World.PLAYER
+          .buildingPid = i.pid, World.PLAYER.buildingArea = e.area, Be = _, 0 === World.PLAYER.interaction && (World
+            .PLAYER.extraLoot = 1), World.PLAYER.interaction = 2, World.PLAYER.eInteract = e.interact, 1
       }
       return 0
     }
@@ -10103,8 +9727,7 @@ var ent, inhandID, weapon, Render = function () {
       var t = 1 + .15 * (a.breath < 500 ? a.breath / 500 : 1 - (a.breath - 500) / 500);
       if (t *= scaleby, 1 === Ae.isLoaded) {
         ctx.globalAlpha = MathUtils.Ease.outQuad(a.hit / 500);
-        o = scaleby * (a.i * e + j + i),
-          _ = scaleby * (a.j * e + X + i);
+        o = scaleby * (a.i * e + j + i), _ = scaleby * (a.j * e + X + i);
         var d = t * Ae.width / 2,
           n = t * Ae.height / 2;
         ctx.drawImage(Ae, _ - d / 2, o - n / 2, d, n), ctx.globalAlpha = 1
@@ -10147,9 +9770,8 @@ var ent, inhandID, weapon, Render = function () {
         t = window.Math.cos(e.hurtAngle) * n, d = window.Math.sin(e.hurtAngle) * n, e.hurt -= delta
       }
       if (3e3 === e.breath && 0 !== Me && 0 === e.hurt) return CanvasUtils.drawImageHd(a.imgFull, X + e.x + t, j + e.y +
-          d, e.angle, 0, 0, _),
-        void(0 !== e.removed ? (e.death > 300 && (e.removed = 2), ctx.globalAlpha = 1) : e.born < 700 && (e.born +=
-          delta, ctx.globalAlpha = 1));
+        d, e.angle, 0, 0, _), void(0 !== e.removed ? (e.death > 300 && (e.removed = 2), ctx.globalAlpha = 1) : e
+        .born < 700 && (e.born += delta, ctx.globalAlpha = 1));
       if (CanvasUtils.drawImageHd(a.img, X + e.x + t, j + e.y + d, e.angle, 0, 0, _), a.imgTop !== window.undefined) {
         if (t = 0, d = 0, e.hurt2 > 0) {
           n = e.hurt2 > 250 ? 10 * MathUtils.Ease.inQuad((300 - e.hurt2) / 250) : 10 * MathUtils.Ease.outQuad(e.hurt2 /
@@ -10157,11 +9779,11 @@ var ent, inhandID, weapon, Render = function () {
           t = window.Math.cos(e.hurtAngle) * n, d = window.Math.sin(e.hurtAngle) * n, e.hurt2 -= delta
         }
         0 === Me ? (e.heal > 0 ? e.heal = window.Math.max(0, e.heal - delta) : e.breath += delta, e.breath > 6e3 && (e
-            .breath = 0), e.breath > 3e3 ? _ += .025 * (e.breath - 3e3) / 3e3 : _ += .025 - .025 * e.breath / 3e3) : (
-            0 === e.heal && (e.heal = e.breath), e.breath > 6e3 && (e.breath = 0), e.breath > 3e3 ? (e.breath = window
-              .Math.max(3e3, e.breath - delta), _ += .025 * (e.breath - 3e3) / 3e3) : e.breath < 3e3 && (e.breath =
-              window.Math.min(3e3, e.breath + delta), _ += .025 - .025 * e.breath / 3e3)),
-          CanvasUtils.drawImageHd(a.imgTop, X + e.x + t, j + e.y + d, e.angle, 0, 0, _)
+          .breath = 0), e.breath > 3e3 ? _ += .025 * (e.breath - 3e3) / 3e3 : _ += .025 - .025 * e.breath / 3e3) : (
+          0 === e.heal && (e.heal = e.breath), e.breath > 6e3 && (e.breath = 0), e.breath > 3e3 ? (e.breath = window
+            .Math.max(3e3, e.breath - delta), _ += .025 * (e.breath - 3e3) / 3e3) : e.breath < 3e3 && (e.breath =
+            window.Math.min(3e3, e.breath + delta), _ += .025 - .025 * e.breath / 3e3)), CanvasUtils.drawImageHd(a
+          .imgTop, X + e.x + t, j + e.y + d, e.angle, 0, 0, _)
       }
       if (0 !== e.removed ? (e.death > 300 && (e.removed = 2), ctx.globalAlpha = 1) : e.born < 700 && (e.born += delta,
           ctx.globalAlpha = 1), pathFinder)
@@ -10215,8 +9837,7 @@ var ent, inhandID, weapon, Render = function () {
         for (o = n; o <= r; o++) {
           var l = de[a][o];
           if (l.frameId === ui)
-            for (var s = l.b, g = l.i,
-                m = 0; m < g; m++) {
+            for (var s = l.b, g = l.i, m = 0; m < g; m++) {
               var c = s[m],
                 I = c.type,
                 E = Entitie.units[I][c.cycle];
@@ -10252,23 +9873,22 @@ var ent, inhandID, weapon, Render = function () {
       var o = 0,
         t = 0;
       if (0 !== e.removed) e.death += delta, ctx.globalAlpha = window.Math.max(0, MathUtils.Ease.outQuart(1 - e.death /
-          800)),
-        t = e.death / 2400;
+        800)), t = e.death / 2400;
       else if (e.born < 500) {
         var d = window.Math.min(1, MathUtils.Ease.outQuart(e.born / 500));
         ctx.globalAlpha = d
       }
       e.breath = (e.breath + delta) % 1500, o = e.breath < 750 ? .95 + .1 * MathUtils.Ease.inOutQuad(e.breath / 750) :
-        .95 + .1 * MathUtils.Ease.inOutQuad(1 - (e.breath - 750) / 750),
-        CanvasUtils.drawImageHd(LOOT[e.extra], X + e.x, j + e.y, e.angle, 0, 0, o - t), 0 !== e.removed ? (e.death >
-          800 && (e.removed = 2), ctx.globalAlpha = 1) : e.born < 500 && (e.born += delta, ctx.globalAlpha = 1)
+        .95 + .1 * MathUtils.Ease.inOutQuad(1 - (e.breath - 750) / 750), CanvasUtils.drawImageHd(LOOT[e.extra], X + e.x,
+          j + e.y, e.angle, 0, 0, o - t), 0 !== e.removed ? (e.death > 800 && (e.removed = 2), ctx.globalAlpha = 1) : e
+        .born < 500 && (e.born += delta, ctx.globalAlpha = 1)
     }
 
     function sa() {
       var e = 0;
-      fe = 0, Se[0] = 0, Se[1] = 0, Se[2] = 0, Se[3] = 0, Be = 12e3,
-        ke = 12e3, World.PLAYER.extraLoot = 0, World.PLAYER.buildingId = -1, World.PLAYER.buildingArea = -1, 1 !== World
-        .PLAYER.interaction && (World.PLAYER.interaction = -1);
+      fe = 0, Se[0] = 0, Se[1] = 0, Se[2] = 0, Se[3] = 0, Be = 12e3, ke = 12e3, World.PLAYER.extraLoot = 0, World.PLAYER
+        .buildingId = -1, World.PLAYER.buildingArea = -1, 1 !== World.PLAYER.interaction && (World.PLAYER
+          .interaction = -1);
       var i = Entitie.units[ENTITIES.length],
         a = Entitie.border[ENTITIES.length],
         _ = a.border,
@@ -10427,120 +10047,112 @@ var ent, inhandID, weapon, Render = function () {
         var i = [Math.floor(e.j), Math.floor(e.i)],
           a = [Math.floor(setx), Math.floor(sety)];
         currentPath = function (e, i, a) {
-            var _ = Math.abs,
-              o = Math.max,
-              t = 0,
-              d = e[0].length,
-              n = e.length,
-              r = d * n,
-              l = function (e, i) {
-                return o(_(e.x - i.x), _(e.y - i.y))
-              },
-              s = function (e, i, a, _, o, t, d, n, r) {
-                e && (a && m(d, o) && r.push({
-                  x: d,
-                  y: o
-                }), _ && m(n, o) && r.push({
-                  x: n,
-                  y: o
-                }));
-                i && (a && m(d, t) && r.push({
-                  x: d,
-                  y: t
-                }), _ && m(n, t) && r.push({
-                  x: n,
-                  y: t
-                }))
-              };
+          var _ = Math.abs,
+            o = Math.max,
+            t = 0,
+            d = e[0].length,
+            n = e.length,
+            r = d * n,
+            l = function (e, i) {
+              return o(_(e.x - i.x), _(e.y - i.y))
+            },
+            s = function (e, i, a, _, o, t, d, n, r) {
+              e && (a && m(d, o) && r.push({
+                x: d,
+                y: o
+              }), _ && m(n, o) && r.push({
+                x: n,
+                y: o
+              }));
+              i && (a && m(d, t) && r.push({
+                x: d,
+                y: t
+              }), _ && m(n, t) && r.push({
+                x: n,
+                y: t
+              }))
+            };
 
-            function g(e, i) {
-              var a = i - 1,
-                _ = i + 1,
-                o = e + 1,
-                t = e - 1,
-                r = a > -1 && m(e, a),
-                l = _ < n && m(e, _),
-                g = o < d && m(o, i),
-                c = t > -1 && m(t, i),
-                I = [];
-              return r && I.push({
-                x: e,
-                y: a
-              }), g && I.push({
-                x: o,
-                y: i
-              }), l && I.push({
-                x: e,
-                y: _
-              }), c && I.push({
-                x: t,
-                y: i
-              }), s(r, l, g, c, a, _, o, t, I), I
+          function g(e, i) {
+            var a = i - 1,
+              _ = i + 1,
+              o = e + 1,
+              t = e - 1,
+              r = a > -1 && m(e, a),
+              l = _ < n && m(e, _),
+              g = o < d && m(o, i),
+              c = t > -1 && m(t, i),
+              I = [];
+            return r && I.push({
+              x: e,
+              y: a
+            }), g && I.push({
+              x: o,
+              y: i
+            }), l && I.push({
+              x: e,
+              y: _
+            }), c && I.push({
+              x: t,
+              y: i
+            }), s(r, l, g, c, a, _, o, t, I), I
+          }
+
+          function m(i, a) {
+            return null != e[i] && null != e[i][a] && (e[i][a] <= t || 2 === e[i][a])
+          }
+
+          function c(e, i) {
+            return {
+              Parent: e,
+              value: i.x + i.y * d,
+              x: i.x,
+              y: i.y,
+              f: 0,
+              g: 0
             }
-
-            function m(i, a) {
-              return null != e[i] && null != e[i][a] && (e[i]
-                [a] <= t || 2 === e[i]
-                [a])
-            }
-
-            function c(e, i) {
-              return {
-                Parent: e,
-                value: i.x + i.y * d,
-                x: i.x,
-                y: i.y,
-                f: 0,
-                g: 0
+          }
+          return function () {
+            for (var e, _, o, t, d, n, s, m, I = c(null, {
+                x: i[0],
+                y: i[1]
+              }), E = c(null, {
+                x: a[0],
+                y: a[1]
+              }), u = new Array(r), L = [I], p = [], R = []; t = L.length;) {
+              for (d = r, n = -1, s = 0; s < t; s++) L[s].f < d && (d = L[s].f, n = s);
+              if ((_ = L.splice(n, 1)[0]).value === E.value) {
+                o = p[p.push(_) - 1];
+                do {
+                  R.push([o.x, o.y])
+                } while (o = o.Parent);
+                u = p = L = [], R.reverse()
+              } else {
+                for (s = 0, m = (e = g(_.x, _.y)).length; s < m; s++) u[(o = c(_, e[s])).value] || (o.g = _.g + l(e[
+                  s], _), o.f = o.g + l(e[s], E), L.push(o), u[o.value] = !0);
+                p.push(_)
               }
             }
-            return function () {
-              for (var e, _, o, t, d,
-                  n, s, m, I = c(null, {
-                    x: i[0],
-                    y: i[1]
-                  }), E = c(null, {
-                    x: a[0],
-                    y: a[1]
-                  }), u = new Array(r), L = [I], p = [],
-                  R = []; t = L.length;) {
-                for (d = r, n = -1, s = 0; s < t; s++) L[s].f < d && (d = L[s].f, n = s);
-                if ((_ = L.splice(n, 1)[0]).value === E.value) {
-                  o = p[p.push(_) - 1];
-                  do {
-                    R.push([o.x, o.y])
-                  } while (o = o.Parent);
-                  u = p = L = [], R.reverse()
-                } else {
-                  for (s = 0, m = (e = g(_.x, _.y)).length; s < m; s++) u[(o = c(_, e[s])).value] || (o.g = _.g + l(e[
-                    s], _), o.f = o.g + l(e[s], E), L.push(o), u[o.value] = !0);
-                  p.push(_)
-                }
-              }
-              return R
-            }()
-          }(pworld, pathStart = i, pathEnd = a), e.currentPath = currentPath,
-          pathFinder && (function (e) {
-            e.currentPath = currentPath;
-            for (var i = [], a = [],
-                _ = 0; _ < currentPath.length; _++) {
-              i.push([o]), a.push([
-                t
-              ]);
-              var o = scaleby * (100 * currentPath[_][1] + j + 50),
-                t = scaleby * (100 * currentPath[_][0] + X + 50)
-            }
-            for (ctx.beginPath(a[0], i[0]), _ = 1; _ < currentPath.length; _++) ctx.lineTo(a[_], i[_]),
-              ctx.strokeStyle = "#00FF7F", ctx.stroke()
-          }(e), function () {
-            e.currentPath = currentPath;
-            var i = scaleby * (100 * e.j + X + 50),
-              a = scaleby * (100 * e.i + j + 50);
-            ctx.strokeRect(i - 20, a - 20, 40, 40), ctx.strokeStyle = "#00FF7F";
-            for (var _ = 0; _ < currentPath.length; _++) var o = scaleby * (100 * currentPath[_][0] + X + 50),
-              t = scaleby * (100 * currentPath[_][1] + j + 50);
-            ctx.strokeRect(o - 20, t - 20, 40, 40), ctx.strokeStyle = "#e2f553"
-          }())
+            return R
+          }()
+        }(pworld, pathStart = i, pathEnd = a), e.currentPath = currentPath, pathFinder && (function (e) {
+          e.currentPath = currentPath;
+          for (var i = [], a = [], _ = 0; _ < currentPath.length; _++) {
+            i.push([o]), a.push([t]);
+            var o = scaleby * (100 * currentPath[_][1] + j + 50),
+              t = scaleby * (100 * currentPath[_][0] + X + 50)
+          }
+          for (ctx.beginPath(a[0], i[0]), _ = 1; _ < currentPath.length; _++) ctx.lineTo(a[_], i[_]), ctx
+            .strokeStyle = "#00FF7F", ctx.stroke()
+        }(e), function () {
+          e.currentPath = currentPath;
+          var i = scaleby * (100 * e.j + X + 50),
+            a = scaleby * (100 * e.i + j + 50);
+          ctx.strokeRect(i - 20, a - 20, 40, 40), ctx.strokeStyle = "#00FF7F";
+          for (var _ = 0; _ < currentPath.length; _++) var o = scaleby * (100 * currentPath[_][0] + X + 50),
+            t = scaleby * (100 * currentPath[_][1] + j + 50);
+          ctx.strokeRect(o - 20, t - 20, 40, 40), ctx.strokeStyle = "#e2f553"
+        }())
       }
     }
     var ca = CanvasUtils.options.forceResolution,
@@ -10557,13 +10169,12 @@ var ent, inhandID, weapon, Render = function () {
         qi = window.document.getElementById("bod").onresize, World.gameMode === World.__BR__ && (ni.clearRect(0, 0, s,
             s), si.clearRect(0, 0, s, s), Ee = 0), Le = 0, Render.explosionShake = 0, Render.shake = 0, Me = i !==
           window.undefined ? 0 : A, ee = g !== window.undefined ? g : .01, Ue = a !== window.undefined ? a : 0, Q = 0,
-          q = 0, World.PLAYER.x = 0, World.PLAYER.y = 0, World.PLAYER._i = 0,
-          World.PLAYER._j = 0, se.effect = 0, se.move = 0, ge.effect = 0, ge.move = 0, ea.id = -1, ea.uid = -1;
+          q = 0, World.PLAYER.x = 0, World.PLAYER.y = 0, World.PLAYER._i = 0, World.PLAYER._j = 0, se.effect = 0, se
+          .move = 0, ge.effect = 0, ge.move = 0, ea.id = -1, ea.uid = -1;
         var m = localStorage2.getItem("particles");
         null !== m && (oe = window.Number(m)), xi = "", Vi = null, MapManager.width = 150, MapManager.height = 150,
-          Render.__TRANSFORM__ = 100 * MapManager.width / 255, _ = MapManager.width,
-          d = MapManager.height, t = e * d, n = 824 / (o = e * _), l = (r = 568) + b, c = o / 8, World.setSizeWorld(_,
-            d);
+          Render.__TRANSFORM__ = 100 * MapManager.width / 255, _ = MapManager.width, d = MapManager.height, t = e * d,
+          n = 824 / (o = e * _), l = (r = 568) + b, c = o / 8, World.setSizeWorld(_, d);
         for (var I = 0; I < d; I++) {
           de[I] = [];
           for (var E = 0; E < _; E++) de[I][E] = new fi
@@ -10572,22 +10183,19 @@ var ent, inhandID, weapon, Render = function () {
         for (I = 0; I < u; I++) he[I] = null
       },
       world: function () {
-        Render.globalTime += delta,
-          1 === pa && function () {
+        Render.globalTime += delta, 1 === pa && function () {
             ua <= 0 && Ea + delta > 1500 ? (pa = 0, Ea = 1500) : (ua -= delta, La += delta, Ea = (Ea + delta) % 1500);
             var e = MathUtils.Ease.inOutQuad((Ea > 750 ? 1500 - Ea : Ea) / 750);
-            ua < 750 && Ea > 750 && 1500 - Ea > ua ? e = .5 * window.Math.max(0,
-              (1500 - Ea) / 750) + .5 * e : La > 750 && (e = .5 + .5 * e);
+            ua < 750 && Ea > 750 && 1500 - Ea > ua ? e = .5 * window.Math.max(0, (1500 - Ea) / 750) + .5 * e : La >
+              750 && (e = .5 + .5 * e);
             var i = 20 * e;
-            Render.scale = Ia + e,
-              CanvasUtils.options.scheduledRatio = CanvasUtils.options.deviceRatio / (ca + i),
+            Render.scale = Ia + e, CanvasUtils.options.scheduledRatio = CanvasUtils.options.deviceRatio / (ca + i),
               qi()
           }(), ie = CanvasUtils.lerp(ie, Render.scale + Se[0] + Se[1] + Se[2] + Se[3], ee), ae = scaleby, canwns =
           canw / (scaleby += ie * scaleby), canhns = canh / scaleby,
           function () {
-            for (var e = Entitie.units[__ENTITIE_PLAYER__],
-                i = Entitie.border[__ENTITIE_PLAYER__],
-                _ = i.border, o = 0; o < _; o++) {
+            for (var e = Entitie.units[__ENTITIE_PLAYER__], i = Entitie.border[__ENTITIE_PLAYER__], _ = i.border, o =
+                0; o < _; o++) {
               var t = e[i.cycle[o]];
               if (t.pid === World.PLAYER.id) {
                 Me = Math2d.fastDist(World.PLAYER.x, World.PLAYER.y, t.x, t.y) < 1 ? window.Math.max(0, Me - delta) :
@@ -10595,10 +10203,9 @@ var ent, inhandID, weapon, Render = function () {
                 var d = ENTITIES[__ENTITIE_PLAYER__].clothes[255 & t.extra],
                   n = World.gauges;
                 d.rad !== window.undefined ? (n.rad.bonus = d.rad, n.cold.bonus = d.warm) : (n.rad.bonus = 0, n.cold
-                    .bonus = 0), Q = t.x, q = t.y, World.PLAYER.x = t.x,
-                  World.PLAYER.y = t.y, World.PLAYER._i = t.i, World.PLAYER._j = t.j,
-                  World.PLAYER.isBuilding = 6 === ENTITIES[__ENTITIE_PLAYER__].weapons[t.extra >> 8 & 255].type ? 1 :
-                  0;
+                    .bonus = 0), Q = t.x, q = t.y, World.PLAYER.x = t.x, World.PLAYER.y = t.y, World.PLAYER._i = t.i,
+                  World.PLAYER._j = t.j, World.PLAYER.isBuilding = 6 === ENTITIES[__ENTITIE_PLAYER__].weapons[t
+                    .extra >> 8 & 255].type ? 1 : 0;
                 var r = window.Math.min(canh4ns, canw4ns),
                   l = (r = Mouse.dist > r ? a * window.Math.min((Mouse.dist - r) / r, 1) : 0) * window.Math.cos(Mouse
                     .angle),
@@ -10609,9 +10216,9 @@ var ent, inhandID, weapon, Render = function () {
                 return Render.shake > 0 && (Render.shake -= 1, g += 6 * window.Math.random() - 3, m += 6 * window.Math
                     .random() - 3), Render.explosionShake > 0 && (Render.explosionShake -= 1, g += 18 * window.Math
                     .random() - 9, m += 18 * window.Math.random() - 9), X = canw2 / scaleby - t.x - Z + g, j = canh2 /
-                  scaleby - t.y - $ + m, t.x + Z, t.y + $,
-                  rowx = ~~((Mouse.x * scaleby / scaleby + Z - canw2 / scaleby + Q) / 100), void(rowy = ~~((Mouse.y *
-                    scaleby / scaleby + $ - canh2 / scaleby + q) / 100))
+                  scaleby - t.y - $ + m, t.x + Z, t.y + $, rowx = ~~((Mouse.x * scaleby / scaleby + Z - canw2 /
+                    scaleby + Q) / 100), void(rowy = ~~((Mouse.y * scaleby / scaleby + $ - canh2 / scaleby + q) /
+                    100))
               }
             }
           }(), Bi(), Ki(), sa(),
@@ -10629,48 +10236,36 @@ var ent, inhandID, weapon, Render = function () {
                 l = o.yCenter[n] + j + i + e * World.PLAYER.iBuild;
               if (World.PLAYER.jBuild >= 0 && World.PLAYER.iBuild >= 0 && World.PLAYER.jBuild < _ && World.PLAYER
                 .iBuild < d) {
-                var s = de[World.PLAYER.iBuild][
-                    World.PLAYER.jBuild
-                  ],
+                var s = de[World.PLAYER.iBuild][World.PLAYER.jBuild],
                   g = -1 === World.PLAYER.team ? -2 : World.PLAYER.team;
                 s.tile !== ui || 2 === o.zid && 0 !== s.tilePid && s.category !== SKILLS.__PLANT__ ? (o.detail
                   .category === SKILLS.__PLANT__ || 2 === o.zid || 0 !== s.pid && s.pid !== World.PLAYER.id && World
                   .players[s.pid].team !== g) && s.ground === ui || o.iTile !== window.undefined && (n % 2 == 0 && (
-                  World.PLAYER.iBuild < 1 || World.PLAYER.iBuild >= d - 1 || de[World.PLAYER.iBuild + 1][
-                    World.PLAYER.jBuild
-                  ].tile === ui || de[World.PLAYER.iBuild + 1][
-                    World.PLAYER.jBuild
-                  ].ground === ui && de[World.PLAYER.iBuild + 1][
-                    World.PLAYER.jBuild
-                  ].pid !== World.PLAYER.id && 0 !== de[World.PLAYER.iBuild + 1][
-                    World.PLAYER.jBuild
-                  ].pid && World.players[de[World.PLAYER.iBuild + 1]
-                    [World.PLAYER.jBuild].pid].team !== g || de[World.PLAYER.iBuild - 1][
-                    World.PLAYER.jBuild
-                  ].tile === ui || de[World.PLAYER.iBuild - 1][
-                    World.PLAYER.jBuild
-                  ].ground === ui && de[World.PLAYER.iBuild - 1][
-                    World.PLAYER.jBuild
-                  ].pid !== World.PLAYER.id && 0 !== de[World.PLAYER.iBuild - 1][
-                    World.PLAYER.jBuild
-                  ].pid && World.players[de[World.PLAYER.iBuild - 1]
-                    [World.PLAYER.jBuild].pid].team !== g) || n % 2 == 1 && (World.PLAYER.jBuild < 1 || World
-                  .PLAYER.jBuild >= _ - 1 || de[World.PLAYER.iBuild][World.PLAYER.jBuild + 1].tile === ui || de[
-                    World.PLAYER.iBuild][World.PLAYER.jBuild + 1].ground === ui && de[World.PLAYER.iBuild][World
-                    .PLAYER.jBuild + 1
-                  ].pid !== World.PLAYER.id && 0 !== de[World.PLAYER.iBuild][World.PLAYER.jBuild + 1].pid && World
-                  .players[de[World.PLAYER.iBuild][
-                    World.PLAYER.jBuild + 1
+                  World.PLAYER.iBuild < 1 || World.PLAYER.iBuild >= d - 1 || de[World.PLAYER.iBuild + 1][World
+                    .PLAYER.jBuild
+                  ].tile === ui || de[World.PLAYER.iBuild + 1][World.PLAYER.jBuild].ground === ui && de[World
+                    .PLAYER.iBuild + 1][World.PLAYER.jBuild].pid !== World.PLAYER.id && 0 !== de[World.PLAYER
+                    .iBuild + 1][World.PLAYER.jBuild].pid && World.players[de[World.PLAYER.iBuild + 1][World
+                    .PLAYER.jBuild
+                  ].pid].team !== g || de[World.PLAYER.iBuild - 1][World.PLAYER.jBuild].tile === ui || de[World
+                    .PLAYER.iBuild - 1][World.PLAYER.jBuild].ground === ui && de[World.PLAYER.iBuild - 1][World
+                    .PLAYER.jBuild
+                  ].pid !== World.PLAYER.id && 0 !== de[World.PLAYER.iBuild - 1][World.PLAYER.jBuild].pid && World
+                  .players[de[World.PLAYER.iBuild - 1][World.PLAYER.jBuild].pid].team !== g) || n % 2 == 1 && (
+                  World.PLAYER.jBuild < 1 || World.PLAYER.jBuild >= _ - 1 || de[World.PLAYER.iBuild][World.PLAYER
+                    .jBuild + 1
+                  ].tile === ui || de[World.PLAYER.iBuild][World.PLAYER.jBuild + 1].ground === ui && de[World
+                    .PLAYER.iBuild][World.PLAYER.jBuild + 1].pid !== World.PLAYER.id && 0 !== de[World.PLAYER
+                    .iBuild][World.PLAYER.jBuild + 1].pid && World.players[de[World.PLAYER.iBuild][World.PLAYER
+                    .jBuild + 1
                   ].pid].team !== g || de[World.PLAYER.iBuild][World.PLAYER.jBuild - 1].tile === ui || de[World
                     .PLAYER.iBuild][World.PLAYER.jBuild - 1].ground === ui && de[World.PLAYER.iBuild][World.PLAYER
                     .jBuild - 1
                   ].pid !== World.PLAYER.id && 0 !== de[World.PLAYER.iBuild][World.PLAYER.jBuild - 1].pid && World
-                  .players[de[World.PLAYER.iBuild][
-                    World.PLAYER.jBuild - 1
-                  ].pid].team !== g || World.PLAYER._i === World.PLAYER.iBuild)) ? (World.PLAYER.canBuild = 0,
-                  CanvasUtils.drawImageHd(o.redprint, r, l, n * v, 0, 0, 1)) : (World.PLAYER.canBuild = 1,
-                  CanvasUtils.drawImageHd(o.blueprint, r, l, n * v, 0, 0, 1)) : (World.PLAYER.canBuild = 1,
-                  CanvasUtils.drawImageHd(o.redprint, r, l, n * v, 0, 0, 1))
+                  .players[de[World.PLAYER.iBuild][World.PLAYER.jBuild - 1].pid].team !== g || World.PLAYER._i ===
+                  World.PLAYER.iBuild)) ? (World.PLAYER.canBuild = 0, CanvasUtils.drawImageHd(o.redprint, r, l, n *
+                  v, 0, 0, 1)) : (World.PLAYER.canBuild = 1, CanvasUtils.drawImageHd(o.blueprint, r, l, n * v, 0, 0,
+                  1)) : (World.PLAYER.canBuild = 1, CanvasUtils.drawImageHd(o.redprint, r, l, n * v, 0, 0, 1))
               }
               if (1 !== le.isLoaded) return void(le = CanvasUtils.loadImage(u, le));
               a = 1 === o.wall || World.PLAYER.interaction >= 0 ? window.Math.max(0, World.PLAYER.hintRotate -
@@ -10681,38 +10276,26 @@ var ent, inhandID, weapon, Render = function () {
               var m = scaleby * le.width / 2,
                 c = scaleby * le.height / 2;
               ctx.drawImage(le, (X + Q) * scaleby - m / 2, window.Math.max(10 * scaleby, (j + q) * scaleby - c / 2 -
-                  65 * scaleby - 60 * scaleby), m, c),
-                ctx.globalAlpha = 1
+                65 * scaleby - 60 * scaleby), m, c), ctx.globalAlpha = 1
             }
             World.PLAYER.hintRotate = a
           }(), World.transition > 0 && function () {
             var e, i, a = ctx;
-            i = 1 - MathUtils.Ease.inQuad(World.transition / 1e3), Ra.width = canvas.width,
-              Ra.height = canvas.height, (ctx = wa).save();
+            i = 1 - MathUtils.Ease.inQuad(World.transition / 1e3), Ra.width = canvas.width, Ra.height = canvas.height,
+              (ctx = wa).save();
             var _ = CanvasUtils.options.scheduledRatio / CanvasUtils.options.backingStoreRatio;
-            ctx.scale(_, _), e = INVENTORY2, INVENTORY2 = INVENTORY, INVENTORY = e, e = PARTICLES2,
-              PARTICLES2 = PARTICLES,
-              PARTICLES = e, e = LOOT2, LOOT2 = LOOT,
-              LOOT = e, e = RESOURCES2, RESOURCES2 = RESOURCES, RESOURCES = e, e = ENTITIES2,
-              ENTITIES2 = ENTITIES,
-              ENTITIES = e, e = LIGHTFIRE2, LIGHTFIRE2 = LIGHTFIRE, LIGHTFIRE = e, e = GROUND2,
-              GROUND2 = GROUND,
-              GROUND = e, e = AI2,
-              AI2 = AI, AI = e, ctx.fillStyle = 0 === World.day ? "#0B2129" : "#3D5942", ctx.fillRect(0, 0, canw,
-                canh),
-              Bi(), sa(), e = INVENTORY2, INVENTORY2 = INVENTORY, INVENTORY = e, e = PARTICLES2,
-              PARTICLES2 = PARTICLES,
-              PARTICLES = e, e = LOOT2, LOOT2 = LOOT,
-              LOOT = e, e = RESOURCES2, RESOURCES2 = RESOURCES, RESOURCES = e, e = ENTITIES2,
-              ENTITIES2 = ENTITIES,
-              ENTITIES = e, e = LIGHTFIRE2, LIGHTFIRE2 = LIGHTFIRE, LIGHTFIRE = e, e = GROUND2,
-              GROUND2 = GROUND,
-              GROUND = e, e = AI2,
-              AI2 = AI, AI = e, ctx.restore(), (ctx = a).globalAlpha = i, ctx.drawImage(Ra, 0, 0, canw, canh), ctx
-              .globalAlpha = 1, World.transition = window.Math.max(0, World.transition - delta),
-              0 === World.transition && World.changeDayCycle()
-          }(), Entitie.cleanRemoved(),
-          ui++;
+            ctx.scale(_, _), e = INVENTORY2, INVENTORY2 = INVENTORY, INVENTORY = e, e = PARTICLES2, PARTICLES2 =
+              PARTICLES, PARTICLES = e, e = LOOT2, LOOT2 = LOOT, LOOT = e, e = RESOURCES2, RESOURCES2 = RESOURCES,
+              RESOURCES = e, e = ENTITIES2, ENTITIES2 = ENTITIES, ENTITIES = e, e = LIGHTFIRE2, LIGHTFIRE2 =
+              LIGHTFIRE, LIGHTFIRE = e, e = GROUND2, GROUND2 = GROUND, GROUND = e, e = AI2, AI2 = AI, AI = e, ctx
+              .fillStyle = 0 === World.day ? "#0B2129" : "#3D5942", ctx.fillRect(0, 0, canw, canh), Bi(), sa(), e =
+              INVENTORY2, INVENTORY2 = INVENTORY, INVENTORY = e, e = PARTICLES2, PARTICLES2 = PARTICLES, PARTICLES =
+              e, e = LOOT2, LOOT2 = LOOT, LOOT = e, e = RESOURCES2, RESOURCES2 = RESOURCES, RESOURCES = e, e =
+              ENTITIES2, ENTITIES2 = ENTITIES, ENTITIES = e, e = LIGHTFIRE2, LIGHTFIRE2 = LIGHTFIRE, LIGHTFIRE = e,
+              e = GROUND2, GROUND2 = GROUND, GROUND = e, e = AI2, AI2 = AI, AI = e, ctx.restore(), (ctx = a)
+              .globalAlpha = i, ctx.drawImage(Ra, 0, 0, canw, canh), ctx.globalAlpha = 1, World.transition = window
+              .Math.max(0, World.transition - delta), 0 === World.transition && World.changeDayCycle()
+          }(), Entitie.cleanRemoved(), ui++;
         for (var o = 0; o < SOUND_LENGTH; o++) soundLimit[o] = 0;
         canwns = canw / (scaleby = ae), canhns = canh / scaleby
       },
@@ -10728,12 +10311,11 @@ var ent, inhandID, weapon, Render = function () {
                 var a = World.players[World.PLAYER.teamJoin];
                 null === a.nicknameLabel && (a.nicknameLabel = GUI.renderText(a.nickname, "'Viga', sans-serif",
                     "#FFFFFF", 38, 400, window.undefined, 16, 25, window.undefined, window.undefined, window
-                    .undefined, window.undefined, "#000000", 12)),
-                  ctx.drawImage(oi, e, i, scaleby * oi.wh, scaleby * oi.h2), 0 !== a.nicknameLabel.width && 0 !== a
-                  .nicknameLabel.height && ctx.drawImage(a.nicknameLabel, e + 20 * scaleby, i + 6 * scaleby, a
-                    .nicknameLabel.wh * scaleby, a.nicknameLabel.h2 * scaleby),
-                  Game.acceptMember.draw(), Game.refuseMember.draw(), World.PLAYER.teamEffect < 333 && (ctx
-                    .globalAlpha = 1)
+                    .undefined, window.undefined, "#000000", 12)), ctx.drawImage(oi, e, i, scaleby * oi.wh, scaleby *
+                    oi.h2), 0 !== a.nicknameLabel.width && 0 !== a.nicknameLabel.height && ctx.drawImage(a
+                    .nicknameLabel, e + 20 * scaleby, i + 6 * scaleby, a.nicknameLabel.wh * scaleby, a.nicknameLabel
+                    .h2 * scaleby), Game.acceptMember.draw(), Game.refuseMember.draw(), World.PLAYER.teamEffect <
+                  333 && (ctx.globalAlpha = 1)
               }
             } else oi = CanvasUtils.loadImage(w, oi)
           }(e + 250 * scaleby, i), 1 === ze.isLoaded) {
@@ -10750,9 +10332,8 @@ var ent, inhandID, weapon, Render = function () {
                 0, 0, 0, 1), ctx.globalAlpha = 1) : Ee > 0 && (Ee = window.Math.max(0, Ee - delta), ctx.globalAlpha =
                 MathUtils.Ease.inQuad(Ee / 500), CanvasUtils.drawImageHd(Ie, canw2ns, 58, 0, 0, 0, 1), ctx
                 .globalAlpha = 1), ctx.drawImage(ri.img, o / 2, t / 2, b, b, e, i, d, d), ctx.globalAlpha = mi > 600 ?
-              MathUtils.Ease.inOutQuad((1200 - mi) / 600) : MathUtils.Ease.inOutQuad(mi / 600),
-              mi = (mi + delta) % 1200, ctx.drawImage(gi.img, o / 2, t / 2, b, b, e, i, d, d), ctx.globalAlpha = 1,
-              Pi(0, i), Fi(e, i, 0)
+              MathUtils.Ease.inOutQuad((1200 - mi) / 600) : MathUtils.Ease.inOutQuad(mi / 600), mi = (mi + delta) %
+              1200, ctx.drawImage(gi.img, o / 2, t / 2, b, b, e, i, d, d), ctx.globalAlpha = 1, Pi(0, i), Fi(e, i, 0)
           } else 0 === World.PLAYER.ghoul && (1 === World.gauges.rad.decrease ? (Le = window.Math.min(1e3, Le +
             delta), ctx.globalAlpha = MathUtils.Ease.inQuad(Le / 500), CanvasUtils.drawImageHd(ue, canw2ns, 58, 0,
               0, 0, 1), ctx.globalAlpha = 1) : Le > 0 && (Le = window.Math.max(0, Le - delta), ctx.globalAlpha =
@@ -10763,8 +10344,7 @@ var ent, inhandID, weapon, Render = function () {
           var g = e / scaleby,
             m = i / scaleby;
           if (-1 !== World.PLAYER.team || 0 !== World.PLAYER.ghoul && World.playerAlive < 6)
-            for (var I = Entitie.units[__ENTITIE_PLAYER__],
-                E = 0; E < World.PLAYER.teamLength; E++) {
+            for (var I = Entitie.units[__ENTITIE_PLAYER__], E = 0; E < World.PLAYER.teamLength; E++) {
               var u = World.PLAYER.teamPos[E];
               if (!(u.old < 0)) {
                 var L = World.players[u.id];
@@ -10792,10 +10372,10 @@ var ent, inhandID, weapon, Render = function () {
               .skillPoint > 0 || se.effect > 0)) {
             var S = (se.move + delta) % 1e3;
             se.move = S, se.move < 500 ? e += 260 + 15 * MathUtils.Ease.inOutQuad(S / 500) : e += 260 + 15 * MathUtils
-              .Ease.inOutQuad((1e3 - S) / 500), ctx.globalAlpha = MathUtils.Ease.inQuad(se.effect),
-              CanvasUtils.drawImageHd(se, e, i + 31, 0, 0, 0, 1), ctx.globalAlpha = 1, World.PLAYER.skillPoint <= 0 ||
-              1 === Game.getSkillBoxState() ? se.effect = window.Math.max(0, se.effect - delta / 500) : se.effect <
-              1 && (se.effect = window.Math.min(1, se.effect + delta / 500))
+              .Ease.inOutQuad((1e3 - S) / 500), ctx.globalAlpha = MathUtils.Ease.inQuad(se.effect), CanvasUtils
+              .drawImageHd(se, e, i + 31, 0, 0, 0, 1), ctx.globalAlpha = 1, World.PLAYER.skillPoint <= 0 || 1 === Game
+              .getSkillBoxState() ? se.effect = window.Math.max(0, se.effect - delta / 500) : se.effect < 1 && (se
+                .effect = window.Math.min(1, se.effect + delta / 500))
           }
         } else ze = CanvasUtils.loadImage("img/borderBigMinimap2.png", ze)
       },
@@ -10813,12 +10393,11 @@ var ent, inhandID, weapon, Render = function () {
           E = I.length / 2;
         if (E > 0) {
           b = window.Math.floor(n / scaleby + window.Math.min(window.Math.max(10, I[0] * c), 400)), A = window.Math
-            .floor(d / scaleby + window.Math.min(window.Math.max(10, I[1] * m), 400)),
-            CanvasUtils.drawImageHd(Xe, A, b, 0, 0, 0, 1);
+            .floor(d / scaleby + window.Math.min(window.Math.max(10, I[1] * m), 400)), CanvasUtils.drawImageHd(Xe, A,
+              b, 0, 0, 0, 1);
           for (var u = 1; u < E; u++) b = window.Math.floor(n / scaleby + window.Math.min(window.Math.max(10, I[2 *
-              u] * c), 400)),
-            A = window.Math.floor(d / scaleby + window.Math.min(window.Math.max(10, I[1 + 2 * u] * m), 400)),
-            CanvasUtils.drawImageHd(Je, A, b, 0, 0, 0, 1)
+            u] * c), 400)), A = window.Math.floor(d / scaleby + window.Math.min(window.Math.max(10, I[1 + 2 * u] *
+            m), 400)), CanvasUtils.drawImageHd(Je, A, b, 0, 0, 0, 1)
         }
         if (World.gameMode === World.__BR__) {
           var L = r + 205,
@@ -10835,8 +10414,8 @@ var ent, inhandID, weapon, Render = function () {
               var T, O = World.players[w.id],
                 A = window.Math.floor(r + window.Math.min(window.Math.max(10, O.rx * m), 400)),
                 b = window.Math.floor(l + window.Math.min(window.Math.max(10, O.ry * m), 400));
-              T = ui === O.frameId + 1 ? R[O.locatePlayer].angle : O.x % D,
-                CanvasUtils.drawImageHd(Ke, A, b, T, 0, 0, 1)
+              T = ui === O.frameId + 1 ? R[O.locatePlayer].angle : O.x % D, CanvasUtils.drawImageHd(Ke, A, b, T, 0, 0,
+                1)
             }
           }
         }
@@ -10853,17 +10432,17 @@ var ent, inhandID, weapon, Render = function () {
           _ = a.current / a._max;
         CanvasUtils.fillRect(ctx, e / scaleby + 14, i / scaleby + 71, 189 * _, 16, "#70BD56");
         var o = World.gauges.food;
-        _ = o.current / o._max,
-          CanvasUtils.fillRect(ctx, e / scaleby + 13, i / scaleby + 162, 54, 63 * -_, "#e58833");
+        _ = o.current / o._max, CanvasUtils.fillRect(ctx, e / scaleby + 13, i / scaleby + 162, 54, 63 * -_,
+        "#e58833");
         var t = World.gauges.cold;
-        _ = t.current / t._max,
-          CanvasUtils.fillRect(ctx, e / scaleby + 81, i / scaleby + 162, 54, 63 * -_, "#55B7BC");
+        _ = t.current / t._max, CanvasUtils.fillRect(ctx, e / scaleby + 81, i / scaleby + 162, 54, 63 * -_,
+        "#55B7BC");
         var d = World.gauges.stamina;
-        _ = d.current / d._max,
-          CanvasUtils.fillRect(ctx, e / scaleby + 150, i / scaleby + 162, 54, 63 * -_, "#d7c83a");
+        _ = d.current / d._max, CanvasUtils.fillRect(ctx, e / scaleby + 150, i / scaleby + 162, 54, 63 * -_,
+          "#d7c83a");
         var n = World.gauges.xp;
-        _ = n.current / n._max,
-          CanvasUtils.fillRect(ctx, e / scaleby + 226, i / scaleby + 172, 16, 77 * -_, "#FFFFFF");
+        _ = n.current / n._max, CanvasUtils.fillRect(ctx, e / scaleby + 226, i / scaleby + 172, 16, 77 * -_,
+          "#FFFFFF");
         var r, l, s = World.updateHour();
         if (s >= 1e7) {
           if (1 !== je.isLoaded) return void(je = CanvasUtils.loadImage(R, je));
@@ -10889,10 +10468,9 @@ var ent, inhandID, weapon, Render = function () {
       gaugesAfter: function (e, i) {
         var a = World.PLAYER.level;
         ne[a] === window.undefined && (ne[a] = {
-            img: GUI.renderText("" + a, "'Black Han Sans', sans-serif", "#ffffff", 44, 250, window.undefined, 18,
-              15, window.undefined, window.undefined, window.undefined, window.undefined, "#000000", 15)
-          }, ne[a].img.isLoaded = 1),
-          CanvasUtils.drawImageHd(ne[a], e / scaleby + 234, i / scaleby + 79, 0, 0, 0, 1);
+          img: GUI.renderText("" + a, "'Black Han Sans', sans-serif", "#ffffff", 44, 250, window.undefined, 18,
+            15, window.undefined, window.undefined, window.undefined, window.undefined, "#000000", 15)
+        }, ne[a].img.isLoaded = 1), CanvasUtils.drawImageHd(ne[a], e / scaleby + 234, i / scaleby + 79, 0, 0, 0, 1);
         var _ = World.gauges.rad,
           o = 1 - _.current / _._max;
         CanvasUtils.drawImageHd($e, 38 + e / scaleby, 37 + i / scaleby, window.Math.PI * o, 0, 0, 1)
@@ -10914,8 +10492,8 @@ var ent, inhandID, weapon, Render = function () {
                 .scoreSimplified, "'Viga', sans-serif", "#ffffff", 40, 150, window.undefined, 5, 12)), 0 !== d
               .leaderboardLabel.width && 0 !== d.leaderboardLabel.height && Ii.drawImage(d.leaderboardLabel, 90, 114 +
                 50 * t, d.leaderboardLabel.width, d.leaderboardLabel.height), Ii.drawImage(d.scoreLabel, 484, 114 +
-                50 * t, d.scoreLabel.width, d.scoreLabel.height),
-              1 === (n = KARMA[d.KARMA].img).isLoaded && Ii.drawImage(n, 612, 114 + 50 * t, n.width, n.height)
+                50 * t, d.scoreLabel.width, d.scoreLabel.height), 1 === (n = KARMA[d.KARMA].img).isLoaded && Ii
+              .drawImage(n, 612, 114 + 50 * t, n.width, n.height)
           }
           var n;
           if (World.PLAYER.inLeaderboard = o, 1 === o) 1 === (n = KARMA[World.PLAYER.KARMA].img).isLoaded && Ii
@@ -10956,8 +10534,7 @@ var ent, inhandID, weapon, Render = function () {
             var L = t[u.id][0];
             if (L > 0) {
               var p = INVENTORY[L].itemButton.img[0];
-              0 === p.isLoaded && (p = INVENTORY2[L].itemButton.img[0]),
-                ctx.globalAlpha = .7;
+              0 === p.isLoaded && (p = INVENTORY2[L].itemButton.img[0]), ctx.globalAlpha = .7;
               n = 68 * scaleby;
               ctx.drawImage(p, Mouse.x * scaleby - n / 2, Mouse.y * scaleby - n / 2, n, n), ctx.globalAlpha = 1
             }
@@ -10992,20 +10569,19 @@ var ent, inhandID, weapon, Render = function () {
         var I = e.pos.x,
           E = e.pos.y;
         i.pos.x = I + 594 * scaleby, i.pos.y = E + 0 * scaleby, i.draw();
-        for (var u = World.PLAYER.craftAvailable, L = World.PLAYER.recipeAvailable,
-            p = World.PLAYER.craftCategory, R = World.PLAYER.craftArea, w = 0; w < a.length; w++) {
+        for (var u = World.PLAYER.craftAvailable, L = World.PLAYER.recipeAvailable, p = World.PLAYER.craftCategory,
+            R = World.PLAYER.craftArea, w = 0; w < a.length; w++) {
           var T = a[w];
           w === p && T.setState(GUI.__BUTTON_CLICK__), T.pos.x = 10 * scaleby + I + 47 * w * scaleby, T.pos.y = E -
-            40 * scaleby,
-            T.draw()
+            40 * scaleby, T.draw()
         }
         var O = 0;
         for (w = 0; w < d.length; w++) {
           if (w === R && 1 === World.PLAYER.isInBuilding);
           else if (w !== World.PLAYER.buildingArea && 0 !== w) continue;
           T = d[w];
-          w === R && T.setState(GUI.__BUTTON_CLICK__), T.pos.x = I - 40 * scaleby,
-            T.pos.y = 10 * scaleby + E + 43 * O * scaleby, T.draw(), O++
+          w === R && T.setState(GUI.__BUTTON_CLICK__), T.pos.x = I - 40 * scaleby, T.pos.y = 10 * scaleby + E + 43 *
+            O * scaleby, T.draw(), O++
         }
         n.pos.x = I + 364 * scaleby, n.pos.y = E + 27 * scaleby, n.draw();
         var A = Game.craft,
@@ -11035,19 +10611,16 @@ var ent, inhandID, weapon, Render = function () {
                 .5, _.setState(GUI.__BUTTON_OUT__), _.draw(), ctx.globalAlpha = 1)) : (o.pos.x = I + 454 * scaleby, o
               .pos.y = E + 153 * scaleby, o.draw()), 1 !== Ce.isLoaded) return void(Ce = CanvasUtils.loadImage(
             "img/craft-gauge.png", Ce));
-          1 === World.PLAYER.isInBuilding ? 0 !== World.PLAYER.building.time && 0 !== World.PLAYER.building.fuel && (
-              (N = World.PLAYER.building.time - window.Date.now()) < 0 && (World.PLAYER.building.time = 0), N =
-              MathUtils.Ease.inOutQuad(1 - N / World.PLAYER.building.timeMax)) : 0 !== World.PLAYER.crafting && (
-              (N = World.PLAYER.crafting - window.Date.now()) < 0 && (World.PLAYER.crafting = 0), N = MathUtils.Ease
-              .inOutQuad(1 - N / World.PLAYER.craftingMax)),
-            N = window.Math.min(1, window.Math.max(0, N)),
-            y = scaleby * Ce.width / 2, S = scaleby * Ce.height / 2;
+          1 === World.PLAYER.isInBuilding ? 0 !== World.PLAYER.building.time && 0 !== World.PLAYER.building.fuel && ((
+                N = World.PLAYER.building.time - window.Date.now()) < 0 && (World.PLAYER.building.time = 0), N =
+              MathUtils.Ease.inOutQuad(1 - N / World.PLAYER.building.timeMax)) : 0 !== World.PLAYER.crafting && ((N =
+                World.PLAYER.crafting - window.Date.now()) < 0 && (World.PLAYER.crafting = 0), N = MathUtils.Ease
+              .inOutQuad(1 - N / World.PLAYER.craftingMax)), N = window.Math.min(1, window.Math.max(0, N)), y =
+            scaleby * Ce.width / 2, S = scaleby * Ce.height / 2;
           var M = I + 356 * scaleby,
             W = E + 206 * scaleby;
-          ctx.fillStyle = "#A29742",
-            h = 2 * (U = 3 * scaleby),
-            ctx.fillRect(window.Math.floor(M + U), window.Math.floor(W + U), window.Math.floor((y - h) * N), window
-              .Math.floor(S - h)), ctx.drawImage(Ce, M, W, y, S)
+          ctx.fillStyle = "#A29742", h = 2 * (U = 3 * scaleby), ctx.fillRect(window.Math.floor(M + U), window.Math
+            .floor(W + U), window.Math.floor((y - h) * N), window.Math.floor(S - h)), ctx.drawImage(Ce, M, W, y, S)
         } else {
           var C = World.PLAYER.craftAvailable[World.PLAYER.craftIdSelected];
           if (t.pos.x = I + 454 * scaleby, t.pos.y = E + 153 * scaleby, 1 === C) t.draw();
@@ -11087,15 +10660,14 @@ var ent, inhandID, weapon, Render = function () {
               .5, 0, 0, .9);
           var V = Game.queue,
             B = World.PLAYER.building.pos;
-          b = World.PLAYER.building.len, y = 40 * scaleby,
-            S = 40 * scaleby, U = 62 * scaleby, h = 356 * scaleby, f = 237 * scaleby;
+          b = World.PLAYER.building.len, y = 40 * scaleby, S = 40 * scaleby, U = 62 * scaleby, h = 356 * scaleby, f =
+            237 * scaleby;
           for (w = 0; w < b; w++) {
             T = V[w];
             w === B ? 0 !== N && (ctx.globalAlpha = .6, CanvasUtils.drawImageHd(Fe, T.pos.x / scaleby + 20, T.pos.y /
                 scaleby + 20, 0, 0, 0, .85 * window.Math.max(.01, window.Math.min(1, N))), ctx.globalAlpha = 1) : w <
               B && (ctx.globalAlpha = .6, CanvasUtils.drawImageHd(Fe, T.pos.x / scaleby + 20, T.pos.y / scaleby + 20,
-                0, 0, 0, .85 * D), ctx.globalAlpha = 1), T.pos.x = h + I + w * U, T.pos.y = f + E,
-              T.draw()
+                0, 0, 0, .85 * D), ctx.globalAlpha = 1), T.pos.x = h + I + w * U, T.pos.y = f + E, T.draw()
           }
         }
         var k = Game.tools;
@@ -11103,8 +10675,7 @@ var ent, inhandID, weapon, Render = function () {
           (T = k[w]).pos.x = h + I + w * U, T.pos.y = f + E, T.draw()
         }
         if (World.PLAYER.skillPoint !== yi) {
-          bi.clearRect(0, 0, 280, 50),
-            yi = World.PLAYER.skillPoint;
+          bi.clearRect(0, 0, 280, 50), yi = World.PLAYER.skillPoint;
           x = GUI.renderText("SKILL POINT: " + yi, "'Viga', sans-serif", "#FFFFFF", 32, 400);
           bi.drawImage(x, 24, 12)
         }
@@ -11140,11 +10711,9 @@ var ent, inhandID, weapon, Render = function () {
         var o = e.pos.x,
           t = e.pos.y;
         i.pos.x = o + 161 * scaleby, i.pos.y = t + 0 * scaleby, i.draw();
-        for (var d, n = World.PLAYER.chest, r = t + 14 * scaleby, l = Game.chest,
-            s = 0; s < 4; s++) s % 2 == 0 ? (d = o + 12.5 * scaleby, 2 === s && (r += 71 * scaleby)) : d += 72 *
-          scaleby, 0 !== n[s][
-            0
-          ] && Wi(l[s], n[s], d, r, a, _)
+        for (var d, n = World.PLAYER.chest, r = t + 14 * scaleby, l = Game.chest, s = 0; s < 4; s++) s % 2 == 0 ? (d =
+          o + 12.5 * scaleby, 2 === s && (r += 71 * scaleby)) : d += 72 * scaleby, 0 !== n[s][0] && Wi(l[s], n[s],
+          d, r, a, _)
       },
       team: function (e, i, a, _, o, t, d, n) {
         var r = 0,
@@ -11159,21 +10728,19 @@ var ent, inhandID, weapon, Render = function () {
                 break
               } World.PLAYER.teamNameValid = s, r = i.pos.x, l = i.pos.y, i.draw(), e.pos.x = r + 513 * scaleby, e.pos
             .y = l + 2 * scaleby, xi !== Game.teamName && (xi = Game.teamName, Vi = GUI.renderText(xi,
-              "'Viga', sans-serif", "#FFFFFF", 30, 400)),
-            null !== Vi && 0 !== xi.length && (CanvasUtils.fillRect(ctx, r / scaleby + 39, l / scaleby + 14, 122,
-              16.5, "#000000"), ctx.drawImage(Vi, r + 35 * scaleby, l + 14.5 * scaleby, Vi.wh * scaleby, Vi.h2 *
-              scaleby)), o.pos.x = r + 172 * scaleby, o.pos.y = l + 6 * scaleby,
-            0 === s || window.Date.now() - World.PLAYER.teamCreateDelay < 30500 ? (o.setState(GUI.__BUTTON_OUT__), ctx
-              .globalAlpha = .5, o.draw(), ctx.globalAlpha = 1) : o.draw();
+              "'Viga', sans-serif", "#FFFFFF", 30, 400)), null !== Vi && 0 !== xi.length && (CanvasUtils.fillRect(ctx,
+              r / scaleby + 39, l / scaleby + 14, 122, 16.5, "#000000"), ctx.drawImage(Vi, r + 35 * scaleby, l +
+              14.5 * scaleby, Vi.wh * scaleby, Vi.h2 * scaleby)), o.pos.x = r + 172 * scaleby, o.pos.y = l + 6 *
+            scaleby, 0 === s || window.Date.now() - World.PLAYER.teamCreateDelay < 30500 ? (o.setState(GUI
+              .__BUTTON_OUT__), ctx.globalAlpha = .5, o.draw(), ctx.globalAlpha = 1) : o.draw();
           var m = 0;
           for (g = 0; g < 18; g++) {
             if (0 !== (c = World.teams[g]).leader) null === c.label && (c.label = GUI.renderText(c.name,
-                "'Viga', sans-serif", "#FFFFFF", 30, 400)), ctx.drawImage(c.label, r + (20 + m % 3 * 163) * scaleby,
-                l + (58.5 + 36 * window.Math.floor(m / 3)) * scaleby, c.label.wh * scaleby, c.label.h2 * scaleby),
-              (I = Game.join[m]).pos.x = r + (84 + m % 3 * 163) * scaleby, I.pos.y = l + (48 + 36 * window.Math.floor(
-                m / 3)) * scaleby,
-              window.Date.now() - World.PLAYER.teamDelay < 10500 ? (I.setState(GUI.__BUTTON_OUT__), ctx.globalAlpha =
-                .5, I.draw(), ctx.globalAlpha = 1) : I.draw(), m++
+              "'Viga', sans-serif", "#FFFFFF", 30, 400)), ctx.drawImage(c.label, r + (20 + m % 3 * 163) * scaleby,
+              l + (58.5 + 36 * window.Math.floor(m / 3)) * scaleby, c.label.wh * scaleby, c.label.h2 * scaleby), (
+              I = Game.join[m]).pos.x = r + (84 + m % 3 * 163) * scaleby, I.pos.y = l + (48 + 36 * window.Math
+              .floor(m / 3)) * scaleby, window.Date.now() - World.PLAYER.teamDelay < 10500 ? (I.setState(GUI
+              .__BUTTON_OUT__), ctx.globalAlpha = .5, I.draw(), ctx.globalAlpha = 1) : I.draw(), m++
           }
         } else {
           var c;
@@ -11188,13 +10755,13 @@ var ent, inhandID, weapon, Render = function () {
               var I, E = World.players[g];
               if (c.uid === E.teamUid && E.team === c.id) null === E.nicknameLabel && (E.nicknameLabel = GUI
                   .renderText(E.nickname, "'Viga', sans-serif", "#FFFFFF", 38, 400, window.undefined, 16, 25, window
-                    .undefined, window.undefined, window.undefined, window.undefined, "#000000", 12)),
-                0 !== E.nicknameLabel.width && 0 !== E.nicknameLabel.height && ctx.drawImage(E.nicknameLabel, r + (
-                    26 + m % 3 * 166.5) * scaleby, l + (53 + 29.5 * window.Math.floor(m / 3)) * scaleby, E
-                  .nicknameLabel.wh * scaleby / 2.2, E.nicknameLabel.h2 * scaleby / 2.2), (I = Game.kick[m]).pos.x =
-                r + (132 + m % 3 * 166.5) * scaleby, I.pos.y = l + (48.5 + 29.5 * window.Math.floor(m / 3)) * scaleby,
-                window.Date.now() - World.PLAYER.teamDelay < 10500 || E.id === World.PLAYER.id ? (I.setState(GUI
-                  .__BUTTON_OUT__), ctx.globalAlpha = .5, I.draw(), ctx.globalAlpha = 1) : I.draw(), m++
+                    .undefined, window.undefined, window.undefined, window.undefined, "#000000", 12)), 0 !== E
+                .nicknameLabel.width && 0 !== E.nicknameLabel.height && ctx.drawImage(E.nicknameLabel, r + (26 + m %
+                    3 * 166.5) * scaleby, l + (53 + 29.5 * window.Math.floor(m / 3)) * scaleby, E.nicknameLabel.wh *
+                  scaleby / 2.2, E.nicknameLabel.h2 * scaleby / 2.2), (I = Game.kick[m]).pos.x = r + (132 + m % 3 *
+                  166.5) * scaleby, I.pos.y = l + (48.5 + 29.5 * window.Math.floor(m / 3)) * scaleby, window.Date
+                .now() - World.PLAYER.teamDelay < 10500 || E.id === World.PLAYER.id ? (I.setState(GUI.__BUTTON_OUT__),
+                  ctx.globalAlpha = .5, I.draw(), ctx.globalAlpha = 1) : I.draw(), m++
             }
           } else {
             _.pos.x = r + 311.5 * scaleby, _.pos.y = l + 5 * scaleby, _.draw();
@@ -11234,8 +10801,7 @@ var ent, inhandID, weapon, Render = function () {
               .heightInteract = o), ctx.drawImage(be, t, d, _, o);
             var n = LOOT[World.PLAYER.loot];
             t = (X + Q) * a - _ / (2 * scaleby), d = window.Math.max(10, (j + q) * a - o / (2 * scaleby) - 65 * a -
-                60),
-              CanvasUtils.drawImageHd(n, t + 77, d + 33, n.angle, 0, 0, n.scale);
+              60), CanvasUtils.drawImageHd(n, t + 77, d + 33, n.angle, 0, 0, n.scale);
             break;
           case 1:
             var r = World.PLAYER.interactionDelay / World.PLAYER.interactionWait,
@@ -11267,14 +10833,12 @@ var ent, inhandID, weapon, Render = function () {
               if (1 !== ye.isLoaded) return void(ye = 0 === isTouchScreen ? CanvasUtils.loadImage("img/loot2.png",
                 ye) : CanvasUtils.loadImage(I, be));
               a = s / scaleby;
-              _ = scaleby * ye.width / 2, o = scaleby * ye.height / 2, t += _ + 10 * scaleby,
-                d = window.Math.max(10 * scaleby, (j + q) * s - o / 2 - 65 * s - 60 * scaleby), 1 === isTouchScreen &&
-                (Game.xInteract2 = t, Game.yInteract2 = d),
-                ctx.drawImage(ye, t, d, _, o);
+              _ = scaleby * ye.width / 2, o = scaleby * ye.height / 2, t += _ + 10 * scaleby, d = window.Math.max(10 *
+                scaleby, (j + q) * s - o / 2 - 65 * s - 60 * scaleby), 1 === isTouchScreen && (Game.xInteract2 = t,
+                Game.yInteract2 = d), ctx.drawImage(ye, t, d, _, o);
               n = LOOT[World.PLAYER.loot];
-              t = (X + Q) * a + 5,
-                d = window.Math.max(10, (j + q) * a - o / (2 * scaleby) - 65 * a - 60),
-                CanvasUtils.drawImageHd(n, t + 77, d + 33, n.angle, 0, 0, n.scale)
+              t = (X + Q) * a + 5, d = window.Math.max(10, (j + q) * a - o / (2 * scaleby) - 65 * a - 60), CanvasUtils
+                .drawImageHd(n, t + 77, d + 33, n.angle, 0, 0, n.scale)
             }
           }
         }
@@ -11322,16 +10886,13 @@ var ent, inhandID, weapon, Render = function () {
               g = 0,
               m = 0;
             return a - 1 >= 0 && (i = de[a - 1][o]).wallFrame === ui && i.wall === n && (s = 1, r += C), a + 1 <
-              d && (i = de[a + 1][o]).wallFrame === ui && i.wall === n && (r += F, g = 1),
-              o - 1 >= 0 && (i = de[a][o - 1]).wallFrame === ui && i.wall === n && (r += M, m = 1),
-              o + 1 < _ && (i = de[a][o + 1]).wallFrame === ui && i.wall === n && (r += W, l = 1),
-              l + s === 2 && (i = de[a - 1][o + 1]).wallFrame === ui && i.wall === n && (r += V), m + s === 2 && (
-                i = de[a - 1][
-                  o - 1
-                ]).wallFrame === ui && i.wall === n && (r += B), g + l === 2 && (i = de[a + 1][o + 1])
-              .wallFrame === ui && i.wall === n && (r += P), g + m === 2 && (i = de[a + 1][
-                o - 1
-              ]).wallFrame === ui && i.wall === n && (r += x), r = z[r], de[a][o].drawFloor = t.drawFloor[r], r
+              d && (i = de[a + 1][o]).wallFrame === ui && i.wall === n && (r += F, g = 1), o - 1 >= 0 && (i = de[
+                a][o - 1]).wallFrame === ui && i.wall === n && (r += M, m = 1), o + 1 < _ && (i = de[a][o + 1])
+              .wallFrame === ui && i.wall === n && (r += W, l = 1), l + s === 2 && (i = de[a - 1][o + 1])
+              .wallFrame === ui && i.wall === n && (r += V), m + s === 2 && (i = de[a - 1][o - 1]).wallFrame ===
+              ui && i.wall === n && (r += B), g + l === 2 && (i = de[a + 1][o + 1]).wallFrame === ui && i.wall ===
+              n && (r += P), g + m === 2 && (i = de[a + 1][o - 1]).wallFrame === ui && i.wall === n && (r += x),
+              r = z[r], de[a][o].drawFloor = t.drawFloor[r], r
           }(i)], X + i.x + a, j + i.y + o, 0, 0, 0, n)
       },
       lowWall: function (e, i, a, o, t, n) {
@@ -11344,11 +10905,9 @@ var ent, inhandID, weapon, Render = function () {
             switch (i) {
             case 0:
               a + 1 < d && (r = de[a + 1][o]).wallFrame === ui && r.wall === t && (1 === r.rotate ? n += k : 3 === r
-                .rotate && (n += H)), o - 1 >= 0 && ((r = de[a][
-                o - 1
-              ]).wallFrame !== ui || r.wall !== t || 3 !== r.rotate && 0 !== r.rotate || (n += Y)), o + 1 < _ && (
-                (r = de[a][o + 1]).wallFrame !== ui || r.wall !== t || 1 !== r.rotate && 0 !== r.rotate || (n +=
-                  G));
+                .rotate && (n += H)), o - 1 >= 0 && ((r = de[a][o - 1]).wallFrame !== ui || r.wall !== t || 3 !==
+                r.rotate && 0 !== r.rotate || (n += Y)), o + 1 < _ && ((r = de[a][o + 1]).wallFrame !== ui || r
+                .wall !== t || 1 !== r.rotate && 0 !== r.rotate || (n += G));
               break;
             case 1:
               o - 1 >= 0 && (r = de[a][o - 1]).wallFrame === ui && r.wall === t && (0 === r.rotate ? n += H : 2 ===
@@ -11358,11 +10917,9 @@ var ent, inhandID, weapon, Render = function () {
               break;
             case 2:
               a - 1 >= 0 && (r = de[a - 1][o]).wallFrame === ui && r.wall === t && (1 === r.rotate ? n += H : 3 ===
-                r.rotate && (n += k)), o - 1 >= 0 && ((r = de[a][
-                o - 1
-              ]).wallFrame !== ui || r.wall !== t || 3 !== r.rotate && 2 !== r.rotate || (n += G)), o + 1 < _ && (
-                (r = de[a][o + 1]).wallFrame !== ui || r.wall !== t || 1 !== r.rotate && 2 !== r.rotate || (n +=
-                  Y));
+                r.rotate && (n += k)), o - 1 >= 0 && ((r = de[a][o - 1]).wallFrame !== ui || r.wall !== t || 3 !==
+                r.rotate && 2 !== r.rotate || (n += G)), o + 1 < _ && ((r = de[a][o + 1]).wallFrame !== ui || r
+                .wall !== t || 1 !== r.rotate && 2 !== r.rotate || (n += Y));
               break;
             case 3:
               var r;
@@ -11377,8 +10934,8 @@ var ent, inhandID, weapon, Render = function () {
         if (1 === l.isLoaded) {
           var s = scaleby * l.width / 2 * n,
             g = scaleby * l.height / 2 * n;
-          ctx.save(), ctx.translate(scaleby * (X + i.x + a), scaleby * (j + i.y + o)), ctx.rotate(t * v),
-            ctx.translate(e.xRotate * scaleby - s / 2, e.yRotate * scaleby - g / 2), ctx.drawImage(l, -e.xRotate *
+          ctx.save(), ctx.translate(scaleby * (X + i.x + a), scaleby * (j + i.y + o)), ctx.rotate(t * v), ctx
+            .translate(e.xRotate * scaleby - s / 2, e.yRotate * scaleby - g / 2), ctx.drawImage(l, -e.xRotate *
               scaleby, -e.yRotate * scaleby, s, g), ctx.restore()
         } else r.img = CanvasUtils.loadImage(r.src, r.img)
       },
@@ -11403,8 +10960,8 @@ var ent, inhandID, weapon, Render = function () {
             t = scaleby * (_.i * e + j + i), o = scaleby * (_.j * e + X + i);
             var I = scaleby * Ae.width / 2,
               E = scaleby * Ae.height / 2;
-            ctx.drawImage(Ae, o - I / 2, t - E / 2, I, E),
-              ctx.globalAlpha = 1, _.breath = window.Math.max(0, _.breath - delta)
+            ctx.drawImage(Ae, o - I / 2, t - E / 2, I, E), ctx.globalAlpha = 1, _.breath = window.Math.max(0, _
+              .breath - delta)
           }
         } else s.img = CanvasUtils.loadImage(s.src, s.img)
       },
@@ -11429,9 +10986,8 @@ var ent, inhandID, weapon, Render = function () {
         }
         var _;
         e.breath2 = (e.breath2 + delta) % 5e3, a = 1 + .15 * ((_ = e.breath2) < 2500 ? _ / 2500 : 1 - (_ - 2500) /
-            2500),
-          CanvasUtils.drawImageHd(LIGHTFIRE[3], X + e.x + LIGHTFIREX[3], j + e.y + LIGHTFIREY[3], 0, 0, 0, a), ctx
-          .globalAlpha = 1
+            2500), CanvasUtils.drawImageHd(LIGHTFIRE[3], X + e.x + LIGHTFIREX[3], j + e.y + LIGHTFIREY[3], 0, 0, 0,
+          a), ctx.globalAlpha = 1
       },
       smelter: function (e, i, a, _, o, t) {
         var d = (o + 1) % 2,
@@ -11489,8 +11045,8 @@ var ent, inhandID, weapon, Render = function () {
           n = o % 2;
         de[i.i + d][i.j + n].tile = ui, de[i.i - d][i.j - n].tile = ui, de[i.i + d][i.j + n].tilePid = i.pid, de[i.i -
             d][i.j - n].tilePid = i.pid, de[i.i + d][i.j + n].category = window.undefined, de[i.i - d][i.j - n]
-          .category = window.undefined, _a(e, i, 0),
-          CanvasUtils.drawImageHd(e.building, X + i.x + a, j + i.y + _, o * v, 0, 0, t)
+          .category = window.undefined, _a(e, i, 0), CanvasUtils.drawImageHd(e.building, X + i.x + a, j + i.y + _, o *
+            v, 0, 0, t)
       },
       teslaBench: function (e, i, a, _, o, t) {
         var d = (o + 1) % 2,
@@ -11534,10 +11090,10 @@ var ent, inhandID, weapon, Render = function () {
             return i - 1 >= 0 && de[i - 1][a].floorFrame === ui && (n = 1, o += C), i + 1 < d && de[i + 1][a]
               .floorFrame === ui && (o += F, r = 1), a - 1 >= 0 && de[i][a - 1].floorFrame === ui && (o += M,
                 l = 1), a + 1 < _ && de[i][a + 1].floorFrame === ui && (o += W, t = 1), t + n === 2 && de[i - 1]
-              [a + 1].floorFrame === ui && (o += V),
-              l + n === 2 && de[i - 1][a - 1].floorFrame === ui && (o += B),
-              r + t === 2 && de[i + 1][a + 1].floorFrame === ui && (o += P),
-              r + l === 2 && de[i + 1][a - 1].floorFrame === ui && (o += x), z[o]
+              [a + 1].floorFrame === ui && (o += V), l + n === 2 && de[i - 1][a - 1].floorFrame === ui && (o +=
+                B), r + t === 2 && de[i + 1][a + 1].floorFrame === ui && (o += P), r + l === 2 && de[i + 1][a -
+                1
+              ].floorFrame === ui && (o += x), z[o]
           }(i)], X + i.x, j + i.y, 0, 0, 0, n))
       },
       defaultBuilding: function (e, i, a, _, o, t) {
@@ -11553,8 +11109,8 @@ var ent, inhandID, weapon, Render = function () {
         var d = i.state >> 4 & 1,
           n = INVENTORY[e.id].subtype[i.subtype];
         1 === d ? i.hit = window.Math.min(500, i.hit + delta) : i.hit > 0 && (i.hit = window.Math.max(0, i.hit -
-            delta)), 0 === d && 1 === n.usable && 1 === _a(n, i, 0) && (World.PLAYER.eInteract = pe),
-          CanvasUtils.drawImageHd(n.building, X + i.x + a, j + i.y + _, o * v, 0, 0, t), i.hit > 0 && oa(i, a, _)
+            delta)), 0 === d && 1 === n.usable && 1 === _a(n, i, 0) && (World.PLAYER.eInteract = pe), CanvasUtils
+          .drawImageHd(n.building, X + i.x + a, j + i.y + _, o * v, 0, 0, t), i.hit > 0 && oa(i, a, _)
       },
       road: function (e, i, a, _, o, t) {
         var d = INVENTORY[e.id].subtype[i.subtype];
@@ -11576,9 +11132,8 @@ var ent, inhandID, weapon, Render = function () {
         i.breath = (i.breath + delta) % 500;
         var d = i.breath / 500,
           n = .95 + .3 * MathUtils.Ease.inOutQuad(d);
-        ctx.globalAlpha = 1 - d,
-          CanvasUtils.drawImageHd(e.building[1], X + i.x + a, j + i.y + _, o * v, 0, 0, n), ctx.globalAlpha = 1,
-          CanvasUtils.drawImageHd(e.building[0], X + i.x + a, j + i.y + _, o * v, 0, 0, t)
+        ctx.globalAlpha = 1 - d, CanvasUtils.drawImageHd(e.building[1], X + i.x + a, j + i.y + _, o * v, 0, 0, n), ctx
+          .globalAlpha = 1, CanvasUtils.drawImageHd(e.building[0], X + i.x + a, j + i.y + _, o * v, 0, 0, t)
       },
       spike: function (e, i, a, _, o, t) {
         var d = 0,
@@ -11628,8 +11183,8 @@ var ent, inhandID, weapon, Render = function () {
           var c = 0;
           i.hurt > 150 ? c = MathUtils.Ease.inQuad((300 - i.hurt) / 300) : m += .2 * (1 - (c = MathUtils.Ease.outQuad(
               i.hurt / 150))), a += window.Math.cos(i.hurtAngle) * c * 10, _ += window.Math.sin(i.hurtAngle) * c * 10,
-            ctx.globalAlpha = window.Math.min(1, window.Math.max(0, c)),
-            CanvasUtils.drawImageHd(e.hurt, a, _, i.angle + d / 1.5, l, 0, m), ctx.globalAlpha = 1
+            ctx.globalAlpha = window.Math.min(1, window.Math.max(0, c)), CanvasUtils.drawImageHd(e.hurt, a, _, i
+              .angle + d / 1.5, l, 0, m), ctx.globalAlpha = 1
         }
         CanvasUtils.drawImageHd(e.head, a, _, i.angle + d / 1.5, l, 0, o)
       },
@@ -11638,13 +11193,13 @@ var ent, inhandID, weapon, Render = function () {
         var d = i.state >> 4 & 15;
         if (i.breath2 !== d && (i.breath2 = d, i.breath = 0), i.breath = i.breath + delta, i.heal = (i.heal + delta) %
           1e3, t = 1 + .03 * (i.heal < 500 ? i.heal / 500 : 1 - (i.heal - 500) / 500), 0 === d) ctx.globalAlpha =
-          MathUtils.Ease.inOutQuad(i.breath / e.evolve),
-          CanvasUtils.drawImageHd(e.building[0], X + i.x + a, j + i.y + _, o * v, 0, 0, t), ctx.globalAlpha = 1;
+          MathUtils.Ease.inOutQuad(i.breath / e.evolve), CanvasUtils.drawImageHd(e.building[0], X + i.x + a, j + i.y +
+            _, o * v, 0, 0, t), ctx.globalAlpha = 1;
         else if (i.breath < e.evolve) {
           var n = MathUtils.Ease.inOutQuad(i.breath / e.evolve);
-          ctx.globalAlpha = 1 - n,
-            CanvasUtils.drawImageHd(e.building[d - 1], X + i.x + a, j + i.y + _, o * v, 0, 0, t), ctx.globalAlpha = n,
-            CanvasUtils.drawImageHd(e.building[d], X + i.x + a, j + i.y + _, o * v, 0, 0, t), ctx.globalAlpha = 1
+          ctx.globalAlpha = 1 - n, CanvasUtils.drawImageHd(e.building[d - 1], X + i.x + a, j + i.y + _, o * v, 0, 0,
+            t), ctx.globalAlpha = n, CanvasUtils.drawImageHd(e.building[d], X + i.x + a, j + i.y + _, o * v, 0, 0,
+            t), ctx.globalAlpha = 1
         } else CanvasUtils.drawImageHd(e.building[d], X + i.x + a, j + i.y + _, o * v, 0, 0, t)
       },
       lamp: function (e, i, a, _, o, t) {
@@ -11672,11 +11227,11 @@ var ent, inhandID, weapon, Render = function () {
         var d = i.state >> 7 & 1;
         1 === d ? i.hitMax = window.Math.min(500, i.hitMax + delta) : i.hitMax > 0 && (i.hitMax = window.Math.max(0, i
           .hitMax - delta)), i.hitMax > 0 && 500 !== i.hitMax ? (ctx.globalAlpha = MathUtils.Ease.outQuad(i.hitMax /
-          500), CanvasUtils.drawImageHd(e.building[1]
-          [i.broke], X + i.x + a, j + i.y + _, o * v, 0, 0, t), ctx.globalAlpha = MathUtils.Ease.outQuad(1 - i
-          .hitMax / 500), CanvasUtils.drawImageHd(e.building[0][i.broke], X + i.x + a, j + i.y + _, o * v, 0, 0,
-          t), ctx.globalAlpha = 1) : CanvasUtils.drawImageHd(e.building[d][i.broke], X + i.x + a, j + i.y + _, o *
-          v, 0, 0, t)
+            500), CanvasUtils.drawImageHd(e.building[1][i.broke], X + i.x + a, j + i.y + _, o * v, 0, 0, t), ctx
+          .globalAlpha = MathUtils.Ease.outQuad(1 - i.hitMax / 500), CanvasUtils.drawImageHd(e.building[0][i.broke],
+            X + i.x + a, j + i.y + _, o * v, 0, 0, t), ctx.globalAlpha = 1) : CanvasUtils.drawImageHd(e.building[d][
+          i.broke
+        ], X + i.x + a, j + i.y + _, o * v, 0, 0, t)
       },
       battleRoyale: function () {
         if (8 === World.PLAYER.toxicStep) {
@@ -11720,16 +11275,12 @@ function _AutoEat() {
     L = !1;
   (u -= delta) <= 0 && -1 === World.PLAYER.interaction && (I = !1), E = 1 != weapon.consumable || weapon.heal < -1 ||
     weapon.food <= 0 ? 0 : 1, m < setHungryLevel && (I || (0 === E ? function () {
-      for (var m = 0; m < c.length; m++) c[m][0] !== o && c[m][0] !== t && c[m][
-        0
-      ] !== d && c[m][0] !== n && c[m][0] !== r && c[m][
-        0
-      ] !== l && c[m][0] !== s && c[m][0] !== g || (e = c[m][0], i = c[m][1], a = c[m][2], _ = c[m][3]);
+      for (var m = 0; m < c.length; m++) c[m][0] !== o && c[m][0] !== t && c[m][0] !== d && c[m][0] !== n && c[m][
+        0] !== r && c[m][0] !== l && c[m][0] !== s && c[m][0] !== g || (e = c[m][0], i = c[m][1], a = c[m][2], _ =
+          c[m][3]);
       L = null != e || null != i || null != a || null != _;
       I || L && function (e, i, a, _) {
-        I || L && Client.sendPacket(window.JSON.stringify([8, e, i,
-          a, _
-        ]))
+        I || L && Client.sendPacket(window.JSON.stringify([8, e, i, a, _]))
       }(e, i, a, _)
     }() : I || (Client.sendMouseDown(), Client.sendMouseUp()))), 0 !== myplayerhit && Client.sendMouseUp()
 }
@@ -11755,11 +11306,8 @@ var MapManager = function () {
     init: function (t, d, n, r) {
       window.console.time("Town generation"),
         function (t, d, n) {
-          new RNG.Random(t), e = d,
-            i = n, MapManager.width = d, MapManager.height = n, a = [],
-            MapManager.grid = a, [],
-            _ = [], MapManager.roads = _, -1, o.i = 0,
-            o.j = 0, 0
+          new RNG.Random(t), e = d, i = n, MapManager.width = d, MapManager.height = n, a = [], MapManager.grid = a,
+            [], _ = [], MapManager.roads = _, -1, o.i = 0, o.j = 0, 0
         }(t, d, n),
         function () {
           for (var _ = 0; _ < i; _++) {
@@ -11774,20 +11322,12 @@ var MapManager = function () {
     height: 0
   }
 }();
-COUNTER_ENTITIE = 0,
-  __ENTITIE_PLAYER__ = COUNTER_ENTITIE++, __ENTITIE_LOOT__ = COUNTER_ENTITIE++,
-  __ENTITIE_BULLET__ = COUNTER_ENTITIE++,
-  __ENTITIE_BUILD_TOP__ = COUNTER_ENTITIE++,
-  __ENTITIE_BUILD_DOWN__ = COUNTER_ENTITIE++,
-  __ENTITIE_BUILD_GROUND__ = COUNTER_ENTITIE++,
-  __ENTITIE_BUILD_GROUND2__ = COUNTER_ENTITIE++,
-  __ENTITIE_PARTICLES__ = COUNTER_ENTITIE++,
-  __ENTITIE_RESOURCES_TOP__ = COUNTER_ENTITIE++,
-  __ENTITIE_RESOURCES_DOWN__ = COUNTER_ENTITIE++,
-  __ENTITIE_RESOURCES_MID__ = COUNTER_ENTITIE++,
-  __ENTITIE_RESOURCES_STOP__ = COUNTER_ENTITIE++,
-  __ENTITIE_EXPLOSION__ = COUNTER_ENTITIE++, __ENTITIE_AI__ = COUNTER_ENTITIE++, ENTITIES[__ENTITIE_PLAYER__].update =
-  function (e, i, a) {
+COUNTER_ENTITIE = 0, __ENTITIE_PLAYER__ = COUNTER_ENTITIE++, __ENTITIE_LOOT__ = COUNTER_ENTITIE++, __ENTITIE_BULLET__ =
+  COUNTER_ENTITIE++, __ENTITIE_BUILD_TOP__ = COUNTER_ENTITIE++, __ENTITIE_BUILD_DOWN__ = COUNTER_ENTITIE++,
+  __ENTITIE_BUILD_GROUND__ = COUNTER_ENTITIE++, __ENTITIE_BUILD_GROUND2__ = COUNTER_ENTITIE++, __ENTITIE_PARTICLES__ =
+  COUNTER_ENTITIE++, __ENTITIE_RESOURCES_TOP__ = COUNTER_ENTITIE++, __ENTITIE_RESOURCES_DOWN__ = COUNTER_ENTITIE++,
+  __ENTITIE_RESOURCES_MID__ = COUNTER_ENTITIE++, __ENTITIE_RESOURCES_STOP__ = COUNTER_ENTITIE++, __ENTITIE_EXPLOSION__ =
+  COUNTER_ENTITIE++, __ENTITIE_AI__ = COUNTER_ENTITIE++, ENTITIES[__ENTITIE_PLAYER__].update = function (e, i, a) {
     if (Math2d.dist(e.x, e.y, i, a) > 66) {
       e.rx = i, e.ry = a;
       var _ = Math2d.angle(e.rx, e.ry, e.nx, e.ny);
@@ -11795,12 +11335,11 @@ COUNTER_ENTITIE = 0,
     }
     e.speed = (e.state >> 8) / 100
   }, ENTITIES[__ENTITIE_PLAYER__].init = function (e) {
-    for (var i = World.players[e.pid],
-        a = 0; a < i.runEffect.length; a++) i.runEffect[a].delay = 0;
+    for (var i = World.players[e.pid], a = 0; a < i.runEffect.length; a++) i.runEffect[a].delay = 0;
     for (a = 0; a < i.cartridges.length; a++) i.cartridges[a].delay = 0;
     e.angle = e.nangle, i.ghoul > 0 && (e.heal = 1, e.hurt2 = 1)
-  }, ENTITIES[__ENTITIE_AI__].update = ENTITIES[__ENTITIE_PLAYER__].update,
-  ENTITIES[__ENTITIE_AI__].init = function (e) {
+  }, ENTITIES[__ENTITIE_AI__].update = ENTITIES[__ENTITIE_PLAYER__].update, ENTITIES[__ENTITIE_AI__].init = function (
+  e) {
     e.heal = 1, e.hurt2 = 1, e.angle = e.nangle, e.speed = (e.state >> 8) / 100
   }, ENTITIES[__ENTITIE_LOOT__].init = function (e) {
     e.x !== e.rx || e.y !== e.ry ? (e.angle = Math2d.angle(e.x, e.y, e.rx, e.ry), e.nangle = e.angle) : (e.angle +=
@@ -11833,13 +11372,13 @@ COUNTER_ENTITIE = 0,
     var o = INVENTORY[e.extra >> 7];
     e.x = window.Math.floor(i / Render.__TILE_SIZE__) * Render.__TILE_SIZE__ + Render.__TILE_SIZE2__ + o.xCenter[_], e
       .y = window.Math.floor(a / Render.__TILE_SIZE__) * Render.__TILE_SIZE__ + Render.__TILE_SIZE2__ + o.yCenter[_], e
-      .rx = e.x, e.ry = e.y, e.nx = e.x,
-      e.ny = e.y, e.px = e.x, e.py = e.y, 1 === o.door && 16 == (16 & e.state) && (e.px = window.Math.floor(e.j + o
-        .jMove[_]) * Render.__TILE_SIZE__ + Render.__TILE_SIZE2__ + o.xCenter[(_ + 1) % 4], e.py = window.Math.floor(e
-        .i + o.iMove[_]) * Render.__TILE_SIZE__ + Render.__TILE_SIZE2__ + o.yCenter[(_ + 1) % 4])
-  }, ENTITIES[__ENTITIE_BUILD_DOWN__].update = ENTITIES[__ENTITIE_BUILD_TOP__].update,
-  ENTITIES[__ENTITIE_BUILD_GROUND__].update = ENTITIES[__ENTITIE_BUILD_TOP__].update,
-  ENTITIES[__ENTITIE_BUILD_GROUND2__].update = ENTITIES[__ENTITIE_BUILD_TOP__].update;
+      .rx = e.x, e.ry = e.y, e.nx = e.x, e.ny = e.y, e.px = e.x, e.py = e.y, 1 === o.door && 16 == (16 & e.state) && (e
+        .px = window.Math.floor(e.j + o.jMove[_]) * Render.__TILE_SIZE__ + Render.__TILE_SIZE2__ + o.xCenter[(_ + 1) %
+          4], e.py = window.Math.floor(e.i + o.iMove[_]) * Render.__TILE_SIZE__ + Render.__TILE_SIZE2__ + o.yCenter[(_ +
+          1) % 4])
+  }, ENTITIES[__ENTITIE_BUILD_DOWN__].update = ENTITIES[__ENTITIE_BUILD_TOP__].update, ENTITIES[
+    __ENTITIE_BUILD_GROUND__].update = ENTITIES[__ENTITIE_BUILD_TOP__].update, ENTITIES[__ENTITIE_BUILD_GROUND2__]
+  .update = ENTITIES[__ENTITIE_BUILD_TOP__].update;
 try {
   Render.shake
 } catch (o) {
@@ -12318,328 +11857,327 @@ var PARTICLESID = {
     }
   }],
   PARTICLES = [];
-PARTICLES[PARTICLESID.__NOTHING__] = [],
-  PARTICLES[PARTICLESID.__WOOD__] = [{
-    src: "img/day-particules-wood1.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-wood2.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-wood3.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-wood4.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-wood5.png",
-    img: {
-      isLoaded: 0
-    }
-  }], PARTICLES[PARTICLESID.__STONE__] = [{
-    src: "img/day-particules-stone1.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-stone2.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-stone3.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-stone4.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-stone5.png",
-    img: {
-      isLoaded: 0
-    }
-  }], PARTICLES[PARTICLESID.__STEEL__] = [{
-    src: "img/day-particules-steel1.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-steel2.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-steel3.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-steel4.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-steel5.png",
-    img: {
-      isLoaded: 0
-    }
-  }], PARTICLES[PARTICLESID.__URANIUM__] = [{
-    src: "img/day-particules-uranium1.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-uranium2.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-uranium3.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-uranium4.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-uranium5.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-uranium6.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-uranium7.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-uranium8.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-uranium9.png",
-    img: {
-      isLoaded: 0
-    }
-  }], PARTICLES[PARTICLESID.__SULFUR__] = [{
-    src: "img/day-particules-sulfur1.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-sulfur2.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-sulfur3.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-sulfur4.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-sulfur5.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-sulfur6.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-sulfur7.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-sulfur8.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-sulfur9.png",
-    img: {
-      isLoaded: 0
-    }
-  }], PARTICLES[PARTICLESID.__LEAF__] = [{
-    src: "img/day-particules-leaf1.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaf2.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaf3.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaf4.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaf5.png",
-    img: {
-      isLoaded: 0
-    }
-  }], PARTICLES[PARTICLESID.__LEAFTREE__] = [{
-    src: "img/day-particules-wood1.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-wood3.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaftree1.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaftree2.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaftree3.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaftree4.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaftree5.png",
-    img: {
-      isLoaded: 0
-    }
-  }], PARTICLES[PARTICLESID.flower] = [{
-    src: "img/day-particules-flower1.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-flower2.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-flower3.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-flower4.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-flower5.png",
-    img: {
-      isLoaded: 0
-    }
-  }], PARTICLES[PARTICLESID.__ORANGE__] = [{
-    src: "img/day-particules-leaf1.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaf2.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaf3.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaf4.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaf5.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaf6.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaf7.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaf8.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-leaf9.png",
-    img: {
-      isLoaded: 0
-    }
-  }], PARTICLES[PARTICLESID.__BLOOD__] = [{
-    src: "img/day-particules-blood1.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-blood2.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-blood3.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-blood4.png",
-    img: {
-      isLoaded: 0
-    }
-  }, {
-    src: "img/day-particules-blood5.png",
-    img: {
-      isLoaded: 0
-    }
-  }];
+PARTICLES[PARTICLESID.__NOTHING__] = [], PARTICLES[PARTICLESID.__WOOD__] = [{
+  src: "img/day-particules-wood1.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-wood2.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-wood3.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-wood4.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-wood5.png",
+  img: {
+    isLoaded: 0
+  }
+}], PARTICLES[PARTICLESID.__STONE__] = [{
+  src: "img/day-particules-stone1.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-stone2.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-stone3.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-stone4.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-stone5.png",
+  img: {
+    isLoaded: 0
+  }
+}], PARTICLES[PARTICLESID.__STEEL__] = [{
+  src: "img/day-particules-steel1.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-steel2.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-steel3.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-steel4.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-steel5.png",
+  img: {
+    isLoaded: 0
+  }
+}], PARTICLES[PARTICLESID.__URANIUM__] = [{
+  src: "img/day-particules-uranium1.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-uranium2.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-uranium3.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-uranium4.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-uranium5.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-uranium6.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-uranium7.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-uranium8.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-uranium9.png",
+  img: {
+    isLoaded: 0
+  }
+}], PARTICLES[PARTICLESID.__SULFUR__] = [{
+  src: "img/day-particules-sulfur1.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-sulfur2.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-sulfur3.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-sulfur4.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-sulfur5.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-sulfur6.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-sulfur7.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-sulfur8.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-sulfur9.png",
+  img: {
+    isLoaded: 0
+  }
+}], PARTICLES[PARTICLESID.__LEAF__] = [{
+  src: "img/day-particules-leaf1.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaf2.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaf3.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaf4.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaf5.png",
+  img: {
+    isLoaded: 0
+  }
+}], PARTICLES[PARTICLESID.__LEAFTREE__] = [{
+  src: "img/day-particules-wood1.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-wood3.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaftree1.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaftree2.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaftree3.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaftree4.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaftree5.png",
+  img: {
+    isLoaded: 0
+  }
+}], PARTICLES[PARTICLESID.flower] = [{
+  src: "img/day-particules-flower1.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-flower2.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-flower3.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-flower4.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-flower5.png",
+  img: {
+    isLoaded: 0
+  }
+}], PARTICLES[PARTICLESID.__ORANGE__] = [{
+  src: "img/day-particules-leaf1.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaf2.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaf3.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaf4.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaf5.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaf6.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaf7.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaf8.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-leaf9.png",
+  img: {
+    isLoaded: 0
+  }
+}], PARTICLES[PARTICLESID.__BLOOD__] = [{
+  src: "img/day-particules-blood1.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-blood2.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-blood3.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-blood4.png",
+  img: {
+    isLoaded: 0
+  }
+}, {
+  src: "img/day-particules-blood5.png",
+  img: {
+    isLoaded: 0
+  }
+}];
 var NVMWV = 380;
 
 function Detail(e, i, a, _, o, t, d, n, r) {
@@ -12648,9 +12186,9 @@ function Detail(e, i, a, _, o, t, d, n, r) {
     this.area = [], this.timer = [];
     for (var l = 0; l < t.length; l++) this.area[l] = t[l][0], this.timer[l] = t[l][1]
   }
-  a !== window.undefined ? this.category = a : this.category = -1,
-    d !== window.undefined ? this.level = d : this.level = -1, n !== window.undefined ? this.previous = n : this
-    .previous = -1, r !== window.undefined ? this.price = r : this.price = 1
+  a !== window.undefined ? this.category = a : this.category = -1, d !== window.undefined ? this.level = d : this
+    .level = -1, n !== window.undefined ? this.previous = n : this.previous = -1, r !== window.undefined ? this.price =
+    r : this.price = 1
 }
 PARTICLES[PARTICLESID.__FIRE__] = [{
   src: "img/day-particules-fire1.png",
@@ -13947,11 +13485,8 @@ var INVENTORY = [{
   collision: 1,
   areaEffect: 0,
   draw: Render.wall,
-  drawFloor: [0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+  drawFloor: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
   ],
   broken: [{
     src: "img/day-wood-wall-broken0.png",
@@ -14267,11 +13802,8 @@ var INVENTORY = [{
   collision: 1,
   areaEffect: 0,
   draw: Render.wall,
-  drawFloor: [0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+  drawFloor: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
   ],
   broken: [{
     src: "img/day-stone-wall-broken0.png",
@@ -14587,11 +14119,8 @@ var INVENTORY = [{
   collision: 1,
   areaEffect: 0,
   draw: Render.wall,
-  drawFloor: [0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+  drawFloor: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
   ],
   broken: [{
     src: "img/day-steel-wall-broken0.png",
@@ -15365,9 +14894,7 @@ var INVENTORY = [{
   },
   detail: new Detail("Soda", "Give energy.", SKILLS.__SURVIVAL__, [
     [IID.__GHOUL_BLOOD__, 1],
-    [IID.__CHEMICAL_COMPONENT__,
-      1
-    ],
+    [IID.__CHEMICAL_COMPONENT__, 1],
     [IID.__CAN__, 1]
   ], 1, [
     [AREAS.__FIRE__, 4e4],
@@ -15391,13 +14918,12 @@ var INVENTORY = [{
       isLoaded: 0
     }]
   },
-  detail: new Detail("MP5", "Not bad.", SKILLS.__WEAPON__,
-    [
-      [IID.__ALLOYS__, 6],
-      [IID.__SHAPED_METAL__, 6]
-    ], 1, [
-      [AREAS.__WORKBENCH2__, 2e5]
-    ], 10),
+  detail: new Detail("MP5", "Not bad.", SKILLS.__WEAPON__, [
+    [IID.__ALLOYS__, 6],
+    [IID.__SHAPED_METAL__, 6]
+  ], 1, [
+    [AREAS.__WORKBENCH2__, 2e5]
+  ], 10),
   idWeapon: 20,
   bullet: IID.__BULLET_9MM__,
   stack: 1,
@@ -15731,12 +15257,8 @@ var INVENTORY = [{
       isLoaded: 0
     }
   },
-  xLight: [-20.5, -101.5, 20.5,
-    101.5
-  ],
-  yLight: [101.5, -20.5, -101,
-    20.5
-  ],
+  xLight: [-20.5, -101.5, 20.5, 101.5],
+  yLight: [101.5, -20.5, -101, 20.5],
   wall: 0,
   lowWall: 0,
   door: 0,
@@ -18221,9 +17743,7 @@ var INVENTORY = [{
   },
   detail: new Detail("RadAway", "Reduce your radioactivity a lot.", SKILLS.__DRUG__, [
     [IID.__SYRINGE__, 1],
-    [IID.__CHEMICAL_COMPONENT__,
-      1
-    ],
+    [IID.__CHEMICAL_COMPONENT__, 1],
     [IID.__MUSHROOM2__, 1]
   ], 1, [
     [AREAS.__AGITATOR__, 45e3]
@@ -19301,12 +18821,8 @@ var INVENTORY = [{
       isLoaded: 0
     }
   },
-  xLight: [-20.5, -101.5, 20.5,
-    101.5
-  ],
-  yLight: [101.5, -20.5, -101,
-    20.5
-  ],
+  xLight: [-20.5, -101.5, 20.5, 101.5],
+  yLight: [101.5, -20.5, -101, 20.5],
   wall: 0,
   lowWall: 0,
   door: 0,
@@ -19349,38 +18865,36 @@ var INVENTORY = [{
     }
   }],
   light: [{
-      src: "img/day-tesla-light0.png",
-      img: {
-        isLoaded: 0
-      }
-    }, 0, {
-      src: "img/day-tesla-light1.png",
-      img: {
-        isLoaded: 0
-      }
-    }, {
-      src: "img/day-tesla-light2.png",
-      img: {
-        isLoaded: 0
-      }
-    }, 0, {
-      src: "img/day-tesla-light3.png",
-      img: {
-        isLoaded: 0
-      }
-    }, {
-      src: "img/day-tesla-light4.png",
-      img: {
-        isLoaded: 0
-      }
-    }, {
-      src: "img/day-tesla-light5.png",
-      img: {
-        isLoaded: 0
-      }
-    }, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0
-  ],
+    src: "img/day-tesla-light0.png",
+    img: {
+      isLoaded: 0
+    }
+  }, 0, {
+    src: "img/day-tesla-light1.png",
+    img: {
+      isLoaded: 0
+    }
+  }, {
+    src: "img/day-tesla-light2.png",
+    img: {
+      isLoaded: 0
+    }
+  }, 0, {
+    src: "img/day-tesla-light3.png",
+    img: {
+      isLoaded: 0
+    }
+  }, {
+    src: "img/day-tesla-light4.png",
+    img: {
+      isLoaded: 0
+    }
+  }, {
+    src: "img/day-tesla-light5.png",
+    img: {
+      isLoaded: 0
+    }
+  }, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   particles: PARTICLESID.__METAL__,
   particlesDist: 80,
   timelife: 31536e7,
@@ -20031,9 +19545,7 @@ var INVENTORY = [{
   },
   detail: new Detail("Tesla Armor", "Protects you from energy weapons", SKILLS.__CLOTHE__, [
     [IID.__ARMOR_TESLA_1__, 1],
-    [IID.__SHAPED_URANIUM__,
-      10
-    ],
+    [IID.__SHAPED_URANIUM__, 10],
     [IID.__ELECTRONICS__, 5],
     [IID.__WIRE__, 5],
     [IID.__ALLOYS__, 10]
@@ -20367,9 +19879,7 @@ var INVENTORY = [{
   },
   detail: new Detail("Ghoul Drug", "Ghouls does not attack you.", SKILLS.__DRUG__, [
     [IID.__SYRINGE__, 1],
-    [IID.__CHEMICAL_COMPONENT__,
-      1
-    ],
+    [IID.__CHEMICAL_COMPONENT__, 1],
     [IID.__MUSHROOM2__, 1],
     [IID.__MUSHROOM3__, 1],
     [IID.__GHOUL_BLOOD__, 1]
@@ -20514,9 +20024,7 @@ var INVENTORY = [{
   },
   detail: new Detail("Lapadone", "You are faster a certain time.", SKILLS.__DRUG__, [
     [IID.__SYRINGE__, 1],
-    [IID.__CHEMICAL_COMPONENT__,
-      1
-    ],
+    [IID.__CHEMICAL_COMPONENT__, 1],
     [IID.__MUSHROOM1__, 1],
     [IID.__GHOUL_BLOOD__, 1]
   ], 1, [
@@ -20691,14 +20199,13 @@ var INVENTORY = [{
       isLoaded: 0
     }]
   },
-  detail: new Detail("Ghoul Seed", "Plant your pumpkin pet", -1,
-    [
-      [IID.__PUMPKIN__, 1],
-      [IID.__GHOUL_BLOOD__, 1]
-    ], 1, [
-      [AREAS.__FIRE__, 3e4],
-      [AREAS.__BBQ__, 2e4]
-    ], 99),
+  detail: new Detail("Ghoul Seed", "Plant your pumpkin pet", -1, [
+    [IID.__PUMPKIN__, 1],
+    [IID.__GHOUL_BLOOD__, 1]
+  ], 1, [
+    [AREAS.__FIRE__, 3e4],
+    [AREAS.__BBQ__, 2e4]
+  ], 99),
   stack: 40,
   loot: LOOTID.__SEED_GHOUL__,
   fruit: LOOTID.tomato,
@@ -20881,9 +20388,7 @@ var INVENTORY = [{
   },
   detail: new Detail("Antidote", "Remove the withdrawal effects (pink skin)", SKILLS.__DRUG__, [
     [IID.__SYRINGE__, 1],
-    [IID.__CHEMICAL_COMPONENT__,
-      1
-    ],
+    [IID.__CHEMICAL_COMPONENT__, 1],
     [IID.__MUSHROOM1__, 1],
     [IID.__ANTIDOTE_FLOWER__, 1]
   ], 1, [
@@ -21273,9 +20778,7 @@ var INVENTORY = [{
   detail: new Detail("Cable", "Create automatic mechanisms", SKILLS.__LOGIC__, [
     [IID.__SMALL_WIRE__, 1]
   ], 3, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ]),
   stack: 255,
   loot: LOOTID.__CABLE0__,
@@ -21348,9 +20851,7 @@ var INVENTORY = [{
   detail: new Detail("Cable", "Create automatic mechanisms", SKILLS.__LOGIC__, [
     [IID.__SMALL_WIRE__, 1]
   ], 3, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ]),
   stack: 255,
   loot: LOOTID.__CABLE1__,
@@ -21423,9 +20924,7 @@ var INVENTORY = [{
   detail: new Detail("Cable", "Create automatic mechanisms", SKILLS.__LOGIC__, [
     [IID.__SMALL_WIRE__, 1]
   ], 3, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ]),
   stack: 255,
   loot: LOOTID.__CABLE2__,
@@ -21498,9 +20997,7 @@ var INVENTORY = [{
   detail: new Detail("Cable", "Create automatic mechanisms", SKILLS.__LOGIC__, [
     [IID.__SMALL_WIRE__, 1]
   ], 3, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ]),
   stack: 255,
   loot: LOOTID.__CABLE3__,
@@ -21574,9 +21071,7 @@ var INVENTORY = [{
     [IID.__SHAPED_METAL__, 1],
     [IID.__SMALL_WIRE__, 1]
   ], 3, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ]),
   stack: 255,
   loot: LOOTID.__SWITCH__,
@@ -21662,9 +21157,7 @@ var INVENTORY = [{
     [IID.__SHAPED_METAL__, 1],
     [IID.__SMALL_WIRE__, 1]
   ], 3, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ]),
   stack: 255,
   loot: LOOTID.__GATE_OR__,
@@ -21738,9 +21231,7 @@ var INVENTORY = [{
     [IID.__SHAPED_METAL__, 1],
     [IID.__SMALL_WIRE__, 1]
   ], 3, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ]),
   stack: 255,
   loot: LOOTID.__GATE_AND__,
@@ -21814,9 +21305,7 @@ var INVENTORY = [{
     [IID.__SHAPED_METAL__, 1],
     [IID.__SMALL_WIRE__, 1]
   ], 3, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ]),
   stack: 255,
   loot: LOOTID.__GATE_NOT__,
@@ -21890,9 +21379,7 @@ var INVENTORY = [{
     [IID.__SHAPED_METAL__, 1],
     [IID.__SMALL_WIRE__, 1]
   ], 3, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ]),
   stack: 255,
   loot: LOOTID.__LAMP__,
@@ -22047,9 +21534,7 @@ var INVENTORY = [{
     [IID.__SHAPED_METAL__, 8],
     [IID.__SMALL_WIRE__, 1]
   ], 1, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ], 7),
   stack: 255,
   loot: LOOTID.__CABLE_WALL__,
@@ -22139,9 +21624,7 @@ var INVENTORY = [{
     [IID.__SMALL_WIRE__, 2],
     [IID.__ELECTRONICS__, 1]
   ], 1, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ], 7),
   stack: 255,
   loot: LOOTID.__AUTOMATIC_DOOR__,
@@ -22253,9 +21736,7 @@ var INVENTORY = [{
     [IID.__SHAPED_METAL__, 1],
     [IID.__SMALL_WIRE__, 1]
   ], 3, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ]),
   stack: 255,
   loot: LOOTID.__PLATFORM__,
@@ -22368,11 +21849,8 @@ var INVENTORY = [{
   collision: 1,
   areaEffect: 0,
   draw: Render.wall,
-  drawFloor: [0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+  drawFloor: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
   ],
   broken: [{
     src: "img/day-stone-cave-broken0.png",
@@ -22689,11 +22167,8 @@ var INVENTORY = [{
   collision: 1,
   areaEffect: 0,
   draw: Render.wall,
-  drawFloor: [1, 1, 1, 1, 1, 0, 0,
-    0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
-    1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+  drawFloor: [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
   ],
   broken: [{
     src: "img/day-bunker-wall-broken0.png",
@@ -23674,9 +23149,7 @@ var INVENTORY = [{
   detail: new Detail("Cable  - Bridge", "Create automatic mechanisms", SKILLS.__LOGIC__, [
     [IID.__SMALL_WIRE__, 1]
   ], 3, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ]),
   stack: 255,
   loot: LOOTID.__CABLE4__,
@@ -23750,9 +23223,7 @@ var INVENTORY = [{
     [IID.__SHAPED_METAL__, 1],
     [IID.__SMALL_WIRE__, 1]
   ], 3, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ]),
   stack: 255,
   loot: LOOTID.__GATE_TIMER__,
@@ -23848,9 +23319,7 @@ var INVENTORY = [{
     [IID.__SHAPED_METAL__, 1],
     [IID.__SMALL_WIRE__, 1]
   ], 3, [
-    [AREAS.__WELDING_MACHINE__,
-      15e3
-    ]
+    [AREAS.__WELDING_MACHINE__, 15e3]
   ]),
   stack: 255,
   loot: LOOTID.__GATE_XOR__,
@@ -24226,13 +23695,10 @@ if (FURNITURE[FURNITUREID.__SOFA0__] = {
     [IID.__ELECTRONICS__, 4],
     [IID.__SHAPED_METAL__, 4],
     [IID.__JUNK__, 12]
-  ]), FURNITURE[FURNITUREID.__MACHINE0__].width = [100, 100,
-    100, 100
-  ], FURNITURE[FURNITUREID.__MACHINE0__].height = [100, 100, 100, 100], FURNITURE[FURNITUREID.__MACHINE0__]._x = [0, 0,
-    0, 0
-  ], FURNITURE[FURNITUREID.__MACHINE0__]._y = [0,
-    0, 0, 0
-  ], FURNITURE[FURNITUREID.__MACHINE0__].life = 800, FURNITURE[FURNITUREID.__MACHINE1__] = window.JSON.parse(window.JSON
+  ]), FURNITURE[FURNITUREID.__MACHINE0__].width = [100, 100, 100, 100], FURNITURE[FURNITUREID.__MACHINE0__].height = [
+    100, 100, 100, 100
+  ], FURNITURE[FURNITUREID.__MACHINE0__]._x = [0, 0, 0, 0], FURNITURE[FURNITUREID.__MACHINE0__]._y = [0, 0, 0, 0],
+  FURNITURE[FURNITUREID.__MACHINE0__].life = 800, FURNITURE[FURNITUREID.__MACHINE1__] = window.JSON.parse(window.JSON
     .stringify(FURNITURE[FURNITUREID.__MACHINE0__])), FURNITURE[FURNITUREID.__MACHINE1__].building.src =
   "img/day-electronic-box1.png", FURNITURE[FURNITUREID.__MACHINE1__].width = [120, 120, 120, 120], FURNITURE[FURNITUREID
     .__MACHINE1__].height = [120, 120, 120, 120], FURNITURE[FURNITUREID.__MACHINE1__]._x = [-10, -10, -10, -10],
@@ -24267,12 +23733,11 @@ if (FURNITURE[FURNITUREID.__SOFA0__] = {
   ], FURNITURE[FURNITUREID.__TABLE1__].height = [280, 100, 280, 100], FURNITURE[FURNITUREID.__TABLE1__].iTile = [-1, 0,
     -1, 0
   ], FURNITURE[FURNITUREID.__TABLE1__].jTile = [0, -1, 0, -1], FURNITURE[FURNITUREID.__TABLE1__]._x = [0, -90, 0, -90],
-  FURNITURE[FURNITUREID.__TABLE1__]._y = [-90,
-    0, -90, 0
-  ], FURNITURE[FURNITUREID.__TABLE2__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID.__TABLE0__])),
-  FURNITURE[FURNITUREID.__TABLE2__].building.src = "img/day-table2.png", FURNITURE[FURNITUREID.__TABLE2__].impact =
-  SOUNDID.__STEEL_IMPACT__, FURNITURE[FURNITUREID.__TABLE2__].destroy = SOUNDID.__STEEL_DESTROY__, FURNITURE[FURNITUREID
-    .__TABLE2__].particles = PARTICLESID.__STEEL__, FURNITURE[FURNITUREID.__TABLE2__].detail = new Detail("", "", -1, [
+  FURNITURE[FURNITUREID.__TABLE1__]._y = [-90, 0, -90, 0], FURNITURE[FURNITUREID.__TABLE2__] = window.JSON.parse(window
+    .JSON.stringify(FURNITURE[FURNITUREID.__TABLE0__])), FURNITURE[FURNITUREID.__TABLE2__].building.src =
+  "img/day-table2.png", FURNITURE[FURNITUREID.__TABLE2__].impact = SOUNDID.__STEEL_IMPACT__, FURNITURE[FURNITUREID
+    .__TABLE2__].destroy = SOUNDID.__STEEL_DESTROY__, FURNITURE[FURNITUREID.__TABLE2__].particles = PARTICLESID
+  .__STEEL__, FURNITURE[FURNITUREID.__TABLE2__].detail = new Detail("", "", -1, [
     [IID.__SHAPED_METAL__, 8]
   ]), FURNITURE[FURNITUREID.__TV0__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID.__SOFA0__])),
   FURNITURE[FURNITUREID.__TV0__].building.src = "img/day-tv0.png", FURNITURE[FURNITUREID.__TV0__].impact = SOUNDID
@@ -24334,15 +23799,13 @@ if (FURNITURE[FURNITUREID.__SOFA0__] = {
   ]), FURNITURE[FURNITUREID.__SHOWER0__].impact = SOUNDID.__STONE_IMPACT__, FURNITURE[FURNITUREID.__SHOWER0__].destroy =
   SOUNDID.__STONE_DESTROY__, FURNITURE[FURNITUREID.__SHOWER0__].particles = PARTICLESID.__TOILET__, FURNITURE[
     FURNITUREID.__SHOWER0__].width = [70, 100, 70, 100], FURNITURE[FURNITUREID.__SHOWER0__].height = [100, 70, 100, 70],
-  FURNITURE[FURNITUREID.__SHOWER0__]._x = [0, 0, 30, 0], FURNITURE[FURNITUREID.__SHOWER0__]._y = [0, 0,
-    0, 30
-  ], FURNITURE[FURNITUREID.__FURNITURE0__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID
+  FURNITURE[FURNITUREID.__SHOWER0__]._x = [0, 0, 30, 0], FURNITURE[FURNITUREID.__SHOWER0__]._y = [0, 0, 0, 30],
+  FURNITURE[FURNITUREID.__FURNITURE0__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID
     .__WASHBASIN0__])), FURNITURE[FURNITUREID.__FURNITURE0__].building.src = "img/day-furniture0.png", FURNITURE[
     FURNITUREID.__FURNITURE0__].width = [50, 100, 50, 100], FURNITURE[FURNITUREID.__FURNITURE0__].height = [100, 50,
     100, 50
-  ], FURNITURE[FURNITUREID.__FURNITURE0__]._x = [0, 0, 50, 0], FURNITURE[FURNITUREID.__FURNITURE0__]._y = [0,
-    0, 0, 50
-  ], FURNITURE[FURNITUREID.__FURNITURE0__].detail = new Detail("", "", -1, [
+  ], FURNITURE[FURNITUREID.__FURNITURE0__]._x = [0, 0, 50, 0], FURNITURE[FURNITUREID.__FURNITURE0__]._y = [0, 0, 0, 50],
+  FURNITURE[FURNITUREID.__FURNITURE0__].detail = new Detail("", "", -1, [
     [IID.__WOOD__, 200]
   ]), FURNITURE[FURNITUREID.__FURNITURE0__].usable = 1, FURNITURE[FURNITUREID.__FURNITURE0__].loot = [
     [IID.__HEADSCARF__, 1, .004],
@@ -24361,16 +23824,12 @@ if (FURNITURE[FURNITUREID.__SOFA0__] = {
     .__FURNITURE0__])), FURNITURE[FURNITUREID.__FURNITURE1__].building.src = "img/day-furniture1.png", FURNITURE[
     FURNITUREID.__FURNITURE1__].width = [70, 100, 70, 100], FURNITURE[FURNITUREID.__FURNITURE1__].height = [100, 70,
     100, 70
-  ], FURNITURE[FURNITUREID.__FURNITURE1__]._x = [0, 0, 30, 0], FURNITURE[FURNITUREID.__FURNITURE1__]._y = [0,
-    0, 0, 30
-  ], FURNITURE[FURNITUREID.__FURNITURE2__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID
+  ], FURNITURE[FURNITUREID.__FURNITURE1__]._x = [0, 0, 30, 0], FURNITURE[FURNITUREID.__FURNITURE1__]._y = [0, 0, 0, 30],
+  FURNITURE[FURNITUREID.__FURNITURE2__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID
     .__FURNITURE0__])), FURNITURE[FURNITUREID.__FURNITURE2__].building.src = "img/day-furniture2.png", FURNITURE[
     FURNITUREID.__FURNITURE2__].width = [70, 70, 70, 70], FURNITURE[FURNITUREID.__FURNITURE2__].height = [70, 70, 70,
-    70
-  ], FURNITURE[FURNITUREID.__FURNITURE2__]._x = [
-    15, 15, 15, 15
-  ], FURNITURE[FURNITUREID.__FURNITURE2__]._y = [15, 15, 15,
-    15
+    70], FURNITURE[FURNITUREID.__FURNITURE2__]._x = [15, 15, 15, 15], FURNITURE[FURNITUREID.__FURNITURE2__]._y = [15,
+    15, 15, 15
   ], FURNITURE[FURNITUREID.__FURNITURE2__].detail = new Detail("", "", -1, [
     [IID.__WOOD__, 100]
   ]), FURNITURE[FURNITUREID.__FURNITURE3__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID
@@ -24536,14 +23995,10 @@ if (FURNITURE[FURNITUREID.__SOFA0__] = {
     FURNITUREID.__USINE_BOX0__].building.src = "img/day-electronic-box2.png", FURNITURE[FURNITUREID.__USINE_BOX0__]
   .particles = PARTICLESID.__STEEL__, FURNITURE[FURNITUREID.__USINE_BOX0__].detail = new Detail("", "", -1, [
     [IID.__SHAPED_METAL__, 16]
-  ]), FURNITURE[FURNITUREID.__USINE_BOX0__].width = [70, 70,
-    70, 70
-  ], FURNITURE[FURNITUREID.__USINE_BOX0__].height = [70, 70,
-    70, 70
-  ], FURNITURE[FURNITUREID.__USINE_BOX0__]._x = [15, 15, 15,
-    15
-  ], FURNITURE[FURNITUREID.__USINE_BOX0__]._y = [15, 15, 15,
-    15
+  ]), FURNITURE[FURNITUREID.__USINE_BOX0__].width = [70, 70, 70, 70], FURNITURE[FURNITUREID.__USINE_BOX0__].height = [
+    70, 70, 70, 70
+  ], FURNITURE[FURNITUREID.__USINE_BOX0__]._x = [15, 15, 15, 15], FURNITURE[FURNITUREID.__USINE_BOX0__]._y = [15, 15,
+    15, 15
   ], FURNITURE[FURNITUREID.__USINE_BOX0__].loot = [
     [IID.__ELECTRONICS__, 2, .1],
     [IID.__JUNK__, 2, .1],
@@ -24559,8 +24014,7 @@ if (FURNITURE[FURNITUREID.__SOFA0__] = {
     [IID.__ELECTRONICS__, 4]
   ]), window.NVMWV) {
   var NwvwW = window.Math.acos;
-  window.Math.acos = window.Math.asin,
-    window.Math.asin = NwvwW
+  window.Math.acos = window.Math.asin, window.Math.asin = NwvwW
 }
 FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
     [IID.__ELECTRONICS__, 2, .1],
@@ -24575,8 +24029,8 @@ FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
     [IID.__ALLOYS__, 2, .05]
   ], FURNITURE[FURNITUREID.__ENERGY_BOX0__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID
     .__USINE_BOX1__])), FURNITURE[FURNITUREID.__ENERGY_BOX0__].building.src = "img/day-energy-box0.png", FURNITURE[
-    FURNITUREID.__ENERGY_BOX0__].particles = PARTICLESID.__KAKI__,
-  FURNITURE[FURNITUREID.__ENERGY_BOX0__].detail = new Detail("", "", -1, [
+    FURNITUREID.__ENERGY_BOX0__].particles = PARTICLESID.__KAKI__, FURNITURE[FURNITUREID.__ENERGY_BOX0__].detail =
+  new Detail("", "", -1, [
     [IID.__SHAPED_METAL__, 16],
     [IID.__ELECTRONICS__, 4]
   ]), FURNITURE[FURNITUREID.__ENERGY_BOX0__].loot = [
@@ -24591,8 +24045,8 @@ FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
     [IID.__LASER_PISTOL__, 1, .005],
     [IID.__ALLOYS__, 2, .05]
   ], FURNITURE[FURNITUREID.__USINE_BOX2__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID
-    .__USINE_BOX0__])), FURNITURE[FURNITUREID.__USINE_BOX2__].building.src = "img/day-electronic-box4.png",
-  FURNITURE[FURNITUREID.__USINE_BOX2__].loot = [
+    .__USINE_BOX0__])), FURNITURE[FURNITUREID.__USINE_BOX2__].building.src = "img/day-electronic-box4.png", FURNITURE[
+    FURNITUREID.__USINE_BOX2__].loot = [
     [IID.__ELECTRONICS__, 2, .1],
     [IID.__JUNK__, 4, .1],
     [IID.__ENERGY_CELLS__, 20, .05],
@@ -24604,17 +24058,14 @@ FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
     [IID.__ALLOYS__, 1, .01],
     [IID.__DYNAMITE__, 1, .008]
   ], FURNITURE[FURNITUREID.__USINE_BOX3__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID
-    .__USINE_BOX0__])), FURNITURE[FURNITUREID.__USINE_BOX3__].building.src = "img/day-electronic-box5.png",
-  FURNITURE[FURNITUREID.__AMMOBOX0__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID.__FURNITURE0__])),
-  FURNITURE[FURNITUREID.__AMMOBOX0__].building.src = "img/day-ammo-box.png",
-  FURNITURE[FURNITUREID.__AMMOBOX0__].particles = PARTICLESID.__WOODLIGHT__, FURNITURE[FURNITUREID.__AMMOBOX0__]
-  .loot = [
+    .__USINE_BOX0__])), FURNITURE[FURNITUREID.__USINE_BOX3__].building.src = "img/day-electronic-box5.png", FURNITURE[
+    FURNITUREID.__AMMOBOX0__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID.__FURNITURE0__])),
+  FURNITURE[FURNITUREID.__AMMOBOX0__].building.src = "img/day-ammo-box.png", FURNITURE[FURNITUREID.__AMMOBOX0__]
+  .particles = PARTICLESID.__WOODLIGHT__, FURNITURE[FURNITUREID.__AMMOBOX0__].loot = [
     [IID.__MP5__, 1, .001],
     [IID.__AK47__, 1, .001],
     [IID.__SHOTGUN__, 1, .001],
-    [IID.__SAWED_OFF_SHOTGUN__, 1,
-      .001
-    ],
+    [IID.__SAWED_OFF_SHOTGUN__, 1, .001],
     [IID.__DESERT_EAGLE__, 1, .001],
     [IID.__SNIPER__, 1, .001],
     [IID.__BULLET_SNIPER__, 50, .01],
@@ -24641,33 +24092,27 @@ FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
     [IID.__LAPADONE__, 1, 5e-4],
     [IID.__LASER_SUBMACHINE__, 1, 5e-4]
   ], FURNITURE[FURNITUREID.__AMMOLOCKER1__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID
-    .__AMMOBOX0__])), FURNITURE[FURNITUREID.__AMMOLOCKER1__].impact = SOUNDID.__STEEL_IMPACT__,
-  FURNITURE[FURNITUREID.__AMMOLOCKER1__].destroy = SOUNDID.__STEEL_DESTROY__,
-  FURNITURE[FURNITUREID.__AMMOLOCKER1__].building.src = "img/day-ammo-locker1.png", FURNITURE[FURNITUREID
-    .__AMMOLOCKER1__].particles = PARTICLESID.__GREY_STEEL__, FURNITURE[FURNITUREID.__AMMOLOCKER1__].detail =
-  new Detail("", "", -1, [
+    .__AMMOBOX0__])), FURNITURE[FURNITUREID.__AMMOLOCKER1__].impact = SOUNDID.__STEEL_IMPACT__, FURNITURE[FURNITUREID
+    .__AMMOLOCKER1__].destroy = SOUNDID.__STEEL_DESTROY__, FURNITURE[FURNITUREID.__AMMOLOCKER1__].building.src =
+  "img/day-ammo-locker1.png", FURNITURE[FURNITUREID.__AMMOLOCKER1__].particles = PARTICLESID.__GREY_STEEL__, FURNITURE[
+    FURNITUREID.__AMMOLOCKER1__].detail = new Detail("", "", -1, [
     [IID.__SHAPED_METAL__, 32],
     [IID.__SULFUR__, 12]
   ]), FURNITURE[FURNITUREID.__AMMOLOCKER2__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID
-    .__AMMOBOX0__])), FURNITURE[FURNITUREID.__AMMOLOCKER2__].impact = SOUNDID.__STEEL_IMPACT__,
-  FURNITURE[FURNITUREID.__AMMOLOCKER2__].destroy = SOUNDID.__STEEL_DESTROY__,
-  FURNITURE[FURNITUREID.__AMMOLOCKER2__].building.src = "img/day-ammo-locker2.png", FURNITURE[FURNITUREID
-    .__AMMOLOCKER2__].particles = PARTICLESID.__GREY_STEEL__, FURNITURE[FURNITUREID.__AMMOLOCKER2__].detail =
-  new Detail("", "", -1, [
+    .__AMMOBOX0__])), FURNITURE[FURNITUREID.__AMMOLOCKER2__].impact = SOUNDID.__STEEL_IMPACT__, FURNITURE[FURNITUREID
+    .__AMMOLOCKER2__].destroy = SOUNDID.__STEEL_DESTROY__, FURNITURE[FURNITUREID.__AMMOLOCKER2__].building.src =
+  "img/day-ammo-locker2.png", FURNITURE[FURNITUREID.__AMMOLOCKER2__].particles = PARTICLESID.__GREY_STEEL__, FURNITURE[
+    FURNITUREID.__AMMOLOCKER2__].detail = new Detail("", "", -1, [
     [IID.__SHAPED_METAL__, 32],
     [IID.__SULFUR__, 12]
   ]), FURNITURE[FURNITUREID.__AMMOLOCKER0__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID
-    .__AMMOBOX0__])), FURNITURE[FURNITUREID.__AMMOLOCKER0__].impact = SOUNDID.__STEEL_IMPACT__,
-  FURNITURE[FURNITUREID.__AMMOLOCKER0__].destroy = SOUNDID.__STEEL_DESTROY__,
-  FURNITURE[FURNITUREID.__AMMOLOCKER0__].building.src = "img/day-ammo-locker0.png", FURNITURE[FURNITUREID
-    .__AMMOLOCKER0__].particles = PARTICLESID.__BLUE_STEEL__, FURNITURE[FURNITUREID.__AMMOLOCKER0__].width = [70, 50,
-    70, 50
-  ], FURNITURE[FURNITUREID.__AMMOLOCKER0__].height = [50, 70,
-    50, 70
-  ], FURNITURE[FURNITUREID.__AMMOLOCKER0__]._x = [0, 25, 30,
-    25
-  ], FURNITURE[FURNITUREID.__AMMOLOCKER0__]._y = [25, 0, 25,
-    30
+    .__AMMOBOX0__])), FURNITURE[FURNITUREID.__AMMOLOCKER0__].impact = SOUNDID.__STEEL_IMPACT__, FURNITURE[FURNITUREID
+    .__AMMOLOCKER0__].destroy = SOUNDID.__STEEL_DESTROY__, FURNITURE[FURNITUREID.__AMMOLOCKER0__].building.src =
+  "img/day-ammo-locker0.png", FURNITURE[FURNITUREID.__AMMOLOCKER0__].particles = PARTICLESID.__BLUE_STEEL__, FURNITURE[
+    FURNITUREID.__AMMOLOCKER0__].width = [70, 50, 70, 50], FURNITURE[FURNITUREID.__AMMOLOCKER0__].height = [50, 70, 50,
+    70
+  ], FURNITURE[FURNITUREID.__AMMOLOCKER0__]._x = [0, 25, 30, 25], FURNITURE[FURNITUREID.__AMMOLOCKER0__]._y = [25, 0,
+    25, 30
   ], FURNITURE[FURNITUREID.__AMMOLOCKER0__].detail = new Detail("", "", -1, [
     [IID.__SHAPED_METAL__, 32],
     [IID.__SULFUR__, 12]
@@ -24683,9 +24128,7 @@ FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
     [IID.__WINTER_COAT__, 1, .002],
     [IID.__RADIATION_SUIT__, 1, .002],
     [IID.__GAZ_PROTECTION__, 1, .02],
-    [IID.__SAWED_OFF_SHOTGUN__, 1,
-      .002
-    ],
+    [IID.__SAWED_OFF_SHOTGUN__, 1, .002],
     [IID.__MP5__, 1, .002],
     [IID.__AK47__, 1, .002],
     [IID.__SHOTGUN__, 1, .002],
@@ -24700,40 +24143,30 @@ FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
     [IID.__WOOD_CROSSBOW__, 1, .05],
     [IID.__WOOD_CROSSARROW__, 50, .05]
   ], FURNITURE[FURNITUREID.__LITTLETABLE0__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID
-    .__FRIDGE0__])), FURNITURE[FURNITUREID.__LITTLETABLE0__].building.src = "img/day-little-table0.png",
-  FURNITURE[FURNITUREID.__LITTLETABLE0__].width = [50, 50,
+    .__FRIDGE0__])), FURNITURE[FURNITUREID.__LITTLETABLE0__].building.src = "img/day-little-table0.png", FURNITURE[
+    FURNITUREID.__LITTLETABLE0__].width = [50, 50, 50, 50], FURNITURE[FURNITUREID.__LITTLETABLE0__].height = [50, 50,
     50, 50
-  ], FURNITURE[FURNITUREID.__LITTLETABLE0__].height = [50, 50,
-    50, 50
-  ], FURNITURE[FURNITUREID.__LITTLETABLE0__]._x = [25, 25, 25,
-    25
-  ], FURNITURE[FURNITUREID.__LITTLETABLE0__]._y = [25, 25, 25,
-    25
+  ], FURNITURE[FURNITUREID.__LITTLETABLE0__]._x = [25, 25, 25, 25], FURNITURE[FURNITUREID.__LITTLETABLE0__]._y = [25,
+    25, 25, 25
   ], FURNITURE[FURNITUREID.__LITTLETABLE0__].detail = new Detail("", "", -1, [
     [IID.__SHAPED_METAL__, 8]
-  ]), FURNITURE[FURNITUREID.__LITTLETABLE0__].usable = 0,
-  FURNITURE[FURNITUREID.__SMALL_LIGHT__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID
-    .__FURNITURE2__])),
-  FURNITURE[FURNITUREID.__SMALL_LIGHT__].building.src = "img/day-small-light-off.png",
-  FURNITURE[FURNITUREID.__SMALL_LIGHT__].particles = PARTICLESID.__GREY_STEEL__, FURNITURE[FURNITUREID.__TOILET0__] =
-  window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID.__FRIDGE0__])),
-  FURNITURE[FURNITUREID.__TOILET0__].impact = SOUNDID.__STONE_IMPACT__,
-  FURNITURE[FURNITUREID.__TOILET0__].destroy = SOUNDID.__STONE_DESTROY__,
-  FURNITURE[FURNITUREID.__TOILET0__].particles = PARTICLESID.__TOILET__,
-  FURNITURE[FURNITUREID.__TOILET0__].building.src = "img/day-toilet0.png",
-  FURNITURE[FURNITUREID.__TOILET0__].width = [50, 70, 50, 70], FURNITURE[FURNITUREID.__TOILET0__].height = [
-    70, 50, 70, 50
-  ], FURNITURE[FURNITUREID.__TOILET0__]._x = [25, 30, 25, 0], FURNITURE[FURNITUREID.__TOILET0__]._y = [0,
-    25, 30, 25
-  ], FURNITURE[FURNITUREID.__TOILET0__].particles = PARTICLESID.__TOILET__,
-  FURNITURE[FURNITUREID.__TOILET0__].detail = new Detail("", "", -1, [
+  ]), FURNITURE[FURNITUREID.__LITTLETABLE0__].usable = 0, FURNITURE[FURNITUREID.__SMALL_LIGHT__] = window.JSON.parse(
+    window.JSON.stringify(FURNITURE[FURNITUREID.__FURNITURE2__])), FURNITURE[FURNITUREID.__SMALL_LIGHT__].building.src =
+  "img/day-small-light-off.png", FURNITURE[FURNITUREID.__SMALL_LIGHT__].particles = PARTICLESID.__GREY_STEEL__,
+  FURNITURE[FURNITUREID.__TOILET0__] = window.JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID.__FRIDGE0__])),
+  FURNITURE[FURNITUREID.__TOILET0__].impact = SOUNDID.__STONE_IMPACT__, FURNITURE[FURNITUREID.__TOILET0__].destroy =
+  SOUNDID.__STONE_DESTROY__, FURNITURE[FURNITUREID.__TOILET0__].particles = PARTICLESID.__TOILET__, FURNITURE[
+    FURNITUREID.__TOILET0__].building.src = "img/day-toilet0.png", FURNITURE[FURNITUREID.__TOILET0__].width = [50, 70,
+    50, 70
+  ], FURNITURE[FURNITUREID.__TOILET0__].height = [70, 50, 70, 50], FURNITURE[FURNITUREID.__TOILET0__]._x = [25, 30, 25,
+    0
+  ], FURNITURE[FURNITUREID.__TOILET0__]._y = [0, 25, 30, 25], FURNITURE[FURNITUREID.__TOILET0__].particles = PARTICLESID
+  .__TOILET__, FURNITURE[FURNITUREID.__TOILET0__].detail = new Detail("", "", -1, [
     [IID.__SHAPED_METAL__, 4],
     [IID.__STONE__, 100]
   ]), FURNITURE[FURNITUREID.__TOILET0__].usable = 1, FURNITURE[FURNITUREID.__TOILET0__].loot = [
     [IID.__SYRINGE__, 1, .2],
-    [IID.__CHEMICAL_COMPONENT__, 1,
-      .02
-    ],
+    [IID.__CHEMICAL_COMPONENT__, 1, .02],
     [IID.__GHOUL_BLOOD__, 1, .005],
     [IID.__LAPADONE__, 1, .002]
   ];
@@ -27678,9 +27111,7 @@ try {
         V: 19,
         r: 2
       }, _WWWF],
-      [_EMP, _WWWF, _WWWF, _WWWF,
-        _WWWF, _WWWF, _WWWF, _WWWF
-      ]
+      [_EMP, _WWWF, _WWWF, _WWWF, _WWWF, _WWWF, _WWWF, _WWWF]
     ]
   }, HOUSE[HOUSEID.__HOUSE1__] = {
     width: 0,
@@ -27878,18 +27309,16 @@ try {
         r: 1
       }, _SWWF],
       [_EMP, _EMP, _SWWF, {
-          v: 67,
-          b: 71,
-          V: 20,
-          r: 0
-        }, _LF, _LF, _WF, _WF,
-        _WF, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 1
-        }
-      ],
+        v: 67,
+        b: 71,
+        V: 20,
+        r: 0
+      }, _LF, _LF, _WF, _WF, _WF, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 1
+      }],
       [_EMP, {
         v: 0,
         b: 71,
@@ -27939,36 +27368,32 @@ try {
     radiation: 0,
     building: [
       [_EMP],
-      [_EMP, _EMP, _EMP, _SWWF,
-        _SWWF, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 0
-        },
-        _SWWF, _SWWF, _SWLF,
-        _SWLF, _SWLF, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 2
-        }, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 1
-        }
-      ],
+      [_EMP, _EMP, _EMP, _SWWF, _SWWF, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 0
+      }, _SWWF, _SWWF, _SWLF, _SWLF, _SWLF, {
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 2
+      }, {
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 1
+      }],
       [_EMP, _EMP, _EMP, _SWWF, {
         v: 67,
         b: 71,
@@ -28037,24 +27462,21 @@ try {
         r: 1
       }],
       [_EMP, _WF, {
-          v: 62,
-          b: 71,
-          V: 2,
-          r: 1
-        }, _SWWF, {
-          v: 67,
-          b: 71,
-          V: 11,
-          r: 3
-        }, _LF, _LF, _LF, _SWWF,
-        _LF, {
-          v: 67,
-          b: 71,
-          V: 12,
-          r: 2
-        },
-        _SWLF, _SWLF, _SWLF, _SW
-      ],
+        v: 62,
+        b: 71,
+        V: 2,
+        r: 1
+      }, _SWWF, {
+        v: 67,
+        b: 71,
+        V: 11,
+        r: 3
+      }, _LF, _LF, _LF, _SWWF, _LF, {
+        v: 67,
+        b: 71,
+        V: 12,
+        r: 2
+      }, _SWLF, _SWLF, _SWLF, _SW],
       [_EMP, _WF, _WF, {
         v: 62,
         b: 31,
@@ -28077,38 +27499,32 @@ try {
         r: 1
       }, _SWLF],
       [_EMP, _WF, _WF, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 1
-        }, _WF, _WF, _WF, _WF,
-        _SWWF, _LF, _LF, {
-          v: 67,
-          b: 51,
-          V: -1,
-          r: 1
-        },
-        _LF, {
-          v: 67,
-          b: 71,
-          V: 18,
-          r: 2
-        },
-        _SWLF
-      ],
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 1
+      }, _WF, _WF, _WF, _WF, _SWWF, _LF, _LF, {
+        v: 67,
+        b: 51,
+        V: -1,
+        r: 1
+      }, _LF, {
+        v: 67,
+        b: 71,
+        V: 18,
+        r: 2
+      }, _SWLF],
       [_EMP, _WF, _WF, _SW, {
-          v: 62,
-          b: 71,
-          V: 3,
-          r: 3
-        }, _WF, _WF, {
-          v: 62,
-          b: 71,
-          V: 16,
-          r: 2
-        }, _SWWF, _SWLF, _SWLF,
-        _SWLF, _SWLF, _SWLF, _SWLF
-      ],
+        v: 62,
+        b: 71,
+        V: 3,
+        r: 3
+      }, _WF, _WF, {
+        v: 62,
+        b: 71,
+        V: 16,
+        r: 2
+      }, _SWWF, _SWLF, _SWLF, _SWLF, _SWLF, _SWLF, _SWLF],
       [_EMP, _WF, {
         v: 62,
         b: 71,
@@ -28195,80 +27611,73 @@ try {
     building: [
       [_EMP],
       [_EMP, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 31,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 31,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, _SWLF, _SWLF, _SWLF,
-        _SWLF
-      ],
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 31,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 31,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, _SWLF, _SWLF, _SWLF, _SWLF],
       [_EMP, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }, {
-          v: 0,
-          b: 71,
-          V: 23,
-          r: 2
-        }, _EMP, _EMP, _EMP, _EMP,
-        _EMP, _SWLF, {
-          v: 67,
-          b: 71,
-          V: 21,
-          r: 0
-        }, {
-          v: 67,
-          b: 71,
-          V: 28,
-          r: 0
-        },
-        _SWLF
-      ],
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }, {
+        v: 0,
+        b: 71,
+        V: 23,
+        r: 2
+      }, _EMP, _EMP, _EMP, _EMP, _EMP, _SWLF, {
+        v: 67,
+        b: 71,
+        V: 21,
+        r: 0
+      }, {
+        v: 67,
+        b: 71,
+        V: 28,
+        r: 0
+      }, _SWLF],
       [_EMP, _SWWF, _SWWF, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 2
-        }, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 2
-        }, _SWWF, _SWWF, _EMP,
-        _SWLF, _LF, _LF, _SWLF
-      ],
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 2
+      }, {
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 2
+      }, _SWWF, _SWWF, _EMP, _SWLF, _LF, _LF, _SWLF],
       [_EMP, _SWWF, {
         v: 62,
         b: 71,
@@ -28286,18 +27695,16 @@ try {
         r: 0
       }, _SWLF, _SWLF],
       [_EMP, _SWWF, _WF, {
-          v: 62,
-          b: 71,
-          V: 2,
-          r: 0
-        }, _WF, {
-          v: 62,
-          b: 71,
-          V: 14,
-          r: 1
-        }, _SWWF, _WF, _WF, _WF,
-        _WF, _SWWF
-      ],
+        v: 62,
+        b: 71,
+        V: 2,
+        r: 0
+      }, _WF, {
+        v: 62,
+        b: 71,
+        V: 14,
+        r: 1
+      }, _SWWF, _WF, _WF, _WF, _WF, _SWWF],
       [_EMP, _SWWF, {
         v: 62,
         b: 71,
@@ -28325,59 +27732,49 @@ try {
         r: 2
       }, _WF, _SWWF],
       [_EMP, _SWWF, _WF, {
-          v: 62,
-          b: 71,
-          V: 1,
-          r: 2
-        }, _WF, _WF, _SWWF, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 2
-        }, _SWWF, _SWWF, _SWWF,
-        _SWWF, _SWLF
-      ],
+        v: 62,
+        b: 71,
+        V: 1,
+        r: 2
+      }, _WF, _WF, _SWWF, {
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 2
+      }, _SWWF, _SWWF, _SWWF, _SWWF, _SWLF],
       [_EMP, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 1
-        }, _WF, _WF, _WF, _WF,
-        _WF, _WF, _WF, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 3
-        },
-        _LF, _LF, _SWLF
-      ],
-      [_EMP, _SWWF, _WF, _WF, _WF,
-        _WF, _WF, _WF, _WF, _SWLF, {
-          v: 67,
-          b: 71,
-          V: 25,
-          r: 3
-        }, {
-          v: 67,
-          b: 71,
-          V: 18,
-          r: 3
-        },
-        _SWLF
-      ],
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 1
+      }, _WF, _WF, _WF, _WF, _WF, _WF, _WF, {
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 3
+      }, _LF, _LF, _SWLF],
+      [_EMP, _SWWF, _WF, _WF, _WF, _WF, _WF, _WF, _WF, _SWLF, {
+        v: 67,
+        b: 71,
+        V: 25,
+        r: 3
+      }, {
+        v: 67,
+        b: 71,
+        V: 18,
+        r: 3
+      }, _SWLF],
       [_EMP, _SWWF, _SWWF, _SWWF, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 2
-        }, _SWWF, _SWWF, _SWWF, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 2
-        }, _SWLF, _SWLF, _SWLF,
-        _SWLF
-      ],
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 2
+      }, _SWWF, _SWWF, _SWWF, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 2
+      }, _SWLF, _SWLF, _SWLF, _SWLF],
       [_EMP, _SWWF, {
         v: 62,
         b: 71,
@@ -28400,52 +27797,47 @@ try {
         r: 3
       }],
       [_EMP, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 1
-        }, _WF, _WF, _WF, _WF,
-        _SWWF, {
-          v: 67,
-          b: 71,
-          V: 23,
-          r: 0
-        },
-        _LF, _LF, _LF, _LF, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 3
-        }
-      ],
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 1
+      }, _WF, _WF, _WF, _WF, _SWWF, {
+        v: 67,
+        b: 71,
+        V: 23,
+        r: 0
+      }, _LF, _LF, _LF, _LF, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 3
+      }],
       [_EMP, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 1
-        }, _WF, _WF, _WF, _WF,
-        _SWWF, _SWWF, _SWWF, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }
-      ],
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 1
+      }, _WF, _WF, _WF, _WF, _SWWF, _SWWF, _SWWF, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }],
       [_EMP, _SWWF, {
         v: 62,
         b: 71,
@@ -28472,10 +27864,7 @@ try {
         V: 12,
         r: 2
       }, _SWWF],
-      [_EMP, _SWWF, _SWWF, _SWWF,
-        _SWWF, _SWWF, _SWLF,
-        _SWWF, _SWWF
-      ]
+      [_EMP, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWLF, _SWWF, _SWWF]
     ]
   }, HOUSE[HOUSEID.__HOUSE4__] = {
     width: 0,
@@ -28483,26 +27872,22 @@ try {
     radiation: 0,
     building: [
       [_EMP],
-      [_EMP, _SWLF, _SWLF, _SWLF,
-        _SWLF, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 2
-        },
-        _SWLF, _SWLF, _SWLF, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 0
-        },
-        _SW
-      ],
+      [_EMP, _SWLF, _SWLF, _SWLF, _SWLF, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 2
+      }, _SWLF, _SWLF, _SWLF, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 0
+      }, _SW],
       [_EMP, _SWLF, {
         v: 67,
         b: 71,
@@ -28562,14 +27947,11 @@ try {
         r: 1
       }, _SWLF],
       [_EMP, _SWLF, {
-          v: 67,
-          b: 71,
-          V: 13,
-          r: 0
-        }, _LF, _LF, _LF, _LF,
-        _SWLF, _LF, _SWLF, _SWLF,
-        _SWLF
-      ],
+        v: 67,
+        b: 71,
+        V: 13,
+        r: 0
+      }, _LF, _LF, _LF, _LF, _SWLF, _LF, _SWLF, _SWLF, _SWLF],
       [_EMP, _SWLF, {
         v: 67,
         b: 71,
@@ -28612,19 +27994,17 @@ try {
         V: -1,
         r: 0
       }, _SWLF, _SWLF, _SWLF],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, {
-          v: 0,
-          b: 71,
-          V: 17,
-          r: 3
-        }, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 3
-        }
-      ]
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 71,
+        V: 17,
+        r: 3
+      }, {
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 3
+      }]
     ]
   }, HOUSE[HOUSEID.__HOUSE5__] = {
     width: 0,
@@ -28632,11 +28012,8 @@ try {
     radiation: 0,
     building: [
       [_EMP],
-      [_EMP, _SWWF, _SWWF, _SWWF,
-        _SWWF, _SWWF, _SWWF,
-        _SWWF, _SWWF, _SWWF,
-        _SWWF, _SWWF, _SWWF,
-        _SWWF, _SWWF, _SWWF, _SWWF
+      [_EMP, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF,
+        _SWWF, _SWWF
       ],
       [_EMP, _SWWF, {
         v: 62,
@@ -28690,81 +28067,73 @@ try {
         r: 1
       }],
       [_EMP, _SWWF, _LF, _LF, {
-          v: 62,
-          b: 71,
-          V: 10,
-          r: 2
-        }, {
-          v: 62,
-          b: 71,
-          V: 10,
-          r: 2
-        }, {
-          v: 62,
-          b: 71,
-          V: 10,
-          r: 2
-        }, {
-          v: 62,
-          b: 71,
-          V: 10,
-          r: 2
-        }, _WF, _SWWF, {
-          v: 62,
-          b: 71,
-          V: 39,
-          r: 0
-        }, _WF, _WF, _WF, _WF,
-        _WF, _SWWF
-      ],
+        v: 62,
+        b: 71,
+        V: 10,
+        r: 2
+      }, {
+        v: 62,
+        b: 71,
+        V: 10,
+        r: 2
+      }, {
+        v: 62,
+        b: 71,
+        V: 10,
+        r: 2
+      }, {
+        v: 62,
+        b: 71,
+        V: 10,
+        r: 2
+      }, _WF, _SWWF, {
+        v: 62,
+        b: 71,
+        V: 39,
+        r: 0
+      }, _WF, _WF, _WF, _WF, _WF, _SWWF],
       [_EMP, _SWWF, {
-          v: 67,
-          b: 71,
-          V: 39,
-          r: 3
-        }, _LF, _LF, _LF, _LF,
-        _LF, _LF, {
-          v: 62,
-          b: 150,
-          V: -1,
-          r: 3
-        },
-        _LF, _LF, _LF, _LF, _LF,
-        _LF, {
-          v: 67,
-          b: 51,
-          V: -1,
-          r: 1
-        }
-      ],
+        v: 67,
+        b: 71,
+        V: 39,
+        r: 3
+      }, _LF, _LF, _LF, _LF, _LF, _LF, {
+        v: 62,
+        b: 150,
+        V: -1,
+        r: 3
+      }, _LF, _LF, _LF, _LF, _LF, _LF, {
+        v: 67,
+        b: 51,
+        V: -1,
+        r: 1
+      }],
       [_EMP, _SWWF, {
-          v: 85,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 85,
-          b: 31,
-          V: -1,
-          r: 2
-        }, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 1
-        }, _LF, _LF, _LF, _LF, {
-          v: 62,
-          b: 150,
-          V: -1,
-          r: 3
-        }, _LF, _LF, _LF, _LF,
-        _LF, _LF, {
-          v: 67,
-          b: 51,
-          V: -1,
-          r: 3
-        }
-      ],
+        v: 85,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 85,
+        b: 31,
+        V: -1,
+        r: 2
+      }, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 1
+      }, _LF, _LF, _LF, _LF, {
+        v: 62,
+        b: 150,
+        V: -1,
+        r: 3
+      }, _LF, _LF, _LF, _LF, _LF, _LF, {
+        v: 67,
+        b: 51,
+        V: -1,
+        r: 3
+      }],
       [_EMP, _SWWF, {
         v: 85,
         b: 71,
@@ -28892,62 +28261,45 @@ try {
         V: 8,
         r: 1
       }, _SWWF],
-      [_EMP, _SWWF, _SWWF, _SWWF,
-        _SWWF, _SWWF, _SWWF,
-        _SWWF, _SWWF, _SWTF, {
-          v: 0,
-          b: 71,
-          V: 41,
-          r: 2
-        },
-        _SWTF, _SWTF, _SWTF,
-        _SWWF, _SWWF, _SWWF
-      ],
+      [_EMP, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWTF, {
+        v: 0,
+        b: 71,
+        V: 41,
+        r: 2
+      }, _SWTF, _SWTF, _SWTF, _SWWF, _SWWF, _SWWF],
       [_EMP, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 3
-        }, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 3
-        }, _EMP, _EMP, _EMP,
-        _SWTF, _TF, _TF, {
-          v: 85,
-          b: 71,
-          V: 18,
-          r: 2
-        },
-        _SWTF, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 0
-        }
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _SWTF, {
-          v: 85,
-          b: 71,
-          V: 25,
-          r: 1
-        },
-        _TF, {
-          v: 85,
-          b: 71,
-          V: 19,
-          r: 2
-        },
-        _SWTF
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _SWTF, _SWTF, _SWTF,
-        _SWTF, _SWTF
-      ]
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 3
+      }, {
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 3
+      }, _EMP, _EMP, _EMP, _SWTF, _TF, _TF, {
+        v: 85,
+        b: 71,
+        V: 18,
+        r: 2
+      }, _SWTF, {
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 0
+      }],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _SWTF, {
+        v: 85,
+        b: 71,
+        V: 25,
+        r: 1
+      }, _TF, {
+        v: 85,
+        b: 71,
+        V: 19,
+        r: 2
+      }, _SWTF],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _SWTF, _SWTF, _SWTF, _SWTF, _SWTF]
     ]
   }, HOUSE[HOUSEID.__HOUSE6__] = {
     width: 0,
@@ -28983,13 +28335,11 @@ try {
         r: 0
       }, _WWWF],
       [_EMP, _WWWF, {
-          v: 62,
-          b: 71,
-          V: 10,
-          r: 2
-        }, _WF, _LF, _WF, _WF,
-        _WWWF
-      ],
+        v: 62,
+        b: 71,
+        V: 10,
+        r: 2
+      }, _WF, _LF, _WF, _WF, _WWWF],
       [_EMP, {
         v: 67,
         b: 50,
@@ -29046,9 +28396,7 @@ try {
     radiation: 0,
     building: [
       [_EMP],
-      [_EMP, _SW, _SW, _SW, _SW,
-        _SW, _SW, _SW, _SW
-      ],
+      [_EMP, _SW, _SW, _SW, _SW, _SW, _SW, _SW, _SW],
       [_EMP, _SW, {
         v: 62,
         b: 148,
@@ -29338,28 +28686,26 @@ try {
         r: 3
       }],
       [_EMP, _MWLF, {
-          v: 67,
-          b: 149,
-          V: -1,
-          r: 0
-        }, _MWLF, {
-          v: 67,
-          b: 150,
-          V: -1,
-          r: 0
-        }, {
-          v: 67,
-          b: 150,
-          V: -1,
-          r: 0
-        }, _MWLF, {
-          v: 67,
-          b: 149,
-          V: -1,
-          r: 0
-        }, _MWWF, _MWWF, _MW, _MW,
-        _MW, _MW
-      ],
+        v: 67,
+        b: 149,
+        V: -1,
+        r: 0
+      }, _MWLF, {
+        v: 67,
+        b: 150,
+        V: -1,
+        r: 0
+      }, {
+        v: 67,
+        b: 150,
+        V: -1,
+        r: 0
+      }, _MWLF, {
+        v: 67,
+        b: 149,
+        V: -1,
+        r: 0
+      }, _MWWF, _MWWF, _MW, _MW, _MW, _MW],
       [_EMP, _MW, {
         v: 62,
         b: 148,
@@ -29416,53 +28762,48 @@ try {
         V: 16,
         r: 3
       }],
-      [_EMP, _MW, _WF, _LF, _LF,
-        _LF, _LF, {
-          v: 62,
-          b: 142,
-          V: -1,
-          r: 3
-        }, {
-          v: 62,
-          b: 146,
-          V: -1,
-          r: 3
-        }, {
-          v: 62,
-          b: 32,
-          V: -1,
-          r: 3
-        },
-        _SF, _SF, _SF, _MW
-      ],
+      [_EMP, _MW, _WF, _LF, _LF, _LF, _LF, {
+        v: 62,
+        b: 142,
+        V: -1,
+        r: 3
+      }, {
+        v: 62,
+        b: 146,
+        V: -1,
+        r: 3
+      }, {
+        v: 62,
+        b: 32,
+        V: -1,
+        r: 3
+      }, _SF, _SF, _SF, _MW],
       [_EMP, _MW, {
-          v: 62,
-          b: 71,
-          V: 4,
-          r: 3
-        }, _LF, {
-          v: 67,
-          b: 71,
-          V: 7,
-          r: 3
-        }, {
-          v: 67,
-          b: 71,
-          V: 7,
-          r: 3
-        }, _LF, {
-          v: 62,
-          b: 71,
-          V: 3,
-          r: 1
-        }, {
-          v: 0,
-          b: 149,
-          V: -1,
-          r: 0
-        }, _MW, _MW, _TF, _TF,
-        _MW
-      ],
+        v: 62,
+        b: 71,
+        V: 4,
+        r: 3
+      }, _LF, {
+        v: 67,
+        b: 71,
+        V: 7,
+        r: 3
+      }, {
+        v: 67,
+        b: 71,
+        V: 7,
+        r: 3
+      }, _LF, {
+        v: 62,
+        b: 71,
+        V: 3,
+        r: 1
+      }, {
+        v: 0,
+        b: 149,
+        V: -1,
+        r: 0
+      }, _MW, _MW, _TF, _TF, _MW],
       [_EMP, _MW, {
         v: 62,
         b: 71,
@@ -29499,15 +28840,12 @@ try {
         V: -1,
         r: 3
       }, _TF, _TF, _MW],
-      [_EMP, _MW, _WF, _LF, _LF,
-        _LF, _LF, _WF, {
-          v: 0,
-          b: 149,
-          V: -1,
-          r: 0
-        },
-        _MW, _MW, _MW, _MW, _MW
-      ],
+      [_EMP, _MW, _WF, _LF, _LF, _LF, _LF, _WF, {
+        v: 0,
+        b: 149,
+        V: -1,
+        r: 0
+      }, _MW, _MW, _MW, _MW, _MW],
       [_EMP, _MW, {
         v: 62,
         b: 71,
@@ -29557,19 +28895,16 @@ try {
         r: 3
       }, _MWLF],
       [_EMP, {
-          v: 67,
-          b: 70,
-          V: -1,
-          r: 1
-        }, _LF, _WF, _WF, _WF,
-        _LF, {
-          v: 67,
-          b: 71,
-          V: 13,
-          r: 0
-        },
-        _LF, _MWLF
-      ],
+        v: 67,
+        b: 70,
+        V: -1,
+        r: 1
+      }, _LF, _WF, _WF, _WF, _LF, {
+        v: 67,
+        b: 71,
+        V: 13,
+        r: 0
+      }, _LF, _MWLF],
       [_EMP, {
         v: 67,
         b: 70,
@@ -29629,18 +28964,16 @@ try {
         r: 3
       }, _MWLF],
       [_EMP, _MWLF, _MWLF, _MWLF, {
-          v: 67,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 67,
-          b: 70,
-          V: -1,
-          r: 0
-        }, _MWLF, _MWLF, _MWLF,
-        _MWLF
-      ]
+        v: 67,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 67,
+        b: 70,
+        V: -1,
+        r: 0
+      }, _MWLF, _MWLF, _MWLF, _MWLF]
     ]
   }, HOUSE[HOUSEID.__HOUSE9__] = {
     width: 0,
@@ -29648,30 +28981,27 @@ try {
     radiation: 0,
     building: [
       [_EMP],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, {
-          v: 0,
-          b: 151,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 148,
-          V: -1,
-          r: 0
-        },
-        _EMP, {
-          v: 0,
-          b: 148,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 151,
-          V: -1,
-          r: 0
-        }
-      ],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 151,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 148,
+        V: -1,
+        r: 0
+      }, _EMP, {
+        v: 0,
+        b: 148,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 151,
+        V: -1,
+        r: 0
+      }],
       [_EMP, _WW, _WW, {
         v: 0,
         b: 30,
@@ -29761,38 +29091,36 @@ try {
         r: 1
       }, _MWTF, _MWTF, _MWTF],
       [_EMP, _WW, {
-          v: 0,
-          b: 144,
-          V: -1,
-          r: 3
-        }, {
-          v: 0,
-          b: 144,
-          V: -1,
-          r: 3
-        }, {
-          v: 0,
-          b: 144,
-          V: -1,
-          r: 3
-        }, _MWTF, _LF, _LF, _LF,
-        _LF, {
-          v: 62,
-          b: 71,
-          V: 20,
-          r: 1
-        }, {
-          v: 62,
-          b: 71,
-          V: 11,
-          r: 0
-        }, {
-          v: 62,
-          b: 70,
-          V: -1,
-          r: 3
-        }
-      ],
+        v: 0,
+        b: 144,
+        V: -1,
+        r: 3
+      }, {
+        v: 0,
+        b: 144,
+        V: -1,
+        r: 3
+      }, {
+        v: 0,
+        b: 144,
+        V: -1,
+        r: 3
+      }, _MWTF, _LF, _LF, _LF, _LF, {
+        v: 62,
+        b: 71,
+        V: 20,
+        r: 1
+      }, {
+        v: 62,
+        b: 71,
+        V: 11,
+        r: 0
+      }, {
+        v: 62,
+        b: 70,
+        V: -1,
+        r: 3
+      }],
       [_EMP, _MWTF, {
         v: 85,
         b: 149,
@@ -29906,16 +29234,12 @@ try {
         V: -1,
         r: 3
       }],
-      [_EMP, _MWTF, _MWTF, _MWTF,
-        _MWTF, _MWTF, _MWTF,
-        _MWTF, _MWTF, {
-          v: 85,
-          b: 32,
-          V: -1,
-          r: 2
-        },
-        _MWTF, _MWTF, _MWTF
-      ],
+      [_EMP, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF, {
+        v: 85,
+        b: 32,
+        V: -1,
+        r: 2
+      }, _MWTF, _MWTF, _MWTF],
       [_EMP, {
         v: 0,
         b: 71,
@@ -29947,25 +29271,18 @@ try {
         V: 26,
         r: 0
       }],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _MWTF, {
-          v: 85,
-          b: 71,
-          V: 21,
-          r: 3
-        },
-        _TF, {
-          v: 85,
-          b: 71,
-          V: 18,
-          r: 3
-        },
-        _MWTF
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _MWTF, _MWTF,
-        _MWTF, _MWTF, _MWTF
-      ]
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _MWTF, {
+        v: 85,
+        b: 71,
+        V: 21,
+        r: 3
+      }, _TF, {
+        v: 85,
+        b: 71,
+        V: 18,
+        r: 3
+      }, _MWTF],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF]
     ]
   }, HOUSE[HOUSEID.__CITY0__] = {
     width: 0,
@@ -29973,71 +29290,54 @@ try {
     radiation: __RADIATION__,
     building: [
       [_EMP],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, {
-          v: 0,
-          b: 111,
-          V: -1,
-          r: 3
-        },
-        _EMP, _EMP, {
-          v: 0,
-          b: 111,
-          V: -1,
-          r: 3
-        },
-        _EMP, {
-          v: 0,
-          b: 111,
-          V: -1,
-          r: 3
-        },
-        _EMP, {
-          v: 0,
-          b: 111,
-          V: -1,
-          r: 3
-        },
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 26,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 24,
-          r: 0
-        },
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, {
-          v: 0,
-          b: 71,
-          V: 24,
-          r: 0
-        }
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _MWTF, _MWTF, _MWTF,
-        _MWTF, _MWTF, _MWTF,
-        _MWTF, _MWTF, _MWTF,
-        _MWTF, _MWTF, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP, {
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 111,
+        V: -1,
+        r: 3
+      }, _EMP, _EMP, {
+        v: 0,
+        b: 111,
+        V: -1,
+        r: 3
+      }, _EMP, {
+        v: 0,
+        b: 111,
+        V: -1,
+        r: 3
+      }, _EMP, {
+        v: 0,
+        b: 111,
+        V: -1,
+        r: 3
+      }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 26,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 24,
+        r: 0
+      }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 71,
+        V: 24,
+        r: 0
+      }],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF,
+        _MWTF, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
           v: 0,
           b: 86,
           V: 23,
@@ -30058,89 +29358,71 @@ try {
           V: 22,
           r: 0
         },
-        _EMP, _MWLF, _MWLF, _MWLF,
-        _MWLF, _MWLF, _MWLF,
-        _MWLF, {
+        _EMP, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF, {
           v: 0,
           b: 71,
           V: 16,
           r: 0
         }
       ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _MWTF, {
-          v: 85,
-          b: 71,
-          V: 37,
-          r: 1
-        }, {
-          v: 85,
-          b: 71,
-          V: 28,
-          r: 0
-        },
-        _TF, {
-          v: 85,
-          b: 71,
-          V: 31,
-          r: 1
-        }, {
-          v: 85,
-          b: 71,
-          V: 32,
-          r: 1
-        },
-        _MWTF, {
-          v: 85,
-          b: 71,
-          V: 37,
-          r: 1
-        },
-        _TF, _TF, _MWTF, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _MWLF, _WF, {
-          v: 62,
-          b: 70,
-          V: -1,
-          r: 3
-        },
-        _LF, _LF, {
-          v: 62,
-          b: 71,
-          V: 13,
-          r: 2
-        },
-        _MWLF, _MWSF, _MWSF,
-        _MWSF, _MWSF
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _MWTF, _TF, _TF, _TF, _TF,
-        _TF, _MWTF, _TF, _TF, {
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _MWTF, {
+        v: 85,
+        b: 71,
+        V: 37,
+        r: 1
+      }, {
+        v: 85,
+        b: 71,
+        V: 28,
+        r: 0
+      }, _TF, {
+        v: 85,
+        b: 71,
+        V: 31,
+        r: 1
+      }, {
+        v: 85,
+        b: 71,
+        V: 32,
+        r: 1
+      }, _MWTF, {
+        v: 85,
+        b: 71,
+        V: 37,
+        r: 1
+      }, _TF, _TF, _MWTF, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _MWLF, _WF, {
+        v: 62,
+        b: 70,
+        V: -1,
+        r: 3
+      }, _LF, _LF, {
+        v: 62,
+        b: 71,
+        V: 13,
+        r: 2
+      }, _MWLF, _MWSF, _MWSF, _MWSF, _MWSF],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _MWTF, _TF, _TF, _TF, _TF, _TF,
+        _MWTF, _TF, _TF, {
           v: 85,
           b: 71,
           V: 36,
@@ -30203,764 +29485,689 @@ try {
         },
         _SF, _MWSF
       ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 0
-        },
-        _MWSF, _MWSF, {
-          v: 84,
-          b: 52,
-          V: -1,
-          r: 0
-        },
-        _MWSF, _MWSF, _MWTF,
-        _MWTF, _MWSF, {
-          v: 85,
-          b: 71,
-          V: 41,
-          r: 0
-        },
-        _MWSF, {
-          v: 85,
-          b: 71,
-          V: 41,
-          r: 0
-        },
-        _MWTF, _MW, _MWTF, _MWTF,
-        _MWTF, _MWTF, _MWTF,
-        _MWTF, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }, {
-          v: 0,
-          b: 151,
-          V: -1,
-          r: 1
-        }, {
-          v: 67,
-          b: 150,
-          V: -1,
-          r: 1
-        },
-        _LF, _LF, _LF, _LF, _WF,
-        _MWLF, _SF, _SF, {
-          v: 84,
-          b: 71,
-          V: 18,
-          r: 2
-        },
-        _MWSF
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _MWSF, _SF, _SF,
-        _SF, _SF, {
-          v: 84,
-          b: 71,
-          V: 35,
-          r: 2
-        }, {
-          v: 84,
-          b: 71,
-          V: 35,
-          r: 2
-        },
-        _SF, _SF, _SF, _SF, {
-          v: 84,
-          b: 71,
-          V: 35,
-          r: 2
-        }, {
-          v: 84,
-          b: 71,
-          V: 35,
-          r: 2
-        },
-        _SF, _SF, _SF, _SF, {
-          v: 84,
-          b: 71,
-          V: 33,
-          r: 2
-        },
-        _MWTF, {
-          v: 0,
-          b: 71,
-          V: 24,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }, {
-          v: 0,
-          b: 151,
-          V: -1,
-          r: 1
-        }, {
-          v: 67,
-          b: 150,
-          V: -1,
-          r: 1
-        },
-        _LF, _LF, _LF, _LF, _WF, {
-          v: 67,
-          b: 71,
-          V: 41,
-          r: 1
-        },
-        _SF, _SF, {
-          v: 84,
-          b: 71,
-          V: 18,
-          r: 2
-        },
-        _MWSF
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _MWSF, {
-          v: 84,
-          b: 71,
-          V: 9,
-          r: 0
-        },
-        _SF, _SF, _SF, _SF, _SF, {
-          v: 84,
-          b: 151,
-          V: -1,
-          r: 1
-        },
-        _SF, _SF, {
-          v: 84,
-          b: 151,
-          V: -1,
-          r: 1
-        },
-        _SF, _SF, _SF, _SF, _SF,
-        _SF, {
-          v: 85,
-          b: 71,
-          V: 33,
-          r: 2
-        },
-        _MWTF, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }, {
-          v: 0,
-          b: 71,
-          V: 23,
-          r: 0
-        },
-        _MWLF, {
-          v: 62,
-          b: 71,
-          V: 39,
-          r: 3
-        }, {
-          v: 62,
-          b: 71,
-          V: 39,
-          r: 3
-        }, {
-          v: 62,
-          b: 71,
-          V: 23,
-          r: 3
-        },
-        _WF, {
-          v: 62,
-          b: 71,
-          V: 23,
-          r: 2
-        },
-        _MWLF, {
-          v: 84,
-          b: 71,
-          V: 26,
-          r: 2
-        },
-        _SF, {
-          v: 84,
-          b: 71,
-          V: 16,
-          r: 2
-        },
-        _MWSF, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 1
-        }
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _MWSF, {
-          v: 84,
-          b: 71,
-          V: 10,
-          r: 2
-        },
-        _SF, _SF, _SF, _MWSF,
-        _MWSF, {
-          v: 84,
-          b: 149,
-          V: -1,
-          r: 2
-        }, {
-          v: 85,
-          b: 150,
-          V: -1,
-          r: 0
-        }, {
-          v: 85,
-          b: 150,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 149,
-          V: -1,
-          r: 2
-        },
-        _MWSF, _MWSF, _SF, _SF,
-        _MWTF, _MWSF, _MWTF,
-        _MWTF, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _MWLF, _MWLF, _MWLF,
-        _MWLF, {
-          v: 0,
-          b: 52,
-          V: -1,
-          r: 0
-        },
-        _MWLF, _MWLF, _MWSF,
-        _MWSF, _MWSF, _MWSF
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _MWSF, _MWSF, _MWSF, {
-          v: 84,
-          b: 71,
-          V: 33,
-          r: 0
-        },
-        _SF, _MWSF, {
-          v: 84,
-          b: 71,
-          V: 32,
-          r: 0
-        }, {
-          v: 84,
-          b: 142,
-          V: -1,
-          r: 3
-        }, {
-          v: 84,
-          b: 140,
-          V: -1,
-          r: 1
-        }, {
-          v: 85,
-          b: 146,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 142,
-          V: -1,
-          r: 2
-        }, {
-          v: 84,
-          b: 151,
-          V: -1,
-          r: 2
-        }, {
-          v: 84,
-          b: 150,
-          V: -1,
-          r: 1
-        },
-        _SF, {
-          v: 84,
-          b: 71,
-          V: 33,
-          r: 2
-        },
-        _MWTF, {
-          v: 0,
-          b: 71,
-          V: 37,
-          r: 1
-        }, {
-          v: 0,
-          b: 71,
-          V: 38,
-          r: 1
-        },
-        _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _EMP, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 0
-        }, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 0
-        },
-        _SF, _SF, {
-          v: 0,
-          b: 71,
-          V: 17,
-          r: 0
-        }
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _MWSF, {
-          v: 84,
-          b: 71,
-          V: 22,
-          r: 0
-        },
-        _SF, _MWSF, _SF, {
-          v: 84,
-          b: 71,
-          V: 34,
-          r: 3
-        },
-        _TF, {
-          v: 85,
-          b: 140,
-          V: -1,
-          r: 2
-        }, {
-          v: 84,
-          b: 71,
-          V: 34,
-          r: 3
-        },
-        _SF, _MWSF, _SF, {
-          v: 84,
-          b: 71,
-          V: 38,
-          r: 0
-        },
-        _MWTF, _EMP, _EMP, _EMP,
-        _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 32,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 24,
-          r: 0
-        }
-      ],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 0
+      }, _MWSF, _MWSF, {
+        v: 84,
+        b: 52,
+        V: -1,
+        r: 0
+      }, _MWSF, _MWSF, _MWTF, _MWTF, _MWSF, {
+        v: 85,
+        b: 71,
+        V: 41,
+        r: 0
+      }, _MWSF, {
+        v: 85,
+        b: 71,
+        V: 41,
+        r: 0
+      }, _MWTF, _MW, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, {
+        v: 0,
+        b: 151,
+        V: -1,
+        r: 1
+      }, {
+        v: 67,
+        b: 150,
+        V: -1,
+        r: 1
+      }, _LF, _LF, _LF, _LF, _WF, _MWLF, _SF, _SF, {
+        v: 84,
+        b: 71,
+        V: 18,
+        r: 2
+      }, _MWSF],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _MWSF, _SF, _SF, _SF, _SF, {
+        v: 84,
+        b: 71,
+        V: 35,
+        r: 2
+      }, {
+        v: 84,
+        b: 71,
+        V: 35,
+        r: 2
+      }, _SF, _SF, _SF, _SF, {
+        v: 84,
+        b: 71,
+        V: 35,
+        r: 2
+      }, {
+        v: 84,
+        b: 71,
+        V: 35,
+        r: 2
+      }, _SF, _SF, _SF, _SF, {
+        v: 84,
+        b: 71,
+        V: 33,
+        r: 2
+      }, _MWTF, {
+        v: 0,
+        b: 71,
+        V: 24,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, {
+        v: 0,
+        b: 151,
+        V: -1,
+        r: 1
+      }, {
+        v: 67,
+        b: 150,
+        V: -1,
+        r: 1
+      }, _LF, _LF, _LF, _LF, _WF, {
+        v: 67,
+        b: 71,
+        V: 41,
+        r: 1
+      }, _SF, _SF, {
+        v: 84,
+        b: 71,
+        V: 18,
+        r: 2
+      }, _MWSF],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _MWSF, {
+        v: 84,
+        b: 71,
+        V: 9,
+        r: 0
+      }, _SF, _SF, _SF, _SF, _SF, {
+        v: 84,
+        b: 151,
+        V: -1,
+        r: 1
+      }, _SF, _SF, {
+        v: 84,
+        b: 151,
+        V: -1,
+        r: 1
+      }, _SF, _SF, _SF, _SF, _SF, _SF, {
+        v: 85,
+        b: 71,
+        V: 33,
+        r: 2
+      }, _MWTF, {
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, {
+        v: 0,
+        b: 71,
+        V: 23,
+        r: 0
+      }, _MWLF, {
+        v: 62,
+        b: 71,
+        V: 39,
+        r: 3
+      }, {
+        v: 62,
+        b: 71,
+        V: 39,
+        r: 3
+      }, {
+        v: 62,
+        b: 71,
+        V: 23,
+        r: 3
+      }, _WF, {
+        v: 62,
+        b: 71,
+        V: 23,
+        r: 2
+      }, _MWLF, {
+        v: 84,
+        b: 71,
+        V: 26,
+        r: 2
+      }, _SF, {
+        v: 84,
+        b: 71,
+        V: 16,
+        r: 2
+      }, _MWSF, {
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 1
+      }],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _MWSF, {
+        v: 84,
+        b: 71,
+        V: 10,
+        r: 2
+      }, _SF, _SF, _SF, _MWSF, _MWSF, {
+        v: 84,
+        b: 149,
+        V: -1,
+        r: 2
+      }, {
+        v: 85,
+        b: 150,
+        V: -1,
+        r: 0
+      }, {
+        v: 85,
+        b: 150,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 149,
+        V: -1,
+        r: 2
+      }, _MWSF, _MWSF, _SF, _SF, _MWTF, _MWSF, _MWTF, _MWTF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _MWLF, _MWLF, _MWLF, _MWLF, {
+        v: 0,
+        b: 52,
+        V: -1,
+        r: 0
+      }, _MWLF, _MWLF, _MWSF, _MWSF, _MWSF, _MWSF],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _MWSF, _MWSF, _MWSF, {
+        v: 84,
+        b: 71,
+        V: 33,
+        r: 0
+      }, _SF, _MWSF, {
+        v: 84,
+        b: 71,
+        V: 32,
+        r: 0
+      }, {
+        v: 84,
+        b: 142,
+        V: -1,
+        r: 3
+      }, {
+        v: 84,
+        b: 140,
+        V: -1,
+        r: 1
+      }, {
+        v: 85,
+        b: 146,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 142,
+        V: -1,
+        r: 2
+      }, {
+        v: 84,
+        b: 151,
+        V: -1,
+        r: 2
+      }, {
+        v: 84,
+        b: 150,
+        V: -1,
+        r: 1
+      }, _SF, {
+        v: 84,
+        b: 71,
+        V: 33,
+        r: 2
+      }, _MWTF, {
+        v: 0,
+        b: 71,
+        V: 37,
+        r: 1
+      }, {
+        v: 0,
+        b: 71,
+        V: 38,
+        r: 1
+      }, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _EMP, {
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 0
+      }, {
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 0
+      }, _SF, _SF, {
+        v: 0,
+        b: 71,
+        V: 17,
+        r: 0
+      }],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _MWSF, {
+        v: 84,
+        b: 71,
+        V: 22,
+        r: 0
+      }, _SF, _MWSF, _SF, {
+        v: 84,
+        b: 71,
+        V: 34,
+        r: 3
+      }, _TF, {
+        v: 85,
+        b: 140,
+        V: -1,
+        r: 2
+      }, {
+        v: 84,
+        b: 71,
+        V: 34,
+        r: 3
+      }, _SF, _MWSF, _SF, {
+        v: 84,
+        b: 71,
+        V: 38,
+        r: 0
+      }, _MWTF, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 32,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 24,
+        r: 0
+      }],
       [_EMP, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 0
-        }, {
-          v: 0,
-          b: 71,
-          V: 17,
-          r: 0
-        }, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 26,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 24,
-          r: 0
-        }, _EMP, _MWSF, _MW, {
-          v: 84,
-          b: 32,
-          V: -1,
-          r: 0
-        }, _MWSF, {
-          v: 84,
-          b: 142,
-          V: -1,
-          r: 0
-        }, {
-          v: 85,
-          b: 148,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 146,
-          V: -1,
-          r: 1
-        }, {
-          v: 85,
-          b: 146,
-          V: -1,
-          r: 0
-        }, {
-          v: 85,
-          b: 148,
-          V: -1,
-          r: 0
-        }, {
-          v: 85,
-          b: 142,
-          V: -1,
-          r: 1
-        }, _MWSF, {
-          v: 84,
-          b: 32,
-          V: -1,
-          r: 0
-        }, _MW, _MWTF, _EMP, _EMP,
-        _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 35,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 29,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 29,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 29,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 29,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 29,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 29,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 29,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 29,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 29,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 29,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 29,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 29,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 31,
-          r: 0
-        }
-      ],
-      [_EMP, _EMP, _EMP, _MWTF,
-        _MWTF, _MWTF, _MWTF, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, {
-          v: 0,
-          b: 70,
-          V: -1,
-          r: 3
-        },
-        _TF, _TF, _MWSF, {
-          v: 84,
-          b: 140,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 71,
-          V: 34,
-          r: 1
-        }, {
-          v: 85,
-          b: 140,
-          V: -1,
-          r: 2
-        },
-        _TF, {
-          v: 84,
-          b: 71,
-          V: 34,
-          r: 1
-        }, {
-          v: 84,
-          b: 140,
-          V: -1,
-          r: 2
-        },
-        _MWSF, _TF, _TF, {
-          v: 0,
-          b: 70,
-          V: -1,
-          r: 1
-        },
-        _EMP, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _EMP, {
-          v: 0,
-          b: 71,
-          V: 23,
-          r: 0
-        },
-        _EMP, _EMP, _EMP, _WF
-      ],
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 0
+      }, {
+        v: 0,
+        b: 71,
+        V: 17,
+        r: 0
+      }, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 26,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 24,
+        r: 0
+      }, _EMP, _MWSF, _MW, {
+        v: 84,
+        b: 32,
+        V: -1,
+        r: 0
+      }, _MWSF, {
+        v: 84,
+        b: 142,
+        V: -1,
+        r: 0
+      }, {
+        v: 85,
+        b: 148,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 146,
+        V: -1,
+        r: 1
+      }, {
+        v: 85,
+        b: 146,
+        V: -1,
+        r: 0
+      }, {
+        v: 85,
+        b: 148,
+        V: -1,
+        r: 0
+      }, {
+        v: 85,
+        b: 142,
+        V: -1,
+        r: 1
+      }, _MWSF, {
+        v: 84,
+        b: 32,
+        V: -1,
+        r: 0
+      }, _MW, _MWTF, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 35,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 29,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 29,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 29,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 29,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 29,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 29,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 29,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 29,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 29,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 29,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 29,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 29,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 31,
+        r: 0
+      }],
+      [_EMP, _EMP, _EMP, _MWTF, _MWTF, _MWTF, _MWTF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, {
+        v: 0,
+        b: 70,
+        V: -1,
+        r: 3
+      }, _TF, _TF, _MWSF, {
+        v: 84,
+        b: 140,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 71,
+        V: 34,
+        r: 1
+      }, {
+        v: 85,
+        b: 140,
+        V: -1,
+        r: 2
+      }, _TF, {
+        v: 84,
+        b: 71,
+        V: 34,
+        r: 1
+      }, {
+        v: 84,
+        b: 140,
+        V: -1,
+        r: 2
+      }, _MWSF, _TF, _TF, {
+        v: 0,
+        b: 70,
+        V: -1,
+        r: 1
+      }, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _EMP, {
+        v: 0,
+        b: 71,
+        V: 23,
+        r: 0
+      }, _EMP, _EMP, _EMP, _WF],
       [_EMP, _EMP, _EMP, _MWTF, {
         v: 85,
         b: 71,
@@ -31107,315 +30314,406 @@ try {
         V: -1,
         r: 0
       }],
-      [_EMP, _EMP, _EMP, _MWSF,
-        _SF, _SF, _MWSF, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }, {
-          v: 0,
-          b: 32,
-          V: -1,
-          r: 3
-        },
-        _TF, _TF, _TF, _MWSF, {
-          v: 0,
-          b: 149,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 149,
-          V: -1,
-          r: 0
-        }, {
-          v: 85,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 85,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 149,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 149,
-          V: -1,
-          r: 0
-        },
-        _MWSF, _TF, _TF, _TF, {
-          v: 0,
-          b: 32,
-          V: -1,
-          r: 1
-        },
-        _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 0
-        },
-        _WWLF, _LF, _LF, {
-          v: 67,
-          b: 71,
-          V: 6,
-          r: 1
-        },
-        _WWLF, _WF, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 1
-        },
-        _LF, _LF, _EMP, _EMP,
-        _EMP, _EMP, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }
-      ],
+      [_EMP, _EMP, _EMP, _MWSF, _SF, _SF, _MWSF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, {
+        v: 0,
+        b: 32,
+        V: -1,
+        r: 3
+      }, _TF, _TF, _TF, _MWSF, {
+        v: 0,
+        b: 149,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 149,
+        V: -1,
+        r: 0
+      }, {
+        v: 85,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 85,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 149,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 149,
+        V: -1,
+        r: 0
+      }, _MWSF, _TF, _TF, _TF, {
+        v: 0,
+        b: 32,
+        V: -1,
+        r: 1
+      }, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, {
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 0
+      }, _WWLF, _LF, _LF, {
+        v: 67,
+        b: 71,
+        V: 6,
+        r: 1
+      }, _WWLF, _WF, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 1
+      }, _LF, _LF, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }],
       [_EMP, _EMP, _EMP, {
-          v: 84,
-          b: 71,
-          V: 41,
-          r: 1
-        }, _SF, _SF, {
-          v: 84,
-          b: 71,
-          V: 41,
-          r: 3
-        }, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }, {
-          v: 0,
-          b: 70,
-          V: -1,
-          r: 3
-        }, {
-          v: 85,
-          b: 70,
-          V: -1,
-          r: 0
-        }, _SF, _SF, _SF, {
-          v: 84,
-          b: 144,
-          V: -1,
-          r: 1
-        }, {
-          v: 84,
-          b: 144,
-          V: -1,
-          r: 1
-        }, _SF, _SF, {
-          v: 84,
-          b: 144,
-          V: -1,
-          r: 1
-        }, {
-          v: 84,
-          b: 144,
-          V: -1,
-          r: 1
-        }, _SF, _SF, _SF, {
-          v: 85,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 70,
-          V: -1,
-          r: 1
-        }, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }, _EMP, {
-          v: 67,
-          b: 30,
-          V: -1,
-          r: 1
-        }, _LF, _LF, {
-          v: 67,
-          b: 71,
-          V: 19,
-          r: 2
-        }, _WWWF, _WF, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 1
-        }, _LF, _LF, _EMP, _EMP,
-        _EMP, _EMP, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }
-      ],
+        v: 84,
+        b: 71,
+        V: 41,
+        r: 1
+      }, _SF, _SF, {
+        v: 84,
+        b: 71,
+        V: 41,
+        r: 3
+      }, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, {
+        v: 0,
+        b: 70,
+        V: -1,
+        r: 3
+      }, {
+        v: 85,
+        b: 70,
+        V: -1,
+        r: 0
+      }, _SF, _SF, _SF, {
+        v: 84,
+        b: 144,
+        V: -1,
+        r: 1
+      }, {
+        v: 84,
+        b: 144,
+        V: -1,
+        r: 1
+      }, _SF, _SF, {
+        v: 84,
+        b: 144,
+        V: -1,
+        r: 1
+      }, {
+        v: 84,
+        b: 144,
+        V: -1,
+        r: 1
+      }, _SF, _SF, _SF, {
+        v: 85,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 70,
+        V: -1,
+        r: 1
+      }, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, {
+        v: 67,
+        b: 30,
+        V: -1,
+        r: 1
+      }, _LF, _LF, {
+        v: 67,
+        b: 71,
+        V: 19,
+        r: 2
+      }, _WWWF, _WF, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 1
+      }, _LF, _LF, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }],
       [_EMP, _EMP, _EMP, _MWTF, {
-          v: 85,
-          b: 71,
-          V: 36,
-          r: 2
-        }, {
-          v: 85,
-          b: 71,
-          V: 37,
-          r: 3
-        }, _MWTF, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }, _EMP, {
-          v: 0,
-          b: 70,
-          V: -1,
-          r: 3
-        }, {
-          v: 85,
-          b: 71,
-          V: 39,
-          r: 0
-        }, _TF, _TF, _TF, _TF,
-        _TF, _TF, _TF, _TF, _TF,
-        _TF, {
-          v: 85,
-          b: 71,
-          V: 35,
-          r: 1
-        }, {
-          v: 0,
-          b: 70,
-          V: -1,
-          r: 1
-        },
-        _EMP, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _WWLF, {
-          v: 67,
-          b: 71,
-          V: 8,
-          r: 3
-        },
-        _LF, {
-          v: 67,
-          b: 71,
-          V: 0,
-          r: 1
-        },
-        _WWLF, _WF, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 1
-        }, {
-          v: 67,
-          b: 71,
-          V: 23,
-          r: 1
-        }, {
-          v: 67,
-          b: 71,
-          V: 23,
-          r: 1
-        },
-        _EMP, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }
-      ],
+        v: 85,
+        b: 71,
+        V: 36,
+        r: 2
+      }, {
+        v: 85,
+        b: 71,
+        V: 37,
+        r: 3
+      }, _MWTF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, {
+        v: 0,
+        b: 70,
+        V: -1,
+        r: 3
+      }, {
+        v: 85,
+        b: 71,
+        V: 39,
+        r: 0
+      }, _TF, _TF, _TF, _TF, _TF, _TF, _TF, _TF, _TF, _TF, {
+        v: 85,
+        b: 71,
+        V: 35,
+        r: 1
+      }, {
+        v: 0,
+        b: 70,
+        V: -1,
+        r: 1
+      }, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _WWLF, {
+        v: 67,
+        b: 71,
+        V: 8,
+        r: 3
+      }, _LF, {
+        v: 67,
+        b: 71,
+        V: 0,
+        r: 1
+      }, _WWLF, _WF, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 1
+      }, {
+        v: 67,
+        b: 71,
+        V: 23,
+        r: 1
+      }, {
+        v: 67,
+        b: 71,
+        V: 23,
+        r: 1
+      }, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }],
       [_EMP, _EMP, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 1
-        }, _MWTF, _MWTF, _MWTF,
-        _MWTF, _EMP, {
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 1
+      }, _MWTF, _MWTF, _MWTF, _MWTF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, {
+        v: 0,
+        b: 70,
+        V: -1,
+        r: 3
+      }, {
+        v: 84,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 32,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 32,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 70,
+        V: -1,
+        r: 1
+      }, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, {
+        v: 0,
+        b: 71,
+        V: 23,
+        r: 0
+      }, _WWLF, _WWLF, _WWLF, _WWLF, _WWLF, _WF, _SWLF, _SWLF, _SWLF, _SWLF, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
           v: 0,
           b: 86,
           V: 23,
@@ -31425,132 +30723,9 @@ try {
           b: 86,
           V: 22,
           r: 0
-        },
-        _EMP, {
-          v: 0,
-          b: 70,
-          V: -1,
-          r: 3
-        }, {
-          v: 84,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 32,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 32,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 70,
-          V: -1,
-          r: 1
-        },
-        _EMP, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }, {
-          v: 0,
-          b: 71,
-          V: 23,
-          r: 0
-        },
-        _WWLF, _WWLF, _WWLF,
-        _WWLF, _WWLF, _WF, _SWLF,
-        _SWLF, _SWLF, _SWLF, _EMP,
+        }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
         _EMP, _EMP, {
           v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, {
-          v: 0,
           b: 86,
           V: 23,
           r: 0
@@ -31570,8 +30745,7 @@ try {
           V: 22,
           r: 0
         },
-        _WF, _WF, _WF, _WF, _WF,
-        _WF, _WF, _SWLF, _WF, {
+        _WF, _WF, _WF, _WF, _WF, _WF, _WF, _SWLF, _WF, {
           v: 62,
           b: 71,
           V: 21,
@@ -31585,208 +30759,206 @@ try {
         }
       ],
       [{
-          v: 0,
-          b: 86,
-          V: 26,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 33,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 32,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 33,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 9,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 9,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 32,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 24,
-          r: 0
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 62,
-          b: 69,
-          V: -1,
-          r: 2
-        }, _SWLF, _SWLF, _SWLF, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 0
-        }, _SWWF, _SWWF, {
-          v: 67,
-          b: 51,
-          V: -1,
-          r: 2
-        }, _SWLF, _SWLF, _SWLF,
-        _SWLF
-      ],
+        v: 0,
+        b: 86,
+        V: 26,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 33,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 32,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 33,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 9,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 9,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 32,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 24,
+        r: 0
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 62,
+        b: 69,
+        V: -1,
+        r: 2
+      }, _SWLF, _SWLF, _SWLF, {
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 0
+      }, _SWWF, _SWWF, {
+        v: 67,
+        b: 51,
+        V: -1,
+        r: 2
+      }, _SWLF, _SWLF, _SWLF, _SWLF],
       [{
         v: 0,
         b: 86,
@@ -31989,193 +31161,191 @@ try {
         r: 3
       }],
       [{
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 27,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 9,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 9,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 9,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }, _EMP, _EMP, _WF, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 1
-        }, _LF, _LF, _LF, _LF,
-        _LF, _LF, _SWLF, _LF, _LF, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 3
-        }
-      ],
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 27,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 9,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 9,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 9,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _EMP, _WF, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 1
+      }, _LF, _LF, _LF, _LF, _LF, _LF, _SWLF, _LF, _LF, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 3
+      }],
       [{
         v: 0,
         b: 86,
@@ -32392,746 +31562,683 @@ try {
         V: 16,
         r: 1
       }],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 7,
-          r: 0
-        },
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, {
-          v: 84,
-          b: 71,
-          V: 23,
-          r: 0
-        }, {
-          v: 84,
-          b: 151,
-          V: -1,
-          r: 0
-        }, {
-          v: 84,
-          b: 71,
-          V: 23,
-          r: 0
-        },
-        _EMP, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 0
-        }, {
-          v: 62,
-          b: 69,
-          V: -1,
-          r: 0
-        },
-        _SWLF, {
-          v: 67,
-          b: 71,
-          V: 15,
-          r: 0
-        }, {
-          v: 67,
-          b: 71,
-          V: 4,
-          r: 0
-        }, {
-          v: 67,
-          b: 71,
-          V: 3,
-          r: 0
-        }, {
-          v: 67,
-          b: 71,
-          V: 14,
-          r: 0
-        },
-        _LF, _LF, _LF, _LF, _LF,
-        _SWLF, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 1
-        }
-      ],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 7,
+        r: 0
+      }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 84,
+        b: 71,
+        V: 23,
+        r: 0
+      }, {
+        v: 84,
+        b: 151,
+        V: -1,
+        r: 0
+      }, {
+        v: 84,
+        b: 71,
+        V: 23,
+        r: 0
+      }, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 0
+      }, {
+        v: 62,
+        b: 69,
+        V: -1,
+        r: 0
+      }, _SWLF, {
+        v: 67,
+        b: 71,
+        V: 15,
+        r: 0
+      }, {
+        v: 67,
+        b: 71,
+        V: 4,
+        r: 0
+      }, {
+        v: 67,
+        b: 71,
+        V: 3,
+        r: 0
+      }, {
+        v: 67,
+        b: 71,
+        V: 14,
+        r: 0
+      }, _LF, _LF, _LF, _LF, _LF, _SWLF, {
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 1
+      }],
       [_EMP, _EMP, _WWWF, {
-          v: 62,
-          b: 71,
-          V: 26,
-          r: 1
-        }, _WF, _WF, _WWWF, {
-          v: 62,
-          b: 71,
-          V: 16,
-          r: 2
-        }, _WF, _WF, _WWWF, {
-          v: 0,
-          b: 31,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 31,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 0
-        }, _EMP, {
-          v: 0,
-          b: 86,
-          V: 15,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }, _EMP, _EMP, _EMP, _EMP,
-        _MWWF, _MWWF, _MWWF, {
-          v: 62,
-          b: 150,
-          V: -1,
-          r: 3
-        },
-        _MWWF, _MWWF, _MWWF, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 0
-        },
-        _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _EMP, {
-          v: 0,
-          b: 71,
-          V: 23,
-          r: 0
-        },
-        _SWLF, {
-          v: 67,
-          b: 71,
-          V: 4,
-          r: 3
-        }, {
-          v: 67,
-          b: 71,
-          V: 7,
-          r: 3
-        }, {
-          v: 67,
-          b: 71,
-          V: 7,
-          r: 3
-        }, {
-          v: 67,
-          b: 71,
-          V: 3,
-          r: 1
-        },
-        _LF, _WF, _WF, _WF, _LF, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 3
-        }
-      ],
+        v: 62,
+        b: 71,
+        V: 26,
+        r: 1
+      }, _WF, _WF, _WWWF, {
+        v: 62,
+        b: 71,
+        V: 16,
+        r: 2
+      }, _WF, _WF, _WWWF, {
+        v: 0,
+        b: 31,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 31,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 0
+      }, _EMP, {
+        v: 0,
+        b: 86,
+        V: 15,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, _EMP, _EMP, _EMP, _EMP, _MWWF, _MWWF, _MWWF, {
+        v: 62,
+        b: 150,
+        V: -1,
+        r: 3
+      }, _MWWF, _MWWF, _MWWF, {
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 0
+      }, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _EMP, {
+        v: 0,
+        b: 71,
+        V: 23,
+        r: 0
+      }, _SWLF, {
+        v: 67,
+        b: 71,
+        V: 4,
+        r: 3
+      }, {
+        v: 67,
+        b: 71,
+        V: 7,
+        r: 3
+      }, {
+        v: 67,
+        b: 71,
+        V: 7,
+        r: 3
+      }, {
+        v: 67,
+        b: 71,
+        V: 3,
+        r: 1
+      }, _LF, _WF, _WF, _WF, _LF, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 3
+      }],
       [_EMP, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 0
-        }, _WWWF, {
-          v: 62,
-          b: 71,
-          V: 17,
-          r: 1
-        }, _WF, {
-          v: 62,
-          b: 71,
-          V: 22,
-          r: 1
-        }, _WWWF, {
-          v: 62,
-          b: 71,
-          V: 17,
-          r: 2
-        }, _WF, {
-          v: 62,
-          b: 71,
-          V: 15,
-          r: 1
-        }, _WWWF, _EMP, _EMP, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }, _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }, _EMP, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 0
-        }, _EMP, {
-          v: 0,
-          b: 71,
-          V: 24,
-          r: 0
-        }, _MWWF, {
-          v: 62,
-          b: 71,
-          V: 16,
-          r: 2
-        }, {
-          v: 62,
-          b: 71,
-          V: 39,
-          r: 1
-        }, _WF, _WF, _WF, _MWWF, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 0
-        }, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }, _EMP, _EMP, {
-          v: 0,
-          b: 148,
-          V: -1,
-          r: 3
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }, _LF, _LF, _LF, _LF,
-        _LF, _WF, _WF, _WF, _LF, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 3
-        }
-      ],
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 0
+      }, _WWWF, {
+        v: 62,
+        b: 71,
+        V: 17,
+        r: 1
+      }, _WF, {
+        v: 62,
+        b: 71,
+        V: 22,
+        r: 1
+      }, _WWWF, {
+        v: 62,
+        b: 71,
+        V: 17,
+        r: 2
+      }, _WF, {
+        v: 62,
+        b: 71,
+        V: 15,
+        r: 1
+      }, _WWWF, _EMP, _EMP, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, _EMP, {
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 0
+      }, _EMP, {
+        v: 0,
+        b: 71,
+        V: 24,
+        r: 0
+      }, _MWWF, {
+        v: 62,
+        b: 71,
+        V: 16,
+        r: 2
+      }, {
+        v: 62,
+        b: 71,
+        V: 39,
+        r: 1
+      }, _WF, _WF, _WF, _MWWF, {
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 0
+      }, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _EMP, {
+        v: 0,
+        b: 148,
+        V: -1,
+        r: 3
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }, _LF, _LF, _LF, _LF, _LF, _WF, _WF, _WF, _LF, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 3
+      }],
       [_EMP, _EMP, _WWWF, {
-          v: 62,
-          b: 71,
-          V: 10,
-          r: 0
-        }, _WF, {
-          v: 62,
-          b: 71,
-          V: 0,
-          r: 1
-        }, _WWWF, {
-          v: 62,
-          b: 71,
-          V: 1,
-          r: 3
-        }, _WF, {
-          v: 62,
-          b: 71,
-          V: 8,
-          r: 1
-        }, _WWWF, _EMP, _EMP, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }, _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }, _EMP, _MW, _MWSF,
-        _MWSF, _MWWF, _WF, _WF,
-        _WF, _WF, {
-          v: 62,
-          b: 71,
-          V: 27,
-          r: 2
-        },
-        _MWWF, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _EMP, {
-          v: 0,
-          b: 140,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }, {
-          v: 67,
-          b: 71,
-          V: 23,
-          r: 0
-        }, {
-          v: 67,
-          b: 71,
-          V: 27,
-          r: 3
-        }, {
-          v: 67,
-          b: 71,
-          V: 8,
-          r: 2
-        }, {
-          v: 67,
-          b: 71,
-          V: 27,
-          r: 3
-        },
-        _LF, _LF, _LF, _LF, {
-          v: 67,
-          b: 71,
-          V: 12,
-          r: 2
-        },
-        _SWLF
-      ],
+        v: 62,
+        b: 71,
+        V: 10,
+        r: 0
+      }, _WF, {
+        v: 62,
+        b: 71,
+        V: 0,
+        r: 1
+      }, _WWWF, {
+        v: 62,
+        b: 71,
+        V: 1,
+        r: 3
+      }, _WF, {
+        v: 62,
+        b: 71,
+        V: 8,
+        r: 1
+      }, _WWWF, _EMP, _EMP, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, _EMP, _MW, _MWSF, _MWSF, _MWWF, _WF, _WF, _WF, _WF, {
+        v: 62,
+        b: 71,
+        V: 27,
+        r: 2
+      }, _MWWF, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _EMP, {
+        v: 0,
+        b: 140,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }, {
+        v: 67,
+        b: 71,
+        V: 23,
+        r: 0
+      }, {
+        v: 67,
+        b: 71,
+        V: 27,
+        r: 3
+      }, {
+        v: 67,
+        b: 71,
+        V: 8,
+        r: 2
+      }, {
+        v: 67,
+        b: 71,
+        V: 27,
+        r: 3
+      }, _LF, _LF, _LF, _LF, {
+        v: 67,
+        b: 71,
+        V: 12,
+        r: 2
+      }, _SWLF],
       [_EMP, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 0
-        }, _WWWF, {
-          v: 62,
-          b: 71,
-          V: 9,
-          r: 2
-        }, _WF, _WF, _WWWF, _WF,
-        _WF, {
-          v: 62,
-          b: 71,
-          V: 12,
-          r: 2
-        },
-        _WW, _EMP, _EMP, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 2
-        },
-        _MWSF, {
-          v: 84,
-          b: 71,
-          V: 16,
-          r: 1
-        }, {
-          v: 84,
-          b: 71,
-          V: 19,
-          r: 1
-        },
-        _MWSF, {
-          v: 62,
-          b: 32,
-          V: -1,
-          r: 0
-        }, {
-          v: 62,
-          b: 70,
-          V: -1,
-          r: 0
-        },
-        _WF, _WF, {
-          v: 62,
-          b: 71,
-          V: 39,
-          r: 2
-        },
-        _MWWF, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _EMP, {
-          v: 0,
-          b: 148,
-          V: -1,
-          r: 0
-        },
-        _SWLF, _SWLF, _SWLF,
-        _SWLF, _SWLF, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 0
-        }, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 0
-        },
-        _SWLF, _SWLF, _SWLF,
-        _SWLF, {
-          v: 0,
-          b: 71,
-          V: 24,
-          r: 1
-        }
-      ],
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 0
+      }, _WWWF, {
+        v: 62,
+        b: 71,
+        V: 9,
+        r: 2
+      }, _WF, _WF, _WWWF, _WF, _WF, {
+        v: 62,
+        b: 71,
+        V: 12,
+        r: 2
+      }, _WW, _EMP, _EMP, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }, {
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, {
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 2
+      }, _MWSF, {
+        v: 84,
+        b: 71,
+        V: 16,
+        r: 1
+      }, {
+        v: 84,
+        b: 71,
+        V: 19,
+        r: 1
+      }, _MWSF, {
+        v: 62,
+        b: 32,
+        V: -1,
+        r: 0
+      }, {
+        v: 62,
+        b: 70,
+        V: -1,
+        r: 0
+      }, _WF, _WF, {
+        v: 62,
+        b: 71,
+        V: 39,
+        r: 2
+      }, _MWWF, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _EMP, {
+        v: 0,
+        b: 148,
+        V: -1,
+        r: 0
+      }, _SWLF, _SWLF, _SWLF, _SWLF, _SWLF, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 0
+      }, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 0
+      }, _SWLF, _SWLF, _SWLF, _SWLF, {
+        v: 0,
+        b: 71,
+        V: 24,
+        r: 1
+      }],
       [_EMP, {
-          v: 0,
-          b: 71,
-          V: 17,
-          r: 0
-        }, _WW, _WWWF, _WWWF,
-        _WWWF, _WWWF, _WWWF,
-        _WWWF, _WW, _WW, _EMP,
-        _EMP, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 3
-        }, {
-          v: 0,
-          b: 71,
-          V: 24,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }, {
-          v: 0,
-          b: 71,
-          V: 17,
-          r: 0
-        },
-        _MWSF, _SF, _SF, _MWSF,
-        _LF, {
-          v: 67,
-          b: 70,
-          V: -1,
-          r: 3
-        },
-        _WF, _WF, _WF, _MWWF, {
-          v: 84,
-          b: 71,
-          V: 23,
-          r: 0
-        },
-        _SF, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _EMP, {
-          v: 0,
-          b: 140,
-          V: -1,
-          r: 0
-        },
-        _SWLF, {
-          v: 62,
-          b: 71,
-          V: 20,
-          r: 1
-        },
-        _WF, {
-          v: 62,
-          b: 71,
-          V: 28,
-          r: 0
-        },
-        _SWWF, _WF, _WF, _WF, {
-          v: 62,
-          b: 71,
-          V: 20,
-          r: 1
-        }, {
-          v: 62,
-          b: 71,
-          V: 13,
-          r: 1
-        },
-        _SWWF
-      ],
-      [_EMP, _EMP, _EMP, _SWWF,
-        _SWWF, _SWWF, _SWWF,
-        _SWWF, _SWWF, _WF, _WF,
-        _WF, _WF, {
-          v: 62,
-          b: 69,
-          V: -1,
-          r: 3
-        },
-        _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        },
-        _EMP, _MWSF, _SF, _SF,
-        _MWLF, _LF, {
-          v: 67,
-          b: 70,
-          V: -1,
-          r: 3
-        },
-        _WF, _WF, _WF, {
-          v: 62,
-          b: 150,
-          V: -1,
-          r: 3
-        }, {
-          v: 84,
-          b: 151,
-          V: -1,
-          r: 0
-        },
-        _SF, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _EMP, {
-          v: 0,
-          b: 140,
-          V: -1,
-          r: 0
-        }, {
-          v: 62,
-          b: 69,
-          V: -1,
-          r: 1
-        },
-        _WF, _WF, _WF, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 3
-        },
-        _WF, _WF, _WF, _WF, _WF, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 1
-        }
-      ],
+        v: 0,
+        b: 71,
+        V: 17,
+        r: 0
+      }, _WW, _WWWF, _WWWF, _WWWF, _WWWF, _WWWF, _WWWF, _WW, _WW, _EMP, _EMP, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 3
+      }, {
+        v: 0,
+        b: 71,
+        V: 24,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, {
+        v: 0,
+        b: 71,
+        V: 17,
+        r: 0
+      }, _MWSF, _SF, _SF, _MWSF, _LF, {
+        v: 67,
+        b: 70,
+        V: -1,
+        r: 3
+      }, _WF, _WF, _WF, _MWWF, {
+        v: 84,
+        b: 71,
+        V: 23,
+        r: 0
+      }, _SF, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _EMP, {
+        v: 0,
+        b: 140,
+        V: -1,
+        r: 0
+      }, _SWLF, {
+        v: 62,
+        b: 71,
+        V: 20,
+        r: 1
+      }, _WF, {
+        v: 62,
+        b: 71,
+        V: 28,
+        r: 0
+      }, _SWWF, _WF, _WF, _WF, {
+        v: 62,
+        b: 71,
+        V: 20,
+        r: 1
+      }, {
+        v: 62,
+        b: 71,
+        V: 13,
+        r: 1
+      }, _SWWF],
+      [_EMP, _EMP, _EMP, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _WF, _WF, _WF, _WF, {
+        v: 62,
+        b: 69,
+        V: -1,
+        r: 3
+      }, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, _EMP, _MWSF, _SF, _SF, _MWLF, _LF, {
+        v: 67,
+        b: 70,
+        V: -1,
+        r: 3
+      }, _WF, _WF, _WF, {
+        v: 62,
+        b: 150,
+        V: -1,
+        r: 3
+      }, {
+        v: 84,
+        b: 151,
+        V: -1,
+        r: 0
+      }, _SF, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _EMP, {
+        v: 0,
+        b: 140,
+        V: -1,
+        r: 0
+      }, {
+        v: 62,
+        b: 69,
+        V: -1,
+        r: 1
+      }, _WF, _WF, _WF, {
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 3
+      }, _WF, _WF, _WF, _WF, _WF, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 1
+      }],
       [_EMP, _EMP, {
         v: 0,
         b: 71,
@@ -33268,106 +32375,92 @@ try {
         V: -1,
         r: 1
       }],
-      [_EMP, _EMP, _EMP, _SWWF,
-        _WF, _WF, _WF, _WF, _SWWF,
-        _SWLF, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 2
-        }, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 2
-        },
-        _SWLF, _SWLF, _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 13,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        },
-        _EMP, _MWSF, _MWSF, _MWSF,
-        _MWLF, {
-          v: 67,
-          b: 144,
-          V: -1,
-          r: 0
-        }, {
-          v: 67,
-          b: 70,
-          V: -1,
-          r: 3
-        },
-        _WF, _WF, {
-          v: 62,
-          b: 71,
-          V: 39,
-          r: 2
-        },
-        _MWWF, {
-          v: 84,
-          b: 71,
-          V: 23,
-          r: 0
-        },
-        _SF, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _EMP, {
-          v: 0,
-          b: 140,
-          V: -1,
-          r: 0
-        },
-        _SWWF, _SWWF, _SWWF,
-        _SWWF, _SWWF, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 2
-        }, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 2
-        },
-        _SWLF, _SWLF, _SWLF,
-        _SWLF, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 1
-        }
-      ],
+      [_EMP, _EMP, _EMP, _SWWF, _WF, _WF, _WF, _WF, _SWWF, _SWLF, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 2
+      }, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 2
+      }, _SWLF, _SWLF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 13,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, _EMP, _MWSF, _MWSF, _MWSF, _MWLF, {
+        v: 67,
+        b: 144,
+        V: -1,
+        r: 0
+      }, {
+        v: 67,
+        b: 70,
+        V: -1,
+        r: 3
+      }, _WF, _WF, {
+        v: 62,
+        b: 71,
+        V: 39,
+        r: 2
+      }, _MWWF, {
+        v: 84,
+        b: 71,
+        V: 23,
+        r: 0
+      }, _SF, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _EMP, {
+        v: 0,
+        b: 140,
+        V: -1,
+        r: 0
+      }, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 2
+      }, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 2
+      }, _SWLF, _SWLF, _SWLF, _SWLF, {
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 1
+      }],
       [_EMP, _EMP, _EMP, _SWWF, {
         v: 62,
         b: 71,
@@ -33504,417 +32597,385 @@ try {
         V: -1,
         r: 3
       }],
-      [_EMP, _EMP, _EMP, _SWWF,
-        _WF, _WF, _WF, _WF, _SWWF, {
-          v: 67,
-          b: 71,
-          V: 12,
-          r: 0
-        },
-        _LF, _LF, {
-          v: 67,
-          b: 71,
-          V: 12,
-          r: 2
-        },
-        _SWLF, _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        },
-        _EMP, _EMP, _EMP, _EMP,
-        _MWLF, _MWLF, _MWLF, {
-          v: 62,
-          b: 150,
-          V: -1,
-          r: 3
-        }, {
-          v: 62,
-          b: 150,
-          V: -1,
-          r: 3
-        },
-        _MWWF, _MWWF, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _EMP, _EMP, _EMP,
-        _WF, _WF, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 1
-        },
-        _LF, _LF, _LF, _LF, _LF,
-        _LF, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 3
-        }
-      ],
+      [_EMP, _EMP, _EMP, _SWWF, _WF, _WF, _WF, _WF, _SWWF, {
+        v: 67,
+        b: 71,
+        V: 12,
+        r: 0
+      }, _LF, _LF, {
+        v: 67,
+        b: 71,
+        V: 12,
+        r: 2
+      }, _SWLF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, _EMP, _EMP, _EMP, _EMP, _MWLF, _MWLF, _MWLF, {
+        v: 62,
+        b: 150,
+        V: -1,
+        r: 3
+      }, {
+        v: 62,
+        b: 150,
+        V: -1,
+        r: 3
+      }, _MWWF, _MWWF, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _EMP, _EMP, _EMP, _WF, _WF, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 1
+      }, _LF, _LF, _LF, _LF, _LF, _LF, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 3
+      }],
       [_EMP, _EMP, {
-          v: 0,
-          b: 71,
-          V: 24,
-          r: 0
-        }, _SWWF, {
-          v: 62,
-          b: 71,
-          V: 1,
-          r: 2
-        }, {
-          v: 62,
-          b: 71,
-          V: 8,
-          r: 2
-        }, _WF, {
-          v: 62,
-          b: 71,
-          V: 23,
-          r: 2
-        }, _SWWF, {
-          v: 67,
-          b: 71,
-          V: 23,
-          r: 2
-        }, _LF, _LF, {
-          v: 67,
-          b: 71,
-          V: 20,
-          r: 2
-        }, _SWLF, _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }, _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, {
-          v: 84,
-          b: 71,
-          V: 23,
-          r: 0
-        },
-        _SF, _SF, {
-          v: 84,
-          b: 71,
-          V: 23,
-          r: 0
-        },
-        _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _EMP, _EMP, _EMP,
-        _WF, _WF, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 1
-        },
-        _LF, _LF, _LF, _LF, _LF,
-        _LF, {
-          v: 67,
-          b: 31,
-          V: -1,
-          r: 3
-        }
-      ],
-      [_EMP, _EMP, _EMP, _SWWF,
-        _SWWF, _SWWF, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 0
-        },
-        _SWWF, _SWWF, _SWLF, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 0
-        }, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 0
-        },
-        _SWLF, _SWLF, _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        },
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _SF, _SF, _SF,
-        _SF, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 21,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 20,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 15,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 36,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 3,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 3,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 3,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 3,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 3,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 4,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 3,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 3,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 3,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 3,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 3,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 3,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 3,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 45,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 9,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 9,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 32,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 25,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 24,
-          r: 0
-        }
-      ],
+        v: 0,
+        b: 71,
+        V: 24,
+        r: 0
+      }, _SWWF, {
+        v: 62,
+        b: 71,
+        V: 1,
+        r: 2
+      }, {
+        v: 62,
+        b: 71,
+        V: 8,
+        r: 2
+      }, _WF, {
+        v: 62,
+        b: 71,
+        V: 23,
+        r: 2
+      }, _SWWF, {
+        v: 67,
+        b: 71,
+        V: 23,
+        r: 2
+      }, _LF, _LF, {
+        v: 67,
+        b: 71,
+        V: 20,
+        r: 2
+      }, _SWLF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 84,
+        b: 71,
+        V: 23,
+        r: 0
+      }, _SF, _SF, {
+        v: 84,
+        b: 71,
+        V: 23,
+        r: 0
+      }, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _EMP, _EMP, _EMP, _WF, _WF, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 1
+      }, _LF, _LF, _LF, _LF, _LF, _LF, {
+        v: 67,
+        b: 31,
+        V: -1,
+        r: 3
+      }],
+      [_EMP, _EMP, _EMP, _SWWF, _SWWF, _SWWF, {
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 0
+      }, _SWWF, _SWWF, _SWLF, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 0
+      }, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 0
+      }, _SWLF, _SWLF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _SF, _SF, _SF, _SF, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 21,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 20,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 15,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 36,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 3,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 3,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 3,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 3,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 3,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 4,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 3,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 3,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 3,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 3,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 3,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 3,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 3,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 45,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 9,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 9,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 32,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 25,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 24,
+        r: 0
+      }],
       [{
         v: 0,
         b: 86,
@@ -34458,102 +33519,89 @@ try {
         V: -1,
         r: 1
       }],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 1
-        }, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 1
-        },
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 1
-        },
-        _LF, _LF, _LF, _SWWF, {
-          v: 62,
-          b: 71,
-          V: 27,
-          r: 1
-        }, {
-          v: 62,
-          b: 71,
-          V: 27,
-          r: 1
-        },
-        _WF, _WF, _WF, {
-          v: 62,
-          b: 69,
-          V: -1,
-          r: 3
-        },
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 1
+      }, {
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 1
+      }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 1
+      }, _LF, _LF, _LF, _SWWF, {
+        v: 62,
+        b: 71,
+        V: 27,
+        r: 1
+      }, {
+        v: 62,
+        b: 71,
+        V: 27,
+        r: 1
+      }, _WF, _WF, _WF, {
+        v: 62,
+        b: 69,
+        V: -1,
+        r: 3
+      }, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 3
+      }, _EMP, {
+        v: 0,
+        b: 111,
+        V: -1,
+        r: 1
+      }, {
+        v: 0,
+        b: 140,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 111,
+        V: -1,
+        r: 1
+      }, _EMP, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 1
+      }],
+      [_EMP, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF, _MWWF, _MWWF, _MWWF, _MWWF, _MWWF, _MWWF,
         _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 3
-        },
-        _EMP, {
-          v: 0,
-          b: 111,
-          V: -1,
-          r: 1
-        }, {
-          v: 0,
-          b: 140,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 111,
-          V: -1,
-          r: 1
-        },
-        _EMP, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 1
-        }
-      ],
-      [_EMP, _MWLF, _MWLF, _MWLF,
-        _MWLF, _MWLF, _MWLF,
-        _MWLF, _MWLF, _MWWF,
-        _MWWF, _MWWF, _MWWF,
-        _MWWF, _MWWF, _EMP, {
           v: 0,
           b: 86,
           V: 14,
@@ -34635,696 +33683,662 @@ try {
         }
       ],
       [_EMP, _MWLF, {
-          v: 67,
-          b: 71,
-          V: 35,
-          r: 2
-        }, _LF, {
-          v: 67,
-          b: 142,
-          V: -1,
-          r: 0
-        }, {
-          v: 67,
-          b: 146,
-          V: -1,
-          r: 1
-        }, {
-          v: 67,
-          b: 146,
-          V: -1,
-          r: 1
-        }, {
-          v: 67,
-          b: 140,
-          V: -1,
-          r: 1
-        }, {
-          v: 67,
-          b: 140,
-          V: -1,
-          r: 1
-        }, {
-          v: 62,
-          b: 150,
-          V: -1,
-          r: 1
-        }, _WF, _WF, {
-          v: 62,
-          b: 71,
-          V: 17,
-          r: 3
-        }, {
-          v: 62,
-          b: 71,
-          V: 16,
-          r: 1
-        }, _MWWF, _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 1
-        }, _LF, _LF, {
-          v: 67,
-          b: 71,
-          V: 3,
-          r: 1
-        }, _SWWF, {
-          v: 62,
-          b: 71,
-          V: 22,
-          r: 2
-        }, {
-          v: 62,
-          b: 71,
-          V: 20,
-          r: 3
-        }, {
-          v: 62,
-          b: 71,
-          V: 11,
-          r: 2
-        }, _WF, _SWWF, _SWWF,
-        _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 3
-        },
-        _EMP, {
-          v: 0,
-          b: 111,
-          V: -1,
-          r: 1
-        }, {
-          v: 0,
-          b: 140,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 111,
-          V: -1,
-          r: 1
-        },
-        _EMP, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 1
-        }
-      ],
+        v: 67,
+        b: 71,
+        V: 35,
+        r: 2
+      }, _LF, {
+        v: 67,
+        b: 142,
+        V: -1,
+        r: 0
+      }, {
+        v: 67,
+        b: 146,
+        V: -1,
+        r: 1
+      }, {
+        v: 67,
+        b: 146,
+        V: -1,
+        r: 1
+      }, {
+        v: 67,
+        b: 140,
+        V: -1,
+        r: 1
+      }, {
+        v: 67,
+        b: 140,
+        V: -1,
+        r: 1
+      }, {
+        v: 62,
+        b: 150,
+        V: -1,
+        r: 1
+      }, _WF, _WF, {
+        v: 62,
+        b: 71,
+        V: 17,
+        r: 3
+      }, {
+        v: 62,
+        b: 71,
+        V: 16,
+        r: 1
+      }, _MWWF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 1
+      }, _LF, _LF, {
+        v: 67,
+        b: 71,
+        V: 3,
+        r: 1
+      }, _SWWF, {
+        v: 62,
+        b: 71,
+        V: 22,
+        r: 2
+      }, {
+        v: 62,
+        b: 71,
+        V: 20,
+        r: 3
+      }, {
+        v: 62,
+        b: 71,
+        V: 11,
+        r: 2
+      }, _WF, _SWWF, _SWWF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 3
+      }, _EMP, {
+        v: 0,
+        b: 111,
+        V: -1,
+        r: 1
+      }, {
+        v: 0,
+        b: 140,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 111,
+        V: -1,
+        r: 1
+      }, _EMP, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 1
+      }],
       [_EMP, _MWLF, _LF, {
-          v: 67,
-          b: 70,
-          V: -1,
-          r: 3
-        }, {
-          v: 0,
-          b: 149,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 149,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 149,
-          V: -1,
-          r: 2
-        }, _MW, _MW, _MWWF, _WF,
-        _WF, _WF, _WF, _MWWF,
-        _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 1
-        }, {
-          v: 67,
-          b: 71,
-          V: 23,
-          r: 3
-        },
-        _SWLF, _SWLF, _SWWF,
-        _SWWF, _SWWF, _SWWF, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 2
-        },
-        _SWWF, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 3
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 140,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 0
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 0
-        }, {
-          v: 67,
-          b: 69,
-          V: -1,
-          r: 1
-        }
-      ],
+        v: 67,
+        b: 70,
+        V: -1,
+        r: 3
+      }, {
+        v: 0,
+        b: 149,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 149,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 149,
+        V: -1,
+        r: 2
+      }, _MW, _MW, _MWWF, _WF, _WF, _WF, _WF, _MWWF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 1
+      }, {
+        v: 67,
+        b: 71,
+        V: 23,
+        r: 3
+      }, _SWLF, _SWLF, _SWWF, _SWWF, _SWWF, _SWWF, {
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 2
+      }, _SWWF, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 3
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 140,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 0
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 0
+      }, {
+        v: 67,
+        b: 69,
+        V: -1,
+        r: 1
+      }],
       [{
-          v: 0,
-          b: 71,
-          V: 24,
-          r: 1
-        }, _MWLF, _LF, {
-          v: 67,
-          b: 70,
-          V: -1,
-          r: 3
-        }, {
-          v: 67,
-          b: 151,
-          V: -1,
-          r: 3
-        }, {
-          v: 67,
-          b: 151,
-          V: -1,
-          r: 3
-        }, {
-          v: 67,
-          b: 151,
-          V: -1,
-          r: 3
-        }, {
-          v: 67,
-          b: 142,
-          V: -1,
-          r: 0
-        }, {
-          v: 67,
-          b: 146,
-          V: -1,
-          r: 1
-        }, {
-          v: 62,
-          b: 150,
-          V: -1,
-          r: 1
-        }, _WF, {
-          v: 62,
-          b: 71,
-          V: 10,
-          r: 3
-        }, {
-          v: 62,
-          b: 71,
-          V: 7,
-          r: 3
-        }, _WF, {
-          v: 62,
-          b: 32,
-          V: -1,
-          r: 3
-        }, _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, {
-          v: 0,
-          b: 69,
-          V: -1,
-          r: 2
-        }, _SW, {
-          v: 62,
-          b: 71,
-          V: 14,
-          r: 0
-        }, {
-          v: 62,
-          b: 71,
-          V: 5,
-          r: 0
-        }, _WF, _WF, _WF, _WF,
-        _SWWF, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 3
-        },
-        _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        },
-        _EMP, _LF, {
-          v: 67,
-          b: 71,
-          V: 45,
-          r: 0
-        }, {
-          v: 67,
-          b: 71,
-          V: 45,
-          r: 0
-        }, {
-          v: 67,
-          b: 151,
-          V: -1,
-          r: 1
-        },
-        _LF, _LF, {
-          v: 67,
-          b: 71,
-          V: 24,
-          r: 1
-        }
-      ],
+        v: 0,
+        b: 71,
+        V: 24,
+        r: 1
+      }, _MWLF, _LF, {
+        v: 67,
+        b: 70,
+        V: -1,
+        r: 3
+      }, {
+        v: 67,
+        b: 151,
+        V: -1,
+        r: 3
+      }, {
+        v: 67,
+        b: 151,
+        V: -1,
+        r: 3
+      }, {
+        v: 67,
+        b: 151,
+        V: -1,
+        r: 3
+      }, {
+        v: 67,
+        b: 142,
+        V: -1,
+        r: 0
+      }, {
+        v: 67,
+        b: 146,
+        V: -1,
+        r: 1
+      }, {
+        v: 62,
+        b: 150,
+        V: -1,
+        r: 1
+      }, _WF, {
+        v: 62,
+        b: 71,
+        V: 10,
+        r: 3
+      }, {
+        v: 62,
+        b: 71,
+        V: 7,
+        r: 3
+      }, _WF, {
+        v: 62,
+        b: 32,
+        V: -1,
+        r: 3
+      }, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, {
+        v: 0,
+        b: 69,
+        V: -1,
+        r: 2
+      }, _SW, {
+        v: 62,
+        b: 71,
+        V: 14,
+        r: 0
+      }, {
+        v: 62,
+        b: 71,
+        V: 5,
+        r: 0
+      }, _WF, _WF, _WF, _WF, _SWWF, {
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 3
+      }, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }, _EMP, _LF, {
+        v: 67,
+        b: 71,
+        V: 45,
+        r: 0
+      }, {
+        v: 67,
+        b: 71,
+        V: 45,
+        r: 0
+      }, {
+        v: 67,
+        b: 151,
+        V: -1,
+        r: 1
+      }, _LF, _LF, {
+        v: 67,
+        b: 71,
+        V: 24,
+        r: 1
+      }],
       [_EMP, _MWLF, _LF, {
-          v: 67,
-          b: 70,
-          V: -1,
-          r: 3
-        }, {
-          v: 67,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 67,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 67,
-          b: 70,
-          V: -1,
-          r: 0
-        }, {
-          v: 67,
-          b: 140,
-          V: -1,
-          r: 0
-        }, {
-          v: 67,
-          b: 142,
-          V: -1,
-          r: 3
-        }, {
-          v: 62,
-          b: 149,
-          V: -1,
-          r: 1
-        }, {
-          v: 62,
-          b: 144,
-          V: -1,
-          r: 0
-        }, _WF, {
-          v: 62,
-          b: 71,
-          V: 7,
-          r: 3
-        }, _WF, {
-          v: 62,
-          b: 32,
-          V: -1,
-          r: 3
-        }, _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }, _EMP, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 0
-        }, _SWWF, _WF, _WF, _WF,
-        _WF, _WF, {
-          v: 62,
-          b: 71,
-          V: 13,
-          r: 2
-        },
-        _SWWF, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }
-      ],
+        v: 67,
+        b: 70,
+        V: -1,
+        r: 3
+      }, {
+        v: 67,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 67,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 67,
+        b: 70,
+        V: -1,
+        r: 0
+      }, {
+        v: 67,
+        b: 140,
+        V: -1,
+        r: 0
+      }, {
+        v: 67,
+        b: 142,
+        V: -1,
+        r: 3
+      }, {
+        v: 62,
+        b: 149,
+        V: -1,
+        r: 1
+      }, {
+        v: 62,
+        b: 144,
+        V: -1,
+        r: 0
+      }, _WF, {
+        v: 62,
+        b: 71,
+        V: 7,
+        r: 3
+      }, _WF, {
+        v: 62,
+        b: 32,
+        V: -1,
+        r: 3
+      }, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, _EMP, {
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 0
+      }, _SWWF, _WF, _WF, _WF, _WF, _WF, {
+        v: 62,
+        b: 71,
+        V: 13,
+        r: 2
+      }, _SWWF, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }],
       [{
-          v: 0,
-          b: 71,
-          V: 17,
-          r: 1
-        }, _MWLF, _LF, _LF, {
-          v: 67,
-          b: 71,
-          V: 3,
-          r: 0
-        }, {
-          v: 67,
-          b: 148,
-          V: -1,
-          r: 3
-        }, _MWLF, {
-          v: 67,
-          b: 146,
-          V: -1,
-          r: 0
-        }, {
-          v: 67,
-          b: 147,
-          V: -1,
-          r: 3
-        }, {
-          v: 62,
-          b: 149,
-          V: -1,
-          r: 1
-        }, {
-          v: 62,
-          b: 144,
-          V: -1,
-          r: 0
-        }, _WF, _WF, _WF, _MWWF,
-        _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        },
-        _EMP, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 0
-        },
-        _SWWF, {
-          v: 62,
-          b: 71,
-          V: 12,
-          r: 3
-        }, {
-          v: 62,
-          b: 71,
-          V: 23,
-          r: 3
-        },
-        _WF, _WF, {
-          v: 62,
-          b: 71,
-          V: 10,
-          r: 3
-        }, {
-          v: 62,
-          b: 71,
-          V: 9,
-          r: 1
-        },
-        _SWWF, {
-          v: 0,
-          b: 71,
-          V: 17,
-          r: 3
-        },
-        _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }
-      ],
+        v: 0,
+        b: 71,
+        V: 17,
+        r: 1
+      }, _MWLF, _LF, _LF, {
+        v: 67,
+        b: 71,
+        V: 3,
+        r: 0
+      }, {
+        v: 67,
+        b: 148,
+        V: -1,
+        r: 3
+      }, _MWLF, {
+        v: 67,
+        b: 146,
+        V: -1,
+        r: 0
+      }, {
+        v: 67,
+        b: 147,
+        V: -1,
+        r: 3
+      }, {
+        v: 62,
+        b: 149,
+        V: -1,
+        r: 1
+      }, {
+        v: 62,
+        b: 144,
+        V: -1,
+        r: 0
+      }, _WF, _WF, _WF, _MWWF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, _EMP, {
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 0
+      }, _SWWF, {
+        v: 62,
+        b: 71,
+        V: 12,
+        r: 3
+      }, {
+        v: 62,
+        b: 71,
+        V: 23,
+        r: 3
+      }, _WF, _WF, {
+        v: 62,
+        b: 71,
+        V: 10,
+        r: 3
+      }, {
+        v: 62,
+        b: 71,
+        V: 9,
+        r: 1
+      }, _SWWF, {
+        v: 0,
+        b: 71,
+        V: 17,
+        r: 3
+      }, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }],
       [{
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 1
-        }, _MWLF, _LF, _WF, _WF, {
-          v: 67,
-          b: 146,
-          V: -1,
-          r: 0
-        }, _MWLF, {
-          v: 67,
-          b: 142,
-          V: -1,
-          r: 3
-        }, {
-          v: 67,
-          b: 142,
-          V: -1,
-          r: 1
-        }, _MW, {
-          v: 62,
-          b: 144,
-          V: -1,
-          r: 0
-        }, _WF, {
-          v: 62,
-          b: 144,
-          V: -1,
-          r: 0
-        }, {
-          v: 62,
-          b: 144,
-          V: -1,
-          r: 0
-        }, _MWWF, _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }, _EMP, _EMP, _SWWF,
-        _SWWF, _SWWF, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 0
-        }, {
-          v: 62,
-          b: 31,
-          V: -1,
-          r: 0
-        },
-        _SWWF, _SWWF, _SWWF, _EMP,
-        _EMP, {
-          v: 0,
-          b: 86,
-          V: 23,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 22,
-          r: 0
-        }
-      ],
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 1
+      }, _MWLF, _LF, _WF, _WF, {
+        v: 67,
+        b: 146,
+        V: -1,
+        r: 0
+      }, _MWLF, {
+        v: 67,
+        b: 142,
+        V: -1,
+        r: 3
+      }, {
+        v: 67,
+        b: 142,
+        V: -1,
+        r: 1
+      }, _MW, {
+        v: 62,
+        b: 144,
+        V: -1,
+        r: 0
+      }, _WF, {
+        v: 62,
+        b: 144,
+        V: -1,
+        r: 0
+      }, {
+        v: 62,
+        b: 144,
+        V: -1,
+        r: 0
+      }, _MWWF, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, _EMP, _EMP, _SWWF, _SWWF, _SWWF, {
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 0
+      }, {
+        v: 62,
+        b: 31,
+        V: -1,
+        r: 0
+      }, _SWWF, _SWWF, _SWWF, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 23,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 22,
+        r: 0
+      }],
       [_EMP, _MWLF, _LF, _WF, _WF, {
-          v: 67,
-          b: 71,
-          V: 10,
-          r: 0
-        }, _MWLF, {
-          v: 67,
-          b: 71,
-          V: 14,
-          r: 3
-        }, {
-          v: 67,
-          b: 140,
-          V: -1,
-          r: 0
-        }, _MWWF, {
-          v: 62,
-          b: 149,
-          V: -1,
-          r: 0
-        }, _MWWF, {
-          v: 62,
-          b: 149,
-          V: -1,
-          r: 0
-        }, {
-          v: 62,
-          b: 149,
-          V: -1,
-          r: 0
-        }, _MWWF, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 1
-        }, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }, _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 71,
-          V: 24,
-          r: 1
-        },
-        _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 30,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 31,
-          r: 0
-        }
-      ],
+        v: 67,
+        b: 71,
+        V: 10,
+        r: 0
+      }, _MWLF, {
+        v: 67,
+        b: 71,
+        V: 14,
+        r: 3
+      }, {
+        v: 67,
+        b: 140,
+        V: -1,
+        r: 0
+      }, _MWWF, {
+        v: 62,
+        b: 149,
+        V: -1,
+        r: 0
+      }, _MWWF, {
+        v: 62,
+        b: 149,
+        V: -1,
+        r: 0
+      }, {
+        v: 62,
+        b: 149,
+        V: -1,
+        r: 0
+      }, _MWWF, {
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 1
+      }, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 71,
+        V: 24,
+        r: 1
+      }, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 30,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 31,
+        r: 0
+      }],
       [_EMP, _MWLF, {
         v: 67,
         b: 71,
@@ -35453,64 +34467,57 @@ try {
         r: 0
       }],
       [_EMP, _EMP, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 2
-        }, {
-          v: 0,
-          b: 71,
-          V: 16,
-          r: 1
-        }, {
-          v: 0,
-          b: 71,
-          V: 17,
-          r: 1
-        }, {
-          v: 0,
-          b: 71,
-          V: 26,
-          r: 1
-        }, _MW, _MW, _MW, _MW,
-        _MW, _MW, _MW, _MW, _MW,
-        _EMP, {
-          v: 0,
-          b: 86,
-          V: 14,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 12,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 6,
-          r: 0
-        }
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP, {
-          v: 0,
-          b: 86,
-          V: 40,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 1,
-          r: 0
-        }, {
-          v: 0,
-          b: 86,
-          V: 41,
-          r: 0
-        }
-      ]
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 2
+      }, {
+        v: 0,
+        b: 71,
+        V: 16,
+        r: 1
+      }, {
+        v: 0,
+        b: 71,
+        V: 17,
+        r: 1
+      }, {
+        v: 0,
+        b: 71,
+        V: 26,
+        r: 1
+      }, _MW, _MW, _MW, _MW, _MW, _MW, _MW, _MW, _MW, _EMP, {
+        v: 0,
+        b: 86,
+        V: 14,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 12,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 6,
+        r: 0
+      }],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+        v: 0,
+        b: 86,
+        V: 40,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 1,
+        r: 0
+      }, {
+        v: 0,
+        b: 86,
+        V: 41,
+        r: 0
+      }]
     ]
   }, HOUSE[HOUSEID.__BUNKER0__] = {
     width: 0,
@@ -35518,291 +34525,174 @@ try {
     radiation: 0,
     building: [
       [_EMP],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _SC, _SC, _SC,
-        _EMP, _SC, _SC, _SC, _SC,
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC],
+      [_EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+        _SC],
+      [_EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+        _SC, _SC
+      ],
+      [_EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+        _SC, _SC
+      ],
+      [_EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+        _SC, _SC
+      ],
+      [_EMP, _SC, _SC, _SC, _SC, _SC, _SC, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC,
         _SC, _SC, _SC, _SC
       ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC
+      [_EMP, _SC, _SC, _SC, _EMP, _EMP, _EMP, _EMP, _SC, _BWTF, _BWTF, {
+        v: 85,
+        b: 52,
+        V: -1,
+        r: 2
+      }, _BWTF, _BWTF, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC],
+      [_EMP, _EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _BWTF, _TF, _TF, _TF, _BWTF, _SC, _EMP, _EMP, _SC, _SC,
+        _SC, _SC, _SC, _SC
       ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
+      [_EMP, _EMP, _SC, _SC, _SC, _SC, _BWTF, _BWTF, _BWTF, _BWTF, _TF, _TF, _TF, _BWTF, _SC, _SC, _EMP, _SC, _SC,
         _SC, _SC, _SC
       ],
-      [_EMP, _EMP, _EMP, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC
+      [_EMP, _SC, _SC, _SC, _SC, _SC, _BWTF, {
+        v: 85,
+        b: 71,
+        V: 9,
+        r: 0
+      }, {
+        v: 85,
+        b: 71,
+        V: 58,
+        r: 0
+      }, _BWTF, {
+        v: 85,
+        b: 71,
+        V: 33,
+        r: 3
+      }, _TF, {
+        v: 85,
+        b: 71,
+        V: 33,
+        r: 3
+      }, _BWTF, _SC, _SC, _EMP, _SC, _SC, _SC, _SC, _SC, _SC],
+      [_EMP, _SC, _SC, _SC, _SC, _SC, _BWTF, {
+        v: 85,
+        b: 71,
+        V: 10,
+        r: 2
+      }, _TF, _BWTF, _BWTF, _SF, _BWSF, _BWSF, _BW, _SC, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC],
+      [_EMP, _SC, _SC, _SC, _SC, _SC, _BWTF, _TF, _TF, _SF, _SF, _SF, _SF, {
+        v: 84,
+        b: 71,
+        V: 51,
+        r: 1
+      }, _BWSF, _SC, _SC, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC],
+      [_EMP, _SC, _SC, _SC, _SC, _BWTF, _BWTF, _BWTF, _BWTF, _BWTF, _SF, _SF, _SF, _SF, _BWSF, _BW, _SC, _SC,
+        _EMP, _SC, _SC, _SC, _SC, _SC
       ],
-      [_EMP, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC
+      [_EMP, _SC, _SC, _SC, _SC, _BWTF, _SF, _SF, _SF, _BWTF, _BWTF, _SF, _SF, _SF, _BWSF, _BWTF, _BWTF, _SC,
+        _EMP, _SC, _SC, _SC, _SC
       ],
-      [_EMP, _SC, _SC, _SC, _SC,
-        _SC, _SC, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _EMP,
-        _EMP, _EMP, _EMP, _SC,
-        _SC, _SC, _SC, _SC, _SC,
+      [_EMP, _SC, _SC, _SC, _SC, _BWTF, _SF, _BWTF, _SF, _SF, _SF, _SF, _BWTF, _TF, _TF, {
+        v: 85,
+        b: 71,
+        V: 55,
+        r: 2
+      }, _BWTF, _SC, _EMP, _SC, _SC, _SC, _SC],
+      [_EMP, _SC, _SC, _SC, _SC, _BWTF, _SF, _BWTF, _BWTF, _BWTF, _BWTF, _SF, _BWTF, {
+        v: 85,
+        b: 71,
+        V: 28,
+        r: 3
+      }, _TF, {
+        v: 85,
+        b: 71,
+        V: 21,
+        r: 1
+      }, _BWTF, _SC, _EMP, _EMP, _SC, _SC],
+      [_EMP, _SC, _SC, _SC, _SC, _BWTF, _TF, {
+        v: 85,
+        b: 71,
+        V: 23,
+        r: 1
+      }, {
+        v: 85,
+        b: 71,
+        V: 53,
+        r: 3
+      }, {
+        v: 85,
+        b: 71,
+        V: 56,
+        r: 2
+      }, _BWTF, _SF, _BWTF, _BWTF, _BWTF, _BWTF, _BWTF, _SC, _EMP, _EMP, _SC, _SC, _SC],
+      [_EMP, _EMP, _EMP, _SC, _SC, _BWTF, _TF, _TF, _TF, {
+        v: 85,
+        b: 71,
+        V: 53,
+        r: 2
+      }, _BWTF, _SF, _SF, _TF, {
+        v: 85,
+        b: 71,
+        V: 51,
+        r: 0
+      }, {
+        v: 85,
+        b: 71,
+        V: 48,
+        r: 0
+      }, _BWTF, _SC, _SC],
+      [_EMP, _SC, _SC, _SC, _SC, _BWTF, _TF, _TF, _TF, _TF, _BWTF, _BWTF, _BWTF, _TF, _TF, _TF, _BWTF, _SC, _SC,
         _SC
       ],
-      [_EMP, _SC, _SC, _SC, _EMP,
-        _EMP, _EMP, _EMP, _SC,
-        _BWTF, _BWTF, {
-          v: 85,
-          b: 52,
-          V: -1,
-          r: 2
-        },
-        _BWTF, _BWTF, _EMP, _EMP,
-        _SC, _SC, _SC, _SC, _SC,
+      [_EMP, _SC, _SC, _SC, _SC, _BWTF, {
+        v: 85,
+        b: 71,
+        V: 20,
+        r: 3
+      }, {
+        v: 85,
+        b: 71,
+        V: 11,
+        r: 2
+      }, {
+        v: 85,
+        b: 71,
+        V: 49,
+        r: 3
+      }, _TF, {
+        v: 85,
+        b: 71,
+        V: 54,
+        r: 2
+      }, _BWTF, _BWTF, {
+        v: 85,
+        b: 71,
+        V: 48,
+        r: 2
+      }, {
+        v: 85,
+        b: 71,
+        V: 50,
+        r: 2
+      }, {
+        v: 85,
+        b: 71,
+        V: 49,
+        r: 3
+      }, _BWTF, _SC, _SC, _SC, _SC, _SC, _SC],
+      [_EMP, _EMP, _SC, _SC, _SC, _BWTF, _BWTF, _BWTF, _BWTF, _BWTF, _BWTF, _BWTF, _BWTF, _BWTF, _BWTF, _BWTF,
+        _BWTF, _SC, _SC, _SC, _SC, _SC, _SC
+      ],
+      [_EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
         _SC, _SC
       ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _EMP, _SC, _SC, _SC, _SC,
-        _BWTF, _TF, _TF, _TF,
-        _BWTF, _SC, _EMP, _EMP,
-        _SC, _SC, _SC, _SC, _SC,
+      [_EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
         _SC
       ],
-      [_EMP, _EMP, _SC, _SC, _SC,
-        _SC, _BWTF, _BWTF, _BWTF,
-        _BWTF, _TF, _TF, _TF,
-        _BWTF, _SC, _SC, _EMP,
-        _SC, _SC, _SC, _SC, _SC
-      ],
-      [_EMP, _SC, _SC, _SC, _SC,
-        _SC, _BWTF, {
-          v: 85,
-          b: 71,
-          V: 9,
-          r: 0
-        }, {
-          v: 85,
-          b: 71,
-          V: 58,
-          r: 0
-        },
-        _BWTF, {
-          v: 85,
-          b: 71,
-          V: 33,
-          r: 3
-        },
-        _TF, {
-          v: 85,
-          b: 71,
-          V: 33,
-          r: 3
-        },
-        _BWTF, _SC, _SC, _EMP,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC
-      ],
-      [_EMP, _SC, _SC, _SC, _SC,
-        _SC, _BWTF, {
-          v: 85,
-          b: 71,
-          V: 10,
-          r: 2
-        },
-        _TF, _BWTF, _BWTF, _SF,
-        _BWSF, _BWSF, _BW, _SC,
-        _EMP, _EMP, _SC, _SC, _SC,
-        _SC, _SC, _SC
-      ],
-      [_EMP, _SC, _SC, _SC, _SC,
-        _SC, _BWTF, _TF, _TF, _SF,
-        _SF, _SF, _SF, {
-          v: 84,
-          b: 71,
-          V: 51,
-          r: 1
-        },
-        _BWSF, _SC, _SC, _EMP,
-        _EMP, _SC, _SC, _SC, _SC,
-        _SC
-      ],
-      [_EMP, _SC, _SC, _SC, _SC,
-        _BWTF, _BWTF, _BWTF,
-        _BWTF, _BWTF, _SF, _SF,
-        _SF, _SF, _BWSF, _BW, _SC,
-        _SC, _EMP, _SC, _SC, _SC,
-        _SC, _SC
-      ],
-      [_EMP, _SC, _SC, _SC, _SC,
-        _BWTF, _SF, _SF, _SF,
-        _BWTF, _BWTF, _SF, _SF,
-        _SF, _BWSF, _BWTF, _BWTF,
-        _SC, _EMP, _SC, _SC, _SC,
-        _SC
-      ],
-      [_EMP, _SC, _SC, _SC, _SC,
-        _BWTF, _SF, _BWTF, _SF,
-        _SF, _SF, _SF, _BWTF, _TF,
-        _TF, {
-          v: 85,
-          b: 71,
-          V: 55,
-          r: 2
-        },
-        _BWTF, _SC, _EMP, _SC,
-        _SC, _SC, _SC
-      ],
-      [_EMP, _SC, _SC, _SC, _SC,
-        _BWTF, _SF, _BWTF, _BWTF,
-        _BWTF, _BWTF, _SF, _BWTF, {
-          v: 85,
-          b: 71,
-          V: 28,
-          r: 3
-        },
-        _TF, {
-          v: 85,
-          b: 71,
-          V: 21,
-          r: 1
-        },
-        _BWTF, _SC, _EMP, _EMP,
-        _SC, _SC
-      ],
-      [_EMP, _SC, _SC, _SC, _SC,
-        _BWTF, _TF, {
-          v: 85,
-          b: 71,
-          V: 23,
-          r: 1
-        }, {
-          v: 85,
-          b: 71,
-          V: 53,
-          r: 3
-        }, {
-          v: 85,
-          b: 71,
-          V: 56,
-          r: 2
-        },
-        _BWTF, _SF, _BWTF, _BWTF,
-        _BWTF, _BWTF, _BWTF, _SC,
-        _EMP, _EMP, _SC, _SC, _SC
-      ],
-      [_EMP, _EMP, _EMP, _SC, _SC,
-        _BWTF, _TF, _TF, _TF, {
-          v: 85,
-          b: 71,
-          V: 53,
-          r: 2
-        },
-        _BWTF, _SF, _SF, _TF, {
-          v: 85,
-          b: 71,
-          V: 51,
-          r: 0
-        }, {
-          v: 85,
-          b: 71,
-          V: 48,
-          r: 0
-        },
-        _BWTF, _SC, _SC
-      ],
-      [_EMP, _SC, _SC, _SC, _SC,
-        _BWTF, _TF, _TF, _TF, _TF,
-        _BWTF, _BWTF, _BWTF, _TF,
-        _TF, _TF, _BWTF, _SC, _SC,
-        _SC
-      ],
-      [_EMP, _SC, _SC, _SC, _SC,
-        _BWTF, {
-          v: 85,
-          b: 71,
-          V: 20,
-          r: 3
-        }, {
-          v: 85,
-          b: 71,
-          V: 11,
-          r: 2
-        }, {
-          v: 85,
-          b: 71,
-          V: 49,
-          r: 3
-        },
-        _TF, {
-          v: 85,
-          b: 71,
-          V: 54,
-          r: 2
-        },
-        _BWTF, _BWTF, {
-          v: 85,
-          b: 71,
-          V: 48,
-          r: 2
-        }, {
-          v: 85,
-          b: 71,
-          V: 50,
-          r: 2
-        }, {
-          v: 85,
-          b: 71,
-          V: 49,
-          r: 3
-        },
-        _BWTF, _SC, _SC, _SC, _SC,
-        _SC, _SC
-      ],
-      [_EMP, _EMP, _SC, _SC, _SC,
-        _BWTF, _BWTF, _BWTF,
-        _BWTF, _BWTF, _BWTF,
-        _BWTF, _BWTF, _BWTF,
-        _BWTF, _BWTF, _BWTF, _SC,
-        _SC, _SC, _SC, _SC, _SC
-      ],
-      [_EMP, _EMP, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC
-      ],
-      [_EMP, _EMP, _EMP, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC
-      ],
-      [_EMP, _EMP, _EMP, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC
-      ],
-      [_EMP, _EMP, _EMP, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC, _SC, _SC,
-        _SC, _SC, _SC
-      ],
-      [_EMP, _EMP, _EMP, _EMP,
-        _SC, _SC, _SC, _EMP, _EMP,
-        _EMP, _EMP, _SC, _SC, _SC,
-        _SC, _SC
-      ]
+      [_EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+        _SC],
+      [_EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC],
+      [_EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC],
+      [_EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC]
     ]
   })
 } catch (t) {}
@@ -35813,11 +34703,10 @@ for (i = 0; i < HOUSE.length; i++) {
   for (var j = 0; j < housePlan.length; j++) house.width = window.Math.max(housePlan[j].length, house.width)
 }
 var AREASTOITEM = [];
-AREASTOITEM[AREAS.__FIRE__] = IID.__CAMPFIRE__, AREASTOITEM[AREAS.__BBQ__] = IID.__CAMPFIRE_BBQ__,
-  AREASTOITEM[AREAS.__WORKBENCH__] = IID.__WORKBENCH__, AREASTOITEM[AREAS.__WORKBENCH2__] = IID.__WORKBENCH2__,
-  AREASTOITEM[AREAS.__TESLA__] = IID.__TESLA__,
-  AREASTOITEM[AREAS.__SMELTER__] = IID.__SMELTER__, AREASTOITEM[AREAS.__WEAVING__] = IID.__WEAVING__,
-  AREASTOITEM[AREAS.__COMPOST__] = IID.__COMPOST__, AREASTOITEM[AREAS.__AGITATOR__] = IID.__AGITATOR__,
+AREASTOITEM[AREAS.__FIRE__] = IID.__CAMPFIRE__, AREASTOITEM[AREAS.__BBQ__] = IID.__CAMPFIRE_BBQ__, AREASTOITEM[AREAS
+    .__WORKBENCH__] = IID.__WORKBENCH__, AREASTOITEM[AREAS.__WORKBENCH2__] = IID.__WORKBENCH2__, AREASTOITEM[AREAS
+    .__TESLA__] = IID.__TESLA__, AREASTOITEM[AREAS.__SMELTER__] = IID.__SMELTER__, AREASTOITEM[AREAS.__WEAVING__] = IID
+  .__WEAVING__, AREASTOITEM[AREAS.__COMPOST__] = IID.__COMPOST__, AREASTOITEM[AREAS.__AGITATOR__] = IID.__AGITATOR__,
   AREASTOITEM[AREAS.__EXTRACTOR__] = IID.__EXTRACTOR__;
 var INVENTORY2 = null,
   ENTITIES2 = null,
@@ -37053,9 +35942,7 @@ AI[AIID.__NORMAL_GHOUL__] = {
   speedRun: [.14, .24],
   loot: [
     [IID.__ALLOYS__, 4, LOOTID.alloys],
-    [IID.__SHAPED_METAL__, 12,
-      LOOTID.__SHAPED_METAL__
-    ]
+    [IID.__SHAPED_METAL__, 12, LOOTID.__SHAPED_METAL__]
   ],
   light: 1,
   areaEffect: 0,
@@ -37319,9 +36206,7 @@ AI[AIID.__NORMAL_GHOUL__] = {
   life: 3e3,
   speed: [.1, .1],
   loot: [
-    [IID.__SHAPED_URANIUM__, 4,
-      LOOTID.shapeduranium
-    ],
+    [IID.__SHAPED_URANIUM__, 4, LOOTID.shapeduranium],
     [IID.__ALLOYS__, 4, LOOTID.alloys]
   ],
   light: 0,
@@ -37338,20 +36223,16 @@ AI[AIID.__NORMAL_GHOUL__] = {
 };
 try {
   if (exports !== window.undefined) {
-    exports.IID = IID, exports.FURNITUREID = FURNITUREID,
-      exports.HOUSE = HOUSE, exports.HOUSEID = HOUSEID, exports.INVENTORY = INVENTORY, exports.LOOT = LOOT, exports
-      .LOOTID = LOOTID, exports.RESID = RESID,
-      exports.RESOURCES = RESOURCES,
-      exports.AREAS = AREAS, exports.SKILLS = SKILLS, exports.KIT = KIT, exports.BRKIT = BRKIT,
-      exports.AI = AI, exports.AIID = AIID, exports.BEHAVIOR = BEHAVIOR;
+    exports.IID = IID, exports.FURNITUREID = FURNITUREID, exports.HOUSE = HOUSE, exports.HOUSEID = HOUSEID, exports
+      .INVENTORY = INVENTORY, exports.LOOT = LOOT, exports.LOOTID = LOOTID, exports.RESID = RESID, exports.RESOURCES =
+      RESOURCES, exports.AREAS = AREAS, exports.SKILLS = SKILLS, exports.KIT = KIT, exports.BRKIT = BRKIT, exports.AI =
+      AI, exports.AIID = AIID, exports.BEHAVIOR = BEHAVIOR;
     for (var k = 0; k < 3; k++)
       for (i = 1; i < INVENTORY.length; i++) {
         if ((recipe = (item = INVENTORY[i]).detail.recipe) !== window.undefined) {
           for (j = 0; j < recipe.length; j++) {
             var _item = INVENTORY[recipe[j][0]];
-            0 === j && (item.score = 0),
-              item.score += _item.score * recipe[j][1],
-              recipe[j][2] = _item.loot
+            0 === j && (item.score = 0), item.score += _item.score * recipe[j][1], recipe[j][2] = _item.loot
           }
           item.score = window.Math.floor(item.score / 4)
         }
@@ -37360,11 +36241,8 @@ try {
       var item, recipe;
       if ((recipe = (item = FURNITURE[i]).detail.recipe) !== window.undefined) {
         for (j = 0; j < recipe.length; j++) {
-          _item = INVENTORY[recipe[j][
-            0
-          ]];
-          0 === j && (item.score = 0),
-            item.score += _item.score * recipe[j][1], recipe[j][2] = _item.loot
+          _item = INVENTORY[recipe[j][0]];
+          0 === j && (item.score = 0), item.score += _item.score * recipe[j][1], recipe[j][2] = _item.loot
         }
         item.score = window.Math.floor(item.score / 4)
       }
@@ -37393,26 +36271,17 @@ try {
         } else updateClotheInfo(a)
     }
   }
-  INVENTORY2 = window.JSON.parse(window.JSON.stringify(INVENTORY)),
-    PARTICLES2 = window.JSON.parse(window.JSON.stringify(PARTICLES)),
-    LOOT2 = window.JSON.parse(window.JSON.stringify(LOOT)),
-    ENTITIES2 = window.JSON.parse(window.JSON.stringify(ENTITIES)),
-    RESOURCES2 = window.JSON.parse(window.JSON.stringify(RESOURCES)),
-    LIGHTFIRE2 = window.JSON.parse(window.JSON.stringify(LIGHTFIRE)),
-    AI2 = window.JSON.parse(window.JSON.stringify(AI)),
-    replaceStringInObject(RESOURCES2, RESOURCES, "day", "night"),
-    replaceStringInObject(INVENTORY2, INVENTORY, "day", "night"),
-    replaceStringInObject(PARTICLES2, PARTICLES, "day", "night"),
-    replaceStringInObject(LOOT2, LOOT, "day", "night"),
-    replaceStringInObject(ENTITIES2, ENTITIES, "day", "night"),
-    replaceStringInObject(LIGHTFIRE2, LIGHTFIRE, "day", "night"),
-    replaceStringInObject(AI2, AI, "day", "night"), updateClotheInfo(INVENTORY)
+  INVENTORY2 = window.JSON.parse(window.JSON.stringify(INVENTORY)), PARTICLES2 = window.JSON.parse(window.JSON
+      .stringify(PARTICLES)), LOOT2 = window.JSON.parse(window.JSON.stringify(LOOT)), ENTITIES2 = window.JSON.parse(
+      window.JSON.stringify(ENTITIES)), RESOURCES2 = window.JSON.parse(window.JSON.stringify(RESOURCES)), LIGHTFIRE2 =
+    window.JSON.parse(window.JSON.stringify(LIGHTFIRE)), AI2 = window.JSON.parse(window.JSON.stringify(AI)),
+    replaceStringInObject(RESOURCES2, RESOURCES, "day", "night"), replaceStringInObject(INVENTORY2, INVENTORY, "day",
+      "night"), replaceStringInObject(PARTICLES2, PARTICLES, "day", "night"), replaceStringInObject(LOOT2, LOOT, "day",
+      "night"), replaceStringInObject(ENTITIES2, ENTITIES, "day", "night"), replaceStringInObject(LIGHTFIRE2, LIGHTFIRE,
+      "day", "night"), replaceStringInObject(AI2, AI, "day", "night"), updateClotheInfo(INVENTORY)
 }
 var AudioManager = function () {
-  var e = [237225, 303931, 166687,
-      229213, 217292, 205860, 182041,
-      273065
-    ],
+  var e = [237225, 303931, 166687, 229213, 217292, 205860, 182041, 273065],
     i = [],
     a = window.Math.floor(window.Math.random() * e.length),
     _ = 0,
@@ -37421,38 +36290,27 @@ var AudioManager = function () {
     d = .45,
     n = 0,
     r = 0;
-  AudioUtils.audio.end = new AudioUtils.Sound("audio/end.mp3", 0, !0),
-    AudioUtils.audio.title = new AudioUtils.Sound("audio/title.mp3", 0, !0),
-    AudioUtils.audio.geiger = new AudioUtils.Sound("audio/geiger.mp3", 0, !0),
-    AudioUtils.audio.ambient1 = new AudioUtils.Sound("audio/ambient1.mp3", 0, !0),
-    AudioUtils.audio.ambient2 = new AudioUtils.Sound("audio/ambient2.mp3", 0, !0),
-    AudioUtils.audio.ambient3 = new AudioUtils.Sound("audio/ambient3.mp3", 0, !0),
-    AudioUtils.audio.ambient4 = new AudioUtils.Sound("audio/ambient4.mp3", 0, !0),
-    AudioUtils.audio.ambient5 = new AudioUtils.Sound("audio/ambient5.mp3", 0, !0),
-    AudioUtils.audio.ambient6 = new AudioUtils.Sound("audio/ambient6.mp3", 0, !0),
-    AudioUtils.audio.ambient7 = new AudioUtils.Sound("audio/ambient7.mp3", 0, !0),
+  AudioUtils.audio.end = new AudioUtils.Sound("audio/end.mp3", 0, !0), AudioUtils.audio.title = new AudioUtils.Sound(
+      "audio/title.mp3", 0, !0), AudioUtils.audio.geiger = new AudioUtils.Sound("audio/geiger.mp3", 0, !0), AudioUtils
+    .audio.ambient1 = new AudioUtils.Sound("audio/ambient1.mp3", 0, !0), AudioUtils.audio.ambient2 = new AudioUtils
+    .Sound("audio/ambient2.mp3", 0, !0), AudioUtils.audio.ambient3 = new AudioUtils.Sound("audio/ambient3.mp3", 0, !
+    0), AudioUtils.audio.ambient4 = new AudioUtils.Sound("audio/ambient4.mp3", 0, !0), AudioUtils.audio.ambient5 =
+    new AudioUtils.Sound("audio/ambient5.mp3", 0, !0), AudioUtils.audio.ambient6 = new AudioUtils.Sound(
+      "audio/ambient6.mp3", 0, !0), AudioUtils.audio.ambient7 = new AudioUtils.Sound("audio/ambient7.mp3", 0, !0),
     AudioUtils.audio.ambient8 = new AudioUtils.Sound("audio/ambient8.mp3", 0, !0), i.push(AudioUtils.audio.ambient1),
-    i.push(AudioUtils.audio.ambient2),
-    i.push(AudioUtils.audio.ambient3),
-    i.push(AudioUtils.audio.ambient4),
-    i.push(AudioUtils.audio.ambient5),
-    i.push(AudioUtils.audio.ambient6),
-    i.push(AudioUtils.audio.ambient7),
-    i.push(AudioUtils.audio.ambient8),
-    AudioUtils._fx.open = new AudioUtils.Sound("audio/open.mp3", 1, !1, 1),
-    AudioUtils._fx.drag = new AudioUtils.Sound("audio/drag.mp3", 1, !1, 1),
-    AudioUtils._fx.play = new AudioUtils.Sound("audio/play.mp3", 1, !1, 1),
-    AudioUtils._fx.skill = new AudioUtils.Sound("audio/skill.mp3", 1, !1, 1),
-    AudioUtils._fx.craft = new AudioUtils.Sound("audio/craft.mp3", 1, !1, 1),
-    AudioUtils._fx.button = new AudioUtils.Sound("audio/button.mp3", 1, !1, 1),
-    AudioUtils._fx.throwLoot = new AudioUtils.Sound("audio/throwLoot.mp3", 1, !1, 1), AudioUtils._fx.levelup =
-    new AudioUtils.Sound("audio/levelup.mp3", 1, !1, 1),
-    AudioUtils._fx.explosion = new AudioUtils.Sound("audio/explosion.mp3", 1, !1, 1), AudioUtils._fx.zipperOn =
-    new AudioUtils.Sound("audio/zipper-on.mp3", .7, !1, 1), AudioUtils._fx.zipperOff = new AudioUtils.Sound(
-      "audio/zipper-off.mp3", .7, !1, 1), AudioUtils._fx.eat = [
-      new AudioUtils.Sound("audio/eat-1s-0.mp3", 1, !1, 1), new AudioUtils.Sound("audio/eat-1s-1.mp3", 1, !1, 1),
-      new AudioUtils.Sound("audio/eat-1s-2.mp3", 1, !1, 1)
-    ], AudioUtils._fx.damage = [];
+    i.push(AudioUtils.audio.ambient2), i.push(AudioUtils.audio.ambient3), i.push(AudioUtils.audio.ambient4), i.push(
+      AudioUtils.audio.ambient5), i.push(AudioUtils.audio.ambient6), i.push(AudioUtils.audio.ambient7), i.push(
+      AudioUtils.audio.ambient8), AudioUtils._fx.open = new AudioUtils.Sound("audio/open.mp3", 1, !1, 1), AudioUtils
+    ._fx.drag = new AudioUtils.Sound("audio/drag.mp3", 1, !1, 1), AudioUtils._fx.play = new AudioUtils.Sound(
+      "audio/play.mp3", 1, !1, 1), AudioUtils._fx.skill = new AudioUtils.Sound("audio/skill.mp3", 1, !1, 1),
+    AudioUtils._fx.craft = new AudioUtils.Sound("audio/craft.mp3", 1, !1, 1), AudioUtils._fx.button = new AudioUtils
+    .Sound("audio/button.mp3", 1, !1, 1), AudioUtils._fx.throwLoot = new AudioUtils.Sound("audio/throwLoot.mp3", 1, !
+      1, 1), AudioUtils._fx.levelup = new AudioUtils.Sound("audio/levelup.mp3", 1, !1, 1), AudioUtils._fx.explosion =
+    new AudioUtils.Sound("audio/explosion.mp3", 1, !1, 1), AudioUtils._fx.zipperOn = new AudioUtils.Sound(
+      "audio/zipper-on.mp3", .7, !1, 1), AudioUtils._fx.zipperOff = new AudioUtils.Sound("audio/zipper-off.mp3", .7, !
+      1, 1), AudioUtils._fx.eat = [new AudioUtils.Sound("audio/eat-1s-0.mp3", 1, !1, 1), new AudioUtils.Sound(
+      "audio/eat-1s-1.mp3", 1, !1, 1), new AudioUtils.Sound("audio/eat-1s-2.mp3", 1, !1, 1)], AudioUtils._fx
+    .damage = [];
   for (var l = 1; l < SOUND.length; l++) AudioUtils._fx.damage[l] = new AudioUtils.Sound(SOUND[l], 1, !1, 1);
   AudioUtils._fx.shot = [];
   var s = ENTITIES[__ENTITIE_PLAYER__].weapons;
@@ -37470,9 +36328,8 @@ var AudioManager = function () {
     1 === (c = AudioUtils._fx.shot[l]) && (AudioUtils._fx.shot[l] = AudioUtils._fx.eat)
   }
   if (1 === AudioUtils.options.isFx) {
-    AudioUtils.loadSound(AudioUtils._fx.open), AudioUtils.loadSound(AudioUtils._fx.play),
-      AudioUtils.loadSound(AudioUtils._fx.drag), AudioUtils.loadSound(AudioUtils._fx.skill), AudioUtils.loadSound(
-        AudioUtils._fx.craft),
+    AudioUtils.loadSound(AudioUtils._fx.open), AudioUtils.loadSound(AudioUtils._fx.play), AudioUtils.loadSound(
+        AudioUtils._fx.drag), AudioUtils.loadSound(AudioUtils._fx.skill), AudioUtils.loadSound(AudioUtils._fx.craft),
       AudioUtils.loadSound(AudioUtils._fx.button), AudioUtils.loadSound(AudioUtils._fx.levelup), AudioUtils.loadSound(
         AudioUtils._fx.explosion);
     for (l = 0; l < AudioUtils._fx.eat.length; l++) AudioUtils.loadSound(AudioUtils._fx.eat[l]);
@@ -37493,14 +36350,12 @@ var AudioManager = function () {
       o = 1, I(), 0 === _ && (a = (a + 1) % i.length), _ = e[a] - 5e3, AudioUtils.fadeSound(i[a], 5e3, d)
     },
     quitGame: function () {
-      o = 0, t = 1, AudioUtils.fadeSound(AudioUtils.audio.geiger, 250, -r), r = 0,
-        AudioManager.geiger = 0,
+      o = 0, t = 1, AudioUtils.fadeSound(AudioUtils.audio.geiger, 250, -r), r = 0, AudioManager.geiger = 0,
         AudioUtils.fadeSound(i[a], 500, -d), AudioUtils.fadeSound(AudioUtils.audio.end, 1e3, AudioManager
           .musicVolume)
     },
     scheduler: function () {
-      AudioUtils.playSound(AudioUtils.audio.title),
-        AudioUtils.playSound(AudioUtils.audio.end);
+      AudioUtils.playSound(AudioUtils.audio.title), AudioUtils.playSound(AudioUtils.audio.end);
       for (var t = 0; t < i.length; t++) AudioUtils.playSound(i[t]);
       if (1 === AudioUtils.options.isFx) {
         var l = AudioUtils.options.isAudio;
