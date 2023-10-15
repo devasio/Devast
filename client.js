@@ -7523,7 +7523,7 @@ var Border = function () {
           var d = World.PLAYER.inventory[a];
           d[1] = t.amount, d[2] = 0, d[3] = t.life, d[0] = t.id
         }
-        w = 5e3, null === Loader.getURLData("admin") && window.YMPB.refresh(), CanvasUtils.setRenderer(Score), h =
+        w = 5e3, null === Loader.getURLData("admin") && CanvasUtils.setRenderer(Score), h =
           500, U = 500, f = S, y = 1, v()
       },
       update: v,
@@ -7698,7 +7698,7 @@ var Border = function () {
       },
       run: function () {
         Client.onError = e, Client.onOpen = i, World.PLAYER.isBuilding = 0, World.PLAYER.id = 0, Render.setDetection(
-            0), Render.stopPoisonEffect(), u = 5e3, window.YMPB.refresh(), CanvasUtils.setRenderer(Rank), b = 500, A =
+            0), Render.stopPoisonEffect(), u = 5e3, CanvasUtils.setRenderer(Rank), b = 500, A =
           500, y = O, T = 1, U()
       },
       update: U,
