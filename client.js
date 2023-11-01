@@ -6044,7 +6044,7 @@ var Border = function () {
             if (l(), n < 0) {
               function e() {
                 var e = Client.serverList;
-                Home.regions = [], Home.privateServer = [], Home.ghoulServer = [];
+                Home.regions = []
                 for (var i = [], a = [], _ = '<select id="servers">', o = 0; o < e.length; o++) {
                   var t = e[o][4],
                     d = e[o][5];
@@ -6069,17 +6069,7 @@ var Border = function () {
                   r = 0;
                   for (var g = 0; g < Home.regions[o].length; g++) r += e[Home.regions[o][g]][5]
                 }
-                for (var o in Home.privateServer = Home.privateServer.sort((function (i, a) {
-                    return window.Number(e[a][5]) - window.Number(e[i][5])
-                  })), Home.htmlPrivateServer = '<select id="servers">', Home.privateServer) Home
-                  .htmlPrivateServer += '<option value="' + o + '">' + e[Home.privateServer[o]][4].replace("PRIV",
-                    "") + "  - " + e[Home.privateServer[o]][5] + "  players</option>";
-                for (var o in Home.htmlGhoulServer = '<select id="servers">', Home.ghoulServer) Home
-                  .htmlGhoulServer += '<option value="' + e[Home.ghoulServer[o]][0] + '">' + e[Home.ghoulServer[o]][
-                    4
-                  ].replace("ghoul", "") + "  - " + e[Home.ghoulServer[o]][5] + "  players</option>";
-                if (_ += "</select>", Home.htmlBattleRoyale += "</select>", Home.htmlPrivateServer += "</select>",
-                  Home.htmlGhoulServer += "</select>", window.document.getElementById("serverList").innerHTML = _,
+                if (_ += "</select>", window.document.getElementById("serverList").innerHTML = _,
                   window.document.getElementById("servers").selectedIndex = l, World.PLAYER.admin = 1, null !==
                   Loader.getURLData("admin") || null !== Loader.getURLData("member") || null !== Loader.getURLData(
                     "moderator")) {
@@ -6344,8 +6334,7 @@ var Border = function () {
           .__PENDING__) && 0 == (Client.state & State.__CONNECTED__))) {
         Home.serverTest = 0, Home.gameMode = World.__GHOUL__, AudioUtils.playFx(AudioUtils._fx.button, 1, 0), M.hide(),
           N.hide(), Home.survivalHtml = window.document.getElementById("serverList").innerHTML, Home.survivalIndex =
-          window.document.getElementById("servers").selectedIndex, window.document.getElementById("serverList")
-          .innerHTML = Home.htmlGhoulServer;
+          window.document.getElementById("servers").selectedIndex
         var a = window.Math.floor(1 * window.Math.random());
         window.document.getElementById("servers").selectedIndex = a, $()
       }

@@ -258,31 +258,6 @@ div#mapCommands {
   padding-right:12px;
   display:inline-block
 }
-div#featuredVideo {
-  position:absolute;
-  width:182px;
-  height:25px;
-  display:none;
-  color:#fff;
-  font-family:viga,sans-serif;
-  font-size:13px
-}
-div#trevda {
-  position:absolute;
-  margin:0 auto;
-  right:0;
-  display:none
-}
-.trevda {
-  position:absolute;
-  margin:0 auto;
-  right:0;
-  display:none
-}
-div#preroll {
-  width:100%;
-  height:100%
-}
 div#chat {
   position:absolute;
   width:300px;
