@@ -7640,10 +7640,13 @@ var Border = function () {
                             if (0 !== _ && "string" == typeof playerTestArr[_] && 120 !== _) {
                                 35 * ++a >= canh && (a = 1, i++);
                                 let e = playerTestArr[_].padEnd(22),
-                                    o = MathUtils.simplifyNumber(World.players[_].score).padEnd(6),
-                                    t = JSON.stringify(_).padEnd(2),
-                                    d = MathUtils.karmaEmoji(World.players[_].KARMA);
-                                ctx.fillText(`#${t} ${e} ${o} ${d}`, 600 * i, 35 * a)
+                                    t = MathUtils.simplifyNumber(World.players[_].score).padEnd(6),
+                                    d = `#${JSON.stringify(_).padEnd(2)} ${e} ${t}`,
+                                    n = ctx.measureText(d).width;
+                                ctx.fillText(d, 600 * i, 35 * a);
+                                var o = KARMA[World.players[_].KARMA].img;
+                                1 === o.isLoaded && ctx.drawImage(o, 600 * i + n, 35 * a - o.height / 2, o
+                                    .width / 1.5, o.height / 1.5)
                             } ctx.fillStyle = "#000", ctx.font = e
                     }
                     if (1 === d) 1 === n ? Render.bigminimap(Ce, f) : 1 === r ? Render.config(Ne, K, J, j,
@@ -7654,19 +7657,19 @@ var Border = function () {
                         if (Keyboard.isLeft() + Keyboard.isRight() + Keyboard.isTop() + Keyboard
                             .isBottom() >= 1) {
                             ctx.globalAlpha = .3;
-                            var o = canw2ns - 1.5 * canw4ns,
-                                t = canh2ns + canw4ns / 4;
-                            CanvasUtils.circle(ctx, o, t, 60), CanvasUtils.drawPath(ctx, "#000000"),
-                                CanvasUtils.circle(ctx, o + window.Math.cos(Ae) * be * scaleby, t + window
+                            var t = canw2ns - 1.5 * canw4ns,
+                                m = canh2ns + canw4ns / 4;
+                            CanvasUtils.circle(ctx, t, m, 60), CanvasUtils.drawPath(ctx, "#000000"),
+                                CanvasUtils.circle(ctx, t + window.Math.cos(Ae) * be * scaleby, m + window
                                     .Math.sin(Ae) * be * scaleby, 30), CanvasUtils.drawPath(ctx,
                                     "#FFFFFF"), ctx.globalAlpha = 1
                         }
                         if (1 === Se) {
                             ctx.globalAlpha = .3;
-                            o = canw2ns + 1.5 * canw4ns, t = canh2ns + canw4ns / 4;
-                            CanvasUtils.circle(ctx, o, t, 60), CanvasUtils.drawPath(ctx, "#000000"),
-                                CanvasUtils.circle(ctx, o + 25 * window.Math.cos(Mouse.angle) * scaleby,
-                                    t + 25 * window.Math.sin(Mouse.angle) * scaleby, 30), CanvasUtils
+                            t = canw2ns + 1.5 * canw4ns, m = canh2ns + canw4ns / 4;
+                            CanvasUtils.circle(ctx, t, m, 60), CanvasUtils.drawPath(ctx, "#000000"),
+                                CanvasUtils.circle(ctx, t + 25 * window.Math.cos(Mouse.angle) * scaleby,
+                                    m + 25 * window.Math.sin(Mouse.angle) * scaleby, 30), CanvasUtils
                                 .drawPath(ctx, "#FFFFFF"), ctx.globalAlpha = 1
                         }
                     }
