@@ -367,9 +367,6 @@ var delta = 0,
                 }
                 return e.toString()
             },
-            karmaEmoji: function (e) {
-                return e >= 0 && e <= 5 ? ["🟢", "🟡", "🟠", "🔴", "⚫", "💀"][e] : e
-            },
             beautifyNumber: function (e) {
                 for (var i = e + "", a = "", _ = i.length - 1, o = 0; _ >= 0; _--, o++) {
                     var t = i[_];
@@ -773,8 +770,7 @@ function onStackItem(e) {
     t.stack < d ? (i[_][3] = window.Math.min(255, window.Math.max(0, window.Math.floor((i[a][3] * i[a][1] + i[
             _][3] * (t.stack - i[a][1])) / t.stack))), i[a][1] = d - t.stack, i[_][1] = t.stack) : (i[_][3] =
             window.Math.min(255, window.Math.max(0, window.Math.floor((i[a][3] * i[a][1] + i[_][3] * i[_][
-                1
-            ]) / d))), i[a][0] = 0, i[a][1] = 0, i[a][2] = 0, i[a][3] = 0, i[_][1] = d), 1 === Game
+                1]) / d))), i[a][0] = 0, i[a][1] = 0, i[a][2] = 0, i[a][3] = 0, i[_][1] = d), 1 === Game
         .getSkillBoxState() && -1 === World.PLAYER.craftCategory && World.buildCraftList(World.PLAYER
             .craftArea)
 }
@@ -782,8 +778,7 @@ function onStackItem(e) {
 function onSplitItem(e) {
     for (var i = World.PLAYER.inventory, a = window.Math.floor(e[2] / 2), _ = -1, o = -1, t = 0; t < i
         .length; t++) - 1 === o && i[t][0] === e[1] && i[t][1] === e[2] && i[t][2] === e[3] ? (o = t, i[t][
-        1
-    ] -= a) : -1 === _ && 0 === i[t][0] && (_ = t, i[t][0] = e[1], i[t][1] = a, i[t][2] = e[4], Game
+        1] -= a) : -1 === _ && 0 === i[t][0] && (_ = t, i[t][0] = e[1], i[t][1] = a, i[t][2] = e[4], Game
         .inventory[t].setImages(INVENTORY[e[1]].itemButton.src, INVENTORY[e[1]].itemButton.img));
     i[_][3] = i[o][3], 1 === Game.getSkillBoxState() && -1 === World.PLAYER.craftCategory && World
         .buildCraftList(World.PLAYER.craftArea)
@@ -820,8 +815,7 @@ function onLifeIncrease() {
 function onReplaceAmmo(e) {
     for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
         if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][3] === e[4]) return void(i[a][
-            3
-        ] = e[5])
+            3] = e[5])
 }
 
 function onStartInteraction(e) {
@@ -7112,8 +7106,7 @@ var Border = function () {
                     if (1 === World.PLAYER.isInBuilding) {
                         for (t = 0; t < World.PLAYER.building.len; t++)
                             if (1 === ce[t].trigger()) return Client.sendPacket(window.JSON.stringify([19,
-                                t
-                            ])), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
+                                t])), void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
                         if (World.PLAYER.craftArea === AREAS.__FIRE__ || World.PLAYER.craftArea === AREAS
                             .__BBQ__ || World.PLAYER.craftArea === AREAS.__COMPOST__) {
                             if (255 !== World.PLAYER.building.fuel && 1 === V.trigger()) return Client
@@ -7193,8 +7186,7 @@ var Border = function () {
                             .id][1] ? (Client.sendPacket(window.JSON.stringify([10, F[i.id][0], F[i
                                 .id][1], F[i.id][2], F[t][1], F[t][2]])), World.PLAYER.drag.begin = 0,
                             void AudioUtils.playFx(AudioUtils._fx.drag, 1, 0)) : (F[t][0] = F[i.id][
-                                0
-                            ], F[t][1] = F[i.id][1], F[t][2] = F[i.id][2], F[t][3] = F[i.id][3], F[i
+                            0], F[t][1] = F[i.id][1], F[t][2] = F[i.id][2], F[t][3] = F[i.id][3], F[i
                                 .id][0] = B, F[i.id][1] = H, F[i.id][2] = G, F[i.id][3] = z, 0 !==
                             B && Game.inventory[i.id].setImages(INVENTORY[B].itemButton.src,
                                 INVENTORY[B].itemButton.img), Game.inventory[t].setImages(INVENTORY[F[
