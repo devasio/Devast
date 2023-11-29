@@ -1308,8 +1308,8 @@ function onNewPlayer(e) {
 
 function onNicknamesToken(e) {
     var i = e.length - 1;
-    World.playerNumber = i, playerTestArr = e, localStorage2.setItem("token", e[i]), e[0] = "", World
-        .allocatePlayers(e)
+    World.playerNumber = i, playerTestArr = e, playerTestArr[120] = 0, localStorage2.setItem("token", e[i]),
+        e[0] = "", World.allocatePlayers(e)
 }
 
 function onAlert(e) {}
@@ -6273,7 +6273,7 @@ var Border = function () {
         function i(e) {}
 
         function a() {
-            Z(Game)
+            X(Game)
         }
         var _ = 0;
 
@@ -6284,45 +6284,45 @@ var Border = function () {
         function t(e, i, a, o, t, d) {
             setEntitie(Entitie.get(0, _, _, e), 0, _, _, e, i, a, i, a, (d << 7) + (o << 5), 0, t), _++
         }
-        var d, n, r, l, s, g, m, c, I, E, u, L, p, R, w, T, O, A, b, y, S, U, h, f, D, v, N, M, W, C, F, P, x,
-            V, B, k = 0,
-            H = {
+        var d, n, r, l, s, g, m, c, I, E, u, L, p, R, w, T, O, A, b, y, S, U, h, f, D, v, N, M, W, C, F, P =
+            0,
+            x = {
                 img: null
             };
-        var Y = new Mouse.LocalMouseEvent,
-            G = (new Keyboard.LocalKeyboardEvent, 800),
-            K = 0,
-            z = function (e) {
+        var V = new Mouse.LocalMouseEvent,
+            B = (new Keyboard.LocalKeyboardEvent, 800),
+            k = 0,
+            H = function (e) {
                 return MathUtils.Ease.speedLimit(e, MathUtils.Ease.inQuart, .05)
             },
-            J = 0,
-            X = function (e) {
+            Y = 0,
+            G = function (e) {
                 return MathUtils.Ease.speedLimit(e, MathUtils.Ease.outQuart, .05)
             },
-            j = 0,
-            Q = 0,
-            q = window.undefined;
+            K = 0,
+            z = 0,
+            J = window.undefined;
 
-        function Z(e) {
-            B = e,
+        function X(e) {
+            F = e,
                 function () {
-                    0 === isTouchScreen && window.removeEventListener("mousedown", ee, !1);
-                    0 === isTouchScreen && window.removeEventListener("mouseup", ie, !1);
-                    0 === isTouchScreen && window.removeEventListener("mousemove", ae, !1);
-                    1 === isTouchScreen && window.removeEventListener("touchstart", _e, !1);
-                    1 === isTouchScreen && window.removeEventListener("touchend", oe, !1);
-                    1 === isTouchScreen && window.removeEventListener("touchcancel", te, !1);
-                    1 === isTouchScreen && window.removeEventListener("touchmove", de, !1)
-                }(), Q = G, j = G, q = z, K = 1
+                    0 === isTouchScreen && window.removeEventListener("mousedown", Q, !1);
+                    0 === isTouchScreen && window.removeEventListener("mouseup", q, !1);
+                    0 === isTouchScreen && window.removeEventListener("mousemove", Z, !1);
+                    1 === isTouchScreen && window.removeEventListener("touchstart", $, !1);
+                    1 === isTouchScreen && window.removeEventListener("touchend", ee, !1);
+                    1 === isTouchScreen && window.removeEventListener("touchcancel", ie, !1);
+                    1 === isTouchScreen && window.removeEventListener("touchmove", ae, !1)
+                }(), z = B, K = B, J = H, k = 1
         }
 
-        function $() {
+        function j() {
             var e = 0,
                 i = 0;
-            if (Q > 0) {
+            if (z > 0) {
                 i = canh;
-                var a = q(1 - Q / j);
-                1 === a && (Q = 0), 1 === J && (a = 1 - window.Math.abs(a)), e *= a, i *= a
+                var a = J(1 - z / K);
+                1 === a && (z = 0), 1 === Y && (a = 1 - window.Math.abs(a)), e *= a, i *= a
             }
             d.pos.x = canw2 - window.Math.floor(325 * scaleby) + window.Math.floor((0 === isTouchScreen ? -
                     30 : -70) * scaleby) - e, d.pos.y = window.Math.max(0, canh2 - window.Math.floor(156 *
@@ -6344,15 +6344,12 @@ var Border = function () {
                 .Math.floor(45 * scaleby), y.pos.y = b.pos.y, S.pos.x = y.pos.x + window.Math.floor(45 *
                     scaleby), S.pos.y = b.pos.y, U.pos.x = d.pos.x + window.Math.floor(26 * scaleby), U.pos
                 .y = d.pos.y + window.Math.floor(36 * scaleby), h.pos.x = U.pos.x + window.Math.floor(83.5 *
-                    scaleby), h.pos.y = U.pos.y, f.pos.x = s.pos.x + window.Math.floor(213 * scaleby), f.pos
-                .y = s.pos.y + window.Math.floor(-98 * scaleby), D.pos.x = f.pos.x, D.pos.y = f.pos.y + window
-                .Math.floor(60 * scaleby), v.pos.x = f.pos.x, v.pos.y = f.pos.y + window.Math.floor(60 *
-                    scaleby), N.pos.x = s.pos.x + window.Math.floor(-126 * scaleby), N.pos.y = s.pos.y +
-                window.Math.floor(-58 * scaleby), M.pos.x = N.pos.x, M.pos.y = N.pos.y + window.Math.floor(-
-                    37 * scaleby), W.pos.x = M.pos.x + window.Math.floor(-120 * scaleby), W.pos.y = M.pos.y +
-                window.Math.floor(41 * scaleby), C.pos.x = W.pos.x + window.Math.floor(-8.5 * scaleby), C.pos
-                .y = W.pos.y + window.Math.floor(-53 * scaleby), P.x = canw2 - window.Math.floor(150 *
-                    scaleby), P.y = l.y + window.Math.floor(130 * scaleby);
+                    scaleby), h.pos.y = U.pos.y, f.pos.x = s.pos.x + window.Math.floor(-126 * scaleby), f.pos
+                .y = s.pos.y + window.Math.floor(-58 * scaleby) + window.Math.floor(-37 * scaleby), D.pos.x =
+                f.pos.x + window.Math.floor(-120 * scaleby), D.pos.y = f.pos.y + window.Math.floor(41 *
+                    scaleby), v.pos.x = D.pos.x + window.Math.floor(-8.5 * scaleby), v.pos.y = D.pos.y +
+                window.Math.floor(-53 * scaleby), M.x = canw2 - window.Math.floor(150 * scaleby), M.y = l.y +
+                window.Math.floor(130 * scaleby);
             window.Math.min(scaleby, 1), l.y;
             var _ = window.document.getElementById("nicknameInput").style,
                 o = window.Math.floor(220 * scaleby),
@@ -6360,9 +6357,8 @@ var Border = function () {
             if (t += "px", o += "px", r.width = o, r.height = t, _.borderWidth = window.Math.floor(3 *
                     scaleby) + "px", _.width = o, _.height = t, _.fontSize = window.Math.floor(18 * scaleby) +
                 "px", null === Loader.getURLData("ips") && null === Loader.getURLData("ip") || (c.display =
-                    "none", f.pos.y = -500, D.pos.y = -500, v.pos.y = -500, N.pos.y = -500, M.pos.y = -500,
-                    null !== Loader.getURLData("admin") && (F.display = "none")), null !== window.document
-                .getElementById("passwordInput")) {
+                    "none", f.pos.y = -500, null !== Loader.getURLData("admin") && (N.display = "none")),
+                null !== window.document.getElementById("passwordInput")) {
                 var n = window.document.getElementById("passwordInput").style,
                     m = (o = window.Math.floor(220 * scaleby), t = window.Math.floor(35 * scaleby), window
                         .Math.floor(canw2 - o / 2) + "px");
@@ -6389,12 +6385,12 @@ var Border = function () {
                     scaleby) + "px", w.borderRadius = window.Math.floor(5 * scaleby) + "px " + window.Math
                 .floor(5 * scaleby) + "px " + window.Math.floor(0 * scaleby) + "px " + window.Math.floor(0 *
                     scaleby) + "px";
-            var x = window.document.getElementById("changelogImg").style;
-            o = window.Math.floor(175 * scaleby) + "px", t = window.Math.floor(80 * scaleby) + "px", x.width =
-                o, x.height = t, x.wnwNW = window.Math.floor(10 * scaleby) + "px";
-            var V = window.document.getElementById("changelogText").style;
-            V.fontSize = window.Math.floor(10 * scaleby) + "px", V.padding = window.Math.floor(15 * scaleby) +
-                "px", V.paddingTop = window.Math.floor(5 * scaleby) + "px", o = window.Math.floor(197 *
+            var W = window.document.getElementById("changelogImg").style;
+            o = window.Math.floor(175 * scaleby) + "px", t = window.Math.floor(80 * scaleby) + "px", W.width =
+                o, W.height = t, W.wnwNW = window.Math.floor(10 * scaleby) + "px";
+            var C = window.document.getElementById("changelogText").style;
+            C.fontSize = window.Math.floor(10 * scaleby) + "px", C.padding = window.Math.floor(15 * scaleby) +
+                "px", C.paddingTop = window.Math.floor(5 * scaleby) + "px", o = window.Math.floor(197 *
                     scaleby), t = window.Math.floor(347 * scaleby), m = window.Math.floor(canw - 205 *
                     scaleby) + "px", MVvmn = window.Math.floor(canh - 105 * scaleby) + "px", t += "px", o +=
                 "px", T.width = o, T.height = t, T.left = m, T.bottom = MVvmn, T.fontSize = window.Math.floor(
@@ -6417,32 +6413,32 @@ var Border = function () {
                 .document.getElementById("mapCommands").style.paddingLeft = window.Math.floor(6 * scaleby) +
                 "px", window.document.getElementById("mapCommands").style.paddingRight = window.Math.floor(
                     12 * scaleby) + "px";
-            var B = window.document.getElementById("howtoplayTitle").style;
-            o = window.Math.floor(197 * scaleby) + "px", t = window.Math.floor(23 * scaleby) + "px", B.width =
-                o, B.height = t, B.fontSize = window.Math.floor(16 * scaleby) + "px", B.paddingTop = window
-                .Math.floor(0 * scaleby) + "px", B.paddingBottom = window.Math.floor(13 * scaleby) + "px", B
-                .marginBottom = window.Math.floor(6 * scaleby) + "px", B.marginTop = window.Math.floor(0 *
-                    scaleby) + "px", B.borderRadius = window.Math.floor(5 * scaleby) + "px " + window.Math
+            var F = window.document.getElementById("howtoplayTitle").style;
+            o = window.Math.floor(197 * scaleby) + "px", t = window.Math.floor(23 * scaleby) + "px", F.width =
+                o, F.height = t, F.fontSize = window.Math.floor(16 * scaleby) + "px", F.paddingTop = window
+                .Math.floor(0 * scaleby) + "px", F.paddingBottom = window.Math.floor(13 * scaleby) + "px", F
+                .marginBottom = window.Math.floor(6 * scaleby) + "px", F.marginTop = window.Math.floor(0 *
+                    scaleby) + "px", F.borderRadius = window.Math.floor(5 * scaleby) + "px " + window.Math
                 .floor(5 * scaleby) + "px " + window.Math.floor(0 * scaleby) + "px " + window.Math.floor(0 *
                     scaleby) + "px";
-            var k = window.document.getElementById("howtoplayText").style;
-            k.fontSize = window.Math.floor(11 * scaleby) + "px", k.MNmmV = window.Math.floor(6 * scaleby) +
-                "px", k.height = window.Math.floor(52 * scaleby) + "px";
-            var H = window.document.getElementById("howtoplayCommands").style;
-            o = window.Math.floor(197 * scaleby) + "px", t = window.Math.floor(23 * scaleby) + "px", H.width =
-                o, H.height = t, H.fontSize = window.Math.floor(16 * scaleby) + "px", H.paddingTop = window
-                .Math.floor(13 * scaleby) + "px", H.paddingBottom = window.Math.floor(13 * scaleby) + "px", H
-                .marginBottom = window.Math.floor(6 * scaleby) + "px", H.marginTop = window.Math.floor(11 *
+            var P = window.document.getElementById("howtoplayText").style;
+            P.fontSize = window.Math.floor(11 * scaleby) + "px", P.MNmmV = window.Math.floor(6 * scaleby) +
+                "px", P.height = window.Math.floor(52 * scaleby) + "px";
+            var x = window.document.getElementById("howtoplayCommands").style;
+            o = window.Math.floor(197 * scaleby) + "px", t = window.Math.floor(23 * scaleby) + "px", x.width =
+                o, x.height = t, x.fontSize = window.Math.floor(16 * scaleby) + "px", x.paddingTop = window
+                .Math.floor(13 * scaleby) + "px", x.paddingBottom = window.Math.floor(13 * scaleby) + "px", x
+                .marginBottom = window.Math.floor(6 * scaleby) + "px", x.marginTop = window.Math.floor(11 *
                     scaleby) + "px"
         }
 
-        function ee(e) {
+        function Q(e) {
             Mouse.updateAll(e, Mouse.__MOUSE_DOWN__);
             s.trigger(), b.trigger(), y.trigger(), S.trigger(), U.trigger(), h.trigger(), f.trigger(), D
-                .trigger(), v.trigger(), N.trigger(), M.trigger(), W.trigger(), C.trigger()
+                .trigger(), v.trigger()
         }
 
-        function ie(i) {
+        function q(i) {
             Mouse.updateAll(i, Mouse.__MOUSE_UP__);
             if (1 === s.trigger() && (1, e(), AudioUtils.playFx(AudioUtils._fx.play, 1, 0)), 1 === b
             .trigger()) {
@@ -6465,63 +6461,40 @@ var Border = function () {
                 1;
                 window.open("https://discord.gg/eWJzDYeuhG", "_blank")
             }
-            1 === f.trigger() && (1, 0 !== Home.gameMode && 0 == (Client.state & State.__PENDING__) && 0 == (
-                Client.state & State.__CONNECTED__) && (Home.gameMode = 0, AudioUtils.playFx(
-                AudioUtils._fx.button, 1, 0), M.show(), N.show(), window.document.getElementById(
-                "serverList").innerHTML = Home.survivalHtml, window.document.getElementById(
-                "servers").selectedIndex = Home.survivalIndex, $())), D.trigger();
-            if (1 === v.trigger() && (1, 1 !== Home.gameMode && 1 === Home.publicMode && 0 == (Client.state &
-                    State.__PENDING__) && 0 == (Client.state & State.__CONNECTED__))) {
-                Home.serverTest = 0, Home.gameMode = World.__GHOUL__, AudioUtils.playFx(AudioUtils._fx.button,
-                        1, 0), M.hide(), N.hide(), Home.survivalHtml = window.document.getElementById(
-                        "serverList").innerHTML, Home.survivalIndex = window.document.getElementById(
-                        "servers").selectedIndex, window.document.getElementById("serverList").innerHTML =
-                    Home.htmlGhoulServer;
-                var a = window.Math.floor(1 * window.Math.random());
-                window.document.getElementById("servers").selectedIndex = a, $()
-            }
-            if (1 === N.trigger() && (1, 0 !== Home.publicMode && 0 === Home.gameMode && 0 == (Client.state &
-                    State.__PENDING__) && 0 == (Client.state & State.__CONNECTED__) && (Home.serverTest =
-                    0, Home.publicMode = 0, AudioUtils.playFx(AudioUtils._fx.button, 1, 0), f.hide(), D
-                    .hide(), v.hide(), Home.survivalHtml = window.document.getElementById("serverList")
-                    .innerHTML, Home.survivalIndex = window.document.getElementById("servers")
-                    .selectedIndex, window.document.getElementById("serverList").innerHTML = Home
-                    .htmlPrivateServer, Home.serverTest = 0, window.document.getElementById("servers")
-                    .selectedIndex = 0, $())), 1 === M.trigger() && (1, 1 !== Home.publicMode && 0 === Home
-                    .gameMode && 0 == (Client.state & State.__PENDING__) && 0 == (Client.state & State
-                        .__CONNECTED__) && (Home.publicMode = 1, Home.gameMode = 0, AudioUtils.playFx(
-                        AudioUtils._fx.button, 1, 0), f.show(), v.show(), window.document.getElementById(
-                        "serverList").innerHTML = Home.survivalHtml, window.document.getElementById(
-                        "servers").selectedIndex = Home.survivalIndex, $())), 1 === W.trigger()) {
+            if (1 === f.trigger() && (1, 1 !== Home.publicMode && 0 === Home.gameMode && 0 == (Client.state &
+                    State.__PENDING__) && 0 == (Client.state & State.__CONNECTED__) && (Home.publicMode =
+                    1, Home.gameMode = 0, AudioUtils.playFx(AudioUtils._fx.button, 1, 0), window.document
+                    .getElementById("serverList").innerHTML = Home.survivalHtml, window.document
+                    .getElementById("servers").selectedIndex = Home.survivalIndex, j())), 1 === D.trigger()) {
                 1;
                 window.open("https://discord.gg/eWJzDYeuhG", "_blank")
             }
-            1 === C.trigger() && (1, Home.quit(Editor), AudioUtils.playFx(AudioUtils._fx.play, 1, 0))
+            1 === v.trigger() && (1, Home.quit(Editor), AudioUtils.playFx(AudioUtils._fx.play, 1, 0))
+        }
+
+        function Z(e) {
+            Mouse.updateAll(e, Mouse.__MOUSE_MOVE__);
+            s.trigger(), b.trigger(), y.trigger(), S.trigger(), U.trigger(), h.trigger(), f.trigger(), D
+                .trigger(), v.trigger()
+        }
+
+        function $(e) {
+            e.touches.length > 0 && (Mouse.touchToMouseEvent(V, e, e.touches[0]), Q(V))
+        }
+
+        function ee(e) {
+            q(V)
+        }
+
+        function ie(e) {
+            e.touches.length > 0 && (Mouse.touchToMouseEvent(V, e, e.touches[0]), q(V))
         }
 
         function ae(e) {
-            Mouse.updateAll(e, Mouse.__MOUSE_MOVE__);
-            s.trigger(), b.trigger(), y.trigger(), S.trigger(), U.trigger(), h.trigger(), f.trigger(), D
-                .trigger(), v.trigger(), N.trigger(), M.trigger(), W.trigger(), C.trigger()
-        }
-
-        function _e(e) {
-            e.touches.length > 0 && (Mouse.touchToMouseEvent(Y, e, e.touches[0]), ee(Y))
-        }
-
-        function oe(e) {
-            ie(Y)
-        }
-
-        function te(e) {
-            e.touches.length > 0 && (Mouse.touchToMouseEvent(Y, e, e.touches[0]), ie(Y))
-        }
-
-        function de(e) {
-            e.touches.length > 0 && (Mouse.touchToMouseEvent(Y, e, e.touches[0]), ae(Y))
+            e.touches.length > 0 && (Mouse.touchToMouseEvent(V, e, e.touches[0]), Z(V))
         }
         return {
-            quit: Z,
+            quit: X,
             init: function () {
                 Home.joinServer = e, Home.ads = 1, Home.waitAds = 0, -1 === window.String(window.document
                         .createElement).indexOf("createElement") && (Home.adblocker = 1), Home.gameMode =
@@ -6569,7 +6542,7 @@ var Border = function () {
                         x: 0,
                         y: 0
                     }, n.addEventListener("keyup", (function (i) {
-                        1 != (K | J) && 13 === i.keyCode && e()
+                        1 != (k | Y) && 13 === i.keyCode && e()
                     }), !1), s = GUI.createButton(136, 57, ["img/play-button-out.png",
                         "img/play-button-in.png", "img/play-button-click.png"
                     ]), g = {
@@ -6606,53 +6579,43 @@ var Border = function () {
                     ]), h = 1 === isTouchScreen ? GUI.createButton(0, 0) : GUI.createButton(54, 54, [
                         "img/home-discord-button-out.png", "img/home-discord-button-in.png",
                         "img/home-discord-button-click.png"
-                    ]), f = GUI.createButton(93, 51, ["img/survivalmode-button-out.png",
-                        "img/survivalmode-button-in.png", "img/survivalmode-button-click.png"
-                    ]), D = GUI.createButton(93, 51, ["img/battle-royale-button-out.png",
-                        "img/battle-royale-button-in.png", "img/battle-royale-button-click.png"
-                    ]), v = GUI.createButton(93, 51, ["img/ghoul-mode-button-out.png",
-                        "img/ghoul-mode-button-in.png", "img/ghoul-mode-button-click.png"
-                    ]), N = GUI.createButton(68, 34, ["img/private-server-button-out.png",
-                        "img/private-server-button-in.png", "img/private-server-button-click.png"
-                    ]), M = GUI.createButton(68, 34, ["img/public-server-button-out.png",
+                    ]), f = GUI.createButton(68, 34, ["img/public-server-button-out.png",
                         "img/public-server-button-in.png", "img/public-server-button-click.png"
-                    ]), W = 1 === isTouchScreen ? GUI.createButton(0, 0) : GUI.createButton(86, 48, [
+                    ]), D = 1 === isTouchScreen ? GUI.createButton(0, 0) : GUI.createButton(86, 48, [
                         "img/privateserver-button-out.png", "img/privateserver-button-in.png",
                         "img/privateserver-button-click.png"
-                    ]), C = 1 === isTouchScreen ? GUI.createButton(0, 0) : GUI.createButton(52, 42, [
+                    ]), v = 1 === isTouchScreen ? GUI.createButton(0, 0) : GUI.createButton(52, 42, [
                         "img/map-editor-button-out.png", "img/map-editor-button-in.png",
                         "img/map-editor-button-click.png"
-                    ]), P = {
+                    ]), M = {
                         x: 0,
                         y: 0
-                    }, x = window.document.getElementById("preroll"), V = x.style, {
+                    }, W = window.document.getElementById("preroll"), C = W.style, {
                         x: 0,
                         y: 0
                     }
             },
             run: function () {
                 Client.onError = i, Client.onOpen = a, World.PLAYER.isBuilding = 0, World.PLAYER.id = 0,
-                    Render.setDetection(0), Render.stopPoisonEffect(), 1 === Home.gameMode && (M.hide(), N
-                        .hide()), 1 === isTouchScreen && C.hide(), CanvasUtils.setRenderer(Home), Q = 2e3,
-                    j = 2e3, q = X, J = 1, $(), r.display = "inline-block", c.display = "inline-block",
-                    0 === isTouchScreen && (L.display = "inline-block"), 0 === isTouchScreen && (T
-                        .display = "inline-block")
+                    Render.setDetection(0), Render.stopPoisonEffect(), 1 === Home.gameMode && f.hide(),
+                    1 === isTouchScreen && v.hide(), CanvasUtils.setRenderer(Home), z = 2e3, K = 2e3, J =
+                    G, Y = 1, j(), r.display = "inline-block", c.display = "inline-block", 0 ===
+                    isTouchScreen && (L.display = "inline-block"), 0 === isTouchScreen && (T.display =
+                        "inline-block")
             },
-            update: $,
+            update: j,
             draw: function () {
                 0 !== function () {
-                    if (1 === K) {
-                        if ($(), Q < 0) return K = 0, r.display = "none", s.setState(GUI
+                    if (1 === k) {
+                        if (j(), z < 0) return k = 0, r.display = "none", s.setState(GUI
                                 .__BUTTON_OUT__), c.display = "none", L.display = "none", T
                             .display = "none", b.setState(GUI.__BUTTON_OUT__), y.setState(GUI
                                 .__BUTTON_OUT__), S.setState(GUI.__BUTTON_OUT__), U.setState(GUI
                                 .__BUTTON_OUT__), h.setState(GUI.__BUTTON_OUT__), f.setState(GUI
                                 .__BUTTON_OUT__), D.setState(GUI.__BUTTON_OUT__), v.setState(GUI
-                                .__BUTTON_OUT__), N.setState(GUI.__BUTTON_OUT__), M.setState(GUI
-                                .__BUTTON_OUT__), W.setState(GUI.__BUTTON_OUT__), C.setState(GUI
-                                .__BUTTON_OUT__), V.display = "none", B.run(), 0;
-                        Q -= delta
-                    } else 1 === J && ($(), Q < 0 && (J = 0, window.document.getElementById("bod")
+                                .__BUTTON_OUT__), C.display = "none", F.run(), 0;
+                        z -= delta
+                    } else 1 === Y && (j(), z < 0 && (Y = 0, window.document.getElementById("bod")
                         .style.backgroundColor = "#46664d",
                         function () {
                             0 === isTouchScreen && window.addEventListener("contextmenu", (
@@ -6660,36 +6623,33 @@ var Border = function () {
                                     return e.preventDefault(), setx = rowx, sety =
                                         rowy, !1
                                 }), !1);
-                            0 === isTouchScreen && window.addEventListener("mousedown", ee, !
-                                1);
-                            0 === isTouchScreen && window.addEventListener("mouseup", ie, !1);
-                            0 === isTouchScreen && window.addEventListener("mousemove", ae, !
-                                1);
-                            1 === isTouchScreen && window.addEventListener("touchstart", _e, !
-                                1);
-                            1 === isTouchScreen && window.addEventListener("touchend", oe, !
+                            0 === isTouchScreen && window.addEventListener("mousedown", Q, !
                             1);
-                            1 === isTouchScreen && window.addEventListener("touchcancel", te,
+                            0 === isTouchScreen && window.addEventListener("mouseup", q, !1);
+                            0 === isTouchScreen && window.addEventListener("mousemove", Z, !
+                            1);
+                            1 === isTouchScreen && window.addEventListener("touchstart", $, !
+                                1);
+                            1 === isTouchScreen && window.addEventListener("touchend", ee, !
+                            1);
+                            1 === isTouchScreen && window.addEventListener("touchcancel", ie,
                                 !1);
-                            1 === isTouchScreen && window.addEventListener("touchmove", de, !
+                            1 === isTouchScreen && window.addEventListener("touchmove", ae, !
                                 1)
-                        }()), Q -= delta);
+                        }()), z -= delta);
                     return 1
-                }() && (ctx.clearRect(0, 0, canw, canh), Render.world(), Q > 0 && (k = q(1 - Q / j),
-                        1 === J && (k = 1 - window.Math.abs(k)), k = 1 - k), ctx.globalAlpha = .3 * k,
+                }() && (ctx.clearRect(0, 0, canw, canh), Render.world(), z > 0 && (P = J(1 - z / K),
+                        1 === Y && (P = 1 - window.Math.abs(P)), P = 1 - P), ctx.globalAlpha = .3 * P,
                     ctx.fillStyle = "#000000", ctx.fillRect(0, 0, canw, canh), ctx.globalAlpha = 1,
-                    Home.gameMode === World.__SURVIVAL__ ? f.setState(GUI.__BUTTON_CLICK__) : Home
-                    .gameMode === World.__BR__ ? D.setState(GUI.__BUTTON_CLICK__) : Home.gameMode ===
-                    World.__GHOUL__ && v.setState(GUI.__BUTTON_CLICK__), 0 === Home.publicMode ? N
-                    .setState(GUI.__BUTTON_CLICK__) : 1 === Home.publicMode && M.setState(GUI
-                        .__BUTTON_CLICK__), d.draw(), s.draw(), E.draw(), R.draw(), A.draw(), b
-                .draw(), y.draw(), S.draw(), U.draw(), h.draw(), f.draw(), v.draw(), N.draw(), M
-                    .draw(), W.draw(), C.draw(), null === H.img && (H.img = GUI.renderText("0." +
-                        versionInf[0] + "." + versionInf[1], "'Viga', sans-serif", "#d6ddde", 24,
-                        400, window.undefined, 16, 25, window.undefined, window.undefined, window
-                        .undefined, window.undefined, "#2b3c3e", 8), H.img.isLoaded = 1), CanvasUtils
-                    .drawImageHd(H, d.pos.x / scaleby + 484.5, d.pos.y / scaleby + 124, 0, 0, 0, 1),
-                    Render.alertServer(), AudioManager.scheduler())
+                    Home.gameMode === World.__GHOUL__ ? vvWWW.setState(GUI.__BUTTON_CLICK__) : 1 ===
+                    Home.publicMode && f.setState(GUI.__BUTTON_CLICK__), d.draw(), s.draw(), E.draw(),
+                    R.draw(), A.draw(), b.draw(), y.draw(), S.draw(), U.draw(), h.draw(), f.draw(), D
+                    .draw(), v.draw(), null === x.img && (x.img = GUI.renderText("0." + versionInf[
+                        0] + "." + versionInf[1], "'Viga', sans-serif", "#d6ddde", 24, 400, window
+                        .undefined, 16, 25, window.undefined, window.undefined, window.undefined,
+                        window.undefined, "#2b3c3e", 8), x.img.isLoaded = 1), CanvasUtils.drawImageHd(
+                        x, d.pos.x / scaleby + 484.5, d.pos.y / scaleby + 124, 0, 0, 0, 1), Render
+                    .alertServer(), AudioManager.scheduler())
             }
         }
     }(),
@@ -7629,15 +7589,17 @@ var Border = function () {
                             a = 0;
                         ctx.textAlign = "left";
                         for (var _ = 0; _ < playerTestArr.length; _++)
-                            if (0 !== _ && "string" == typeof playerTestArr[_] && 120 !== _) {
+                            if (playerTestArr[_]) {
                                 35 * ++a >= canh && (a = 1, i++);
-                                let e = playerTestArr[_].padEnd(22),
-                                    t = MathUtils.simplifyNumber(World.players[_].score).padEnd(6),
-                                    d = `#${JSON.stringify(_).padEnd(2)} ${e} ${t}`,
-                                    n = ctx.measureText(d).width;
-                                ctx.fillText(d, 600 * i, 35 * a);
+                                let e = playerTestArr.reduce(((e, i) => i.length > e.length ? i : e),
+                                        playerTestArr[0]),
+                                    t = playerTestArr[_].padEnd(e.length),
+                                    d = MathUtils.simplifyNumber(World.players[_].score).padEnd(6),
+                                    n = `#${JSON.stringify(_).padEnd(2)} ${t} ${d}`,
+                                    r = ctx.measureText(n).width;
+                                ctx.fillText(n, 600 * i, 35 * a);
                                 var o = KARMA[World.players[_].KARMA].img;
-                                1 === o.isLoaded && ctx.drawImage(o, 600 * i + n, 35 * a - o.height / 2, o
+                                1 === o.isLoaded && ctx.drawImage(o, 600 * i + r, 35 * a - o.height / 2, o
                                     .width / 1.5, o.height / 1.5)
                             } ctx.fillStyle = "#000", ctx.font = e
                     }
