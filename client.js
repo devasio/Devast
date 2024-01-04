@@ -1478,7 +1478,7 @@ var Client = function () {
                     Accept: "application/json"
                 };
                 window.RIVET_TOKEN && (i.Authorization = "Bearer" + window.RIVET_TOKEN), fetch(
-                    "https://moaning.zip/list", {
+                    "http://localhost:8080/list", {
                         headers: i
                     }).then((e => {
                     if (e.ok) return e.json();
@@ -6246,14 +6246,15 @@ var Border = function () {
                 e = "br"
             }
             var i, a, _ = document.getElementById("servers").value;
-            "auto" == _ ? (i = "https://moaning.zip/find", a = {
+            "auto" == _ ? (i = "http://localhost:8080/find", a = {
                 game_modes: [e]
-            }) : (i = "https://moaning.zip/join", a = {
+            }) : (i = "http://localhost:8080/join", a = {
                 lobby_id: _
             });
             let o = {
                 Accept: "application/json",
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "X-Username": document.getElementById("nicknameInput").value
             };
             window.RIVET_TOKEN && (o.Authorization = "Bearer" + window.RIVET_TOKEN), fetch(i, {
                 method: "POST",
