@@ -1478,7 +1478,7 @@ var Client = function () {
                     Accept: "application/json"
                 };
                 window.RIVET_TOKEN && (i.Authorization = "Bearer" + window.RIVET_TOKEN), fetch(
-                    "https://yops.dev/list", {
+                    "https://moaning.zip/list", {
                         headers: i
                     }).then((e => {
                     if (e.ok) return e.json();
@@ -6246,9 +6246,9 @@ var Border = function () {
                 e = "br"
             }
             var i, a, _ = document.getElementById("servers").value;
-            "auto" == _ ? (i = "https://yops.dev/find", a = {
+            "auto" == _ ? (i = "https://moaning.zip/find", a = {
                 game_modes: [e]
-            }) : (i = "https://yops.dev/join", a = {
+            }) : (i = "https://moaning.zip/join", a = {
                 lobby_id: _
             });
             let o = {
