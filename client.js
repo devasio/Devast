@@ -29,12 +29,15 @@ try {
         return storage[e] === window.undefined ? null : storage[e]
     }
 }
-for (var setx, sety, rowx, rowy, canvas, canw, canh, canw2, canh2, canw4, canh4,
-        canwns, canhns, canw2ns, canh2ns, canw4ns, canh4ns, ctx, AutoLoot = !1,
+for (var setx, sety, rowx, rowy, canvas, canw, canh, canw2, canh2,
+        canw4, canh4,
+        canwns, canhns, canw2ns, canh2ns, canw4ns, canh4ns, ctx,
+        AutoLoot = !1,
         AutoLootLabel = null, AutoEat = !1, AutoEatLabel = null,
         setHungryLevel = 100, drawLines = !1, pworld = [
             []
-        ], pworldWidth = 150, pworldHeight = 150, pathStart = [pworldWidth,
+        ], pworldWidth = 150, pworldHeight = 150, pathStart = [
+            pworldWidth,
             pworldHeight
         ], pathEnd = [0, 0], pathFinder = !1, x = 0; x < pworldWidth; x++) {
     pworld[x] = [];
@@ -76,19 +79,21 @@ var delta = 0,
                     .innerWidth, i = d.size, a = window.Math.floor(i * e)) : (
                     e = window.innerWidth / window.innerHeight, a = d.size, i =
                     window.Math.floor(a * e)) : (i = window.innerWidth, a =
-                    window.innerHeight), canw = i, canh = a, canw2 = window.Math
-                .floor(canw / 2), canh2 = window.Math.floor(canh / 2), canw4 =
-                window.Math.floor(canw / 4), canh4 = window.Math.floor(canh /
-                4), d.ratioX = canw / window.innerWidth, d.ratioY = canh /
-                window.innerHeight, e = d.scheduledRatio / d.backingStoreRatio,
+                    window.innerHeight), canw = i,
+                canh = a, canw2 = window.Math.floor(canw / 2), canh2 = window
+                .Math.floor(canh / 2), canw4 = window.Math.floor(canw / 4),
+                canh4 = window.Math.floor(canh / 4),
+                d.ratioX = canw / window.innerWidth, d.ratioY = canh / window
+                .innerHeight, e = d.scheduledRatio / d.backingStoreRatio,
                 0 !== d.ratio && (e *= d.ratio), canvas.width = canw * e, canvas
                 .height = canh * e, d.resizeMethod ===
                 __RESIZE_METHOD_SCALE__ && (scaleby = window.Math.max(a / (11 *
                         d.size / 16), i / d.size), canvas.style.width = i +
                     "px", canvas.style.height = a + "px"), canwns = canw /
                 scaleby, canhns = canh / scaleby, canw2ns = canw2 / scaleby,
-                canh2ns = canh2 / scaleby, canw4ns = canw4 / scaleby, canh4ns =
-                canh4 / scaleby, ctx.scale(e, e), s(ctx, d.aliasing), g.update()
+                canh2ns = canh2 / scaleby, canw4ns = canw4 / scaleby,
+                canh4ns = canh4 / scaleby, ctx.scale(e, e), s(ctx, d.aliasing),
+                g.update()
         }
 
         function r(l) {
@@ -113,7 +118,8 @@ var delta = 0,
                                             n()) : 3 === canvasQuality && (
                                             canvasQuality = 2, d
                                             .scheduledRatio = d.deviceRatio / 2,
-                                            n()))), fpsAvg = r, o = 0
+                                            n()))),
+                                fpsAvg = r, o = 0
                         }
                         i = 0, a = 0
                     }
@@ -157,12 +163,13 @@ var delta = 0,
             options: d,
             initAnimatedCanvas: function (e, i, a, _, o, t, l) {
                 m(e), i !== window.undefined && (d.resizeMethod = i), a !==
-                    window.undefined && (d.can = a), _ !== window
-                    .undefined && (d.bod = _), o !== window.undefined && (d
-                        .size = o), t !== window.undefined && (d.ratio = t),
-                    l !== window.undefined && (d.aliasing = l), canvas =
-                    window.document.getElementById(d.can), ctx = canvas
-                    .getContext("2d"), d.backingStoreRatio = ctx
+                    window.undefined && (d.can = a),
+                    _ !== window.undefined && (d.bod = _), o !== window
+                    .undefined && (d.size = o), t !== window.undefined && (d
+                        .ratio = t),
+                    l !== window.undefined && (d.aliasing = l),
+                    canvas = window.document.getElementById(d.can), ctx =
+                    canvas.getContext("2d"), d.backingStoreRatio = ctx
                     .webkitBackingStorePixelRatio || ctx
                     .mozBackingStorePixelRatio || ctx
                     .msBackingStorePixelRatio || ctx
@@ -229,8 +236,8 @@ var delta = 0,
             roundRect: function (e, i, a, _, o, t) {
                 e.beginPath(), e.moveTo(i + t, a), e.arcTo(i + _, a, i + _,
                         a + o, t), e.arcTo(i + _, a + o, i, a + o, t), e
-                    .arcTo(i, a + o, i, a, t), e.arcTo(i, a, i + _, a, t), e
-                    .closePath()
+                    .arcTo(i, a + o, i, a, t),
+                    e.arcTo(i, a, i + _, a, t), e.closePath()
             },
             randomColor: function () {
                 for (var e = "#", i = 0; i < 3; i++) {
@@ -252,8 +259,8 @@ var delta = 0,
                 return d
             },
             line: function (e, i, a, _, o) {
-                e.beginPath(), e.moveTo(i * scaleby, a * scaleby), e.lineTo(
-                    _ * scaleby, o * scaleby)
+                e.beginPath(), e.moveTo(i * scaleby, a * scaleby),
+                    e.lineTo(_ * scaleby, o * scaleby)
             },
             drawPath: function (e, i, a, _) {
                 i !== window.undefined && (e.fillStyle = i, e.fill()), a !==
@@ -310,8 +317,9 @@ var delta = 0,
                         m = s.h2 * d;
                     ctx.save(), ctx.translate(i * scaleby, a * scaleby), ctx
                         .rotate(_), ctx.translate(o * d, t * d), ctx.rotate(
-                            n), ctx.drawImage(s, -g / 2 + r * d, -m / 2 +
-                            l * d, g, m), ctx.restore()
+                            n),
+                        ctx.drawImage(s, -g / 2 + r * d, -m / 2 + l * d, g,
+                            m), ctx.restore()
                 } else e.img = CanvasUtils.loadImage(e.src, e.img)
             },
             drawImageHdCrop: function (e, i, a, _, o, t, d, n, r) {
@@ -382,8 +390,8 @@ var delta = 0,
                     return e * e * e
                 },
                 inOutQuart: function (e) {
-                    return e < .5 ? 8 * e * e * e * e : 1 - 8 * --e * e *
-                        e * e
+                    return e < .5 ? 8 * e * e * e * e : 1 - 8 * --
+                    e * e * e * e
                 },
                 inQuart: function (e) {
                     return e * e * e * e
@@ -410,7 +418,8 @@ var delta = 0,
                     if (a) {
                         for (var o = (_ += "." + (e % 1e3 / 1e3).toString()
                                     .substring(2).substring(0, a)).length -
-                                1, t = 0; o > 0 && "0" == _[o]; o--) t++;
+                                1,
+                                t = 0; o > 0 && "0" == _[o]; o--) t++;
                         "." === (_ = _.substring(0, _.length - t))[_
                             .length - 1] && (_ = _.substring(0, _.length -
                             1))
@@ -423,7 +432,8 @@ var delta = 0,
                 for (var i = e + "", a = "", _ = i.length - 1, o = 0; _ >=
                     0; _--, o++) {
                     var t = i[_];
-                    o > 2 && "-" !== t && (o = 0, a = "," + a), a = t + a
+                    o > 2 && "-" !== t && (o = 0, a = "," + a),
+                        a = t + a
                 }
                 return a
             },
@@ -583,7 +593,8 @@ var delta = 0,
                 draw: function () {
                     1 === d.isLoaded && ((n += window.Math.min(delta,
                             3 * o)) > o && (n -= o, r = window.Math
-                            .floor((r + 1) % (d.width / l))), ctx
+                            .floor(
+                                (r + 1) % (d.width / l))), ctx
                         .drawImage(d, l * r, 0, l, d.height, t.x, t
                             .y, e * scaleby, i * scaleby))
                 },
@@ -605,19 +616,21 @@ var delta = 0,
                     .undefined ? (function (e, i, a, _, o, t) {
                             _ < 2 * t && (t = _ / 2), o < 2 * t && (t = o /
                                     2), 0 > t && (t = 0), e.beginPath(), e
-                                .moveTo(i + t, a), e.arcTo(i + _, a, i + _,
-                                    a + o, t), e.arcTo(i + _, a + o, i, a +
-                                    o, t), e.arcTo(i, a + o, i, a, t), e
-                                .arcTo(i, a, i + _, a, t), e.closePath()
+                                .moveTo(i + t, a),
+                                e.arcTo(i + _, a, i + _, a + o, t), e.arcTo(
+                                    i + _, a + o, i, a + o, t), e.arcTo(i,
+                                    a + o, i, a, t), e.arcTo(i, a, i + _, a,
+                                    t), e.closePath()
                         }(u, r + 2, r, o + d - 2 * r - 4, _ + n - 2 * r, g),
                         u.fill()) : u.fillRect(r, r, o + d - 2 * r, _ + n -
                         2 * r), u.globalAlpha = 1, 0 !== r && (u.lineWidth =
                         r, u.strokeStyle = l, u.stroke())), u.textBaseline =
                 "middle", u.font = (I !== window.undefined ? I + " " : "") +
-                _ + "px " + i, m !== window.undefined && (u.strokeStyle = m,
-                    u.lineWidth = c, u.lineJoin = "miter", u.miterLimit = 2,
-                    u.strokeText(e, window.Math.floor(d / 2), window.Math
-                        .floor(n / 2) + window.Math.floor(_ / 2), o)), u
+                _ + "px " + i,
+                m !== window.undefined && (u.strokeStyle = m, u.lineWidth =
+                    c, u.lineJoin = "miter", u.miterLimit = 2, u.strokeText(
+                        e, window.Math.floor(d / 2), window.Math.floor(n /
+                            2) + window.Math.floor(_ / 2), o)), u
                 .fillStyle = a, u.fillText(e, window.Math.floor(d / 2),
                     window.Math.floor(n / 2) + window.Math.floor(_ / 2), o),
                 E.wh = E.width / 2, E.h2 = E.height / 2, E
@@ -694,10 +707,11 @@ function onHandshake(e, i) {
     World.initDayCycle(_ >= World.__DAY__ ? 1 : 0, _), Client.handshake(),
         Render.reset(), Entitie.unitsPerPlayer = a[1], World.playerNumber = i[
         4], World.gameMode = i[5], World.PLAYER.lastScore = -1, World.PLAYER
-        .exp = 0, World.PLAYER.click = 0, World.PLAYER.notification = [], World
-        .PLAYER.notificationLevel = [], World.PLAYER.drag.begin = 0, World
-        .PLAYER.interaction = -1, World.PLAYER.interactionDelay = 0, World
-        .PLAYER.WMnWv = 0, World.PLAYER.blueprint = 0, World.PLAYER
+        .exp = 0, World.PLAYER.click = 0,
+        World.PLAYER.notification = [], World.PLAYER.notificationLevel = [],
+        World.PLAYER.drag.begin = 0, World.PLAYER.interaction = -1, World.PLAYER
+        .interactionDelay = 0,
+        World.PLAYER.WMnWv = 0, World.PLAYER.blueprint = 0, World.PLAYER
         .buildRotate = 0, World.PLAYER.hintRotate = 0, World.PLAYER.grid = 0;
     for (var o = 0; o < World.PLAYER.gridPrev.length; o++) World.PLAYER
         .gridPrev[o] = 0;
@@ -724,21 +738,23 @@ function onHandshake(e, i) {
         ], World.gameMode !== World.__GHOUL__ && (World.PLAYER.nextAreas = 1e7),
         World.PLAYER.badKarma = 0, World.PLAYER.gridPrev[o] = 0, World.PLAYER
         .isBuilding = 0, World.PLAYER.warm = 0, World.PLAYER.wrongTool = 0,
-        World.PLAYER.wrongToolTimer = 0, World.PLAYER.teamLeader = 0, World
-        .PLAYER.teamDelay = 0, World.PLAYER.teamQueue = [0, 0, 0, 0, 0], World
-        .PLAYER.teamCreateDelay = 0, World.PLAYER.teamEffect = 0, World.PLAYER
-        .teamJoin = 0, World.PLAYER.team = -1, World.PLAYER.craftLen = 0, World
-        .PLAYER.craftArea = -1, World.PLAYER.craftCategory = -1, World.PLAYER
-        .craftSelected = -1, World.PLAYER.crafting = 0, World.PLAYER
-        .craftList = [], World.PLAYER.craftAvailable = [], World.PLAYER
-        .recipeAvailable = [], World.PLAYER.recipeList = [], World.PLAYER
-        .recipeLen = 0, World.PLAYER.craftSpeed = 0, World.PLAYER.craftGauge =
-        0, World.PLAYER.toolsList = [], World.PLAYER.toolsLen = 0, World.PLAYER
-        .skillUnlocked = [], World.PLAYER.level = 0, World.PLAYER.kill = 0,
+        World.PLAYER.wrongToolTimer = 0, World.PLAYER.teamLeader = 0,
+        World.PLAYER.teamDelay = 0, World.PLAYER.teamQueue = [0, 0, 0,
+            0, 0
+        ], World.PLAYER.teamCreateDelay = 0, World.PLAYER.teamEffect = 0, World
+        .PLAYER.teamJoin = 0, World.PLAYER.team = -1, World.PLAYER.craftLen = 0,
+        World.PLAYER.craftArea = -1, World.PLAYER.craftCategory = -1, World
+        .PLAYER.craftSelected = -1,
+        World.PLAYER.crafting = 0, World.PLAYER.craftList = [], World.PLAYER
+        .craftAvailable = [], World.PLAYER.recipeAvailable = [], World.PLAYER
+        .recipeList = [], World.PLAYER.recipeLen = 0, World.PLAYER.craftSpeed =
+        0, World.PLAYER.craftGauge = 0, World.PLAYER.toolsList = [], World
+        .PLAYER.toolsLen = 0, World.PLAYER.skillUnlocked = [], World.PLAYER
+        .level = 0, World.PLAYER.kill = 0,
         World.PLAYER.xp = 0, World.PLAYER.skillPoint = 0, World.PLAYER
         .nextLevel = 0, World.PLAYER.isInBuilding = 0, World.PLAYER.isInChest =
-        0, World.PLAYER.extraLoot = 0, Render.scale = 0, World.PLAYER
-        .toxicMap = [], World.PLAYER.toxicStep = 0;
+        0, World.PLAYER.extraLoot = 0, Render.scale = 0,
+        World.PLAYER.toxicMap = [], World.PLAYER.toxicStep = 0;
     for (o = 0; o < 8; o++) {
         World.PLAYER.toxicMap[o] = [];
         for (var t = 0; t < 8; t++) World.PLAYER.toxicMap[o][t] = 0
@@ -758,8 +774,9 @@ function onHandshake(e, i) {
             l.score = MathUtils.inflateNumber(a[r + 4]) + 1, l.scoreSimplified =
             MathUtils.simplifyNumber(l.score - 1)
     }
-    World.PLAYER.ghoul = World.players[World.PLAYER.id].ghoul, localStorage2
-        .setItem("tokenId", World.players[World.PLAYER.id].tokenId),
+    World.PLAYER.ghoul = World.players[World.PLAYER.id].ghoul,
+        localStorage2.setItem("tokenId", World.players[World.PLAYER.id]
+        .tokenId),
         localStorage2.setItem("userId", World.PLAYER.id), World
         .sortLeaderboard(), World.initGauges()
 }
@@ -808,19 +825,20 @@ function onFullInventory(e) {
 function onDeleteItem(e) {
     for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
         if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][
-            3] === e[4]) return i[a][0] = 0, i[a][1] = 0, i[a][2] = 0, i[a][3] =
-            0, void(1 === Game.getSkillBoxState() && -1 === World.PLAYER
-                .craftCategory && World.buildCraftList(World.PLAYER
+                3
+            ] === e[4]) return i[a][0] = 0, i[a][1] = 0, i[a][2] = 0,
+            i[a][3] = 0, void(1 === Game.getSkillBoxState() && -1 === World
+                .PLAYER.craftCategory && World.buildCraftList(World.PLAYER
                     .craftArea))
 }
 
 function onNewItem(e) {
     for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
-        if (0 === i[a][0]) return i[a][0] = e[1], i[a][1] = e[2], i[a][2] = e[
-            3], i[a][3] = e[4], Game.inventory[a].setImages(INVENTORY[e[1]]
-                .itemButton.src, INVENTORY[e[1]].itemButton.img), void(1 ===
-                Game.getSkillBoxState() && -1 === World.PLAYER
-                .craftCategory && World.buildCraftList(World.PLAYER
+        if (0 === i[a][0]) return i[a][0] = e[1], i[a][1] = e[2], i[a]
+            [2] = e[3], i[a][3] = e[4], Game.inventory[a].setImages(
+                INVENTORY[e[1]].itemButton.src, INVENTORY[e[1]].itemButton
+                .img), void(1 === Game.getSkillBoxState() && -1 === World
+                .PLAYER.craftCategory && World.buildCraftList(World.PLAYER
                     .craftArea))
 }
 
@@ -852,7 +870,8 @@ function onStaminaIncrease() {
 function onReplaceItem(e) {
     for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
         if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][
-            3] === e[4]) return i[a][1] = e[5], void(1 === Game
+                3
+            ] === e[4]) return i[a][1] = e[5], void(1 === Game
             .getSkillBoxState() && -1 === World.PLAYER.craftCategory &&
             World.buildCraftList(World.PLAYER.craftArea))
 }
@@ -868,9 +887,13 @@ function onStackItem(e) {
     t.stack < d ? (i[_][3] = window.Math.min(255, window.Math.max(0, window.Math
             .floor((i[a][3] * i[a][1] + i[_][3] * (t.stack - i[a][1])) /
                 t.stack))), i[a][1] = d - t.stack, i[_][1] = t.stack) : (i[_][
-            3] = window.Math.min(255, window.Math.max(0, window.Math.floor((i[a]
-                [3] * i[a][1] + i[_][3] * i[_][1]) / d))), i[a][0] = 0, i[a][
-            1] = 0, i[a][2] = 0, i[a][3] = 0, i[_][1] = d), 1 === Game
+            3
+        ] = window.Math.min(255, window.Math.max(0, window.Math.floor((i[a]
+            [3] * i[a][1] + i[_][3] * i[_][1]) / d))), i[a][
+            0
+        ] = 0, i[a][
+            1
+        ] = 0, i[a][2] = 0, i[a][3] = 0, i[_][1] = d), 1 === Game
         .getSkillBoxState() && -1 === World.PLAYER.craftCategory && World
         .buildCraftList(World.PLAYER.craftArea)
 }
@@ -880,8 +903,9 @@ function onSplitItem(e) {
             1, o = -1, t = 0; t < i.length; t++) - 1 === o && i[t][0] === e[
         1] && i[t][1] === e[2] && i[t][2] === e[3] ? (o = t, i[t][1] -= a) : -
         1 === _ && 0 === i[t][0] && (_ = t, i[t][0] = e[1], i[t][1] = a, i[t][
-            2] = e[4], Game.inventory[t].setImages(INVENTORY[e[1]].itemButton
-                .src, INVENTORY[e[1]].itemButton.img));
+            2
+        ] = e[4], Game.inventory[t].setImages(INVENTORY[e[1]].itemButton
+            .src, INVENTORY[e[1]].itemButton.img));
     i[_][3] = i[o][3], 1 === Game.getSkillBoxState() && -1 === World.PLAYER
         .craftCategory && World.buildCraftList(World.PLAYER.craftArea)
 }
@@ -917,7 +941,8 @@ function onLifeIncrease() {
 function onReplaceAmmo(e) {
     for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
         if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][
-            3] === e[4]) return void(i[a][3] = e[5])
+                3
+            ] === e[4]) return void(i[a][3] = e[5])
 }
 
 function onStartInteraction(e) {
@@ -932,7 +957,8 @@ function onInterruptInteraction() {
 function onReplaceItemAndAmmo(e) {
     for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
         if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][
-            3] === e[4]) return i[a][1] = e[5], i[a][3] = e[6], void(1 === Game
+                3
+            ] === e[4]) return i[a][1] = e[5], i[a][3] = e[6], void(1 === Game
             .getSkillBoxState() && -1 === World.PLAYER.craftCategory &&
             World.buildCraftList(World.PLAYER.craftArea))
 }
@@ -1047,24 +1073,26 @@ function onModdedGaugesValues(e) {
         World.gauges.food.speedInc = i[5] / 1e4, World.gauges.food.speedDec = i[
             6] / 1e4, World.gauges.cold._max = i[7], World.gauges.cold
         .speedInc = i[8] / 1e4, World.gauges.cold.speedDec = i[9] / 1e4, World
-        .gauges.stamina._max = i[10], World.gauges.stamina.speedInc = i[11] /
-        1e4, World.gauges.stamina.speedDec = i[12] / 1e4, World.gauges.rad
-        ._max = i[13], World.gauges.rad.speedInc = i[14] / 1e4, World.gauges.rad
-        .speedDec = i[15] / 1e4, World.gauges.life.current = window.Math.min(
-            World.gauges.life._max, World.gauges.life.current), World.gauges
-        .life.value = window.Math.min(World.gauges.life._max, World.gauges.life
-            .value), World.gauges.food.current = window.Math.min(World.gauges
-            .food._max, World.gauges.food.current), World.gauges.food.value =
-        window.Math.min(World.gauges.food._max, World.gauges.food.value), World
-        .gauges.cold.current = window.Math.min(World.gauges.cold._max, World
-            .gauges.cold.current), World.gauges.cold.value = window.Math.min(
-            World.gauges.cold._max, World.gauges.cold.value), World.gauges
+        .gauges.stamina._max = i[10],
+        World.gauges.stamina.speedInc = i[11] / 1e4, World.gauges.stamina
+        .speedDec = i[12] / 1e4, World.gauges.rad._max = i[13], World.gauges.rad
+        .speedInc = i[14] / 1e4, World.gauges.rad.speedDec = i[15] / 1e4, World
+        .gauges.life.current = window.Math.min(World.gauges.life._max, World
+            .gauges.life.current),
+        World.gauges.life.value = window.Math.min(World.gauges.life._max, World
+            .gauges.life.value), World.gauges.food.current = window.Math.min(
+            World.gauges.food._max, World.gauges.food.current), World.gauges
+        .food.value = window.Math.min(World.gauges.food._max, World.gauges.food
+            .value),
+        World.gauges.cold.current = window.Math.min(World.gauges.cold._max,
+            World.gauges.cold.current), World.gauges.cold.value = window.Math
+        .min(World.gauges.cold._max, World.gauges.cold.value), World.gauges
         .stamina.current = window.Math.min(World.gauges.stamina._max, World
-            .gauges.stamina.current), World.gauges.stamina.value = window.Math
-        .min(World.gauges.stamina._max, World.gauges.stamina.value), World
-        .gauges.rad.current = window.Math.min(World.gauges.rad._max, World
-            .gauges.rad.current), World.gauges.rad.value = window.Math.min(World
-            .gauges.rad._max, World.gauges.rad.value)
+            .gauges.stamina.current),
+        World.gauges.stamina.value = window.Math.min(World.gauges.stamina._max,
+            World.gauges.stamina.value), World.gauges.rad.current = window.Math
+        .min(World.gauges.rad._max, World.gauges.rad.current), World.gauges.rad
+        .value = window.Math.min(World.gauges.rad._max, World.gauges.rad.value)
 }
 
 function onShakeExplosionState(e) {
@@ -1122,8 +1150,8 @@ function onJoinTeam(e) {
 }
 
 function onTeamPosition(e) {
-    for (var i = World.PLAYER.teamPos, a = (e.length - 1) / 3, _ = 0, o = 0; o <
-        a; o++) {
+    for (var i = World.PLAYER.teamPos, a = (e.length - 1) / 3, _ = 0,
+            o = 0; o < a; o++) {
         var t = e[3 + 3 * o];
         if (World.PLAYER.id !== t) {
             var d = e[1 + 3 * o],
@@ -1158,8 +1186,9 @@ function onAreas(e) {
         else {
             var a = window.Math.floor(e[i] / 8),
                 _ = e[i] % 8;
-            World.PLAYER.toxicMap[a][_] = World.PLAYER.toxicStep, World.PLAYER
-                .lastAreas[i - 2][0] = a, World.PLAYER.lastAreas[i - 2][1] = _
+            World.PLAYER.toxicMap[a][_] = World.PLAYER.toxicStep,
+                World.PLAYER.lastAreas[i - 2][0] = a, World.PLAYER.lastAreas[i -
+                    2][1] = _
         } Render.battleRoyale()
 }
 
@@ -1430,13 +1459,14 @@ let playerTestArr = [];
 function onNewPlayer(e) {
     var i = World.players[e[1]];
     i.tokenId = e[2], i.score = 0, i.old = __ENTITIE_PLAYER__, i.nickname = e[
-        3], i.skin = e[4], i.ghoul = e[5], i.team = -1, i.breath = 0, i.move =
-        0, i.orientation = 1, i.punch = 1, i.withdrawal = 0, i.repellent = 0, i
-        .notification = [], i.notificationLevel = [], i.notificationDelay = 0, i
-        .textEase = 0, i.text = [], i.textEffect = [], i.textMove = [], i
-        .label = [], i.locatePlayer = -1, i.frameId = -1, i.nicknameLabel =
-        null, i.playerIdLabel = null, i.storeLabel = null, i.leaderboardLabel =
-        null, 0 === i.ghoul && World.playerAlive++, playerTestArr[e[1]] = e[3]
+        3], i.skin = e[4], i.ghoul = e[5], i.team = -1,
+        i.breath = 0, i.move = 0, i.orientation = 1, i.punch = 1, i.withdrawal =
+        0, i.repellent = 0, i.notification = [], i.notificationLevel = [], i
+        .notificationDelay = 0, i.textEase = 0, i.text = [], i.textEffect = [],
+        i.textMove = [], i.label = [], i.locatePlayer = -1, i.frameId = -1, i
+        .nicknameLabel = null, i.playerIdLabel = null, i.storeLabel = null, i
+        .leaderboardLabel = null, 0 === i.ghoul && World.playerAlive++,
+        playerTestArr[e[1]] = e[3]
 }
 
 function onNicknamesToken(e) {
@@ -1633,31 +1663,33 @@ var Client = function () {
                     if (e.ok) return e.json();
                     throw "Failed to list lobbies: " + e.status
                 })).then((i => {
-                    Client.serverList = i.lobbies.map((e => {
-                        let a = i.regions.find((i =>
-                                i.region_id == e
-                                .region_id)),
-                            _ = a ? a
-                            .region_display_name :
-                            "?";
-                        return [e.lobby_id, "", "",
-                            1, _, e
-                            .total_player_count,
-                            e.game_mode_id
-                        ]
-                    })), e()
+                    Client.serverList = i.lobbies.map(
+                        (e => {
+                            let a = i.regions.find((i =>
+                                    i.region_id == e
+                                    .region_id)),
+                                _ = a ? a
+                                .region_display_name :
+                                "?";
+                            return [e.lobby_id, "", "",
+                                1, _, e
+                                .total_player_count,
+                                e.game_mode_id
+                            ]
+                        })), e()
                 }))
             },
             full: function () {
                 Client.state |= Client.State.__FULL__
             },
             handshake: function () {
-                T(), Client.state = Client.State.__CONNECTED__, null !==
-                    Client.onOpen && Client.onOpen()
+                T(), Client.state = Client.State.__CONNECTED__,
+                    null !== Client.onOpen && Client.onOpen()
             },
             badServerVersion: function (e) {
                 e > l ? Client.state = State.__OLD_CLIENT_VERSION__ : e <
-                    l && (Client.state = State.__OLD_SERVER_VERSION__), T()
+                    l && (Client.state = State.__OLD_SERVER_VERSION__),
+                    T()
             },
             failRestore: function () {
                 T(), Client.state = State.__FAIL_RESTORE__, y()
@@ -1713,7 +1745,8 @@ var Client = function () {
                         u = Mouse.angle, e = window.Math.floor((180 *
                             Mouse.angle / window.Math.PI % 360 + 360
                             ) % 360), i.send(window.JSON.stringify([6,
-                            e])))
+                            e
+                        ])))
                 }
             },
             sendFastMouseAngle: function () {
@@ -1724,7 +1757,8 @@ var Client = function () {
                         u = Mouse.angle, e = window.Math.floor((180 *
                             Mouse.angle / window.Math.PI % 360 + 360
                             ) % 360), i.send(window.JSON.stringify([6,
-                            e])))
+                            e
+                        ])))
                 }
             },
             sendMouseRightLeft: function () {
@@ -1766,7 +1800,8 @@ var Client = function () {
                 .repellent = 0, this.withdrawal = 0, this.notification = [],
                 this.notificationLevel = [], this.notificationDelay = 0, this
                 .textEase = 0, this.text = [], this.textEffect = [], this
-                .textMove = [], this.label = [], this.runEffect = [{
+                .textMove = [], this.label = [],
+                this.runEffect = [{
                     x: 0,
                     y: 0,
                     delay: 0,
@@ -1814,9 +1849,10 @@ var Client = function () {
                     ay: 0
                 }], this.breath = 0, this.move = 0, this.orientation = 1, this
                 .punch = 1, this.consumable = -1, this.consumableLast = 0, this
-                .leaderboardLabel = null, this.nicknameLabel = null, this
-                .playerIdLabel = null, this.scoreLabel = null, this
-                .locatePlayer = -1, this.frameId = -1, this.x = 0, this.y = 0,
+                .leaderboardLabel = null,
+                this.nicknameLabel = null, this.playerIdLabel = null,
+                this.scoreLabel = null, this.locatePlayer = -1, this.frameId = -
+                1, this.x = 0, this.y = 0,
                 this.rx = 0, this.ry = 0, this.KARMA = 0
         }
         var _ = 0;
@@ -1883,14 +1919,15 @@ var Client = function () {
             e = INVENTORY2, INVENTORY2 = INVENTORY, INVENTORY = e, e =
                 PARTICLES2, PARTICLES2 = PARTICLES, PARTICLES = e, e = LOOT2,
                 LOOT2 = LOOT, LOOT = e, e = RESOURCES2, RESOURCES2 = RESOURCES,
-                RESOURCES = e, e = ENTITIES2, ENTITIES2 = ENTITIES, ENTITIES =
-                e, e = LIGHTFIRE2, LIGHTFIRE2 = LIGHTFIRE, LIGHTFIRE = e, e =
-                GROUND2, GROUND2 = GROUND, GROUND = e, e = AI2, AI2 = AI, AI =
-                e, m = (m + 1) % 2, World.day = m, 0 === m ? (window.document
-                    .getElementById("bod").style.backgroundColor = "#3D5942",
-                    canvas.style.backgroundColor = "#3D5942") : (window.document
-                    .getElementById("bod").style.backgroundColor = "#0B2129",
-                    canvas.style.backgroundColor = "#0B2129"), c = 0
+                RESOURCES = e, e = ENTITIES2, ENTITIES2 = ENTITIES,
+                ENTITIES = e, e = LIGHTFIRE2, LIGHTFIRE2 = LIGHTFIRE,
+                LIGHTFIRE = e, e = GROUND2, GROUND2 = GROUND, GROUND = e, e =
+                AI2, AI2 = AI, AI = e, m = (m + 1) % 2, World.day = m, 0 === m ?
+                (window.document.getElementById("bod").style.backgroundColor =
+                    "#3D5942", canvas.style.backgroundColor = "#3D5942") : (
+                    window.document.getElementById("bod").style
+                    .backgroundColor = "#0B2129", canvas.style.backgroundColor =
+                    "#0B2129"), c = 0
         }
 
         function E(e) {
@@ -1909,8 +1946,9 @@ var Client = function () {
                         a.itemButton.src, a.itemButton.img), i++)
                 }
             if (p.toolsLen = i, i = 0, _ !== window.undefined)
-                for (r = 0; r < _.length; r++) a = INVENTORY[_[r][0]], t[i]
-                    .setImages(a.itemButton.src, a.itemButton.img), n[i] = a.id,
+                for (r = 0; r < _.length; r++) a = INVENTORY[_[r][0]],
+                    t[i].setImages(a.itemButton.src, a.itemButton.img), n[i] = a
+                    .id,
                     i++;
             p.recipeLen = i, u(_)
         }
@@ -2160,7 +2198,8 @@ var Client = function () {
                         .stamina.speedDec / 2, -1), r(s.rad, e.rad._max,
                         e.rad.speedInc, 0, 0)), r(s.xp, 255, 0, 0, 0), s.xp
                     .value = 0, s.xp.current = 0, p.nextLevel =
-                    __XP_START__, m === g && (s.cold.decrease = 1)
+                    __XP_START__,
+                    m === g && (s.cold.decrease = 1)
             },
             updateGauges: function () {
                 l(s.life), l(s.food), l(s.cold), l(s.rad), l(s.stamina), l(s
@@ -2203,8 +2242,9 @@ var Client = function () {
                 e === AREAS.__PLAYER__ && (World.releaseBuilding(), p
                     .building.fuel = -1);
                 for (var i = 0, a = 0, _ = World.PLAYER.craftSelected, o =
-                        0, t = p.craftList, d = p.craftAvailable, n = Game
-                        .craft, r = 1; r < INVENTORY.length; r++) {
+                        0, t = p.craftList,
+                        d = p.craftAvailable, n = Game.craft, r = 1; r <
+                    INVENTORY.length; r++) {
                     var l = INVENTORY[r],
                         s = l.detail;
                     s.area === window.undefined || -1 === s.area.indexOf(
@@ -2214,7 +2254,8 @@ var Client = function () {
                             t[o] = r, d[o] = u(s.recipe), o++)
                 }
                 p.craftLen = o, p.craftArea = e, p.craftCategory = -1, p
-                    .craftIdSelected = a, i > 0 && E(i)
+                    .craftIdSelected = a,
+                    i > 0 && E(i)
             },
             buildSkillList: L,
             selectRecipe: E,
@@ -2255,9 +2296,10 @@ var Client = function () {
                     l = o[r];
                 if (l === window.undefined || l.uid !== d) {
                     var s = Border.forceNewIdentifier(_[n]);
-                    (l = a[n][s]) === window.undefined && (a[n][s] = Entitie
-                            .create(n), l = a[n][s]), o[r] = l, l.update =
-                        0, l.removed = 0
+                    (l = a[n][s]) === window.undefined && (a[n][
+                            s
+                        ] = Entitie.create(n), l = a[n][s]),
+                        o[r] = l, l.update = 0, l.removed = 0
                 }
                 return l
             },
@@ -5921,12 +5963,13 @@ var Client = function () {
 function EntitieClass(e) {
     this.uid = 0, this.pid = 0, this.id = 0, this.type = e, this.subtype = 0,
         this.angle = 0, this.nangle = 0, this.angleX = 0, this.angleY = 0, this
-        .state = 0, this.extra = 0, this.broke = 0, this.x = 0, this.y = 0, this
-        .rx = 0, this.ry = 0, this.nx = -1, this.ny = 0, this.px = 0, this.py =
-        0, this.i = 0, this.j = 0, this.speed = 0, this.update = 0, this
-        .removed = 0, this.hit = 0, this.hitMax = 0, this.hurt = 0, this
-        .hurtAngle = 0, this.heal = 0, this.death = 0, this.born = 0, this
-        .breath = 0, this.breath2 = 0, this.particles = [], this.draw = null,
+        .state = 0, this.extra = 0, this.broke = 0,
+        this.x = 0, this.y = 0, this.rx = 0, this.ry = 0, this.nx = -1, this
+        .ny = 0, this.px = 0, this.py = 0, this.i = 0, this.j = 0, this.speed =
+        0, this.update = 0, this.removed = 0, this.hit = 0, this.hitMax = 0,
+        this.hurt = 0, this.hurtAngle = 0,
+        this.heal = 0, this.death = 0, this.born = 0, this.breath = 0,
+        this.breath2 = 0, this.particles = [], this.draw = null,
         this.lerp = .1;
     for (var i = 0; i < 10; i++) this.particles.push({
         c: 0,
@@ -5946,9 +5989,10 @@ function setEntitie(e, i, a, _, o, t, d, n, r, l, s, g) {
         e.speed = m.speed, e.angle = e.nangle, e.x = t, e.y = d, e.z = m.z, e
             .lerp = m.lerp, e.rx = t, e.ry = d, e.i = window.Math.floor(d /
                 Render.__TILE_SIZE__), e.j = window.Math.floor(t / Render
-                .__TILE_SIZE__), e.hit = 0, e.hitMax = 0, e.hurt = 0, e.hurt2 =
-            0, e.hurtAngle = 0, e.heal = 0, e.death = 0, e.breath = 0, e
-            .breath2 = 0, e.born = 0, e.broke = 0, e.subtype = 0, e.draw = null;
+                .__TILE_SIZE__), e.hit = 0, e.hitMax = 0,
+            e.hurt = 0, e.hurt2 = 0, e.hurtAngle = 0, e.heal = 0, e.death = 0, e
+            .breath = 0, e.breath2 = 0, e.born = 0, e.broke = 0, e.subtype = 0,
+            e.draw = null;
         var c = m.init;
         c !== window.undefined && c(e)
     }
@@ -6003,8 +6047,8 @@ var Border = function () {
                     d[e(o)] = i, this.length++
                 }, this.remove = function (e) {
                     for (var a = 0; a < this.length; a++)
-                        if (d[t[a]] === e) return i(o, a), void this
-                            .length--
+                        if (d[t[a]] === e) return i(o, a),
+                            void this.length--
                 }, this.get = function (e) {
                     return d[t[e]]
                 }
@@ -6079,8 +6123,8 @@ var Border = function () {
 
         function r(e, i) {
             if (function (e) {
-                    a = e, TextManager.lang = a, _ = a[0], localStorage2
-                        .setItem("lang", window.JSON.stringify(a))
+                    a = e, TextManager.lang = a, _ = a[0],
+                        localStorage2.setItem("lang", window.JSON.stringify(a))
                 }(e), 0 === o[e[0]].length) {
                 var t = new window.XMLHttpRequest;
                 t.open("GET", "json/lang" + e[1] + ".json", !0), t
@@ -6100,7 +6144,9 @@ var Border = function () {
             },
             getFormatted: function (e) {
                 o[_] === window.undefined || o[_][e] === window.undefined ?
-                    wmwww = o[d][e] : wmwww = o[_][e];
+                    wmwww = o[d][e] : wmwww = o[_][
+                        e
+                    ];
                 for (var i = 1; i < arguments.length; i++) wmwww[0] = wmwww[
                     0].replace("%d", arguments[i]);
                 return wmwww
@@ -6185,7 +6231,8 @@ var Border = function () {
                         i, s[d] = i), s[g] = 1, g
             },
             clearDirectionnal: function () {
-                s[_] = i, s[n] = i, s[a] = i, s[d] = i, s[o] = i, s[r] = i,
+                s[_] = i, s[n] = i, s[a] = i, s[d] = i, s[o] = i,
+                    s[r] = i,
                     s[t] = i, s[l] = i
             },
             isLeft: function () {
@@ -6255,12 +6302,13 @@ var Border = function () {
                     if (1 === _.isLoaded) {
                         var l = i.createBufferSource(),
                             s = i.createGain();
-                        _.source = l, _.gainNode = s, o(_, _.volume), l.buffer =
-                            _.buffer, l.connect(s), null !== stream && l
-                            .connect(stream), s.connect(i.destination), !0 === _
-                            .loop && (l.loop = _.loop), l.stop || (l.stop = l
-                                .noteOff), l.start || (l.start = l.noteOn), _
-                            .source.start((r === window.undefined ? 0 : r) + i
+                        _.source = l, _.gainNode = s, o(_, _.volume),
+                            l.buffer = _.buffer, l.connect(s),
+                            null !== stream && l.connect(stream), s.connect(i
+                                .destination), !0 === _.loop && (l.loop = _
+                                .loop), l.stop || (l.stop = l.noteOff), l
+                            .start || (l.start = l.noteOn), _.source.start((
+                                    r === window.undefined ? 0 : r) + i
                                 .currentTime, d === window.undefined ? 0 : d), _
                             .run = 1, _.start = previousTimestamp
                     } else n(_)
@@ -6286,8 +6334,8 @@ var Border = function () {
                 a.open("GET", e.url, !0), a.responseType = "arraybuffer", a
                     .onload = function () {
                         i.decodeAudioData(a.response, (function (i) {
-                            e.buffer = i, e.isLoaded = 1, e
-                                .durationMs = 1e3 * i.duration
+                            e.buffer = i, e.isLoaded = 1,
+                                e.durationMs = 1e3 * i.duration
                         }))
                     }, e.isLoaded = 2, a.send()
             }
@@ -6311,7 +6359,8 @@ var Border = function () {
             stopSound: t,
             fadeSound: function (e, i, a) {
                 -1 !== e.fadingVolume && (e.volume = e.fadingVolume), e
-                    .fade = 0, e.fadeMax = i, e.fadeEffect = a
+                    .fade = 0, e.fadeMax = i,
+                    e.fadeEffect = a
             },
             changeVolume: o,
             options: a,
@@ -6330,20 +6379,20 @@ var Border = function () {
                 a.isFx = e, localStorage2.setItem("isFx", "" + e)
             },
             initStream: function () {
-                stream = i.createMediaStreamDestination(), mediaRecorder =
-                    new window.MediaRecorder(stream.stream), mediaRecorder
-                    .ondataavailable = function (e) {
+                stream = i.createMediaStreamDestination(),
+                    mediaRecorder = new window.MediaRecorder(stream.stream),
+                    mediaRecorder.ondataavailable = function (e) {
                         chunks.push(e.data)
                     }, mediaRecorder.onstop = function (e) {
                         var i = window.JSON.parse(
                             '{ "type" : "audio/ogg; codecs=opus" }');
-                        blob = new window.Blob(chunks, i), record = window
-                            .URL.createObjectURL(blob)
+                        blob = new window.Blob(chunks, i),
+                            record = window.URL.createObjectURL(blob)
                     }
             },
             startRecordStream: function () {
-                blob = null, record = null, chunks = [], mediaRecorder
-                    .start()
+                blob = null, record = null, chunks = [],
+                    mediaRecorder.start()
             },
             stopRecordStream: function () {
                 mediaRecorder.stop()
@@ -6391,14 +6440,16 @@ var Border = function () {
                 e = GUI.createBackground(423, 276, "img/loading1.png")
             },
             run: function () {
-                CanvasUtils.setRenderer(Loader), n = 800, d = 800, r = t,
+                CanvasUtils.setRenderer(Loader), n = 800, d = 800,
+                    r = t,
                     o = 1, l()
             },
             update: l,
             draw: function () {
                 0 !== function () {
                     if (1 === a) {
-                        if (l(), n < 0) return a = 0, i.run(), 0;
+                        if (l(), n < 0) return a = 0, i.run(),
+                            0;
                         n -= delta
                     } else if (1 === o) {
                         if (l(), n < 0) {
@@ -6408,15 +6459,18 @@ var Border = function () {
                                     .privateServer = [], Home
                                     .ghoulServer = [];
                                 for (var i = [], a = [], _ =
-                                        '<select id="servers">', o =
-                                        0; o < e.length; o++) {
+                                        '<select id="servers">',
+                                        o = 0; o < e.length; o++) {
                                     var t = e[o][4],
                                         d = e[o][5];
-                                    if (d, "ghoul" !== e[o][6]) {
+                                    if (d, "ghoul" !== e[o][
+                                            6
+                                        ]) {
                                         for (var n = 0; n < i
                                             .length; n++)
                                             if (i[n] === t) {
-                                                a[n] += d, n = -1;
+                                                a[n] += d,
+                                                    n = -1;
                                                 break
                                             } - 1 !== n && (i.push(t), a
                                             .push(d))
@@ -6430,16 +6484,17 @@ var Border = function () {
                                     for (n = 0; n < e.length; n++) e[n][
                                         4
                                     ] === t && "survival" === e[n][
-                                        6] && (_ +=
-                                        '<option value="' + e[n][
-                                        0] + '">' + i[o] + " " +
-                                        s++, Client
-                                        .selectedServer === n && (
-                                            l = r), r++)
+                                        6
+                                    ] && (_ += '<option value="' +
+                                        e[n][
+                                            0
+                                        ] + '">' + i[o] + " " + s++,
+                                        Client.selectedServer ===
+                                        n && (l = r), r++)
                                 }
                                 for (var o in Home.htmlBattleRoyale =
-                                        '<select id="servers">', Home
-                                        .regions) {
+                                        '<select id="servers">',
+                                        Home.regions) {
                                     r = 0;
                                     for (var g = 0; g < Home.regions[o]
                                         .length; g++) r += e[Home
@@ -6449,18 +6504,24 @@ var Border = function () {
                                         .privateServer.sort((function (
                                             i, a) {
                                             return window
-                                                .Number(e[a][
-                                                5]) - window
-                                                .Number(e[i][5])
+                                                .Number(e[a]
+                                                    [
+                                                        5
+                                                    ]) - window
+                                                .Number(e[i]
+                                                    [
+                                                        5
+                                                    ])
                                         })), Home.htmlPrivateServer =
-                                        '<select id="servers">', Home
-                                        .privateServer) Home
+                                        '<select id="servers">',
+                                        Home.privateServer) Home
                                     .htmlPrivateServer +=
                                     '<option value="' + o + '">' + e[
                                         Home.privateServer[o]][4]
                                     .replace("PRIV", "") + "  - " + e[
-                                        Home.privateServer[o]][5] +
-                                    "  players</option>";
+                                        Home.privateServer[o]][
+                                        5
+                                    ] + "  players</option>";
                                 if (Home.htmlGhoulServer =
                                     '<select id="servers">', Home
                                     .ghoulServer.length > 0)
@@ -6468,8 +6529,9 @@ var Border = function () {
                                         .htmlGhoulServer +=
                                         '<option value="' + e[Home
                                             .ghoulServer[o]][0] + '">' +
-                                        e[Home.ghoulServer[o]][4]
-                                        .replace("ghoul", "") +
+                                        e[Home.ghoulServer[o]][
+                                            4
+                                        ].replace("ghoul", "") +
                                         "</option>";
                                 else Home.htmlGhoulServer +=
                                     '<option value="No">No servers currently available.</option>';
@@ -6492,8 +6554,8 @@ var Border = function () {
                                             World.PLAYER.admin = 1,
                                             window.document
                                             .getElementById("chatInput")
-                                            .maxLength = 1e6), window
-                                        .document.getElementById(
+                                            .maxLength = 1e6),
+                                        window.document.getElementById(
                                             "nickname").innerHTML +=
                                         '<input id="passwordInput" type="password" placeholder="Password" maxLength="16">';
                                     var m = localStorage2.getItem(
@@ -6612,7 +6674,8 @@ var Border = function () {
             setEntitie(Entitie.get(0, _, _, e), 0, _, _, e, i, a, i, a, (d <<
                 7) + (o << 5), 0, t), _++
         }
-        var d, n, r, l, s, g, m, c, I, E, u, L, p, R, w, T, O, A, b, y, S, U, h,
+        var d, n, r, l, s, g, m, c, I, E, u, L, p, R, w, T, O, A, b,
+            y, S, U, h,
             f, D, v, N, M, W, C, F, P, x, V = 0,
             B = {
                 img: null
@@ -6733,14 +6796,15 @@ var Border = function () {
                     28 * scaleby) + "px", u.width = o, u.height = t, u
                 .fontSize = window.Math.floor(13 * scaleby) + "px", o = window
                 .Math.floor(185 * scaleby), t = window.Math.floor(17 * scaleby),
-                m = window.Math.floor(canw - o) + "px", t += "px", o += "px",
+                m = window.Math.floor(canw - o) + "px", t += "px",
+                o += "px",
                 _top = window.Math.floor(canh - 18 * scaleby) + i + "px", o =
                 window.Math.floor(197 * scaleby), t = window.Math.floor(250 *
                     scaleby), m = window.Math.floor(canw - 205 * scaleby) +
                 "px", t += "px", o += "px", L.width = o, L.height = t, L.left =
                 m, L.fontSize = window.Math.floor(11 * scaleby) + "px", L
-                .borderRadius = window.Math.floor(5 * scaleby) + "px", L
-                .paddingTop = window.Math.floor(18 * scaleby) + "px";
+                .borderRadius = window.Math.floor(5 * scaleby) + "px",
+                L.paddingTop = window.Math.floor(18 * scaleby) + "px";
             var w = window.document.getElementById("changelogTitle").style;
             o = window.Math.floor(197 * scaleby) + "px", t = window.Math.floor(
                     23 * scaleby) + "px", w.width = o, w.height = t, w
@@ -6759,40 +6823,41 @@ var Border = function () {
             var P = window.document.getElementById("changelogText").style;
             P.fontSize = window.Math.floor(10 * scaleby) + "px", P.padding =
                 window.Math.floor(15 * scaleby) + "px", P.paddingTop = window
-                .Math.floor(5 * scaleby) + "px", o = window.Math.floor(197 *
-                    scaleby), t = window.Math.floor(347 * scaleby), m = window
-                .Math.floor(canw - 205 * scaleby) + "px", MVvmn = window.Math
-                .floor(canh - 105 * scaleby) + "px", t += "px", o += "px", T
-                .width = o, T.height = t, T.left = m, T.bottom = MVvmn, T
-                .fontSize = window.Math.floor(13 * scaleby) + "px", T
-                .marginTop = window.Math.floor(0 * scaleby) + "px", T
-                .paddingTop = window.Math.floor(18 * scaleby) + "px", window
-                .document.getElementById("mainCommands").style.marginTop =
-                window.Math.floor(55 * scaleby) + "px", window.document
-                .getElementById("secondCommands").style.marginTop = window.Math
-                .floor(55 * scaleby) + "px", window.document.getElementById(
-                    "moveCommand").style.paddingLeft = window.Math.floor(20 *
+                .Math.floor(5 * scaleby) + "px",
+                o = window.Math.floor(197 * scaleby), t = window.Math.floor(
+                    347 * scaleby), m = window.Math.floor(canw - 205 *
+                scaleby) + "px", MVvmn = window.Math.floor(canh - 105 *
+                scaleby) + "px", t += "px", o += "px", T.width = o, T.height =
+                t, T.left = m, T.bottom = MVvmn, T.fontSize = window.Math.floor(
+                    13 * scaleby) + "px", T.marginTop = window.Math.floor(0 *
+                    scaleby) + "px", T.paddingTop = window.Math.floor(18 *
                     scaleby) + "px", window.document.getElementById(
-                    "moveCommand").style.paddingRight = window.Math.floor(20 *
+                    "mainCommands").style.marginTop = window.Math.floor(55 *
                     scaleby) + "px", window.document.getElementById(
-                    "hitCommands").style.paddingLeft = window.Math.floor(10 *
-                    scaleby) + "px", window.document.getElementById(
-                    "hitCommands").style.paddingRight = window.Math.floor(10 *
-                    scaleby) + "px", window.document.getElementById(
+                    "secondCommands").style.marginTop = window.Math.floor(55 *
+                    scaleby) + "px",
+                window.document.getElementById("moveCommand").style
+                .paddingLeft = window.Math.floor(20 * scaleby) + "px",
+                window.document.getElementById("moveCommand").style
+                .paddingRight = window.Math.floor(20 * scaleby) + "px", window
+                .document.getElementById("hitCommands").style.paddingLeft =
+                window.Math.floor(10 * scaleby) + "px", window.document
+                .getElementById("hitCommands").style.paddingRight = window.Math
+                .floor(10 * scaleby) + "px", window.document.getElementById(
                     "runCommands").style.paddingLeft = window.Math.floor(0 *
                     scaleby) + "px", window.document.getElementById(
                     "runCommands").style.paddingRight = window.Math.floor(20 *
                     scaleby) + "px", window.document.getElementById(
                     "interactCommands").style.paddingLeft = window.Math.floor(
-                    7 * scaleby) + "px", window.document.getElementById(
-                    "interactCommands").style.paddingRight = window.Math.floor(
-                    0 * scaleby) + "px", window.document.getElementById(
-                    "craftCommands").style.paddingLeft = window.Math.floor(5 *
-                    scaleby) + "px", window.document.getElementById(
-                    "craftCommands").style.paddingRight = window.Math.floor(18 *
-                    scaleby) + "px", window.document.getElementById(
-                    "mapCommands").style.paddingLeft = window.Math.floor(6 *
-                    scaleby) + "px", window.document.getElementById(
+                    7 * scaleby) + "px",
+                window.document.getElementById("interactCommands").style
+                .paddingRight = window.Math.floor(0 * scaleby) + "px", window
+                .document.getElementById("craftCommands").style.paddingLeft =
+                window.Math.floor(5 * scaleby) + "px", window.document
+                .getElementById("craftCommands").style.paddingRight = window
+                .Math.floor(18 * scaleby) + "px", window.document
+                .getElementById("mapCommands").style.paddingLeft = window.Math
+                .floor(6 * scaleby) + "px", window.document.getElementById(
                     "mapCommands").style.paddingRight = window.Math.floor(12 *
                     scaleby) + "px";
             var x = window.document.getElementById("howtoplayTitle").style;
@@ -6860,12 +6925,12 @@ var Border = function () {
                 .trigger() && (1, 1 !== Home.gameMode && 1 === Home
                     .publicMode && 0 == (Client.state & State.__PENDING__) &&
                     0 == (Client.state & State.__CONNECTED__))) {
-                Home.serverTest = 0, Home.gameMode = World.__GHOUL__, AudioUtils
-                    .playFx(AudioUtils._fx.button, 1, 0), v.hide(), Home
-                    .survivalHtml = window.document.getElementById("serverList")
-                    .innerHTML, Home.survivalIndex = window.document
-                    .getElementById("servers").selectedIndex, window.document
-                    .getElementById("serverList").innerHTML = Home
+                Home.serverTest = 0, Home.gameMode = World.__GHOUL__,
+                    AudioUtils.playFx(AudioUtils._fx.button, 1, 0), v.hide(),
+                    Home.survivalHtml = window.document.getElementById(
+                        "serverList").innerHTML, Home.survivalIndex = window
+                    .document.getElementById("servers").selectedIndex, window
+                    .document.getElementById("serverList").innerHTML = Home
                     .htmlGhoulServer;
                 var a = window.Math.floor(1 * window.Math.random());
                 window.document.getElementById("servers").selectedIndex = a, q()
@@ -6920,16 +6985,17 @@ var Border = function () {
                     .gameMode = 0, Home.publicMode = 1, Home.alertId = 0,
                     Home.alertDelay = 0, window.document.getElementById(
                         "nicknameInput").value = localStorage2.getItem(
-                        "nickname", n), AudioUtils.fadeSound(AudioUtils
-                        .audio.title, 1e3, AudioManager.musicVolume),
-                    Entitie.removeAll(), Render.reset(1), _ = 0, o(
-                        __ENTITIE_RESOURCES_DOWN__, 200, 0, 127, RESID
-                        .STONE, 3), o(__ENTITIE_RESOURCES_TOP__, 400, 100,
-                        127, RESID.ORANGETREE, 2), o(
-                        __ENTITIE_RESOURCES_STOP__, 100, 100, 127, RESID
-                        .LEAFTREE, 0), t(__ENTITIE_BUILD_GROUND__, 900, 500,
-                        0, 33, IID.__SMELTER__), t(__ENTITIE_BUILD_DOWN__,
-                        800, 400, 1, 1, IID.__WORKBENCH__), o(
+                        "nickname", n),
+                    AudioUtils.fadeSound(AudioUtils.audio.title, 1e3,
+                        AudioManager.musicVolume),
+                    Entitie.removeAll(), Render.reset(1), _ = 0,
+                    o(__ENTITIE_RESOURCES_DOWN__, 200, 0, 127, RESID.STONE,
+                        3), o(__ENTITIE_RESOURCES_TOP__, 400, 100, 127,
+                        RESID.ORANGETREE, 2), o(__ENTITIE_RESOURCES_STOP__,
+                        100, 100, 127, RESID.LEAFTREE, 0), t(
+                        __ENTITIE_BUILD_GROUND__, 900, 500, 0, 33, IID
+                        .__SMELTER__), t(__ENTITIE_BUILD_DOWN__, 800, 400,
+                        1, 1, IID.__WORKBENCH__), o(
                         __ENTITIE_RESOURCES_STOP__, 1100, 300, 10, RESID
                         .LEAFTREE, 1), o(__ENTITIE_RESOURCES_STOP__, 800,
                         200, 127, RESID.LEAFTREE, 2), o(
@@ -7017,24 +7083,26 @@ var Border = function () {
                         "img/twitter-button-in.png",
                         "img/twitter-button-click.png"
                     ]), y = 1 === isTouchScreen ? GUI.createButton(0, 0) :
-                    GUI.createButton(40, 38, ["img/facebook-button-out.png",
-                        "img/facebook-button-in.png",
-                        "img/facebook-button-click.png"
-                    ]), S = 1 === isTouchScreen ? GUI.createButton(0, 0) :
-                    GUI.createButton(40, 38, ["img/youtube-button-out.png",
-                        "img/youtube-button-in.png",
-                        "img/youtube-button-click.png"
-                    ]), U = 1 === isTouchScreen ? GUI.createButton(0, 0) :
-                    GUI.createButton(54, 54, [
-                        "img/home-reddit-button-out.png",
-                        "img/home-reddit-button-in.png",
-                        "img/home-reddit-button-click.png"
-                    ]), h = 1 === isTouchScreen ? GUI.createButton(0, 0) :
-                    GUI.createButton(54, 54, [
-                        "img/home-discord-button-out.png",
-                        "img/home-discord-button-in.png",
-                        "img/home-discord-button-click.png"
-                    ]), f = GUI.createButton(93, 51, [
+                    GUI.createButton(40, 38,
+                        ["img/facebook-button-out.png",
+                            "img/facebook-button-in.png",
+                            "img/facebook-button-click.png"
+                        ]), S = 1 === isTouchScreen ? GUI.createButton(0,
+                    0) : GUI.createButton(40, 38,
+                        ["img/youtube-button-out.png",
+                            "img/youtube-button-in.png",
+                            "img/youtube-button-click.png"
+                        ]), U = 1 === isTouchScreen ? GUI.createButton(0,
+                    0) : GUI.createButton(54, 54,
+                        ["img/home-reddit-button-out.png",
+                            "img/home-reddit-button-in.png",
+                            "img/home-reddit-button-click.png"
+                        ]), h = 1 === isTouchScreen ? GUI.createButton(0,
+                    0) : GUI.createButton(54, 54,
+                        ["img/home-discord-button-out.png",
+                            "img/home-discord-button-in.png",
+                            "img/home-discord-button-click.png"
+                        ]), f = GUI.createButton(93, 51, [
                         "img/survivalmode-button-out.png",
                         "img/survivalmode-button-in.png",
                         "img/survivalmode-button-click.png"
@@ -7047,16 +7115,16 @@ var Border = function () {
                         "img/public-server-button-in.png",
                         "img/public-server-button-click.png"
                     ]), N = 1 === isTouchScreen ? GUI.createButton(0, 0) :
-                    GUI.createButton(86, 48, [
-                        "img/privateserver-button-out.png",
-                        "img/privateserver-button-in.png",
-                        "img/privateserver-button-click.png"
-                    ]), M = 1 === isTouchScreen ? GUI.createButton(0, 0) :
-                    GUI.createButton(52, 42, [
-                        "img/map-editor-button-out.png",
-                        "img/map-editor-button-in.png",
-                        "img/map-editor-button-click.png"
-                    ]), C = {
+                    GUI.createButton(86, 48,
+                        ["img/privateserver-button-out.png",
+                            "img/privateserver-button-in.png",
+                            "img/privateserver-button-click.png"
+                        ]), M = 1 === isTouchScreen ? GUI.createButton(0,
+                    0) : GUI.createButton(52, 42,
+                        ["img/map-editor-button-out.png",
+                            "img/map-editor-button-in.png",
+                            "img/map-editor-button-click.png"
+                        ]), C = {
                         x: 0,
                         y: 0
                     }, F = window.document.getElementById("preroll"), P = F
@@ -7067,14 +7135,15 @@ var Border = function () {
             },
             run: function () {
                 Client.onError = i, Client.onOpen = a, World.PLAYER
-                    .isBuilding = 0, World.PLAYER.id = 0, Render
-                    .setDetection(0), Render.stopPoisonEffect(), 1 === Home
-                    .gameMode && v.hide(), 1 === isTouchScreen && M.hide(),
+                    .isBuilding = 0, World.PLAYER.id = 0,
+                    Render.setDetection(0), Render.stopPoisonEffect(), 1 ===
+                    Home.gameMode && v.hide(), 1 === isTouchScreen && M
+                    .hide(),
                     CanvasUtils.setRenderer(Home), X = 2e3, J = 2e3, j = z,
                     K = 1, q(), r.display = "inline-block", c.display =
                     "inline-block", 0 === isTouchScreen && (L.display =
-                        "inline-block"), 0 === isTouchScreen && (T.display =
-                        "inline-block")
+                        "inline-block"),
+                    0 === isTouchScreen && (T.display = "inline-block")
             },
             update: q,
             draw: function () {
@@ -7084,17 +7153,17 @@ var Border = function () {
                             "none", s.setState(GUI.__BUTTON_OUT__),
                             c.display = "none", L.display = "none",
                             T.display = "none", b.setState(GUI
-                                .__BUTTON_OUT__), y.setState(GUI
-                                .__BUTTON_OUT__), S.setState(GUI
-                                .__BUTTON_OUT__), U.setState(GUI
-                                .__BUTTON_OUT__), h.setState(GUI
-                                .__BUTTON_OUT__), f.setState(GUI
-                                .__BUTTON_OUT__), D.setState(GUI
-                                .__BUTTON_OUT__), v.setState(GUI
-                                .__BUTTON_OUT__), N.setState(GUI
-                                .__BUTTON_OUT__), M.setState(GUI
-                                .__BUTTON_OUT__), P.display =
-                            "none", x.run(), 0;
+                                .__BUTTON_OUT__),
+                            y.setState(GUI.__BUTTON_OUT__), S
+                            .setState(GUI.__BUTTON_OUT__), U
+                            .setState(GUI.__BUTTON_OUT__),
+                            h.setState(GUI.__BUTTON_OUT__), f
+                            .setState(GUI.__BUTTON_OUT__), D
+                            .setState(GUI.__BUTTON_OUT__),
+                            v.setState(GUI.__BUTTON_OUT__), N
+                            .setState(GUI.__BUTTON_OUT__), M
+                            .setState(GUI.__BUTTON_OUT__),
+                            P.display = "none", x.run(), 0;
                         X -= delta
                     } else 1 === K && (q(), X < 0 && (K = 0, window
                         .document.getElementById("bod").style
@@ -7142,16 +7211,15 @@ var Border = function () {
                     .draw(), s.draw(), E.draw(), R.draw(), A.draw(), b
                     .draw(), y.draw(), S.draw(), U.draw(), h.draw(), f
                     .draw(), D.draw(), v.draw(), N.draw(), M.draw(),
-                    null === B.img && (B.img = GUI.renderText("0." +
-                            versionInf[0] + "." + versionInf[1],
-                            "'Viga', sans-serif", "#d6ddde", 24, 400,
-                            window.undefined, 16, 25, window.undefined,
-                            window.undefined, window.undefined, window
-                            .undefined, "#2b3c3e", 8), B.img.isLoaded =
-                        1), CanvasUtils.drawImageHd(B, d.pos.x /
-                        scaleby + 484.5, d.pos.y / scaleby + 124, 0, 0,
-                        0, 1), Render.alertServer(), AudioManager
-                    .scheduler())
+                    null === B.img && (B.img = GUI.renderText(
+                            versionInf, "'Viga', sans-serif", "#d6ddde",
+                            24, 450, window.undefined, 16, 25, window
+                            .undefined, window.undefined, window
+                            .undefined, window.undefined, "#2b3c3e", 8),
+                        B.img.isLoaded = 1), CanvasUtils.drawImageHd(B,
+                        d.pos.x / scaleby + 398.5, d.pos.y / scaleby +
+                        124, 0, 0, 0, 1), Render.alertServer(),
+                    AudioManager.scheduler())
             }
         }
     }(),
@@ -7230,36 +7298,36 @@ var Border = function () {
                 "img/close-box-in.png", "img/close-box-click.png"
             ]),
             D = [CanvasUtils.loadImage("img/high-particules-out.png"),
-                CanvasUtils.loadImage("img/high-particules-in.png"), CanvasUtils
-                .loadImage("img/high-particules-click.png")
+                CanvasUtils.loadImage("img/high-particules-in.png"),
+                CanvasUtils.loadImage("img/high-particules-click.png")
             ],
-            v = [CanvasUtils.loadImage("img/join-button-out.png"), CanvasUtils
-                .loadImage("img/join-button-in.png"), CanvasUtils.loadImage(
-                    "img/join-button-click.png")
+            v = [CanvasUtils.loadImage("img/join-button-out.png"),
+                CanvasUtils.loadImage("img/join-button-in.png"),
+                CanvasUtils.loadImage("img/join-button-click.png")
             ],
-            N = [CanvasUtils.loadImage("img/remove-button-out.png"), CanvasUtils
-                .loadImage("img/remove-button-in.png"), CanvasUtils.loadImage(
-                    "img/remove-button-click.png")
+            N = [CanvasUtils.loadImage("img/remove-button-out.png"),
+                CanvasUtils.loadImage("img/remove-button-in.png"),
+                CanvasUtils.loadImage("img/remove-button-click.png")
             ],
             M = GUI.createButton(54, 42, null, D),
             W = [CanvasUtils.loadImage("img/low-particules-out.png"),
-                CanvasUtils.loadImage("img/low-particules-in.png"), CanvasUtils
-                .loadImage("img/low-particules-click.png")
+                CanvasUtils.loadImage("img/low-particules-in.png"),
+                CanvasUtils.loadImage("img/low-particules-click.png")
             ],
             C = GUI.createButton(54, 42, null, W),
-            F = [CanvasUtils.loadImage("img/no-particules-out.png"), CanvasUtils
-                .loadImage("img/no-particules-in.png"), CanvasUtils.loadImage(
-                    "img/no-particules-click.png")
+            F = [CanvasUtils.loadImage("img/no-particules-out.png"),
+                CanvasUtils.loadImage("img/no-particules-in.png"),
+                CanvasUtils.loadImage("img/no-particules-click.png")
             ],
             P = GUI.createButton(54, 42, null, F),
-            x = [CanvasUtils.loadImage("img/fuel-button-out.png"), CanvasUtils
-                .loadImage("img/fuel-button-in.png"), CanvasUtils.loadImage(
-                    "img/fuel-button-click.png")
+            x = [CanvasUtils.loadImage("img/fuel-button-out.png"),
+                CanvasUtils.loadImage("img/fuel-button-in.png"),
+                CanvasUtils.loadImage("img/fuel-button-click.png")
             ],
             V = GUI.createButton(46, 46, null, x),
-            B = [CanvasUtils.loadImage("img/fuel1-button-out.png"), CanvasUtils
-                .loadImage("img/fuel1-button-in.png"), CanvasUtils.loadImage(
-                    "img/fuel1-button-click.png")
+            B = [CanvasUtils.loadImage("img/fuel1-button-out.png"),
+                CanvasUtils.loadImage("img/fuel1-button-in.png"),
+                CanvasUtils.loadImage("img/fuel1-button-click.png")
             ],
             k = GUI.createButton(46, 46, null, B),
             H = [CanvasUtils.loadImage("img/energy-cells-button-out.png"),
@@ -7268,8 +7336,8 @@ var Border = function () {
             ],
             Y = GUI.createButton(46, 46, null, H),
             G = [CanvasUtils.loadImage("img/high-resolution-out.png"),
-                CanvasUtils.loadImage("img/high-resolution-in.png"), CanvasUtils
-                .loadImage("img/high-resolution-click.png")
+                CanvasUtils.loadImage("img/high-resolution-in.png"),
+                CanvasUtils.loadImage("img/high-resolution-click.png")
             ],
             K = GUI.createButton(54, 42, null, G),
             z = [CanvasUtils.loadImage("img/medium-resolution-out.png"),
@@ -7278,27 +7346,27 @@ var Border = function () {
             ],
             J = GUI.createButton(54, 42, null, z),
             X = [CanvasUtils.loadImage("img/low-resolution-out.png"),
-                CanvasUtils.loadImage("img/low-resolution-in.png"), CanvasUtils
-                .loadImage("img/low-resolution-click.png")
+                CanvasUtils.loadImage("img/low-resolution-in.png"),
+                CanvasUtils.loadImage("img/low-resolution-click.png")
             ],
             j = GUI.createButton(54, 42, null, X),
-            Q = [CanvasUtils.loadImage("img/azerty-button-out.png"), CanvasUtils
-                .loadImage("img/azerty-button-in.png"), CanvasUtils.loadImage(
-                    "img/azerty-button-click.png")
+            Q = [CanvasUtils.loadImage("img/azerty-button-out.png"),
+                CanvasUtils.loadImage("img/azerty-button-in.png"),
+                CanvasUtils.loadImage("img/azerty-button-click.png")
             ],
             q = GUI.createButton(81, 33, null, Q),
-            Z = [CanvasUtils.loadImage("img/qwerty-button-out.png"), CanvasUtils
-                .loadImage("img/qwerty-button-in.png"), CanvasUtils.loadImage(
-                    "img/qwerty-button-click.png")
+            Z = [CanvasUtils.loadImage("img/qwerty-button-out.png"),
+                CanvasUtils.loadImage("img/qwerty-button-in.png"),
+                CanvasUtils.loadImage("img/qwerty-button-click.png")
             ],
             $ = GUI.createButton(87, 33, null, Z),
-            ee = [CanvasUtils.loadImage("img/sound-on-out.png"), CanvasUtils
-                .loadImage("img/sound-on-in.png"), CanvasUtils.loadImage(
-                    "img/sound-on-click.png")
+            ee = [CanvasUtils.loadImage("img/sound-on-out.png"),
+                CanvasUtils.loadImage("img/sound-on-in.png"),
+                CanvasUtils.loadImage("img/sound-on-click.png")
             ],
-            ie = [CanvasUtils.loadImage("img/sound-off-out.png"), CanvasUtils
-                .loadImage("img/sound-off-in.png"), CanvasUtils.loadImage(
-                    "img/sound-off-click.png")
+            ie = [CanvasUtils.loadImage("img/sound-off-out.png"),
+                CanvasUtils.loadImage("img/sound-off-in.png"),
+                CanvasUtils.loadImage("img/sound-off-click.png")
             ],
             ae = GUI.createButton(51, 36, null, ee),
             _e = GUI.createButton(51, 36, null, ie),
@@ -7330,16 +7398,16 @@ var Border = function () {
             fe = 0;
 
         function De() {
-            Client.update(), delta > 5e3 && Client.sendPacket("[20]"), 0 ===
-                t && (Client.sendMove(), Client.sendShift()), Mouse.state ===
-                Mouse.__MOUSE_DOWN__ ? Client.sendFastMouseAngle() : Client
-                .sendMouseAngle(), Mouse.state === Mouse.__MOUSE_DOWN__ && 0 ===
-                World.PLAYER.click ? 1 === World.PLAYER.isBuilding ? (World
-                    .PLAYER.click = -1, 1 === World.PLAYER.canBuild && Client
-                    .sendPacket(window.JSON.stringify([14, World.PLAYER
-                        .buildRotate, World.PLAYER.iBuild, World.PLAYER
-                        .jBuild
-                    ]))) : (World.PLAYER.click = 1, World.interaction = -1,
+            Client.update(), delta > 5e3 && Client.sendPacket("[20]"),
+                0 === t && (Client.sendMove(), Client.sendShift()),
+                Mouse.state === Mouse.__MOUSE_DOWN__ ? Client
+                .sendFastMouseAngle() : Client.sendMouseAngle(), Mouse.state ===
+                Mouse.__MOUSE_DOWN__ && 0 === World.PLAYER.click ? 1 === World
+                .PLAYER.isBuilding ? (World.PLAYER.click = -1, 1 === World
+                    .PLAYER.canBuild && Client.sendPacket(window.JSON.stringify(
+                        [14, World.PLAYER.buildRotate, World.PLAYER.iBuild,
+                            World.PLAYER.jBuild
+                        ]))) : (World.PLAYER.click = 1, World.interaction = -1,
                     Client.sendMouseDown()) : Mouse.state === Mouse
                 .__MOUSE_UP__ && (1 === World.PLAYER.isBuilding ? (h = 0, World
                         .PLAYER.click = 0) : 1 === World.PLAYER.click ? (h = 0,
@@ -7347,7 +7415,8 @@ var Border = function () {
                     h && (World.PLAYER.click = 1, World.interaction = -1, Client
                         .sendMouseDown()))
         }
-        var ve, Ne, Me, We, Ce, Fe, Pe, xe, Ve, Be, ke, He, Ye, Ge, Ke, ze, Je,
+        var ve, Ne, Me, We, Ce, Fe, Pe, xe, Ve, Be, ke, He, Ye, Ge,
+            Ke, ze, Je,
             Xe, je, Qe, qe = [];
         var Ze = new Mouse.LocalMouseEvent,
             $e = new Keyboard.LocalKeyboardEvent,
@@ -7399,17 +7468,18 @@ var Border = function () {
                 window.Math.floor(174 * scaleby) + window.Math.floor(-7 *
                     scaleby) + i, Ne.pos.x = canw2 - window.Math.floor(134 *
                     scaleby) + e, Ne.pos.y = window.Math.max(0, canh2 - window
-                    .Math.floor(133 * scaleby)) + i, Me.pos.x = canw2 - window
-                .Math.floor(81 * scaleby) + e, Me.pos.y = window.Math.max(0,
-                    canh2 - window.Math.floor(82 * scaleby)) + i, We.pos.x =
-                canw2 - window.Math.floor(297 * scaleby) + e, We.pos.y = window
-                .Math.max(0, canh2 - window.Math.floor(202 * scaleby)) + i, Ce
-                .pos.x = canw2 - window.Math.floor(206 * scaleby) + e, Ce.pos
-                .y = window.Math.max(0, canh2 - window.Math.floor(206 *
-                    scaleby)) + i, Fe.pos.x = window.Math.floor(5 * scaleby) -
-                e, Fe.pos.y = window.Math.floor(5 * scaleby) - i, Pe.pos.x =
-                canw - window.Math.floor(233 * scaleby) + window.Math.floor(-6 *
-                    scaleby) - e, Pe.pos.y = window.Math.floor(5 * scaleby) - i,
+                    .Math.floor(133 * scaleby)) + i,
+                Me.pos.x = canw2 - window.Math.floor(81 * scaleby) + e, Me.pos
+                .y = window.Math.max(0, canh2 - window.Math.floor(82 *
+                scaleby)) + i, We.pos.x = canw2 - window.Math.floor(297 *
+                    scaleby) + e, We.pos.y = window.Math.max(0, canh2 - window
+                    .Math.floor(202 * scaleby)) + i, Ce.pos.x = canw2 - window
+                .Math.floor(206 * scaleby) + e, Ce.pos.y = window.Math.max(0,
+                    canh2 - window.Math.floor(206 * scaleby)) + i,
+                Fe.pos.x = window.Math.floor(5 * scaleby) - e, Fe.pos.y = window
+                .Math.floor(5 * scaleby) - i, Pe.pos.x = canw - window.Math
+                .floor(233 * scaleby) + window.Math.floor(-6 * scaleby) - e, Pe
+                .pos.y = window.Math.floor(5 * scaleby) - i,
                 xe.pos.x = canw2 - window.Math.floor(258 * scaleby) - e, xe.pos
                 .y = window.Math.max(0, canh2 - window.Math.floor(137 *
                     scaleby)) - i, Ve.pos.x = canw2 - window.Math.floor(256 *
@@ -7486,7 +7556,8 @@ var Border = function () {
                     }
                 } else if (1 === s)
                 for (var n = World.PLAYER.chest, m = 0; m < 4; m++) 0 !== n[m][
-                    0] && Le[m].trigger();
+                    0
+                ] && Le[m].trigger();
             else if (1 === g)
                 if (-1 === World.PLAYER.team) {
                     E.trigger();
@@ -7604,8 +7675,9 @@ var Border = function () {
                                     World.PLAYER.craftSelected
                                 ])), AudioUtils.playFx(AudioUtils._fx.craft, .8,
                                     0)) : (Client.sendPacket(window.JSON
-                                .stringify([22, World.PLAYER.craftSelected])
-                                ), AudioUtils.playFx(AudioUtils._fx.craft,
+                                .stringify([22,
+                                    World.PLAYER.craftSelected
+                                ])), AudioUtils.playFx(AudioUtils._fx.craft,
                                 .8, 0)), O.setState(GUI.__BUTTON_OUT__)) : 1 ===
                         A.trigger() && (Client.sendPacket(window.JSON.stringify(
                             [23])), World.PLAYER.crafting = 0, A.setState(
@@ -7619,8 +7691,8 @@ var Border = function () {
                         .buildSkillList(SKILLS.__SKILL__), AudioUtils.playFx(
                             AudioUtils._fx.button, 1, 0);
                     else if (1 === S[SKILLS.__BUILDING__].trigger()) World
-                    .buildSkillList(SKILLS.__BUILDING__), AudioUtils.playFx(
-                        AudioUtils._fx.button, 1, 0);
+                    .buildSkillList(SKILLS.__BUILDING__),
+                    AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
                 else if (1 === S[SKILLS.__CLOTHE__].trigger()) World
                     .buildSkillList(SKILLS.__CLOTHE__), AudioUtils.playFx(
                         AudioUtils._fx.button, 1, 0);
@@ -7651,8 +7723,9 @@ var Border = function () {
                 else if (1 === U[AREAS.__FIRE__].trigger() || 1 === U[AREAS
                         .__BBQ__].trigger() || 1 === U[AREAS.__COMPOST__]
                     .trigger()) Client.sendPacket(window.JSON.stringify([World
-                    .PLAYER.packetId, World.PLAYER.buildingId, World
-                    .PLAYER.buildingPid
+                    .PLAYER.packetId,
+                    World.PLAYER.buildingId, World.PLAYER
+                    .buildingPid
                 ])), AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
                 else if (1 === U[AREAS.__WORKBENCH__].trigger()) Client
                     .sendPacket(window.JSON.stringify([World.PLAYER.packetId,
@@ -7676,13 +7749,15 @@ var Border = function () {
                     ])), AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
                 else if (1 === U[AREAS.__TESLA__].trigger()) Client.sendPacket(
                     window.JSON.stringify([World.PLAYER.packetId, World
-                        .PLAYER.buildingId, World.PLAYER.buildingPid
+                        .PLAYER.buildingId,
+                        World.PLAYER.buildingPid
                     ])), AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
                 else if (1 === U[AREAS.__SMELTER__].trigger() || 1 === U[AREAS
                         .__EXTRACTOR__].trigger() || 1 === U[AREAS.__AGITATOR__]
                     .trigger()) Client.sendPacket(window.JSON.stringify([World
-                    .PLAYER.packetId, World.PLAYER.buildingId, World
-                    .PLAYER.buildingPid
+                    .PLAYER.packetId,
+                    World.PLAYER.buildingId, World.PLAYER
+                    .buildingPid
                 ])), AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
                 else {
                     for (var o = World.PLAYER.craftLen, t = 0; t < o; t++)
@@ -7695,7 +7770,8 @@ var Border = function () {
                     if (1 === World.PLAYER.isInBuilding) {
                         for (t = 0; t < World.PLAYER.building.len; t++)
                             if (1 === ce[t].trigger()) return Client.sendPacket(
-                                    window.JSON.stringify([19, t])),
+                                    window.JSON.stringify(
+                                        [19, t])),
                                 void AudioUtils.playFx(AudioUtils._fx
                                     .button, 1, 0);
                         if (World.PLAYER.craftArea === AREAS.__FIRE__ || World
@@ -7703,16 +7779,18 @@ var Border = function () {
                             .craftArea === AREAS.__COMPOST__) {
                             if (255 !== World.PLAYER.building.fuel && 1 === V
                                 .trigger()) return Client.sendPacket(window.JSON
-                                    .stringify([24])), void AudioUtils
-                                .playFx(AudioUtils._fx.button, 1, 0)
+                                .stringify(
+                                    [24])), void AudioUtils.playFx(
+                                AudioUtils._fx.button, 1, 0)
                         } else if (World.PLAYER.craftArea === AREAS
                             .__SMELTER__ || World.PLAYER.craftArea === AREAS
                             .__EXTRACTOR__ || World.PLAYER.craftArea === AREAS
                             .__AGITATOR__) {
                             if (255 !== World.PLAYER.building.fuel && 1 === k
                                 .trigger()) return Client.sendPacket(window.JSON
-                                    .stringify([24])), void AudioUtils
-                                .playFx(AudioUtils._fx.button, 1, 0)
+                                .stringify(
+                                    [24])), void AudioUtils.playFx(
+                                AudioUtils._fx.button, 1, 0)
                         } else if (World.PLAYER.craftArea === AREAS.__TESLA__ &&
                             255 !== World.PLAYER.building.fuel && 1 === Y
                             .trigger()) return Client.sendPacket(window.JSON
@@ -7745,22 +7823,23 @@ var Border = function () {
                             for (t = 0; t < Ee.length; t++) 0 !== World.teams[t]
                                 .leader && (1 === Ee[v].trigger() && (Client
                                     .sendPacket(window.JSON.stringify([30,
-                                        t])), AudioUtils.playFx(AudioUtils
-                                        ._fx.button, 1, 0), World.PLAYER
+                                        t
+                                    ])), AudioUtils.playFx(AudioUtils._fx
+                                        .button, 1, 0), World.PLAYER
                                     .teamDelay = window.Date.now()), v++)
                         }
                     } else if (1 === World.PLAYER.teamLeader) {
                     if (1 === L.trigger() && 0 === World.PLAYER.teamLocked)
                         return Client.sendPacket(window.JSON.stringify([33])),
-                            World.PLAYER.teamLocked = 1, void AudioUtils.playFx(
-                                AudioUtils._fx.button, 1, 0);
+                            World.PLAYER.teamLocked = 1,
+                            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
                     if (1 === p.trigger() && 1 === World.PLAYER.teamLocked)
                         return Client.sendPacket(window.JSON.stringify([34])),
-                            World.PLAYER.teamLocked = 0, void AudioUtils.playFx(
-                                AudioUtils._fx.button, 1, 0);
+                            World.PLAYER.teamLocked = 0,
+                            void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
                     if (1 === R.trigger()) return Client.sendPacket(window.JSON
-                        .stringify([29])), void AudioUtils.playFx(
-                        AudioUtils._fx.button, 1, 0);
+                            .stringify([29])),
+                        void AudioUtils.playFx(AudioUtils._fx.button, 1, 0);
                     v = 0;
                     var N = World.teams[World.PLAYER.team];
                     for (t = 0; t < World.players.length; t++)
@@ -7770,8 +7849,9 @@ var Border = function () {
                                 if (1 === ue[v].trigger()) return Client
                                     .sendPacket(window.JSON.stringify([32, W
                                         .id
-                                    ])), void AudioUtils.playFx(AudioUtils
-                                        ._fx.button, 1, 0);
+                                    ])),
+                                    void AudioUtils.playFx(AudioUtils._fx
+                                        .button, 1, 0);
                                 v++
                             }
                         } else v++
@@ -7794,16 +7874,22 @@ var Border = function () {
                         z = F[t][3],
                         X = INVENTORY[B];
                     if (1 === i.begin) {
-                        if (i.id !== t) return F[t][0] === F[i.id][0] && X
-                            .stack > F[t][1] && X.stack > F[i.id][1] ? (
-                                Client.sendPacket(window.JSON.stringify([10,
-                                    F[i.id][0], F[i.id][1], F[i.id][
+                        if (i.id !== t) return F[t][0] === F[i.id][
+                                0
+                            ] && X.stack > F[t][1] && X.stack > F[i.id][1] ?
+                            (Client.sendPacket(window.JSON.stringify([10,
+                                    F[i.id][0], F[i.id][
+                                        1
+                                    ], F[i.id][
                                         2
                                     ], F[t][1], F[t][2]
                                 ])), World.PLAYER.drag.begin = 0,
                                 void AudioUtils.playFx(AudioUtils._fx.drag,
                                     1, 0)) : (F[t][0] = F[i.id][0], F[t][
-                                1] = F[i.id][1], F[t][2] = F[i.id][2], F[t][
+                                    1
+                                ] = F[i.id][1], F[t][2] = F[i.id][
+                                    2
+                                ], F[t][
                                     3
                                 ] = F[i.id][3], F[i.id][0] = B, F[i.id][1] =
                                 H, F[i.id][2] = G, F[i.id][3] = z, 0 !==
@@ -7818,15 +7904,19 @@ var Border = function () {
                         World.PLAYER.drag.begin = 0
                     }
                     0 !== B && (1 === s && 3 !== e.which ? (Client.sendPacket(
-                                window.JSON.stringify([26, B, H, G, z])),
-                            AudioUtils.playFx(AudioUtils._fx.drag, 1, 0)) :
-                        3 === e.which ? (Client.sendPacket(window.JSON
-                                .stringify([9, B, H, G, z])), AudioUtils
-                            .playFx(AudioUtils._fx.throwLoot, 1, 0)) : e
-                        .ctrlKey ? (AudioUtils.playFx(AudioUtils._fx.drag,
-                            .6, 0), Client.sendPacket(window.JSON
-                            .stringify([11, B, H, G]))) : Client.sendPacket(
-                            window.JSON.stringify([8, B, H, G, z])))
+                        window.JSON.stringify([26,
+                            B, H, G, z
+                        ])), AudioUtils.playFx(AudioUtils._fx.drag,
+                        1, 0)) : 3 === e.which ? (Client.sendPacket(
+                            window.JSON.stringify([9, B, H, G, z])),
+                        AudioUtils.playFx(AudioUtils._fx.throwLoot, 1,
+                            0)) : e.ctrlKey ? (AudioUtils.playFx(
+                            AudioUtils._fx.drag, .6, 0), Client
+                        .sendPacket(window.JSON.stringify([11, B, H,
+                            G]))) : Client.sendPacket(window.JSON
+                        .stringify([
+                            8, B, H, G, z
+                        ])))
                 } if (1 === s && 0 === x) {
                 var Q = Me.pos;
                 (Mouse.sx < Q.x || Mouse.sx > Q.x + 161 * scaleby || Mouse.sy <
@@ -7835,9 +7925,9 @@ var Border = function () {
             }
             if (1 === i.begin) {
                 t = i.id;
-                Client.sendPacket(window.JSON.stringify([9, F[t][0], F[t][1], F[
-                    t][2], F[t][3]])), AudioUtils.playFx(AudioUtils._fx
-                    .throwLoot, 1, 0)
+                Client.sendPacket(window.JSON.stringify([9, F[t][0],
+                    F[t][1], F[t][2], F[t][3]
+                ])), AudioUtils.playFx(AudioUtils._fx.throwLoot, 1, 0)
             }
             i.begin = 0
         }
@@ -7880,7 +7970,8 @@ var Border = function () {
                 Re.trigger()
             } else if (1 === s)
                 for (var _ = World.PLAYER.chest, o = 0; o < 4; o++) 0 !== _[o][
-                    0] && Le[o].trigger();
+                    0
+                ] && Le[o].trigger();
             else if (1 === g)
                 if (-1 === World.PLAYER.team) {
                     E.trigger();
@@ -7919,8 +8010,8 @@ var Border = function () {
                     if (chatinput.value.length > 0)
                         if (1 === World.PLAYER.admin && "!" === chatinput.value[
                                 0])
-                            for (var i = chatinput.value.split("!"), a = 1; a <
-                                i.length; a++) {
+                            for (var i = chatinput.value.split("!"),
+                                    a = 1; a < i.length; a++) {
                                 var _ = "!" + i[a]; - 1 === _.indexOf(
                                     "public") && (_ = _.split(" ").join("")),
                                     Client.sendChatMessage(_), a <= 20 && World
@@ -7974,8 +8065,10 @@ var Border = function () {
                             1, 0)) : e.ctrlKey ? (AudioUtils.playFx(
                                 AudioUtils._fx.drag, .6, 0), Client
                             .sendPacket(window.JSON.stringify([11, s, m,
-                                c]))) : Client.sendPacket(window.JSON
-                            .stringify([8, s, m, c, E]))
+                                c
+                            ]))) : Client.sendPacket(window.JSON.stringify([
+                            8, s, m, c, E
+                        ]))
                     }
                 }
             } else 67 === e.keyCode && 0 === World.PLAYER.ghoul ? 0 === l ? (
@@ -8019,14 +8112,16 @@ var Border = function () {
                             .xInteract2 && l > Game.yInteract2 && r < Game
                             .xInteract2 + Game.widthInteract && l < Game
                             .yInteract2 + Game.heightInteract) {
-                            fe = 1, $e.keyCode = 70, $e.charCode = 70, ci($e);
+                            fe = 1, $e.keyCode = 70, $e.charCode = 70,
+                                ci($e);
                             continue
                         }
                     case 0:
                         if (r > Game.xInteract && l > Game.yInteract && r < Game
                             .xInteract + Game.widthInteract && l < Game
                             .yInteract + Game.heightInteract) {
-                            fe = 1, $e.keyCode = 69, $e.charCode = 69, ci($e);
+                            fe = 1, $e.keyCode = 69, $e.charCode = 69,
+                                ci($e);
                             continue
                         }
                     }
@@ -8174,19 +8269,19 @@ var Border = function () {
                     null, v));
                 for (e = 30, i = 0; i < 171; i++) pe.push(GUI.createButton(
                     e, e, null, le));
-                Game.autoloot = pe, Game.BUTTON_CLOSE_BOX = I, Game
-                    .openBox = c, Game.inventory = se, Game.craft = ge, Game
-                    .recipe = me, Game.preview = Re, Game.queue = ce, Game
-                    .tools = Ie, Game.chest = Le, Game.kick = ue, Game
-                    .join = Ee, Game.getSkillBoxState = o, Game
-                    .getBoxState = _, Game.teamName = "", Game
-                    .acceptMember = T, Game.refuseMember = w, Game
-                    .inventoryItemNumber = we, Game.inventoryAmmoNumber =
-                    Te, Game.xInteract = 0, Game.yInteract = 0, Game
-                    .widthInteract = 0, Game.heightInteract = 0, Game
-                    .xInteract2 = 0, Game.yInteract2 = 0, S[SKILLS
-                        .__BUILDING__] = GUI.createButton(42, 42, [
-                        "img/building-button-out.png",
+                Game.autoloot = pe, Game.BUTTON_CLOSE_BOX = I,
+                    Game.openBox = c, Game.inventory = se, Game.craft = ge,
+                    Game.recipe = me, Game.preview = Re, Game.queue = ce,
+                    Game.tools = Ie, Game.chest = Le, Game.kick = ue, Game
+                    .join = Ee,
+                    Game.getSkillBoxState = o, Game.getBoxState = _, Game
+                    .teamName = "", Game.acceptMember = T,
+                    Game.refuseMember = w, Game.inventoryItemNumber = we,
+                    Game.inventoryAmmoNumber = Te, Game.xInteract = 0,
+                    Game.yInteract = 0, Game.widthInteract = 0,
+                    Game.heightInteract = 0, Game.xInteract2 = 0,
+                    Game.yInteract2 = 0, S[SKILLS.__BUILDING__] = GUI
+                    .createButton(42, 42, ["img/building-button-out.png",
                         "img/building-button-in.png",
                         "img/building-button-click.png"
                     ]), S[SKILLS.__SKILL__] = GUI.createButton(42, 42, [
@@ -8323,11 +8418,12 @@ var Border = function () {
                     .getItem("showLeaderboard") ? (Ke.hide(), ze.show()) : (
                         ze.hide(), Ke.show()), window.document
                     .getElementById("bod").style.backgroundColor =
-                    "#46664D", h = 0, Home.ads++, Game.teamName = "", Game
-                    .teamNameValid = 0, AudioManager.startGame(), World
-                    .gameMode === World.__BR__ ? (Ge.hide(), ke.show()) :
-                    World.PLAYER.ghoul > 0 ? (Ge.hide(), ke.hide()) : (Ge
-                        .show(), ke.show()), CanvasUtils.setRenderer(Game),
+                    "#46664D",
+                    h = 0, Home.ads++, Game.teamName = "", Game
+                    .teamNameValid = 0, AudioManager.startGame(),
+                    World.gameMode === World.__BR__ ? (Ge.hide(), ke
+                .show()) : World.PLAYER.ghoul > 0 ? (Ge.hide(), ke.hide()) :
+                    (Ge.show(), ke.show()), CanvasUtils.setRenderer(Game),
                     di = 1e3, ti = 1e3, ni = oi, _i = 1, li()
             },
             update: li,
@@ -8335,14 +8431,15 @@ var Border = function () {
                 if (0 !== function () {
                         if (1 === ii) {
                             if (li(), di < 0) return ii = 0, Be.setState(GUI
-                                    .__BUTTON_OUT__), ke.setState(GUI
-                                    .__BUTTON_OUT__), He.setState(GUI
-                                    .__BUTTON_OUT__), Ye.setState(GUI
-                                    .__BUTTON_OUT__), Ge.setState(GUI
-                                    .__BUTTON_OUT__), Ke.setState(GUI
-                                    .__BUTTON_OUT__), ze.setState(GUI
-                                    .__BUTTON_OUT__), Xe.display =
-                                "none", Qe.run(), 0;
+                                    .__BUTTON_OUT__),
+                                ke.setState(GUI.__BUTTON_OUT__), He
+                                .setState(GUI.__BUTTON_OUT__),
+                                Ye.setState(GUI.__BUTTON_OUT__), Ge
+                                .setState(GUI.__BUTTON_OUT__),
+                                Ke.setState(GUI.__BUTTON_OUT__), ze
+                                .setState(GUI.__BUTTON_OUT__),
+                                Xe.display = "none", Qe.run(),
+                                0;
                             di -= delta
                         } else 1 === _i && (li(), di < 0 && (_i = 0, World
                             .PLAYER.timePlayed = window.Date.now(),
@@ -8422,8 +8519,8 @@ var Border = function () {
                             .disable ? (Pe.draw(), Render.leaderboard(Pe.pos
                                 .x, Pe.pos.y), Ke.draw()) : ze.draw()), MOD
                         .playerList) {
-                        ctx.fillStyle = "#000", ctx.lineWidth = 6, ctx
-                            .globalAlpha = .5, ctx.fillRect(0, 0, canw,
+                        ctx.fillStyle = "#000", ctx.lineWidth = 6,
+                            ctx.globalAlpha = .5, ctx.fillRect(0, 0, canw,
                                 canh), ctx.globalAlpha = 1, ctx.fillStyle =
                             "#fff";
                         var e = ctx.font;
@@ -8465,22 +8562,24 @@ var Border = function () {
                             ctx.globalAlpha = .3;
                             var t = canw2ns - 1.5 * canw4ns,
                                 m = canh2ns + canw4ns / 4;
-                            CanvasUtils.circle(ctx, t, m, 60), CanvasUtils
-                                .drawPath(ctx, "#000000"), CanvasUtils
-                                .circle(ctx, t + window.Math.cos(Ae) * be *
-                                    scaleby, m + window.Math.sin(Ae) * be *
-                                    scaleby, 30), CanvasUtils.drawPath(ctx,
-                                    "#FFFFFF"), ctx.globalAlpha = 1
+                            CanvasUtils.circle(ctx, t, m, 60),
+                                CanvasUtils.drawPath(ctx, "#000000"),
+                                CanvasUtils.circle(ctx, t + window.Math.cos(
+                                        Ae) * be * scaleby, m + window.Math
+                                    .sin(Ae) * be * scaleby, 30),
+                                CanvasUtils.drawPath(ctx, "#FFFFFF"), ctx
+                                .globalAlpha = 1
                         }
                         if (1 === Se) {
                             ctx.globalAlpha = .3;
                             t = canw2ns + 1.5 * canw4ns, m = canh2ns +
                                 canw4ns / 4;
-                            CanvasUtils.circle(ctx, t, m, 60), CanvasUtils
-                                .drawPath(ctx, "#000000"), CanvasUtils
-                                .circle(ctx, t + 25 * window.Math.cos(Mouse
-                                        .angle) * scaleby, m + 25 * window
-                                    .Math.sin(Mouse.angle) * scaleby, 30),
+                            CanvasUtils.circle(ctx, t, m, 60),
+                                CanvasUtils.drawPath(ctx, "#000000"),
+                                CanvasUtils.circle(ctx, t + 25 * window.Math
+                                    .cos(Mouse.angle) * scaleby, m + 25 *
+                                    window.Math.sin(Mouse.angle) * scaleby,
+                                    30),
                                 CanvasUtils.drawPath(ctx, "#FFFFFF"), ctx
                                 .globalAlpha = 1
                         }
@@ -8632,11 +8731,12 @@ var Border = function () {
             },
             run: function () {
                 Client.onError = e, Client.onOpen = i, World.PLAYER
-                    .isBuilding = 0, World.PLAYER.id = 0, Render
-                    .setDetection(0), Render.stopPoisonEffect();
+                    .isBuilding = 0, World.PLAYER.id = 0,
+                    Render.setDetection(0), Render.stopPoisonEffect();
                 for (var a = 0; a < World.PLAYER.inventory.length; a++)
                     for (var _ = 0; _ < 4; _++) World.PLAYER.inventory[a][
-                        _] = 0;
+                        _
+                    ] = 0;
                 var o = KIT[window.Math.min(KIT.length - 1, World.PLAYER
                     .level)];
                 for (a = 0; a < o.length; a++) {
@@ -8648,15 +8748,17 @@ var Border = function () {
                     d[1] = t.amount, d[2] = 0, d[3] = t.life, d[0] = t.id
                 }
                 w = 5e3, Loader.getURLData("admin"), CanvasUtils
-                    .setRenderer(Score), h = 500, U = 500, f = S, y = 1, v()
+                    .setRenderer(Score), h = 500, U = 500, f = S,
+                    y = 1, v()
             },
             update: v,
             draw: function () {
                 0 !== function () {
                     if (1 === A) {
                         if (v(), h < 0) return A = 0, L.setState(GUI
-                            .__BUTTON_OUT__), p.setState(GUI
-                            .__BUTTON_OUT__), R.run(), 0;
+                                .__BUTTON_OUT__),
+                            p.setState(GUI.__BUTTON_OUT__), R.run(),
+                            0;
                         h -= delta
                     } else 1 === y && (v(), h < 0 && (y = 0, window
                         .document.getElementById("bod").style
@@ -8720,12 +8822,14 @@ var Border = function () {
                                     window.undefined, window.undefined,
                                     "#000000", 12), n.img = d, n.img
                                 .isLoaded = 1, l.img = r, l.img
-                                .isLoaded = 1), CanvasUtils.drawImageHd(
-                                n, a + 108, L + 117, 0, 0, 0, 1),
+                                .isLoaded = 1),
+                            CanvasUtils.drawImageHd(n, a + 108, L + 117,
+                                0, 0, 0, 1),
                             CanvasUtils.drawImageHd(l, a + 288, L + 147,
-                                0, 0, 0, 1), null !== I && c === World
-                            .PLAYER.kill || (c = World.PLAYER.kill, I =
-                                GUI.renderText(c + "",
+                                0, 0, 0, 1),
+                            null !== I && c === World.PLAYER.kill || (
+                                c = World.PLAYER.kill, I = GUI
+                                .renderText(c + "",
                                     "'Viga', sans-serif", "#FFFFFF", 38,
                                     400, window.undefined, 16, 25,
                                     window.undefined, window.undefined,
@@ -8744,8 +8848,9 @@ var Border = function () {
                         for (var y = 0; y < w; y++) {
                             var S = p[y];
                             0 !== R[y][0] && Render.buttonInv(S, R[y],
-                                A, O, Game.inventoryItemNumber, Game
-                                .inventoryAmmoNumber), A += T
+                                    A, O, Game.inventoryItemNumber, Game
+                                    .inventoryAmmoNumber),
+                                A += T
                         }
                         if (scaleby = b, 1 === Home.adblocker) {
                             var U = MathUtils.Ease.inOutQuad(o > 500 ? (
@@ -8753,7 +8858,8 @@ var Border = function () {
                             ctx.globalAlpha = .7, CanvasUtils
                                 .drawImageHd(_, a + 288, L + 193, 0, 0,
                                     0, 1 + .04 * U), ctx.globalAlpha =
-                                1, o = (o + delta) % 1e3
+                                1,
+                                o = (o + delta) % 1e3
                         }
                     }(), Render.alertServer(), AudioManager.scheduler(),
                     w > 0 ? (w = window.Math.max(0, w - delta),
@@ -8894,8 +9000,9 @@ var Border = function () {
             },
             run: function () {
                 Client.onError = e, Client.onOpen = i, World.PLAYER
-                    .isBuilding = 0, World.PLAYER.id = 0, Render
-                    .setDetection(0), Render.stopPoisonEffect(), u = 5e3,
+                    .isBuilding = 0, World.PLAYER.id = 0,
+                    Render.setDetection(0), Render.stopPoisonEffect(), u =
+                    5e3,
                     CanvasUtils.setRenderer(Rank), b = 500, A = 500, y = O,
                     T = 1, U()
             },
@@ -8904,8 +9011,9 @@ var Border = function () {
                 0 !== function () {
                     if (1 === R) {
                         if (U(), b < 0) return R = 0, c.setState(GUI
-                            .__BUTTON_OUT__), I.setState(GUI
-                            .__BUTTON_OUT__), E.run(), 0;
+                                .__BUTTON_OUT__),
+                            I.setState(GUI.__BUTTON_OUT__), E.run(),
+                            0;
                         b -= delta
                     } else 1 === T && (U(), b < 0 && (T = 0, window
                         .document.getElementById("bod").style
@@ -9019,11 +9127,12 @@ var Border = function () {
                     [-1, -1],
                     [-1, -1],
                     [-1, -1]
-                ], World.gauges.rad.value = World.gauges.rad._max, World.gauges
-                .rad.decrease = -1, World.allocatePlayers([0, window.document
-                    .getElementById("nicknameInput").value
-                ]), World.initDayCycle(0, 0), Render.reset(window.undefined, 0,
-                    .07), Render.scale = 0, Entitie.removeAll(), World.PLAYER
+                ], World.gauges.rad.value = World.gauges.rad._max,
+                World.gauges.rad.decrease = -1, World.allocatePlayers(
+                    [0, window.document.getElementById("nicknameInput").value]),
+                World.initDayCycle(0, 0), Render.reset(window.undefined, 0,
+                .07),
+                Render.scale = 0, Entitie.removeAll(), World.PLAYER
                 .buildRotate = 0, World.PLAYER.blueprint = 0, H = 0,
                 function (e, i, a, _, o, t) {
                     setEntitie(Entitie.get(e, H, H, i), e, H, H, i, a, _, a, _,
@@ -9032,30 +9141,31 @@ var Border = function () {
         }
 
         function s() {
-            e = 0, g.setState(GUI.__BUTTON_OUT__), a = 0, _ = 0, isCraftOpen =
-                0, isChestOpen = 0, isTeamOpen = 0, World.releaseBuilding()
+            e = 0, g.setState(GUI.__BUTTON_OUT__), a = 0, _ = 0,
+                isCraftOpen = 0, isChestOpen = 0, isTeamOpen = 0,
+                World.releaseBuilding()
         }
         var g = GUI.createButton(43, 43, ["img/close-box-out.png",
                 "img/close-box-in.png", "img/close-box-click.png"
             ]),
             m = [CanvasUtils.loadImage("img/high-particules-out.png"),
-                CanvasUtils.loadImage("img/high-particules-in.png"), CanvasUtils
-                .loadImage("img/high-particules-click.png")
+                CanvasUtils.loadImage("img/high-particules-in.png"),
+                CanvasUtils.loadImage("img/high-particules-click.png")
             ],
             c = GUI.createButton(54, 42, null, m),
             I = [CanvasUtils.loadImage("img/low-particules-out.png"),
-                CanvasUtils.loadImage("img/low-particules-in.png"), CanvasUtils
-                .loadImage("img/low-particules-click.png")
+                CanvasUtils.loadImage("img/low-particules-in.png"),
+                CanvasUtils.loadImage("img/low-particules-click.png")
             ],
             E = GUI.createButton(54, 42, null, I),
-            u = [CanvasUtils.loadImage("img/no-particules-out.png"), CanvasUtils
-                .loadImage("img/no-particules-in.png"), CanvasUtils.loadImage(
-                    "img/no-particules-click.png")
+            u = [CanvasUtils.loadImage("img/no-particules-out.png"),
+                CanvasUtils.loadImage("img/no-particules-in.png"),
+                CanvasUtils.loadImage("img/no-particules-click.png")
             ],
             L = GUI.createButton(54, 42, null, u),
             p = [CanvasUtils.loadImage("img/high-resolution-out.png"),
-                CanvasUtils.loadImage("img/high-resolution-in.png"), CanvasUtils
-                .loadImage("img/high-resolution-click.png")
+                CanvasUtils.loadImage("img/high-resolution-in.png"),
+                CanvasUtils.loadImage("img/high-resolution-click.png")
             ],
             R = GUI.createButton(54, 42, null, p),
             w = [CanvasUtils.loadImage("img/medium-resolution-out.png"),
@@ -9064,27 +9174,27 @@ var Border = function () {
             ],
             T = GUI.createButton(54, 42, null, w),
             O = [CanvasUtils.loadImage("img/low-resolution-out.png"),
-                CanvasUtils.loadImage("img/low-resolution-in.png"), CanvasUtils
-                .loadImage("img/low-resolution-click.png")
+                CanvasUtils.loadImage("img/low-resolution-in.png"),
+                CanvasUtils.loadImage("img/low-resolution-click.png")
             ],
             A = GUI.createButton(54, 42, null, O),
-            b = [CanvasUtils.loadImage("img/azerty-button-out.png"), CanvasUtils
-                .loadImage("img/azerty-button-in.png"), CanvasUtils.loadImage(
-                    "img/azerty-button-click.png")
+            b = [CanvasUtils.loadImage("img/azerty-button-out.png"),
+                CanvasUtils.loadImage("img/azerty-button-in.png"),
+                CanvasUtils.loadImage("img/azerty-button-click.png")
             ],
             y = GUI.createButton(81, 33, null, b),
-            S = [CanvasUtils.loadImage("img/qwerty-button-out.png"), CanvasUtils
-                .loadImage("img/qwerty-button-in.png"), CanvasUtils.loadImage(
-                    "img/qwerty-button-click.png")
+            S = [CanvasUtils.loadImage("img/qwerty-button-out.png"),
+                CanvasUtils.loadImage("img/qwerty-button-in.png"),
+                CanvasUtils.loadImage("img/qwerty-button-click.png")
             ],
             U = GUI.createButton(87, 33, null, S),
-            h = [CanvasUtils.loadImage("img/sound-on-out.png"), CanvasUtils
-                .loadImage("img/sound-on-in.png"), CanvasUtils.loadImage(
-                    "img/sound-on-click.png")
+            h = [CanvasUtils.loadImage("img/sound-on-out.png"),
+                CanvasUtils.loadImage("img/sound-on-in.png"),
+                CanvasUtils.loadImage("img/sound-on-click.png")
             ],
-            f = [CanvasUtils.loadImage("img/sound-off-out.png"), CanvasUtils
-                .loadImage("img/sound-off-in.png"), CanvasUtils.loadImage(
-                    "img/sound-off-click.png")
+            f = [CanvasUtils.loadImage("img/sound-off-out.png"),
+                CanvasUtils.loadImage("img/sound-off-in.png"),
+                CanvasUtils.loadImage("img/sound-off-click.png")
             ],
             D = GUI.createButton(51, 36, null, h),
             v = GUI.createButton(51, 36, null, f),
@@ -9162,7 +9272,8 @@ var Border = function () {
             }
         }
         var z = window.Math.sqrt(2) / 2;
-        var J, X, j, Q, q, Z, $, ee, ie, ae, _e, oe, te, de, ne, re, le, se,
+        var J, X, j, Q, q, Z, $, ee, ie, ae, _e, oe, te, de, ne, re,
+            le, se,
             ge = null,
             me = (ge = null, 0),
             ce = [],
@@ -9190,33 +9301,36 @@ var Border = function () {
                 window.Math.max(0, canh2 - window.Math.floor(133 * scaleby)) +
                 i, X.pos.x = canw2 - window.Math.floor(206 * scaleby) + e, X.pos
                 .y = window.Math.max(0, canh2 - window.Math.floor(206 *
-                    scaleby)) + i, j.pos.x = window.Math.floor(5 * scaleby) - e,
+                    scaleby)) + i,
+                j.pos.x = window.Math.floor(5 * scaleby) - e,
                 j.pos.y = window.Math.floor(5 * scaleby) - i, Q.pos.x = j.pos
                 .x + window.Math.floor(126 * scaleby), Q.pos.y = j.pos.y, q.pos
                 .x = Q.pos.x, q.pos.y = Q.pos.y + window.Math.floor(44.5 *
-                    scaleby), Z.pos.x = q.pos.x, Z.pos.y = q.pos.y + window.Math
-                .floor(44.5 * scaleby), $.pos.x = canw - window.Math.floor(67 *
-                    scaleby) + window.Math.floor(-5 * scaleby) - e, $.pos.y =
-                window.Math.floor(5 * scaleby) - i, ee.pos.x = $.pos.x + window
-                .Math.floor(-70 * scaleby), ee.pos.y = window.Math.floor(5 *
-                    scaleby) - i, ie.pos.x = ee.pos.x + window.Math.floor(-70 *
-                    scaleby), ie.pos.y = window.Math.floor(5 * scaleby) - i, ae
-                .pos.x = ie.pos.x + window.Math.floor(-70 * scaleby), ae.pos.y =
-                window.Math.floor(5 * scaleby) - i, _e.pos.x = ae.pos.x + window
-                .Math.floor(-70 * scaleby), _e.pos.y = window.Math.floor(5 *
-                    scaleby) - i, re.pos.x = window.Math.floor(5 * scaleby), re
-                .pos.y = canh - window.Math.floor(46.5 * scaleby) + window.Math
-                .floor(-5 * scaleby), le.pos.x = re.pos.x + window.Math.floor(
-                    50 * scaleby), le.pos.y = canh - window.Math.floor(46.5 *
+                    scaleby), Z.pos.x = q.pos.x,
+                Z.pos.y = q.pos.y + window.Math.floor(44.5 * scaleby),
+                $.pos.x = canw - window.Math.floor(67 * scaleby) + window.Math
+                .floor(-5 * scaleby) - e, $.pos.y = window.Math.floor(5 *
+                    scaleby) - i, ee.pos.x = $.pos.x + window.Math.floor(-70 *
+                    scaleby), ee.pos.y = window.Math.floor(5 * scaleby) - i, ie
+                .pos.x = ee.pos.x + window.Math.floor(-70 * scaleby), ie.pos.y =
+                window.Math.floor(5 * scaleby) - i, ae.pos.x = ie.pos.x + window
+                .Math.floor(-70 * scaleby), ae.pos.y = window.Math.floor(5 *
+                    scaleby) - i, _e.pos.x = ae.pos.x + window.Math.floor(-70 *
+                    scaleby), _e.pos.y = window.Math.floor(5 * scaleby) - i, re
+                .pos.x = window.Math.floor(5 * scaleby), re.pos.y = canh -
+                window.Math.floor(46.5 * scaleby) + window.Math.floor(-5 *
+                    scaleby), le.pos.x = re.pos.x + window.Math.floor(50 *
+                    scaleby), le.pos.y = canh - window.Math.floor(46.5 *
                     scaleby) + window.Math.floor(-5 * scaleby), oe.pos.x = j.pos
                 .x + window.Math.floor(89 * scaleby), oe.pos.y = j.pos.y +
                 window.Math.floor(126 * scaleby), te.pos.x = canw - window.Math
                 .floor(46.5 * scaleby) + window.Math.floor(-5 * scaleby), te.pos
                 .y = canh - window.Math.floor(46.5 * scaleby) + window.Math
-                .floor(-5 * scaleby), de.pos.x = te.pos.x + window.Math.floor(-
-                    50 * scaleby), de.pos.y = canh - window.Math.floor(46.5 *
-                    scaleby) + window.Math.floor(-5 * scaleby), ne.pos.x = j.pos
-                .x, ne.pos.y = j.pos.y + window.Math.floor(126 * scaleby)
+                .floor(-5 * scaleby),
+                de.pos.x = te.pos.x + window.Math.floor(-50 * scaleby), de.pos
+                .y = canh - window.Math.floor(46.5 * scaleby) + window.Math
+                .floor(-5 * scaleby), ne.pos.x = j.pos.x, ne.pos.y = j.pos.y +
+                window.Math.floor(126 * scaleby)
         }
 
         function ye(i) {
@@ -9630,8 +9744,8 @@ var Border = function () {
                     .backgroundColor = "#46664D", 0, AudioManager
                     .startGame(), 0 === Ie) {
                     Ie = 1;
-                    for (var e = INVENTORY[IID.__ROAD__].subtype, i = 0; i <
-                        e.length; i++) {
+                    for (var e = INVENTORY[IID.__ROAD__].subtype,
+                            i = 0; i < e.length; i++) {
                         (a = e[i]).itemButton = {
                             src: [a.building.src, "img/useless.png",
                                 "img/useless.png"
@@ -9662,7 +9776,8 @@ var Border = function () {
                         }
                     }
                 }
-                l(), CanvasUtils.setRenderer(Editor), Oe = 1e3, Te = 1e3,
+                l(), CanvasUtils.setRenderer(Editor), Oe = 1e3,
+                    Te = 1e3,
                     Ae = we, Re = 1, be()
             },
             update: be,
@@ -9670,20 +9785,21 @@ var Border = function () {
                 if (0 !== function () {
                         if (1 === Le) {
                             if (be(), Oe < 0) return Le = 0, Q.setState(GUI
-                                .__BUTTON_OUT__), q.setState(GUI
-                                .__BUTTON_OUT__), Z.setState(GUI
-                                .__BUTTON_OUT__), $.setState(GUI
-                                .__BUTTON_OUT__), ee.setState(GUI
-                                .__BUTTON_OUT__), ie.setState(GUI
-                                .__BUTTON_OUT__), ae.setState(GUI
-                                .__BUTTON_OUT__), _e.setState(GUI
-                                .__BUTTON_OUT__), re.setState(GUI
-                                .__BUTTON_OUT__), le.setState(GUI
-                                .__BUTTON_OUT__), oe.setState(GUI
-                                .__BUTTON_OUT__), te.setState(GUI
-                                .__BUTTON_OUT__), de.setState(GUI
-                                .__BUTTON_OUT__), ne.setState(GUI
-                                .__BUTTON_OUT__), se.run(), 0;
+                                    .__BUTTON_OUT__),
+                                q.setState(GUI.__BUTTON_OUT__), Z
+                                .setState(GUI.__BUTTON_OUT__), $
+                                .setState(GUI.__BUTTON_OUT__),
+                                ee.setState(GUI.__BUTTON_OUT__), ie
+                                .setState(GUI.__BUTTON_OUT__),
+                                ae.setState(GUI.__BUTTON_OUT__), _e
+                                .setState(GUI.__BUTTON_OUT__),
+                                re.setState(GUI.__BUTTON_OUT__), le
+                                .setState(GUI.__BUTTON_OUT__),
+                                oe.setState(GUI.__BUTTON_OUT__), te
+                                .setState(GUI.__BUTTON_OUT__),
+                                de.setState(GUI.__BUTTON_OUT__), ne
+                                .setState(GUI.__BUTTON_OUT__),
+                                se.run(), 0;
                             Oe -= delta
                         } else 1 === Re && (be(), Oe < 0 && (Re = 0,
                             function () {
@@ -9755,18 +9871,19 @@ var Border = function () {
                                 var i = World.players[1].locatePlayer;
                                 if (-1 === i) return;
                                 var a = Entitie.units[__ENTITIE_PLAYER__][
-                                i];
+                                    i
+                                ];
                                 WvvVn = (3 & e && 12 & e ? z : 1) * (0 ===
                                         Keyboard.isShift() ? 1.5 * delta :
                                         11 * delta), 1 & e ? a.rx = a.x -
                                     WvvVn : 2 & e && (a.rx = a.x + WvvVn),
                                     8 & e ? a.ry = a.y - WvvVn : 4 & e && (a
-                                        .ry = a.y + WvvVn), a.rx = window
-                                    .Math.max(0, window.Math.min(a.rx, 100 *
-                                        MapManager.width)), a.ry = window
-                                    .Math.max(0, window.Math.min(a.ry, 100 *
-                                        MapManager.height)), a.nx = a.rx, a
-                                    .ny = a.ry
+                                        .ry = a.y + WvvVn),
+                                    a.rx = window.Math.max(0, window.Math
+                                        .min(a.rx, 100 * MapManager.width)),
+                                    a.ry = window.Math.max(0, window.Math
+                                        .min(a.ry, 100 * MapManager.height)
+                                        ), a.nx = a.rx, a.ny = a.ry
                             }
                         }(), ctx.clearRect(0, 0, canw, canh), World
                         .updatePosition(), Render.world(), Render.minimap(j
@@ -9800,9 +9917,9 @@ var Border = function () {
                                 scaleby, e.wh * scaleby, e.h2 * scaleby)
                         }(),
                         function () {
-                            for (var e = _e.pos.x - 5 * scaleby, i = _e.pos
-                                    .y + 74 * scaleby, a = 45 * scaleby, _ =
-                                    0; _ < r; _++) {
+                            for (var e = _e.pos.x - 5 * scaleby,
+                                    i = _e.pos.y + 74 * scaleby,
+                                    a = 45 * scaleby, _ = 0; _ < r; _++) {
                                 var o = n[_];
                                 o.pos.x = e + _ % 8 * a, o.pos.y = i +
                                     window.Math.floor(_ / 8) * a, o.draw()
@@ -9816,22 +9933,24 @@ var Border = function () {
                             ctx.globalAlpha = .3;
                             var i = canw2ns - 1.5 * canw4ns,
                                 o = canh2ns + canw4ns / 4;
-                            CanvasUtils.circle(ctx, i, o, 60), CanvasUtils
-                                .drawPath(ctx, "#000000"), CanvasUtils
-                                .circle(ctx, i + window.Math.cos(C) * F *
-                                    scaleby, o + window.Math.sin(C) * F *
-                                    scaleby, 30), CanvasUtils.drawPath(ctx,
-                                    "#FFFFFF"), ctx.globalAlpha = 1
+                            CanvasUtils.circle(ctx, i, o, 60),
+                                CanvasUtils.drawPath(ctx, "#000000"),
+                                CanvasUtils.circle(ctx, i + window.Math.cos(
+                                        C) * F * scaleby, o + window.Math
+                                    .sin(C) * F * scaleby, 30), CanvasUtils
+                                .drawPath(ctx, "#FFFFFF"), ctx.globalAlpha =
+                                1
                         }
                         if (1 === x) {
                             ctx.globalAlpha = .3;
                             i = canw2ns + 1.5 * canw4ns, o = canh2ns +
                                 canw4ns / 4;
-                            CanvasUtils.circle(ctx, i, o, 60), CanvasUtils
-                                .drawPath(ctx, "#000000"), CanvasUtils
-                                .circle(ctx, i + 25 * window.Math.cos(Mouse
-                                        .angle) * scaleby, o + 25 * window
-                                    .Math.sin(Mouse.angle) * scaleby, 30),
+                            CanvasUtils.circle(ctx, i, o, 60),
+                                CanvasUtils.drawPath(ctx, "#000000"),
+                                CanvasUtils.circle(ctx, i + 25 * window.Math
+                                    .cos(Mouse.angle) * scaleby, o + 25 *
+                                    window.Math.sin(Mouse.angle) * scaleby,
+                                    30),
                                 CanvasUtils.drawPath(ctx, "#FFFFFF"), ctx
                                 .globalAlpha = 1
                         }
@@ -9908,10 +10027,10 @@ var BUILDINGS = [{}, {
         [0, 0, 0, 0],
         [0, 0, 0, 0]
     ],
-    alt: [BID.__ROAD_T0B0L1R1_1__, BID.__ROAD_T0B0L1R1_2__, BID
-        .__ROAD_T0B0L1R1_3__, BID.__ROAD_T0B0L1R1_4__, BID
-        .__ROAD_T0B0L1R1_5__, BID.__ROAD_T0B0L1R1_6__, BID
-        .__ROAD_T0B0L1R1_7__, BID.__ROAD_T0B0L1R1_8__
+    alt: [BID.__ROAD_T0B0L1R1_1__, BID.__ROAD_T0B0L1R1_2__,
+        BID.__ROAD_T0B0L1R1_3__, BID.__ROAD_T0B0L1R1_4__,
+        BID.__ROAD_T0B0L1R1_5__, BID.__ROAD_T0B0L1R1_6__,
+        BID.__ROAD_T0B0L1R1_7__, BID.__ROAD_T0B0L1R1_8__
     ]
 }, {
     id: BID.__ROAD_T0B1L0R0__,
@@ -10188,17 +10307,25 @@ var ent, inhandID, weapon, Render = function () {
                 [],
                 []
             ];
-        K[0][0] = 0, K[0][k] = 3, K[0][H] = 6, K[0][Y | G] = 9, K[0][Y] = 4, K[
-                0][G] = 5, K[0][k | Y] = 27, K[0][k | G] = 20, K[0][H | Y] = 7,
+        K[0][0] = 0, K[0][k] = 3, K[0][H] = 6, K[0][Y | G] = 9, K[0][
+                Y
+            ] = 4, K[0][G] = 5, K[0][k | Y] = 27, K[0][k | G] = 20, K[0][H |
+            Y] = 7,
             K[0][H | G] = 28, K[0][k | Y | G] = 24, K[0][H | Y | G] = 29, K[2][
-                0] = 0, K[2][k] = 3, K[2][H] = 6, K[2][Y | G] = 9, K[2][Y] = 4,
+                0
+            ] = 0, K[2][k] = 3, K[2][H] = 6, K[2][Y | G] = 9, K[2][
+                Y
+            ] = 4,
             K[2][G] = 5, K[2][k | Y] = 27, K[2][k | G] = 20, K[2][H | Y] = 7, K[
                 2][H | G] = 28, K[2][k | Y | G] = 24, K[2][H | Y | G] = 29, K[1]
             [0] = 11, K[1][k] = 12, K[1][H] = 17, K[1][Y | G] = 10, K[1][Y] =
             19, K[1][G] = 18, K[1][k | Y] = 34, K[1][k | G] = 22, K[1][H | Y] =
             23, K[1][H | G] = 33, K[1][k | Y | G] = 35, K[1][H | Y | G] = 32, K[
-                3][0] = 11, K[3][k] = 15, K[3][H] = 14, K[3][Y | G] = 10, K[3][
-                Y] = 19, K[3][G] = 18, K[3][k | Y] = 37, K[3][k | G] = 16, K[3][
+                3][0] = 11, K[3][k] = 15,
+            K[3][H] = 14, K[3][Y | G] = 10, K[3][
+                Y
+            ] = 19, K[3][G] = 18, K[3][k | Y] = 37, K[3][k | G] = 16,
+            K[3][
                 H | Y
             ] = 23, K[3][H | G] = 38, K[3][k | Y | G] = 36, K[3][H | Y | G] =
             39;
@@ -10485,8 +10612,10 @@ var ent, inhandID, weapon, Render = function () {
 
         function fi() {
             this.wallFrame = 0, this.floorFrame = 0, this.drawFloor = 0, this
-                .tile = 0, this.wall = 0, this.frameId = 0, this.ground = 0,
-                this.pid = 0, this.tilePid = 0, this.category = 0, this.i = 0,
+                .tile = 0, this.wall = 0, this.frameId = 0,
+                this.ground = 0,
+                this.pid = 0, this.tilePid = 0, this.category = 0,
+                this.i = 0,
                 this.b = [], this.rotate = 0;
             for (var e = 0; e < 3; e++) this.b.push({
                 type: 0,
@@ -10616,9 +10745,9 @@ var ent, inhandID, weapon, Render = function () {
                 .undefined && (Oe[World.playerAlive] = {
                     img: GUI.renderText("#" + World.playerAlive,
                         "'Viga', sans-serif", "#FFFFFF", 60, 140)
-                }, Oe[World.playerAlive].img.isLoaded = 1), CanvasUtils
-                .drawImageHd(Oe[World.playerAlive], e / scaleby + canwns - 50,
-                    25 + i / scaleby, 0, 0, 0, 1)
+                }, Oe[World.playerAlive].img.isLoaded = 1),
+                CanvasUtils.drawImageHd(Oe[World.playerAlive], e / scaleby +
+                    canwns - 50, 25 + i / scaleby, 0, 0, 0, 1)
         }
         var xi = "",
             Vi = null;
@@ -10829,8 +10958,8 @@ var ent, inhandID, weapon, Render = function () {
                             o = scaleby * (World.PLAYER.jGridPrev[a] * e + X +
                                 i), t = scaleby * We.width / 2, d = scaleby * We
                             .height / 2;
-                        ctx.drawImage(We, o - t / 2, _ - d / 2, t, d), ctx
-                            .globalAlpha = 1
+                        ctx.drawImage(We, o - t / 2, _ - d / 2, t, d),
+                            ctx.globalAlpha = 1
                     }
             } else We = CanvasUtils.loadImage(E, We)
         }
@@ -10885,8 +11014,9 @@ var ent, inhandID, weapon, Render = function () {
                         r = scaleby * (_.size + 1) * n * d.width / 7,
                         l = -r / 2;
                     ctx.save(), ctx.translate((X + _.x) * scaleby, (j + _.y) *
-                            scaleby), ctx.rotate(_.angle), ctx.globalAlpha =
-                        window.Math.max(0, n * n), ctx.drawImage(d, l, l, r, r),
+                            scaleby), ctx.rotate(_.angle),
+                        ctx.globalAlpha = window.Math.max(0, n * n),
+                        ctx.drawImage(d, l, l, r, r),
                         ctx.restore()
                 }
             }
@@ -10905,9 +11035,9 @@ var ent, inhandID, weapon, Render = function () {
                 var t = MathUtils.Ease.outQuart(1 - (e.death - 500) / 400);
                 ctx.globalAlpha = window.Math.min(window.Math.max(0, t), 1),
                     CanvasUtils.drawImageHd(i.death, _, o, e.angle, 0, 0, 1),
-                    t = MathUtils.Ease.outQuart(1 - e.death / 400), a = window
-                    .Math.min(1 + .5 * (1 - t), 1.5), ctx.globalAlpha = window
-                    .Math.max(0, t)
+                    t = MathUtils.Ease.outQuart(1 - e.death / 400),
+                    a = window.Math.min(1 + .5 * (1 - t), 1.5), ctx
+                    .globalAlpha = window.Math.max(0, t)
             }
             16 == (16 & e.extra) && (e.extra &= -17, e.hurt = 250, e.hurtAngle =
                     D * (e.extra >> 5 & 31) / 31), i.draw(i, e, _, o, a), 0 !==
@@ -10931,9 +11061,9 @@ var ent, inhandID, weapon, Render = function () {
                 var l = MathUtils.Ease.outQuart(1 - (e.death - 500) / 400);
                 ctx.globalAlpha = window.Math.min(window.Math.max(0, l), 1),
                     CanvasUtils.drawImageHd(i.death, n, r, e.angle, 0, 0, 1),
-                    l = MathUtils.Ease.outQuart(1 - e.death / 400), t = window
-                    .Math.min(1 + .5 * (1 - l), 1.5), ctx.globalAlpha = window
-                    .Math.max(0, l)
+                    l = MathUtils.Ease.outQuart(1 - e.death / 400),
+                    t = window.Math.min(1 + .5 * (1 - l), 1.5), ctx
+                    .globalAlpha = window.Math.max(0, l)
             }
             if (2 === d) {
                 if (e.state &= 65281, 0 !== AudioUtils._fx.shot[a]) {
@@ -10997,8 +11127,9 @@ var ent, inhandID, weapon, Render = function () {
                                 .hurt2) / 300) : w += .2 * (1 - (T = MathUtils
                                 .Ease.outQuad(_.hurt2 / 150))), ctx
                             .globalAlpha = window.Math.min(1, window.Math.max(0,
-                                T)), CanvasUtils.drawImageHd(e.food, t, d, _
-                                .angle + m / 1.5, E, 0, w), ctx.globalAlpha = 1
+                                T)),
+                            CanvasUtils.drawImageHd(e.food, t, d, _.angle + m /
+                                1.5, E, 0, w), ctx.globalAlpha = 1
                     }
                     _.hurt > 0 && (w = 1, _.hurt -= delta, T = 0, _.hurt > 150 ?
                         T = MathUtils.Ease.inQuad((300 - _.hurt) / 300) :
@@ -11115,8 +11246,8 @@ var ent, inhandID, weapon, Render = function () {
                                 if ((h = p[R]).delay <= 0) {
                                     h.type = i.cartridge, h.delay = i
                                         .cartridgeDelay, h.x = t + 44 * window
-                                        .Math.cos(_.angle), h.y = d + 44 *
-                                        window.Math.sin(_.angle);
+                                        .Math.cos(_.angle),
+                                        h.y = d + 44 * window.Math.sin(_.angle);
                                     var w = -window.Math.PI / 2.5 + _.angle +
                                         window.Math.random() * -window.Math.PI /
                                         3.5;
@@ -11180,11 +11311,11 @@ var ent, inhandID, weapon, Render = function () {
                         _.hurt -= delta, T = 0, _.hurt > 150 ? T = MathUtils
                             .Ease.inQuad((300 - _.hurt) / 300) : f += .2 * (1 -
                                 (T = MathUtils.Ease.outQuad(_.hurt / 150))),
-                            t += window.Math.cos(_.hurtAngle) * T * 3, d +=
-                            window.Math.sin(_.hurtAngle) * T * 3, ctx
-                            .globalAlpha = window.Math.min(1, window.Math.max(0,
-                                T)), CanvasUtils.drawImageHd(e.hurt, t, d, _
-                                .angle, I, 0, f), ctx.globalAlpha = 1
+                            t += window.Math.cos(_.hurtAngle) * T * 3,
+                            d += window.Math.sin(_.hurtAngle) * T * 3,
+                            ctx.globalAlpha = window.Math.min(1, window.Math
+                                .max(0, T)), CanvasUtils.drawImageHd(e.hurt, t,
+                                d, _.angle, I, 0, f), ctx.globalAlpha = 1
                     }
                     _.heal > 0 && (f = 1, _.heal -= delta, _.heal > 150 ? ctx
                         .globalAlpha = window.Math.min(1, window.Math.max(0,
@@ -11264,9 +11395,9 @@ var ent, inhandID, weapon, Render = function () {
                     var O = i.breathWeapon * (n.breath < 750 ? n.breath / 750 :
                         1 - (n.breath - 750) / 750);
                     p = i.rightArm, R = a.rightArm === window.undefined ? g
-                        .rightArm : a.rightArm, CanvasUtils.drawImageHd(R, t, d,
-                            p.angle + _.angle, p.x + L * n.orientation + I + O,
-                            p.y, o);
+                        .rightArm : a.rightArm,
+                        CanvasUtils.drawImageHd(R, t, d, p.angle + _.angle, p
+                            .x + L * n.orientation + I + O, p.y, o);
                     var A = i.weapon;
                     CanvasUtils.drawImageHd(A, t, d, A.angle + _.angle, A.x +
                         L * n.orientation + O + I, A.y, o)
@@ -11416,8 +11547,9 @@ var ent, inhandID, weapon, Render = function () {
                                 .hurt2) / 300) : O += .2 * (1 - (A = MathUtils
                                 .Ease.outQuad(_.hurt2 / 150))), ctx
                             .globalAlpha = window.Math.min(1, window.Math.max(0,
-                                A)), CanvasUtils.drawImageHd(e.food, t, d, _
-                                .angle, 0, 0, O), ctx.globalAlpha = 1
+                                A)),
+                            CanvasUtils.drawImageHd(e.food, t, d, _.angle, 0, 0,
+                                O), ctx.globalAlpha = 1
                     }
                     _.hurt > 0 && (O = 1, _.hurt -= delta, A = 0, _.hurt > 150 ?
                         A = MathUtils.Ease.inQuad((300 - _.hurt) / 300) :
@@ -11535,8 +11667,8 @@ var ent, inhandID, weapon, Render = function () {
             if (e.death > 0) return e.death = window.Math.min(1, e.death +
                     delta / 500), ctx.globalAlpha = 1 - e.death, CanvasUtils
                 .drawImageHd(i, X + e.x, j + e.y, e.angle, 0, 0, 1), ctx
-                .globalAlpha = 1, void(1 === e.death && (ea.id = e.id, ea
-                    .uid = e.uid));
+                .globalAlpha = 1,
+                void(1 === e.death && (ea.id = e.id, ea.uid = e.uid));
             Math2d.fastDist(e.x, e.y, e.nx, e.ny) < .01 && (e.death = .001),
                 CanvasUtils.drawImageHd(i, X + e.x, j + e.y, e.angle, 0, 0, 1)
         }
@@ -11548,12 +11680,12 @@ var ent, inhandID, weapon, Render = function () {
                     .players[i.pid].team && World.players[i.pid].teamUid ===
                     World.teams[World.PLAYER.team].uid)) {
                 var _ = Math2d.fastDist(Q, q, i.x, i.y);
-                if (_ < Be) return World.PLAYER.packetId = e.packetId, World
-                    .PLAYER.buildingId = i.id, World.PLAYER.buildingPid = i
-                    .pid, World.PLAYER.buildingArea = e.area, Be = _, 0 ===
-                    World.PLAYER.interaction && (World.PLAYER.extraLoot =
-                    1), World.PLAYER.interaction = 2, World.PLAYER
-                    .eInteract = e.interact, 1
+                if (_ < Be) return World.PLAYER.packetId = e.packetId,
+                    World.PLAYER.buildingId = i.id, World.PLAYER
+                    .buildingPid = i.pid, World.PLAYER.buildingArea = e
+                    .area, Be = _, 0 === World.PLAYER.interaction && (World
+                        .PLAYER.extraLoot = 1), World.PLAYER.interaction =
+                    2, World.PLAYER.eInteract = e.interact, 1
             }
             return 0
         }
@@ -11647,15 +11779,16 @@ var ent, inhandID, weapon, Render = function () {
                             window.Math.max(3e3, e.breath - delta), _ += .025 *
                             (e.breath - 3e3) / 3e3) : e.breath < 3e3 && (e
                             .breath = window.Math.min(3e3, e.breath + delta),
-                            _ += .025 - .025 * e.breath / 3e3)), CanvasUtils
-                    .drawImageHd(a.imgTop, X + e.x + t, j + e.y + d, e.angle, 0,
-                        0, _)
+                            _ += .025 - .025 * e.breath / 3e3)),
+                    CanvasUtils.drawImageHd(a.imgTop, X + e.x + t, j + e.y + d,
+                        e.angle, 0, 0, _)
             }
             if (0 !== e.removed ? (e.death > 300 && (e.removed = 2), ctx
                     .globalAlpha = 1) : e.born < 700 && (e.born += delta, ctx
                     .globalAlpha = 1), pathFinder)
                 for (var r = 0; r < pworldWidth; r++)
-                    for (var l = 0; l < pworldHeight; l++) pworld[e.j][e.i] = 1
+                    for (var l = 0; l < pworldHeight; l++) pworld[e.j]
+                        [e.i] = 1
         }
 
         function na(e) {
@@ -11702,7 +11835,8 @@ var ent, inhandID, weapon, Render = function () {
                     300 && (e.removed = 2), ctx.globalAlpha = 1), pathFinder &&
                 INVENTORY[a.id].draw != Render.groundFloor)
                 for (var l = 0; l < pworldWidth; l++)
-                    for (var s = 0; s < pworldHeight; s++) pworld[e.j][e.i] = 1
+                    for (var s = 0; s < pworldHeight; s++) pworld[e.j]
+                        [e.i] = 1
         }
 
         function ra(e) {
@@ -11732,15 +11866,17 @@ var ent, inhandID, weapon, Render = function () {
                 .globalAlpha = i);
             var u = Math2d.fastDist(e.nx, e.ny, e.x, e.y);
             u < 400 || 0 !== e.removed ? (ctx.globalAlpha = window.Math.min(u /
-                    400, i), CanvasUtils.drawImageHd(ENTITIES[
-                        __ENTITIE_PLAYER__].bullets[e.extra][2], X + e.x,
-                    j + e.y, e.angle, 0, 0, 1), ctx.globalAlpha = i,
-                CanvasUtils.drawImageHd(ENTITIES[__ENTITIE_PLAYER__]
-                    .bullets[e.extra][1], X + e.x, j + e.y, e.angle, 0, 0, 1
-                    )) : CanvasUtils.drawImageHd(ENTITIES[
-                    __ENTITIE_PLAYER__].bullets[e.extra][0], X + e.x, j + e
-                .y, e.angle, 0, 0, 1), 0 !== e.removed && (e.death > 200 &&
-                (e.removed = 2), ctx.globalAlpha = 1)
+                        400, i), CanvasUtils.drawImageHd(ENTITIES[
+                        __ENTITIE_PLAYER__].bullets[e.extra][
+                        2
+                    ], X + e.x, j + e.y, e.angle, 0, 0, 1), ctx.globalAlpha = i,
+                    CanvasUtils.drawImageHd(ENTITIES[__ENTITIE_PLAYER__]
+                        .bullets[e.extra][
+                            1
+                        ], X + e.x, j + e.y, e.angle, 0, 0, 1)) : CanvasUtils
+                .drawImageHd(ENTITIES[__ENTITIE_PLAYER__].bullets[e.extra][0],
+                    X + e.x, j + e.y, e.angle, 0, 0, 1), 0 !== e.removed && (e
+                    .death > 200 && (e.removed = 2), ctx.globalAlpha = 1)
         }
 
         function la(e) {
@@ -12023,7 +12159,8 @@ var ent, inhandID, weapon, Render = function () {
 
                         function m(i, a) {
                             return null != e[i] && null != e[i][a] && (e[i][
-                                a] <= t || 2 === e[i][a])
+                                a
+                            ] <= t || 2 === e[i][a])
                         }
 
                         function c(e, i) {
@@ -12043,7 +12180,8 @@ var ent, inhandID, weapon, Render = function () {
                                     }), E = c(null, {
                                         x: a[0],
                                         y: a[1]
-                                    }), u = new Array(r), L = [I], p = [],
+                                    }), u = new Array(r), L = [I],
+                                    p = [],
                                     R = []; t = L.length;) {
                                 for (d = r, n = -1, s = 0; s < t; s++) L[s]
                                     .f < d && (d = L[s].f, n = s);
@@ -12084,15 +12222,15 @@ var ent, inhandID, weapon, Render = function () {
                         e.currentPath = currentPath;
                         var i = scaleby * (100 * e.j + X + 50),
                             a = scaleby * (100 * e.i + j + 50);
-                        ctx.strokeRect(i - 20, a - 20, 40, 40), ctx
-                            .strokeStyle = "#00FF7F";
+                        ctx.strokeRect(i - 20, a - 20, 40, 40),
+                            ctx.strokeStyle = "#00FF7F";
                         for (var _ = 0; _ < currentPath.length; _++) var o =
                             scaleby * (100 * currentPath[_][0] + X +
                             50),
                             t = scaleby * (100 * currentPath[_][1] + j +
                                 50);
-                        ctx.strokeRect(o - 20, t - 20, 40, 40), ctx
-                            .strokeStyle = "#e2f553"
+                        ctx.strokeRect(o - 20, t - 20, 40, 40),
+                            ctx.strokeStyle = "#e2f553"
                     }())
             }
         }
@@ -12117,12 +12255,13 @@ var ent, inhandID, weapon, Render = function () {
                     ._i = 0, World.PLAYER._j = 0, se.effect = 0, se.move =
                     0, ge.effect = 0, ge.move = 0, ea.id = -1, ea.uid = -1;
                 var m = localStorage2.getItem("particles");
-                null !== m && (oe = window.Number(m)), xi = "", Vi = null,
+                null !== m && (oe = window.Number(m)), xi = "",
+                    Vi = null,
                     MapManager.width = 150, MapManager.height = 150, Render
                     .__TRANSFORM__ = 100 * MapManager.width / 255, _ =
                     MapManager.width, d = MapManager.height, t = e * d, n =
-                    824 / (o = e * _), l = (r = 568) + b, c = o / 8, World
-                    .setSizeWorld(_, d);
+                    824 / (o = e * _), l = (r = 568) + b, c = o / 8,
+                    World.setSizeWorld(_, d);
                 for (var I = 0; I < d; I++) {
                     de[I] = [];
                     for (var E = 0; E < _; E++) de[I][E] = new fi
@@ -12151,7 +12290,8 @@ var ent, inhandID, weapon, Render = function () {
                     function () {
                         for (var e = Entitie.units[__ENTITIE_PLAYER__], i =
                                 Entitie.border[__ENTITIE_PLAYER__], _ = i
-                                .border, o = 0; o < _; o++) {
+                                .border,
+                                o = 0; o < _; o++) {
                             var t = e[i.cycle[o]];
                             if (t.pid === World.PLAYER.id) {
                                 Me = Math2d.fastDist(World.PLAYER.x, World
@@ -12174,8 +12314,8 @@ var ent, inhandID, weapon, Render = function () {
                                         .Math.min((Mouse.dist - r) / r, 1) :
                                         0) * window.Math.cos(Mouse.angle),
                                     s = r * window.Math.sin(Mouse.angle);
-                                Z = CanvasUtils.lerp(Z, l, .025), $ =
-                                    CanvasUtils.lerp($, s, .025);
+                                Z = CanvasUtils.lerp(Z, l, .025),
+                                    $ = CanvasUtils.lerp($, s, .025);
                                 var g = 0,
                                     m = 0;
                                 return Render.shake > 0 && (Render.shake -=
@@ -12184,14 +12324,15 @@ var ent, inhandID, weapon, Render = function () {
                                         ), Render.explosionShake > 0 && (
                                         Render.explosionShake -= 1, g +=
                                         18 * window.Math.random() - 9, m +=
-                                        18 * window.Math.random() - 9), X =
-                                    canw2 / scaleby - t.x - Z + g, j =
+                                        18 * window.Math.random() - 9),
+                                    X = canw2 / scaleby - t.x - Z + g, j =
                                     canh2 / scaleby - t.y - $ + m, t.x + Z,
                                     t.y + $, rowx = ~~((Mouse.x * scaleby /
                                         scaleby + Z - canw2 / scaleby +
-                                        Q) / 100), void(rowy = ~~((Mouse.y *
-                                        scaleby / scaleby + $ -
-                                        canh2 / scaleby + q) / 100))
+                                        Q) / 100), void(rowy = ~~(
+                                        (Mouse.y * scaleby / scaleby +
+                                            $ - canh2 / scaleby + q) /
+                                        100))
                             }
                         }
                     }(), Bi(), Ki(), sa(),
@@ -12219,8 +12360,8 @@ var ent, inhandID, weapon, Render = function () {
                             if (World.PLAYER.jBuild >= 0 && World.PLAYER
                                 .iBuild >= 0 && World.PLAYER.jBuild < _ &&
                                 World.PLAYER.iBuild < d) {
-                                var s = de[World.PLAYER.iBuild][World.PLAYER
-                                        .jBuild
+                                var s = de[World.PLAYER.iBuild][
+                                        World.PLAYER.jBuild
                                     ],
                                     g = -1 === World.PLAYER.team ? -2 :
                                     World.PLAYER.team;
@@ -12266,8 +12407,8 @@ var ent, inhandID, weapon, Render = function () {
                                             ].pid].team !== g) || n % 2 ==
                                         1 && (World.PLAYER.jBuild < 1 ||
                                             World.PLAYER.jBuild >= _ - 1 ||
-                                            de[World.PLAYER.iBuild][World
-                                                .PLAYER.jBuild + 1
+                                            de[World.PLAYER.iBuild][
+                                                World.PLAYER.jBuild + 1
                                             ].tile === ui || de[World.PLAYER
                                                 .iBuild][World.PLAYER
                                                 .jBuild + 1
@@ -12335,31 +12476,36 @@ var ent, inhandID, weapon, Render = function () {
                             canvas.height, (ctx = wa).save();
                         var _ = CanvasUtils.options.scheduledRatio /
                             CanvasUtils.options.backingStoreRatio;
-                        ctx.scale(_, _), e = INVENTORY2, INVENTORY2 =
-                            INVENTORY, INVENTORY = e, e = PARTICLES2,
-                            PARTICLES2 = PARTICLES, PARTICLES = e, e =
-                            LOOT2, LOOT2 = LOOT, LOOT = e, e = RESOURCES2,
-                            RESOURCES2 = RESOURCES, RESOURCES = e, e =
-                            ENTITIES2, ENTITIES2 = ENTITIES, ENTITIES = e,
+                        ctx.scale(_, _), e = INVENTORY2,
+                            INVENTORY2 = INVENTORY, INVENTORY = e,
+                            e = PARTICLES2,
+                            PARTICLES2 = PARTICLES, PARTICLES = e,
+                            e = LOOT2, LOOT2 = LOOT, LOOT = e, e =
+                            RESOURCES2,
+                            RESOURCES2 = RESOURCES, RESOURCES = e,
+                            e = ENTITIES2, ENTITIES2 = ENTITIES,
+                            ENTITIES = e,
                             e = LIGHTFIRE2, LIGHTFIRE2 = LIGHTFIRE,
                             LIGHTFIRE = e, e = GROUND2, GROUND2 = GROUND,
-                            GROUND = e, e = AI2, AI2 = AI, AI = e, ctx
-                            .fillStyle = 0 === World.day ? "#0B2129" :
+                            GROUND = e, e = AI2, AI2 = AI, AI = e,
+                            ctx.fillStyle = 0 === World.day ? "#0B2129" :
                             "#3D5942", ctx.fillRect(0, 0, canw, canh), Bi(),
                             sa(), e = INVENTORY2, INVENTORY2 = INVENTORY,
-                            INVENTORY = e, e = PARTICLES2, PARTICLES2 =
-                            PARTICLES, PARTICLES = e, e = LOOT2, LOOT2 =
-                            LOOT, LOOT = e, e = RESOURCES2, RESOURCES2 =
-                            RESOURCES, RESOURCES = e, e = ENTITIES2,
-                            ENTITIES2 = ENTITIES, ENTITIES = e, e =
-                            LIGHTFIRE2, LIGHTFIRE2 = LIGHTFIRE, LIGHTFIRE =
-                            e, e = GROUND2, GROUND2 = GROUND, GROUND = e,
+                            INVENTORY = e, e = PARTICLES2,
+                            PARTICLES2 = PARTICLES, PARTICLES = e,
+                            e = LOOT2, LOOT2 = LOOT, LOOT = e, e =
+                            RESOURCES2, RESOURCES2 = RESOURCES,
+                            RESOURCES = e, e = ENTITIES2,
+                            ENTITIES2 = ENTITIES, ENTITIES = e,
+                            e = LIGHTFIRE2, LIGHTFIRE2 = LIGHTFIRE,
+                            LIGHTFIRE = e, e = GROUND2,
+                            GROUND2 = GROUND, GROUND = e,
                             e = AI2, AI2 = AI, AI = e, ctx.restore(), (ctx =
-                                a).globalAlpha = i, ctx.drawImage(Ra, 0, 0,
-                                canw, canh), ctx.globalAlpha = 1, World
-                            .transition = window.Math.max(0, World
-                                .transition - delta), 0 === World
-                            .transition && World.changeDayCycle()
+                                a).globalAlpha = i,
+                            ctx.drawImage(Ra, 0, 0, canw, canh),
+                            ctx.globalAlpha = 1, World.transition = window
+                            .Math.max(0, World.transition - delta), 0 ===
+                            World.transition && World.changeDayCycle()
                     }(), Entitie.cleanRemoved(), ui++;
                 for (var o = 0; o < SOUND_LENGTH; o++) soundLimit[o] = 0;
                 canwns = canw / (scaleby = ae), canhns = canh / scaleby
@@ -12393,16 +12539,16 @@ var ent, inhandID, weapon, Render = function () {
                                             window.undefined, window
                                             .undefined, "#000000", 12)), ctx
                                     .drawImage(oi, e, i, scaleby * oi.wh,
-                                        scaleby * oi.h2), 0 !== a
-                                    .nicknameLabel.width && 0 !== a
+                                        scaleby * oi.h2),
+                                    0 !== a.nicknameLabel.width && 0 !== a
                                     .nicknameLabel.height && ctx.drawImage(a
                                         .nicknameLabel, e + 20 * scaleby,
                                         i + 6 * scaleby, a.nicknameLabel
                                         .wh * scaleby, a.nicknameLabel.h2 *
                                         scaleby), Game.acceptMember.draw(),
-                                    Game.refuseMember.draw(), World.PLAYER
-                                    .teamEffect < 333 && (ctx.globalAlpha =
-                                        1)
+                                    Game.refuseMember.draw(),
+                                    World.PLAYER.teamEffect < 333 && (ctx
+                                        .globalAlpha = 1)
                             }
                         } else oi = CanvasUtils.loadImage(w, oi)
                     }(e + 250 * scaleby, i), 1 === ze.isLoaded) {
@@ -12431,7 +12577,8 @@ var ent, inhandID, weapon, Render = function () {
                                 2, t / 2, b, b, e, i, d, d), ctx
                             .globalAlpha = mi > 600 ? MathUtils.Ease
                             .inOutQuad((1200 - mi) / 600) : MathUtils.Ease
-                            .inOutQuad(mi / 600), mi = (mi + delta) % 1200,
+                            .inOutQuad(mi / 600),
+                            mi = (mi + delta) % 1200,
                             ctx.drawImage(gi.img, o / 2, t / 2, b, b, e, i,
                                 d, d), ctx.globalAlpha = 1, Pi(0, i), Fi(e,
                                 i, 0)
@@ -12518,31 +12665,33 @@ var ent, inhandID, weapon, Render = function () {
                     l = n / scaleby,
                     m = s / o,
                     c = g / t;
-                i.pos.x = window.Math.floor(d + a + 0 * scaleby), i.pos.y =
-                    window.Math.floor(n + 0 * scaleby), e.draw();
+                i.pos.x = window.Math.floor(d + a + 0 * scaleby),
+                    i.pos.y = window.Math.floor(n + 0 * scaleby),
+                    e.draw();
                 var I = World.PLAYER.cities,
                     E = I.length / 2;
                 if (E > 0) {
                     b = window.Math.floor(n / scaleby + window.Math.min(
                             window.Math.max(10, I[0] * c), 400)), A = window
                         .Math.floor(d / scaleby + window.Math.min(window
-                            .Math.max(10, I[1] * m), 400)), CanvasUtils
-                        .drawImageHd(Xe, A, b, 0, 0, 0, 1);
+                            .Math.max(10, I[1] * m), 400)),
+                        CanvasUtils.drawImageHd(Xe, A, b, 0, 0, 0, 1);
                     for (var u = 1; u < E; u++) b = window.Math.floor(n /
                             scaleby + window.Math.min(window.Math.max(10, I[
                                 2 * u] * c), 400)), A = window.Math.floor(
                             d / scaleby + window.Math.min(window.Math.max(
-                                10, I[1 + 2 * u] * m), 400)), CanvasUtils
-                        .drawImageHd(Je, A, b, 0, 0, 0, 1)
+                                10, I[1 + 2 * u] * m), 400)),
+                        CanvasUtils.drawImageHd(Je, A, b, 0, 0, 0, 1)
                 }
                 if (World.gameMode === World.__BR__) {
                     var L = r + 205,
                         p = l + 205;
-                    CanvasUtils.drawImageHd(ri, L, p, 0, 0, 0, 2), ctx
-                        .globalAlpha = mi > 600 ? MathUtils.Ease.inOutQuad((
-                            1200 - mi) / 600) : MathUtils.Ease.inOutQuad(
-                            mi / 600), CanvasUtils.drawImageHd(gi, L, p, 0,
-                            0, 0, 2), ctx.globalAlpha = 1
+                    CanvasUtils.drawImageHd(ri, L, p, 0, 0, 0, 2),
+                        ctx.globalAlpha = mi > 600 ? MathUtils.Ease
+                        .inOutQuad((1200 - mi) / 600) : MathUtils.Ease
+                        .inOutQuad(mi / 600),
+                        CanvasUtils.drawImageHd(gi, L, p, 0, 0, 0, 2), ctx
+                        .globalAlpha = 1
                 }
                 if (i.draw(), -1 !== World.PLAYER.team || 0 !== World.PLAYER
                     .ghoul && World.playerAlive < 6) {
@@ -12740,10 +12889,12 @@ var ent, inhandID, weapon, Render = function () {
                                 .globalAlpha = 1
                         }
                     } else - 1 !== a && 0 !== t[a][0] && (a < 10 ? Ci(t[a][
-                        0], l + c * a, s - 79 * scaleby) : Ci(t[a][
-                            0], a < 13 ? _.pos.x - 200 * scaleby : _
-                        .pos.x - 200 * scaleby - c, _.pos.y + c * ((
-                            10 - a) % 3 - 1)))
+                        0
+                    ], l + c * a, s - 79 * scaleby) : Ci(t[a][
+                            0
+                        ], a < 13 ? _.pos.x - 200 * scaleby : _.pos
+                        .x - 200 * scaleby - c, _.pos.y + c * ((10 -
+                            a) % 3 - 1)))
                 } else re = CanvasUtils.loadImage("img/inv-empty.png", re)
             },
             buttonInv: Wi,
@@ -12752,37 +12903,38 @@ var ent, inhandID, weapon, Render = function () {
                 var I = e.pos.x,
                     E = e.pos.y;
                 s.pos.x = I + 265 * scaleby, s.pos.y = E + 0 * scaleby, s
-                    .draw(), o.pos.x = I + 87 * scaleby, o.pos.y = E + 15 *
-                    scaleby, 1 === Keyboard.isAzerty() && o.setState(GUI
-                        .__BUTTON_CLICK__), o.draw(), t.pos.x = I + 173 *
-                    scaleby, t.pos.y = E + 15 * scaleby, 1 === Keyboard
-                    .isQwerty() && t.setState(GUI.__BUTTON_CLICK__), t
-                    .draw(), _.pos.x = I + 87 * scaleby, _.pos.y = E + 62 *
-                    scaleby, 3 === CanvasUtils.options.forceResolution && _
-                    .setState(GUI.__BUTTON_CLICK__), _.draw(), a.pos.x = I +
-                    147 * scaleby, a.pos.y = E + 62 * scaleby, 2 ===
-                    CanvasUtils.options.forceResolution && a.setState(GUI
+                    .draw(), o.pos.x = I + 87 * scaleby,
+                    o.pos.y = E + 15 * scaleby, 1 === Keyboard.isAzerty() &&
+                    o.setState(GUI.__BUTTON_CLICK__), o.draw(), t.pos.x =
+                    I + 173 * scaleby, t.pos.y = E + 15 * scaleby,
+                    1 === Keyboard.isQwerty() && t.setState(GUI
+                        .__BUTTON_CLICK__), t.draw(), _.pos.x = I + 87 *
+                    scaleby, _.pos.y = E + 62 * scaleby,
+                    3 === CanvasUtils.options.forceResolution && _.setState(
+                        GUI.__BUTTON_CLICK__), _.draw(), a.pos.x = I + 147 *
+                    scaleby, a.pos.y = E + 62 * scaleby, 2 === CanvasUtils
+                    .options.forceResolution && a.setState(GUI
                         .__BUTTON_CLICK__), a.draw(), i.pos.x = I + 207 *
-                    scaleby, i.pos.y = E + 62 * scaleby, 1 === CanvasUtils
-                    .options.forceResolution && i.setState(GUI
-                        .__BUTTON_CLICK__), i.draw(), d.pos.x = I + 87 *
+                    scaleby, i.pos.y = E + 62 * scaleby,
+                    1 === CanvasUtils.options.forceResolution && i.setState(
+                        GUI.__BUTTON_CLICK__), i.draw(), d.pos.x = I + 87 *
                     scaleby, d.pos.y = E + 117 * scaleby, 1 === AudioUtils
                     .options.isAudio && d.setState(GUI.__BUTTON_CLICK__), d
                     .draw(), n.pos.x = I + 147 * scaleby, n.pos.y = E +
                     117 * scaleby, 0 === AudioUtils.options.isAudio && n
-                    .setState(GUI.__BUTTON_CLICK__), n.draw(), r.pos.x = I +
-                    87 * scaleby, r.pos.y = E + 167 * scaleby, 1 ===
-                    AudioUtils.options.isFx && r.setState(GUI
-                        .__BUTTON_CLICK__), r.draw(), l.pos.x = I + 147 *
-                    scaleby, l.pos.y = E + 167 * scaleby, 0 === AudioUtils
-                    .options.isFx && l.setState(GUI.__BUTTON_CLICK__), l
-                    .draw(), c.pos.x = I + 87 * scaleby, c.pos.y = E + 217 *
-                    scaleby, 0 === oe && c.setState(GUI.__BUTTON_CLICK__), c
-                    .draw(), m.pos.x = I + 147 * scaleby, m.pos.y = E +
-                    217 * scaleby, 1 === oe && m.setState(GUI
-                        .__BUTTON_CLICK__), m.draw(), g.pos.x = I + 207 *
-                    scaleby, g.pos.y = E + 217 * scaleby, 2 === oe && g
-                    .setState(GUI.__BUTTON_CLICK__), g.draw()
+                    .setState(GUI.__BUTTON_CLICK__),
+                    n.draw(), r.pos.x = I + 87 * scaleby, r.pos.y = E +
+                    167 * scaleby, 1 === AudioUtils.options.isFx && r
+                    .setState(GUI.__BUTTON_CLICK__), r.draw(), l.pos.x = I +
+                    147 * scaleby, l.pos.y = E + 167 * scaleby, 0 ===
+                    AudioUtils.options.isFx && l.setState(GUI
+                        .__BUTTON_CLICK__), l.draw(), c.pos.x = I + 87 *
+                    scaleby, c.pos.y = E + 217 * scaleby, 0 === oe && c
+                    .setState(GUI.__BUTTON_CLICK__), c.draw(), m.pos.x = I +
+                    147 * scaleby, m.pos.y = E + 217 * scaleby, 1 === oe &&
+                    m.setState(GUI.__BUTTON_CLICK__), m.draw(), g.pos.x =
+                    I + 207 * scaleby, g.pos.y = E + 217 * scaleby, 2 ===
+                    oe && g.setState(GUI.__BUTTON_CLICK__), g.draw()
             },
             craft: function (e, i, a, _, o, t, d, n, r, l, s, g, m, c) {
                 e.draw();
@@ -12807,7 +12959,8 @@ var ent, inhandID, weapon, Render = function () {
                     T = d[w];
                     w === R && T.setState(GUI.__BUTTON_CLICK__), T.pos.x =
                         I - 40 * scaleby, T.pos.y = 10 * scaleby + E + 43 *
-                        O * scaleby, T.draw(), O++
+                        O * scaleby, T.draw(),
+                        O++
                 }
                 n.pos.x = I + 364 * scaleby, n.pos.y = E + 27 * scaleby, n
                     .draw();
@@ -12920,8 +13073,8 @@ var ent, inhandID, weapon, Render = function () {
                             AREAS.__SMELTER__ || R === AREAS
                             .__EXTRACTOR__ || R === AREAS.__AGITATOR__ ? g :
                             R === AREAS.__TESLA__ ? m : s).pos.x = I + 532 *
-                        scaleby, T.pos.y = E + 153 * scaleby, 255 !== World
-                        .PLAYER.building.fuel ? T.draw() : (ctx
+                        scaleby, T.pos.y = E + 153 * scaleby,
+                        255 !== World.PLAYER.building.fuel ? T.draw() : (ctx
                             .globalAlpha = .5, T.setState(GUI
                                 .__BUTTON_OUT__), T.draw(), ctx
                             .globalAlpha = 1), l[K] === window.undefined &&
@@ -12982,14 +13135,14 @@ var ent, inhandID, weapon, Render = function () {
                     var Y = E / scaleby;
                     ge.move < 500 ? Y += -62 - 15 * MathUtils.Ease
                         .inOutQuad(H / 500) : Y += -62 - 15 * MathUtils.Ease
-                        .inOutQuad((1e3 - H) / 500), ctx.globalAlpha =
-                        MathUtils.Ease.inQuad(ge.effect), CanvasUtils
-                        .drawImageHd(ge, 266 + e.pos.x / scaleby, Y, 0, 0,
-                            0, 1), ctx.globalAlpha = 1, World.PLAYER
-                        .skillPoint <= 0 ? ge.effect = window.Math.max(0, ge
-                            .effect - delta / 500) : ge.effect < 1 && (ge
-                            .effect = window.Math.min(1, ge.effect + delta /
-                                500))
+                        .inOutQuad((1e3 - H) / 500),
+                        ctx.globalAlpha = MathUtils.Ease.inQuad(ge.effect),
+                        CanvasUtils.drawImageHd(ge, 266 + e.pos.x / scaleby,
+                            Y, 0, 0, 0, 1), ctx.globalAlpha = 1, World
+                        .PLAYER.skillPoint <= 0 ? ge.effect = window.Math
+                        .max(0, ge.effect - delta / 500) : ge.effect < 1 &&
+                        (ge.effect = window.Math.min(1, ge.effect + delta /
+                            500))
                 }
                 var G = Game.recipe;
                 for (b = World.PLAYER.recipeLen, y = 40 * scaleby, S = 40 *
@@ -13012,10 +13165,10 @@ var ent, inhandID, weapon, Render = function () {
                                 .y / scaleby + 32, -.5, 0, 0, .9), ctx
                             .globalAlpha = 1) : (T.draw(), CanvasUtils
                             .drawImageHd(r[K], T.pos.x / scaleby + 30, T.pos
-                                .y / scaleby + 32, -.5, 0, 0, .9)), c ===
-                        w && World.PLAYER.recipeList[w] > 0 && Ci(World
-                            .PLAYER.recipeList[w], T.pos.x, T.pos.y + 45 *
-                            scaleby)
+                                .y / scaleby + 32, -.5, 0, 0, .9)),
+                        c === w && World.PLAYER.recipeList[w] > 0 && Ci(
+                            World.PLAYER.recipeList[w], T.pos.x, T.pos.y +
+                            45 * scaleby)
                 }
             },
             chest: function (e, i, a, _) {
@@ -13027,8 +13180,8 @@ var ent, inhandID, weapon, Render = function () {
                 for (var d, n = World.PLAYER.chest, r = t + 14 * scaleby,
                         l = Game.chest, s = 0; s < 4; s++) s % 2 == 0 ? (d =
                         o + 12.5 * scaleby, 2 === s && (r += 71 * scaleby)
-                        ) : d += 72 * scaleby, 0 !== n[s][0] && Wi(l[s], n[
-                        s], d, r, a, _)
+                        ) : d += 72 * scaleby,
+                    0 !== n[s][0] && Wi(l[s], n[s], d, r, a, _)
             },
             team: function (e, i, a, _, o, t, d, n) {
                 var r = 0,
@@ -13051,8 +13204,8 @@ var ent, inhandID, weapon, Render = function () {
                                 14, 122, 16.5, "#000000"), ctx.drawImage(Vi,
                                 r + 35 * scaleby, l + 14.5 * scaleby, Vi
                                 .wh * scaleby, Vi.h2 * scaleby)), o.pos.x =
-                        r + 172 * scaleby, o.pos.y = l + 6 * scaleby, 0 ===
-                        s || window.Date.now() - World.PLAYER
+                        r + 172 * scaleby, o.pos.y = l + 6 * scaleby,
+                        0 === s || window.Date.now() - World.PLAYER
                         .teamCreateDelay < 30500 ? (o.setState(GUI
                                 .__BUTTON_OUT__), ctx.globalAlpha = .5, o
                             .draw(), ctx.globalAlpha = 1) : o.draw();
@@ -13110,9 +13263,10 @@ var ent, inhandID, weapon, Render = function () {
                                     Game.kick[m]).pos.x = r + (132 + m % 3 *
                                     166.5) * scaleby, I.pos.y = l + (48.5 +
                                     29.5 * window.Math.floor(m / 3)) *
-                                scaleby, window.Date.now() - World.PLAYER
-                                .teamDelay < 10500 || E.id === World.PLAYER
-                                .id ? (I.setState(GUI.__BUTTON_OUT__), ctx
+                                scaleby,
+                                window.Date.now() - World.PLAYER.teamDelay <
+                                10500 || E.id === World.PLAYER.id ? (I
+                                    .setState(GUI.__BUTTON_OUT__), ctx
                                     .globalAlpha = .5, I.draw(), ctx
                                     .globalAlpha = 1) : I.draw(), m++
                         }
@@ -13176,8 +13330,9 @@ var ent, inhandID, weapon, Render = function () {
                         var n = LOOT[World.PLAYER.loot];
                         t = (X + Q) * a - _ / (2 * scaleby), d = window.Math
                             .max(10, (j + q) * a - o / (2 * scaleby) - 65 *
-                                a - 60), CanvasUtils.drawImageHd(n, t + 77,
-                                d + 33, n.angle, 0, 0, n.scale);
+                                a - 60),
+                            CanvasUtils.drawImageHd(n, t + 77, d + 33, n
+                                .angle, 0, 0, n.scale);
                         break;
                     case 1:
                         var r = World.PLAYER.interactionDelay / World.PLAYER
@@ -13242,9 +13397,10 @@ var ent, inhandID, weapon, Render = function () {
                                     d, _, o);
                             n = LOOT[World.PLAYER.loot];
                             t = (X + Q) * a + 5, d = window.Math.max(10, (
-                                    j + q) * a - o / (2 * scaleby) -
-                                65 * a - 60), CanvasUtils.drawImageHd(n,
-                                t + 77, d + 33, n.angle, 0, 0, n.scale)
+                                        j + q) * a - o / (2 * scaleby) -
+                                    65 * a - 60),
+                                CanvasUtils.drawImageHd(n, t + 77, d + 33, n
+                                    .angle, 0, 0, n.scale)
                         }
                     }
                 }
@@ -13394,8 +13550,8 @@ var ent, inhandID, weapon, Render = function () {
                             scaleby * (j + i.y + o)), ctx.rotate(t * v), ctx
                         .translate(e.xRotate * scaleby - s / 2, e.yRotate *
                             scaleby - g / 2), ctx.drawImage(l, -e.xRotate *
-                            scaleby, -e.yRotate * scaleby, s, g), ctx
-                        .restore()
+                            scaleby, -e.yRotate * scaleby, s, g),
+                        ctx.restore()
                 } else r.img = CanvasUtils.loadImage(r.src, r.img)
             },
             door: function (a, _, o, t, d, n) {
@@ -13478,9 +13634,9 @@ var ent, inhandID, weapon, Render = function () {
                 de[i.i + d][i.j + n].tile = ui, de[i.i - d][i.j - n].tile =
                     ui, de[i.i + d][i.j + n].tilePid = i.pid, de[i.i - d][i
                         .j - n
-                    ].tilePid = i.pid, de[i.i + d][i.j + n].category =
-                    window.undefined, de[i.i - d][i.j - n].category = window
-                    .undefined;
+                    ].tilePid = i.pid,
+                    de[i.i + d][i.j + n].category = window.undefined, de[i
+                        .i - d][i.j - n].category = window.undefined;
                 var r = i.state >> 4 & 1;
                 1 === r ? i.hit = window.Math.min(500, i.hit + delta) : i
                     .hit > 0 && (i.hit = window.Math.max(0, i.hit - delta)),
@@ -13527,12 +13683,13 @@ var ent, inhandID, weapon, Render = function () {
                         i.heal += n * delta / 300, CanvasUtils.drawImageHd(e
                             .building[1], X + i.x + a, j + i.y + _, o * v,
                             0, 0, t), CanvasUtils.drawImageHd(e.building[2],
-                            X + i.x + a + e.spine[o][0], j + i.y + _ + e
-                            .spine[o][1], o * v + i.heal, 0, 0, t),
-                        CanvasUtils.drawImageHd(e.building[3], X + i.x + a,
-                            j + i.y + _, o * v, 0, 0, t)) : CanvasUtils
-                    .drawImageHd(e.building[0], X + i.x + a, j + i.y + _,
-                        o * v, 0, 0, t), i.hit > 0 && oa(i, a, _)
+                            X + i.x + a + e.spine[o]
+                            [0], j + i.y + _ + e.spine[o][1], o * v + i
+                            .heal, 0, 0, t), CanvasUtils.drawImageHd(e
+                            .building[3], X + i.x + a, j + i.y + _, o * v,
+                            0, 0, t)) : CanvasUtils.drawImageHd(e.building[
+                        0], X + i.x + a, j + i.y + _, o * v, 0, 0, t), i
+                    .hit > 0 && oa(i, a, _)
             },
             extractor: function (e, i, a, _, o, t) {
                 var d = i.state >> 4 & 1;
@@ -13547,12 +13704,13 @@ var ent, inhandID, weapon, Render = function () {
                         a += (2 * window.Math.random() - 1) * n, _ += (2 *
                             window.Math.random() - 1) * n, i.heal += n *
                         delta / 300, CanvasUtils.drawImageHd(e.building[1],
-                            X + i.x + a + e.spine[o][0], j + i.y + _ + e
-                            .spine[o][1], o * v + i.heal, 0, 0, t),
-                        CanvasUtils.drawImageHd(e.building[0], X + i.x + a,
-                            j + i.y + _, o * v, 0, 0, t)) : CanvasUtils
-                    .drawImageHd(e.building[2], X + i.x + a, j + i.y + _,
-                        o * v, 0, 0, t), i.hit > 0 && oa(i, a, _)
+                            X + i.x + a + e.spine[o]
+                            [0], j + i.y + _ + e.spine[o][1], o * v + i
+                            .heal, 0, 0, t), CanvasUtils.drawImageHd(e
+                            .building[0], X + i.x + a, j + i.y + _, o * v,
+                            0, 0, t)) : CanvasUtils.drawImageHd(e.building[
+                        2], X + i.x + a, j + i.y + _, o * v, 0, 0, t), i
+                    .hit > 0 && oa(i, a, _)
             },
             workbench2: function (e, i, a, _, o, t) {
                 var d = (o + 1) % 2,
@@ -13560,10 +13718,11 @@ var ent, inhandID, weapon, Render = function () {
                 de[i.i + d][i.j + n].tile = ui, de[i.i - d][i.j - n].tile =
                     ui, de[i.i + d][i.j + n].tilePid = i.pid, de[i.i - d][i
                         .j - n
-                    ].tilePid = i.pid, de[i.i + d][i.j + n].category =
-                    window.undefined, de[i.i - d][i.j - n].category = window
-                    .undefined, _a(e, i, 0), CanvasUtils.drawImageHd(e
-                        .building, X + i.x + a, j + i.y + _, o * v, 0, 0, t)
+                    ].tilePid = i.pid,
+                    de[i.i + d][i.j + n].category = window.undefined, de[i
+                        .i - d][i.j - n].category = window.undefined, _a(e,
+                        i, 0), CanvasUtils.drawImageHd(e.building, X + i.x +
+                        a, j + i.y + _, o * v, 0, 0, t)
             },
             teslaBench: function (e, i, a, _, o, t) {
                 var d = (o + 1) % 2,
@@ -13571,9 +13730,9 @@ var ent, inhandID, weapon, Render = function () {
                 de[i.i + d][i.j + n].tile = ui, de[i.i - d][i.j - n].tile =
                     ui, de[i.i + d][i.j + n].tilePid = i.pid, de[i.i - d][i
                         .j - n
-                    ].tilePid = i.pid, de[i.i + d][i.j + n].category =
-                    window.undefined, de[i.i - d][i.j - n].category = window
-                    .undefined;
+                    ].tilePid = i.pid,
+                    de[i.i + d][i.j + n].category = window.undefined, de[i
+                        .i - d][i.j - n].category = window.undefined;
                 var r = i.state >> 4 & 1;
                 1 === r ? i.hit = window.Math.min(500, i.hit + delta) : i
                     .hit > 0 && (i.hit = window.Math.max(0, i.hit - delta)),
@@ -13619,10 +13778,11 @@ var ent, inhandID, weapon, Render = function () {
                                     n = 0,
                                     r = 0,
                                     l = 0;
-                                return i - 1 >= 0 && de[i - 1][a]
-                                    .floorFrame === ui && (n = 1, o +=
-                                        C), i + 1 < d && de[i + 1][a]
-                                    .floorFrame === ui && (o += F, r =
+                                return i - 1 >= 0 && de[i - 1]
+                                    [a].floorFrame === ui && (n = 1,
+                                        o += C), i + 1 < d && de[i + 1][
+                                        a
+                                    ].floorFrame === ui && (o += F, r =
                                         1), a - 1 >= 0 && de[i][a - 1]
                                     .floorFrame === ui && (o += M, l =
                                         1), a + 1 < _ && de[i][a + 1]
@@ -13656,9 +13816,9 @@ var ent, inhandID, weapon, Render = function () {
                 1 === d ? i.hit = window.Math.min(500, i.hit + delta) : i
                     .hit > 0 && (i.hit = window.Math.max(0, i.hit - delta)),
                     0 === d && 1 === n.usable && 1 === _a(n, i, 0) && (World
-                        .PLAYER.eInteract = pe), CanvasUtils.drawImageHd(n
-                        .building, X + i.x + a, j + i.y + _, o * v, 0, 0, t
-                        ), i.hit > 0 && oa(i, a, _)
+                        .PLAYER.eInteract = pe),
+                    CanvasUtils.drawImageHd(n.building, X + i.x + a, j + i
+                        .y + _, o * v, 0, 0, t), i.hit > 0 && oa(i, a, _)
             },
             road: function (e, i, a, _, o, t) {
                 var d = INVENTORY[e.id].subtype[i.subtype];
@@ -13692,8 +13852,9 @@ var ent, inhandID, weapon, Render = function () {
                     n = .95 + .3 * MathUtils.Ease.inOutQuad(d);
                 ctx.globalAlpha = 1 - d, CanvasUtils.drawImageHd(e.building[
                         1], X + i.x + a, j + i.y + _, o * v, 0, 0, n), ctx
-                    .globalAlpha = 1, CanvasUtils.drawImageHd(e.building[0],
-                        X + i.x + a, j + i.y + _, o * v, 0, 0, t)
+                    .globalAlpha = 1,
+                    CanvasUtils.drawImageHd(e.building[0], X + i.x + a, j +
+                        i.y + _, o * v, 0, 0, t)
             },
             spike: function (e, i, a, _, o, t) {
                 var d = 0,
@@ -13897,14 +14058,17 @@ function _AutoEat() {
         E = 0,
         u = World.PLAYER.interactionDelay,
         L = !1;
-    (u -= delta) <= 0 && -1 === World.PLAYER.interaction && (I = !1), E = 1 !=
-        weapon.consumable || weapon.heal < -1 || weapon.food <= 0 ? 0 : 1, m <
-        setHungryLevel && (I || (0 === E ? function () {
+    (u -= delta) <= 0 && -1 === World.PLAYER.interaction && (I = !1),
+        E = 1 != weapon.consumable || weapon.heal < -1 || weapon.food <= 0 ? 0 :
+        1, m < setHungryLevel && (I || (0 === E ? function () {
             for (var m = 0; m < c.length; m++) c[m][0] !== o && c[m][
-                0] !== t && c[m][0] !== d && c[m][0] !== n && c[m][
-                0] !== r && c[m][0] !== l && c[m][0] !== s && c[m][
-                0] !== g || (e = c[m][0], i = c[m][1], a = c[m][2], _ =
-                    c[m][3]);
+                0
+            ] !== t && c[m][0] !== d && c[m][0] !== n && c[m][
+                0
+            ] !== r && c[m][0] !== l && c[m][0] !== s && c[m][
+                0
+            ] !== g || (e = c[m][0], i = c[m][1], a = c[m]
+                [2], _ = c[m][3]);
             L = null != e || null != i || null != a || null != _;
             I || L && function (e, i, a, _) {
                 I || L && Client.sendPacket(window.JSON.stringify([
@@ -13936,9 +14100,10 @@ var MapManager = function () {
         init: function (t, d, n, r) {
             window.console.time("Town generation"),
                 function (t, d, n) {
-                    new RNG.Random(t), e = d, i = n, MapManager.width =
-                        d, MapManager.height = n, a = [], MapManager
-                        .grid = a, [], _ = [], MapManager.roads = _, -1,
+                    new RNG.Random(t), e = d, i = n,
+                        MapManager.width = d, MapManager.height = n,
+                        a = [], MapManager.grid = a, [], _ = [],
+                        MapManager.roads = _, -1,
                         o.i = 0, o.j = 0, 0
                 }(t, d, n),
                 function () {
@@ -13955,14 +14120,18 @@ var MapManager = function () {
         height: 0
     }
 }();
-COUNTER_ENTITIE = 0, __ENTITIE_PLAYER__ = COUNTER_ENTITIE++, __ENTITIE_LOOT__ =
-    COUNTER_ENTITIE++, __ENTITIE_BULLET__ = COUNTER_ENTITIE++,
-    __ENTITIE_BUILD_TOP__ = COUNTER_ENTITIE++, __ENTITIE_BUILD_DOWN__ =
-    COUNTER_ENTITIE++, __ENTITIE_BUILD_GROUND__ = COUNTER_ENTITIE++,
-    __ENTITIE_BUILD_GROUND2__ = COUNTER_ENTITIE++, __ENTITIE_PARTICLES__ =
-    COUNTER_ENTITIE++, __ENTITIE_RESOURCES_TOP__ = COUNTER_ENTITIE++,
-    __ENTITIE_RESOURCES_DOWN__ = COUNTER_ENTITIE++, __ENTITIE_RESOURCES_MID__ =
-    COUNTER_ENTITIE++, __ENTITIE_RESOURCES_STOP__ = COUNTER_ENTITIE++,
+COUNTER_ENTITIE = 0, __ENTITIE_PLAYER__ = COUNTER_ENTITIE++,
+    __ENTITIE_LOOT__ = COUNTER_ENTITIE++, __ENTITIE_BULLET__ =
+    COUNTER_ENTITIE++,
+    __ENTITIE_BUILD_TOP__ = COUNTER_ENTITIE++,
+    __ENTITIE_BUILD_DOWN__ = COUNTER_ENTITIE++,
+    __ENTITIE_BUILD_GROUND__ = COUNTER_ENTITIE++,
+    __ENTITIE_BUILD_GROUND2__ = COUNTER_ENTITIE++,
+    __ENTITIE_PARTICLES__ = COUNTER_ENTITIE++,
+    __ENTITIE_RESOURCES_TOP__ = COUNTER_ENTITIE++,
+    __ENTITIE_RESOURCES_DOWN__ = COUNTER_ENTITIE++,
+    __ENTITIE_RESOURCES_MID__ = COUNTER_ENTITIE++,
+    __ENTITIE_RESOURCES_STOP__ = COUNTER_ENTITIE++,
     __ENTITIE_EXPLOSION__ = COUNTER_ENTITIE++, __ENTITIE_AI__ =
     COUNTER_ENTITIE++, ENTITIES[__ENTITIE_PLAYER__].update = function (e, i,
     a) {
@@ -14007,12 +14176,12 @@ COUNTER_ENTITIE = 0, __ENTITIE_PLAYER__ = COUNTER_ENTITIE++, __ENTITIE_LOOT__ =
             t = ((_ + o) % o - (e.hurtAngle + o) % o) % o;
         window.Math.abs(t) > .1 && (e.rx = e.x, e.ry = e.y, e.nx = e.x, e.ny = e
             .y)
-    }, ENTITIES[__ENTITIE_RESOURCES_TOP__].update = function () {}, ENTITIES[
-        __ENTITIE_RESOURCES_DOWN__].update = ENTITIES[__ENTITIE_RESOURCES_TOP__]
-    .update, ENTITIES[__ENTITIE_RESOURCES_MID__].update = ENTITIES[
-        __ENTITIE_RESOURCES_TOP__].update, ENTITIES[__ENTITIE_RESOURCES_STOP__]
+    }, ENTITIES[__ENTITIE_RESOURCES_TOP__].update = function () {},
+    ENTITIES[__ENTITIE_RESOURCES_DOWN__].update = ENTITIES[
+        __ENTITIE_RESOURCES_TOP__].update, ENTITIES[__ENTITIE_RESOURCES_MID__]
     .update = ENTITIES[__ENTITIE_RESOURCES_TOP__].update, ENTITIES[
-        __ENTITIE_BUILD_TOP__].update = function (e, i, a) {
+        __ENTITIE_RESOURCES_STOP__].update = ENTITIES[__ENTITIE_RESOURCES_TOP__]
+    .update, ENTITIES[__ENTITIE_BUILD_TOP__].update = function (e, i, a) {
         var _ = e.extra >> 5 & 3;
         e.subtype = e.state >> 5 & 63, e.broke = e.state >> 14, e.state =
             16383 & e.state;
@@ -14021,11 +14190,12 @@ COUNTER_ENTITIE = 0, __ENTITIE_PLAYER__ = COUNTER_ENTITIE++, __ENTITIE_LOOT__ =
             .__TILE_SIZE__ + Render.__TILE_SIZE2__ + o.xCenter[_], e.y = window
             .Math.floor(a / Render.__TILE_SIZE__) * Render.__TILE_SIZE__ +
             Render.__TILE_SIZE2__ + o.yCenter[_], e.rx = e.x, e.ry = e.y, e.nx =
-            e.x, e.ny = e.y, e.px = e.x, e.py = e.y, 1 === o.door && 16 == (16 &
-                e.state) && (e.px = window.Math.floor(e.j + o.jMove[_]) * Render
-                .__TILE_SIZE__ + Render.__TILE_SIZE2__ + o.xCenter[(_ + 1) % 4],
-                e.py = window.Math.floor(e.i + o.iMove[_]) * Render
-                .__TILE_SIZE__ + Render.__TILE_SIZE2__ + o.yCenter[(_ + 1) % 4])
+            e.x, e.ny = e.y, e.px = e.x,
+            e.py = e.y, 1 === o.door && 16 == (16 & e.state) && (e.px = window
+                .Math.floor(e.j + o.jMove[_]) * Render.__TILE_SIZE__ + Render
+                .__TILE_SIZE2__ + o.xCenter[(_ + 1) % 4], e.py = window.Math
+                .floor(e.i + o.iMove[_]) * Render.__TILE_SIZE__ + Render
+                .__TILE_SIZE2__ + o.yCenter[(_ + 1) % 4])
     }, ENTITIES[__ENTITIE_BUILD_DOWN__].update = ENTITIES[__ENTITIE_BUILD_TOP__]
     .update, ENTITIES[__ENTITIE_BUILD_GROUND__].update = ENTITIES[
         __ENTITIE_BUILD_TOP__].update, ENTITIES[__ENTITIE_BUILD_GROUND2__]
@@ -14067,14 +14237,14 @@ var SOUNDID = {
     },
     SOUND = [];
 SOUND[SOUNDID.__WOOD_IMPACT__] = "audio/wood-impact.mp3", SOUND[SOUNDID
-    .__STONE_IMPACT__] = "audio/stone-impact2.mp3", SOUND[SOUNDID
-    .__STONE_IMPACT_2__] = "audio/stone-impact.mp3", SOUND[SOUNDID
-    .__STEEL_IMPACT__] = "audio/metal-impact2.mp3", SOUND[SOUNDID
-    .__PILLOW_IMPACT__] = "audio/pillow-impact.mp3", SOUND[SOUNDID
-    .__WOOD_DESTROY__] = "audio/wood-destroy3.mp3", SOUND[SOUNDID
-    .__STONE_DESTROY__] = "audio/stone-destroy.mp3", SOUND[SOUNDID
-    .__STEEL_DESTROY__] = "audio/metal-destroy2.mp3", SOUND[SOUNDID
-    .__PILLOW_DESTROY__] = "audio/pillow-destroy.mp3";
+        .__STONE_IMPACT__] = "audio/stone-impact2.mp3", SOUND[SOUNDID
+        .__STONE_IMPACT_2__] = "audio/stone-impact.mp3", SOUND[SOUNDID
+        .__STEEL_IMPACT__] = "audio/metal-impact2.mp3", SOUND[SOUNDID
+        .__PILLOW_IMPACT__] = "audio/pillow-impact.mp3", SOUND[SOUNDID
+        .__WOOD_DESTROY__] = "audio/wood-destroy3.mp3", SOUND[SOUNDID
+        .__STONE_DESTROY__] = "audio/stone-destroy.mp3", SOUND[SOUNDID
+        .__STEEL_DESTROY__] = "audio/metal-destroy2.mp3",
+    SOUND[SOUNDID.__PILLOW_DESTROY__] = "audio/pillow-destroy.mp3";
 var SOUND_LENGTH = SOUND.length;
 COUNTER = 0;
 var BEHAVIOR = {
@@ -14839,13 +15009,13 @@ function Detail(e, i, a, _, o, t, d, n, r) {
             .recipe = _), o !== window.undefined && (this.stack = o), t !==
         window.undefined) {
         this.area = [], this.timer = [];
-        for (var l = 0; l < t.length; l++) this.area[l] = t[l][0], this.timer[
-            l] = t[l][1]
+        for (var l = 0; l < t.length; l++) this.area[l] = t[l][0],
+            this.timer[l] = t[l][1]
     }
-    a !== window.undefined ? this.category = a : this.category = -1, d !==
-        window.undefined ? this.level = d : this.level = -1, n !== window
-        .undefined ? this.previous = n : this.previous = -1, r !== window
-        .undefined ? this.price = r : this.price = 1
+    a !== window.undefined ? this.category = a : this.category = -1,
+        d !== window.undefined ? this.level = d : this.level = -1,
+        n !== window.undefined ? this.previous = n : this.previous = -1, r !==
+        window.undefined ? this.price = r : this.price = 1
 }
 PARTICLES[PARTICLESID.__FIRE__] = [{
     src: "img/day-particules-fire1.png",
@@ -16000,7 +16170,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Wood Spear", "Don't forget to pick it up.",
-        SKILLS.__WEAPON__, [
+        SKILLS.__WEAPON__,
+        [
             [IID.__WOOD__, 70]
         ], 1, [
             [AREAS.__PLAYER__, 15e3],
@@ -16226,8 +16397,10 @@ var INVENTORY = [{
     collision: 1,
     areaEffect: 0,
     draw: Render.wall,
-    drawFloor: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    drawFloor: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0
     ],
     broken: [{
@@ -16547,8 +16720,10 @@ var INVENTORY = [{
     collision: 1,
     areaEffect: 0,
     draw: Render.wall,
-    drawFloor: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    drawFloor: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0
     ],
     broken: [{
@@ -16868,8 +17043,10 @@ var INVENTORY = [{
     collision: 1,
     areaEffect: 0,
     draw: Render.wall,
-    drawFloor: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    drawFloor: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0
     ],
     broken: [{
@@ -17146,7 +17323,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Wooden Low Door", "You can shoot through it.",
-        SKILLS.__BUILDING__, [
+        SKILLS.__BUILDING__,
+        [
             [IID.__WOOD__, 40]
         ], 1, [
             [AREAS.__WORKBENCH__, 15e3]
@@ -17253,7 +17431,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Stone Low Door", "You can shoot through it.",
-        SKILLS.__BUILDING__, [
+        SKILLS.__BUILDING__,
+        [
             [IID.__STONE__, 40]
         ], 1, [
             [AREAS.__WORKBENCH__, 15e3]
@@ -17467,7 +17646,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Campfire", "Warm you when you're cold.", SKILLS
-        .__SURVIVAL__, [
+        .__SURVIVAL__,
+        [
             [IID.__WOOD__, 30],
             [IID.__STONE__, 5]
         ], 1, [
@@ -17857,7 +18037,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Min. Radiation Suit",
-        "Previously, on Breaking Bad.", SKILLS.__CLOTHE__, [
+        "Previously, on Breaking Bad.", SKILLS.__CLOTHE__,
+        [
             [IID.__ALLOYS__, 2],
             [IID.__SHAPED_METAL__, 2],
             [IID.__STRING__, 4],
@@ -18896,7 +19077,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Wood floor", "Players can't spawn on it", SKILLS
-        .__BUILDING__, [
+        .__BUILDING__,
+        [
             [IID.__WOOD__, 15]
         ], 2, [
             [AREAS.__WORKBENCH__, 15e3]
@@ -19357,7 +19539,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Light Wood Floor", "Players can't spawn on it",
-        SKILLS.__BUILDING__, [
+        SKILLS.__BUILDING__,
+        [
             [IID.__WOOD__, 15]
         ], 2, [
             [AREAS.__WORKBENCH__, 15e3]
@@ -19675,7 +19858,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Wooden Low Wall", "You can shoot through it.",
-        SKILLS.__BUILDING__, [
+        SKILLS.__BUILDING__,
+        [
             [IID.__WOOD__, 10]
         ], 1, [
             [AREAS.__WORKBENCH__, 1e4]
@@ -19966,7 +20150,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Stone Low Wall", "You can shoot through it.",
-        SKILLS.__BUILDING__, [
+        SKILLS.__BUILDING__,
+        [
             [IID.__STONE__, 10]
         ], 1, [
             [AREAS.__WORKBENCH__, 15e3]
@@ -20257,7 +20442,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Metal Low Wall", "You can shoot through it.",
-        SKILLS.__BUILDING__, [
+        SKILLS.__BUILDING__,
+        [
             [IID.__SHAPED_METAL__, 2]
         ], 1, [
             [AREAS.__WORKBENCH2__, 2e4]
@@ -20819,7 +21005,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Wood Crossbow", "Shoot faster, reload slower",
-        SKILLS.__WEAPON__, [
+        SKILLS.__WEAPON__,
+        [
             [IID.__WOOD__, 200],
             [IID.__STRING__, 2],
             [IID.__SHAPED_METAL__, 1]
@@ -20927,7 +21114,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Stone floor", "Players can't spawn on it",
-        SKILLS.__BUILDING__, [
+        SKILLS.__BUILDING__,
+        [
             [IID.__STONE__, 15]
         ], 2, [
             [AREAS.__WORKBENCH__, 15e3]
@@ -21245,7 +21433,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Tiling floor", "Players can't spawn on it",
-        SKILLS.__BUILDING__, [
+        SKILLS.__BUILDING__,
+        [
             [IID.__STONE__, 15]
         ], 2, [
             [AREAS.__WORKBENCH__, 15e3]
@@ -21867,7 +22056,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Alloys", "To craft powerful INVENTORY", SKILLS
-        .__MINERAL__, [
+        .__MINERAL__,
+        [
             [IID.__STEEL__, 1],
             [IID.__JUNK__, 1],
             [IID.__SULFUR__, 1]
@@ -22478,7 +22668,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Protective Suit",
-        "Protects you from explosives", SKILLS.__CLOTHE__, [
+        "Protects you from explosives", SKILLS.__CLOTHE__,
+        [
             [IID.__SHAPED_METAL__, 6],
             [IID.__STRING__, 6],
             [IID.__LEATHER_BOAR__, 6],
@@ -23063,7 +23254,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Lapadone", "You are faster a certain time.",
-        SKILLS.__DRUG__, [
+        SKILLS.__DRUG__,
+        [
             [IID.__SYRINGE__, 1],
             [IID.__CHEMICAL_COMPONENT__, 1],
             [IID.__MUSHROOM1__, 1],
@@ -24972,8 +25164,10 @@ var INVENTORY = [{
     collision: 1,
     areaEffect: 0,
     draw: Render.wall,
-    drawFloor: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    drawFloor: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0
     ],
     broken: [{
@@ -25295,8 +25489,10 @@ var INVENTORY = [{
     collision: 1,
     areaEffect: 0,
     draw: Render.wall,
-    drawFloor: [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1,
-        1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    drawFloor: [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1,
+        1, 1, 1, 1,
+        1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0
     ],
     broken: [{
@@ -25574,7 +25770,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Golden Floor", "Players can't spawn on it",
-        SKILLS.__BUILDING__, [
+        SKILLS.__BUILDING__,
+        [
             [IID.__LEATHER_BOAR__, 2]
         ], 2, [
             [AREAS.__WORKBENCH__, 15e3]
@@ -25891,7 +26088,8 @@ var INVENTORY = [{
         }]
     },
     detail: new Detail("Red floor", "Players can't spawn on it", SKILLS
-        .__BUILDING__, [
+        .__BUILDING__,
+        [
             [IID.__LEATHER_BOAR__, 2]
         ], 2, [
             [AREAS.__WORKBENCH__, 15e3]
@@ -26890,16 +27088,19 @@ if (FURNITURE[FURNITUREID.__SOFA0__] = {
         [IID.__ELECTRONICS__, 4],
         [IID.__SHAPED_METAL__, 4],
         [IID.__JUNK__, 12]
-    ]), FURNITURE[FURNITUREID.__MACHINE0__].width = [100, 100, 100, 100],
-    FURNITURE[FURNITUREID.__MACHINE0__].height = [100, 100, 100, 100],
-    FURNITURE[FURNITUREID.__MACHINE0__]._x = [0, 0, 0, 0], FURNITURE[FURNITUREID
-        .__MACHINE0__]._y = [0, 0, 0, 0], FURNITURE[FURNITUREID.__MACHINE0__]
-    .life = 800, FURNITURE[FURNITUREID.__MACHINE1__] = window.JSON.parse(window
-        .JSON.stringify(FURNITURE[FURNITUREID.__MACHINE0__])), FURNITURE[
-        FURNITUREID.__MACHINE1__].building.src = "img/day-electronic-box1.png",
-    FURNITURE[FURNITUREID.__MACHINE1__].width = [120, 120, 120, 120], FURNITURE[
-        FURNITUREID.__MACHINE1__].height = [120, 120, 120, 120], FURNITURE[
-        FURNITUREID.__MACHINE1__]._x = [-10, -10, -10, -10], FURNITURE[
+    ]), FURNITURE[FURNITUREID.__MACHINE0__].width = [100, 100,
+        100, 100
+    ], FURNITURE[FURNITUREID.__MACHINE0__].height = [100, 100, 100,
+        100
+    ], FURNITURE[FURNITUREID.__MACHINE0__]._x = [0, 0, 0, 0], FURNITURE[
+        FURNITUREID.__MACHINE0__]._y = [0, 0, 0, 0], FURNITURE[FURNITUREID
+        .__MACHINE0__].life = 800, FURNITURE[FURNITUREID.__MACHINE1__] = window
+    .JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID.__MACHINE0__])),
+    FURNITURE[FURNITUREID.__MACHINE1__].building.src =
+    "img/day-electronic-box1.png", FURNITURE[FURNITUREID.__MACHINE1__].width = [
+        120, 120, 120, 120
+    ], FURNITURE[FURNITUREID.__MACHINE1__].height = [120, 120, 120, 120],
+    FURNITURE[FURNITUREID.__MACHINE1__]._x = [-10, -10, -10, -10], FURNITURE[
         FURNITUREID.__MACHINE1__]._y = [-10, -10, -10, -10], FURNITURE[
         FURNITUREID.__MACHINE1__].detail = new Detail("", "", -1, [
         [IID.__ENERGY_CELLS__, 16],
@@ -26936,19 +27137,20 @@ if (FURNITURE[FURNITUREID.__SOFA0__] = {
     ]), FURNITURE[FURNITUREID.__TABLE1__] = window.JSON.parse(window.JSON
         .stringify(FURNITURE[FURNITUREID.__TABLE0__])), FURNITURE[FURNITUREID
         .__TABLE1__].building.src = "img/day-table1.png", FURNITURE[FURNITUREID
-        .__TABLE1__].width = [100, 290, 100, 280], FURNITURE[FURNITUREID
-        .__TABLE1__].height = [280, 100, 280, 100], FURNITURE[FURNITUREID
-        .__TABLE1__].iTile = [-1, 0, -1, 0], FURNITURE[FURNITUREID.__TABLE1__]
-    .jTile = [0, -1, 0, -1], FURNITURE[FURNITUREID.__TABLE1__]._x = [0, -90, 0,
-        -90
-    ], FURNITURE[FURNITUREID.__TABLE1__]._y = [-90, 0, -90, 0], FURNITURE[
-        FURNITUREID.__TABLE2__] = window.JSON.parse(window.JSON.stringify(
-        FURNITURE[FURNITUREID.__TABLE0__])), FURNITURE[FURNITUREID.__TABLE2__]
-    .building.src = "img/day-table2.png", FURNITURE[FURNITUREID.__TABLE2__]
-    .impact = SOUNDID.__STEEL_IMPACT__, FURNITURE[FURNITUREID.__TABLE2__]
-    .destroy = SOUNDID.__STEEL_DESTROY__, FURNITURE[FURNITUREID.__TABLE2__]
-    .particles = PARTICLESID.__STEEL__, FURNITURE[FURNITUREID.__TABLE2__]
-    .detail = new Detail("", "", -1, [
+        .__TABLE1__].width = [
+        100, 290, 100, 280
+    ], FURNITURE[FURNITUREID.__TABLE1__].height = [280, 100, 280,
+        100
+    ], FURNITURE[FURNITUREID.__TABLE1__].iTile = [-1, 0, -1, 0], FURNITURE[
+        FURNITUREID.__TABLE1__].jTile = [0, -1, 0, -1], FURNITURE[FURNITUREID
+        .__TABLE1__]._x = [0, -90, 0, -90], FURNITURE[FURNITUREID.__TABLE1__]
+    ._y = [-90, 0, -90, 0], FURNITURE[FURNITUREID.__TABLE2__] = window.JSON
+    .parse(window.JSON.stringify(FURNITURE[FURNITUREID.__TABLE0__])), FURNITURE[
+        FURNITUREID.__TABLE2__].building.src = "img/day-table2.png", FURNITURE[
+        FURNITUREID.__TABLE2__].impact = SOUNDID.__STEEL_IMPACT__, FURNITURE[
+        FURNITUREID.__TABLE2__].destroy = SOUNDID.__STEEL_DESTROY__, FURNITURE[
+        FURNITUREID.__TABLE2__].particles = PARTICLESID.__STEEL__, FURNITURE[
+        FURNITUREID.__TABLE2__].detail = new Detail("", "", -1, [
         [IID.__SHAPED_METAL__, 8]
     ]), FURNITURE[FURNITUREID.__TV0__] = window.JSON.parse(window.JSON
         .stringify(FURNITURE[FURNITUREID.__SOFA0__])), FURNITURE[FURNITUREID
@@ -27286,10 +27488,12 @@ if (FURNITURE[FURNITUREID.__SOFA0__] = {
     .particles = PARTICLESID.__STEEL__, FURNITURE[FURNITUREID.__USINE_BOX0__]
     .detail = new Detail("", "", -1, [
         [IID.__SHAPED_METAL__, 16]
-    ]), FURNITURE[FURNITUREID.__USINE_BOX0__].width = [70, 70, 70, 70],
-    FURNITURE[FURNITUREID.__USINE_BOX0__].height = [70, 70, 70, 70], FURNITURE[
-        FURNITUREID.__USINE_BOX0__]._x = [15, 15, 15, 15], FURNITURE[FURNITUREID
-        .__USINE_BOX0__]._y = [15, 15, 15, 15], FURNITURE[FURNITUREID
+    ]), FURNITURE[FURNITUREID.__USINE_BOX0__].width = [70, 70, 70,
+        70
+    ], FURNITURE[FURNITUREID.__USINE_BOX0__].height = [70, 70, 70,
+        70
+    ], FURNITURE[FURNITUREID.__USINE_BOX0__]._x = [15, 15, 15, 15], FURNITURE[
+        FURNITUREID.__USINE_BOX0__]._y = [15, 15, 15, 15], FURNITURE[FURNITUREID
         .__USINE_BOX0__].loot = [
         [IID.__ELECTRONICS__, 2, .1],
         [IID.__JUNK__, 2, .1],
@@ -27321,8 +27525,9 @@ FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
         [IID.__LASER_PISTOL__, 1, .005],
         [IID.__ALLOYS__, 2, .05]
     ], FURNITURE[FURNITUREID.__ENERGY_BOX0__] = window.JSON.parse(window.JSON
-        .stringify(FURNITURE[FURNITUREID.__USINE_BOX1__])), FURNITURE[
-        FURNITUREID.__ENERGY_BOX0__].building.src = "img/day-energy-box0.png",
+        .stringify(FURNITURE[FURNITUREID.__USINE_BOX1__])),
+    FURNITURE[FURNITUREID.__ENERGY_BOX0__].building.src =
+    "img/day-energy-box0.png",
     FURNITURE[FURNITUREID.__ENERGY_BOX0__].particles = PARTICLESID.__KAKI__,
     FURNITURE[FURNITUREID.__ENERGY_BOX0__].detail = new Detail("", "", -1, [
         [IID.__SHAPED_METAL__, 16],
@@ -27339,8 +27544,8 @@ FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
         [IID.__LASER_PISTOL__, 1, .005],
         [IID.__ALLOYS__, 2, .05]
     ], FURNITURE[FURNITUREID.__USINE_BOX2__] = window.JSON.parse(window.JSON
-        .stringify(FURNITURE[FURNITUREID.__USINE_BOX0__])), FURNITURE[
-        FURNITUREID.__USINE_BOX2__].building.src =
+        .stringify(FURNITURE[FURNITUREID.__USINE_BOX0__])),
+    FURNITURE[FURNITUREID.__USINE_BOX2__].building.src =
     "img/day-electronic-box4.png", FURNITURE[FURNITUREID.__USINE_BOX2__]
     .loot = [
         [IID.__ELECTRONICS__, 2, .1],
@@ -27354,8 +27559,8 @@ FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
         [IID.__ALLOYS__, 1, .01],
         [IID.__DYNAMITE__, 1, .008]
     ], FURNITURE[FURNITUREID.__USINE_BOX3__] = window.JSON.parse(window.JSON
-        .stringify(FURNITURE[FURNITUREID.__USINE_BOX0__])), FURNITURE[
-        FURNITUREID.__USINE_BOX3__].building.src =
+        .stringify(FURNITURE[FURNITUREID.__USINE_BOX0__])),
+    FURNITURE[FURNITUREID.__USINE_BOX3__].building.src =
     "img/day-electronic-box5.png", FURNITURE[FURNITUREID.__AMMOBOX0__] = window
     .JSON.parse(window.JSON.stringify(FURNITURE[FURNITUREID.__FURNITURE0__])),
     FURNITURE[FURNITUREID.__AMMOBOX0__].building.src = "img/day-ammo-box.png",
@@ -27391,9 +27596,9 @@ FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
         [IID.__LAPADONE__, 1, 5e-4],
         [IID.__LASER_SUBMACHINE__, 1, 5e-4]
     ], FURNITURE[FURNITUREID.__AMMOLOCKER1__] = window.JSON.parse(window.JSON
-        .stringify(FURNITURE[FURNITUREID.__AMMOBOX0__])), FURNITURE[FURNITUREID
-        .__AMMOLOCKER1__].impact = SOUNDID.__STEEL_IMPACT__, FURNITURE[
-        FURNITUREID.__AMMOLOCKER1__].destroy = SOUNDID.__STEEL_DESTROY__,
+        .stringify(FURNITURE[FURNITUREID.__AMMOBOX0__])),
+    FURNITURE[FURNITUREID.__AMMOLOCKER1__].impact = SOUNDID.__STEEL_IMPACT__,
+    FURNITURE[FURNITUREID.__AMMOLOCKER1__].destroy = SOUNDID.__STEEL_DESTROY__,
     FURNITURE[FURNITUREID.__AMMOLOCKER1__].building.src =
     "img/day-ammo-locker1.png", FURNITURE[FURNITUREID.__AMMOLOCKER1__]
     .particles = PARTICLESID.__GREY_STEEL__, FURNITURE[FURNITUREID
@@ -27401,9 +27606,9 @@ FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
         [IID.__SHAPED_METAL__, 32],
         [IID.__SULFUR__, 12]
     ]), FURNITURE[FURNITUREID.__AMMOLOCKER2__] = window.JSON.parse(window.JSON
-        .stringify(FURNITURE[FURNITUREID.__AMMOBOX0__])), FURNITURE[FURNITUREID
-        .__AMMOLOCKER2__].impact = SOUNDID.__STEEL_IMPACT__, FURNITURE[
-        FURNITUREID.__AMMOLOCKER2__].destroy = SOUNDID.__STEEL_DESTROY__,
+        .stringify(FURNITURE[FURNITUREID.__AMMOBOX0__])),
+    FURNITURE[FURNITUREID.__AMMOLOCKER2__].impact = SOUNDID.__STEEL_IMPACT__,
+    FURNITURE[FURNITUREID.__AMMOLOCKER2__].destroy = SOUNDID.__STEEL_DESTROY__,
     FURNITURE[FURNITUREID.__AMMOLOCKER2__].building.src =
     "img/day-ammo-locker2.png", FURNITURE[FURNITUREID.__AMMOLOCKER2__]
     .particles = PARTICLESID.__GREY_STEEL__, FURNITURE[FURNITUREID
@@ -27411,26 +27616,26 @@ FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
         [IID.__SHAPED_METAL__, 32],
         [IID.__SULFUR__, 12]
     ]), FURNITURE[FURNITUREID.__AMMOLOCKER0__] = window.JSON.parse(window.JSON
-        .stringify(FURNITURE[FURNITUREID.__AMMOBOX0__])), FURNITURE[FURNITUREID
-        .__AMMOLOCKER0__].impact = SOUNDID.__STEEL_IMPACT__, FURNITURE[
-        FURNITUREID.__AMMOLOCKER0__].destroy = SOUNDID.__STEEL_DESTROY__,
+        .stringify(FURNITURE[FURNITUREID.__AMMOBOX0__])),
+    FURNITURE[FURNITUREID.__AMMOLOCKER0__].impact = SOUNDID.__STEEL_IMPACT__,
+    FURNITURE[FURNITUREID.__AMMOLOCKER0__].destroy = SOUNDID.__STEEL_DESTROY__,
     FURNITURE[FURNITUREID.__AMMOLOCKER0__].building.src =
     "img/day-ammo-locker0.png", FURNITURE[FURNITUREID.__AMMOLOCKER0__]
     .particles = PARTICLESID.__BLUE_STEEL__, FURNITURE[FURNITUREID
         .__AMMOLOCKER0__].width = [70, 50, 70, 50], FURNITURE[FURNITUREID
-        .__AMMOLOCKER0__].height = [50, 70, 50, 70], FURNITURE[FURNITUREID
-        .__AMMOLOCKER0__]._x = [0, 25, 30, 25], FURNITURE[FURNITUREID
-        .__AMMOLOCKER0__]._y = [25, 0, 25, 30], FURNITURE[FURNITUREID
-        .__AMMOLOCKER0__].detail = new Detail("", "", -1, [
+        .__AMMOLOCKER0__].height = [50, 70, 50, 70],
+    FURNITURE[FURNITUREID.__AMMOLOCKER0__]._x = [0, 25, 30, 25],
+    FURNITURE[FURNITUREID.__AMMOLOCKER0__]._y = [25, 0, 25, 30],
+    FURNITURE[FURNITUREID.__AMMOLOCKER0__].detail = new Detail("", "", -1, [
         [IID.__SHAPED_METAL__, 32],
         [IID.__SULFUR__, 12]
     ]), FURNITURE[FURNITUREID.__SAFE0__] = window.JSON.parse(window.JSON
-        .stringify(FURNITURE[FURNITUREID.__FURNITURE0__])), FURNITURE[
-        FURNITUREID.__SAFE0__].impact = SOUNDID.__STEEL_IMPACT__, FURNITURE[
-        FURNITUREID.__SAFE0__].destroy = SOUNDID.__STEEL_DESTROY__, FURNITURE[
-        FURNITUREID.__SAFE0__].building.src = "img/day-safe0.png", FURNITURE[
-        FURNITUREID.__SAFE0__].particles = PARTICLESID.__SAFE0__, FURNITURE[
-        FURNITUREID.__SAFE0__].detail = new Detail("", "", -1, [
+        .stringify(FURNITURE[FURNITUREID.__FURNITURE0__])),
+    FURNITURE[FURNITUREID.__SAFE0__].impact = SOUNDID.__STEEL_IMPACT__,
+    FURNITURE[FURNITUREID.__SAFE0__].destroy = SOUNDID.__STEEL_DESTROY__,
+    FURNITURE[FURNITUREID.__SAFE0__].building.src = "img/day-safe0.png",
+    FURNITURE[FURNITUREID.__SAFE0__].particles = PARTICLESID.__SAFE0__,
+    FURNITURE[FURNITUREID.__SAFE0__].detail = new Detail("", "", -1, [
         [IID.__SHAPED_METAL__, 32],
         [IID.__SULFUR__, 32]
     ]), FURNITURE[FURNITUREID.__SAFE0__].loot = [
@@ -27453,31 +27658,33 @@ FURNITURE[FURNITUREID.__USINE_BOX1__].loot = [
         [IID.__WOOD_CROSSBOW__, 1, .05],
         [IID.__WOOD_CROSSARROW__, 50, .05]
     ], FURNITURE[FURNITUREID.__LITTLETABLE0__] = window.JSON.parse(window.JSON
-        .stringify(FURNITURE[FURNITUREID.__FRIDGE0__])), FURNITURE[FURNITUREID
-        .__LITTLETABLE0__].building.src = "img/day-little-table0.png",
-    FURNITURE[FURNITUREID.__LITTLETABLE0__].width = [50, 50, 50, 50], FURNITURE[
-        FURNITUREID.__LITTLETABLE0__].height = [50, 50, 50, 50], FURNITURE[
-        FURNITUREID.__LITTLETABLE0__]._x = [25, 25, 25, 25], FURNITURE[
-        FURNITUREID.__LITTLETABLE0__]._y = [25, 25, 25, 25], FURNITURE[
-        FURNITUREID.__LITTLETABLE0__].detail = new Detail("", "", -1, [
+        .stringify(FURNITURE[FURNITUREID.__FRIDGE0__])),
+    FURNITURE[FURNITUREID.__LITTLETABLE0__].building.src =
+    "img/day-little-table0.png",
+    FURNITURE[FURNITUREID.__LITTLETABLE0__].width = [50, 50, 50, 50],
+    FURNITURE[FURNITUREID.__LITTLETABLE0__].height = [50, 50, 50, 50],
+    FURNITURE[FURNITUREID.__LITTLETABLE0__]._x = [25, 25, 25, 25],
+    FURNITURE[FURNITUREID.__LITTLETABLE0__]._y = [25, 25, 25, 25],
+    FURNITURE[FURNITUREID.__LITTLETABLE0__].detail = new Detail("", "", -1, [
         [IID.__SHAPED_METAL__, 8]
-    ]), FURNITURE[FURNITUREID.__LITTLETABLE0__].usable = 0, FURNITURE[
-        FURNITUREID.__SMALL_LIGHT__] = window.JSON.parse(window.JSON.stringify(
-        FURNITURE[FURNITUREID.__FURNITURE2__])), FURNITURE[FURNITUREID
-        .__SMALL_LIGHT__].building.src = "img/day-small-light-off.png",
+    ]), FURNITURE[FURNITUREID.__LITTLETABLE0__].usable = 0,
+    FURNITURE[FURNITUREID.__SMALL_LIGHT__] = window.JSON.parse(window.JSON
+        .stringify(FURNITURE[FURNITUREID.__FURNITURE2__])),
+    FURNITURE[FURNITUREID.__SMALL_LIGHT__].building.src =
+    "img/day-small-light-off.png",
     FURNITURE[FURNITUREID.__SMALL_LIGHT__].particles = PARTICLESID
     .__GREY_STEEL__, FURNITURE[FURNITUREID.__TOILET0__] = window.JSON.parse(
-        window.JSON.stringify(FURNITURE[FURNITUREID.__FRIDGE0__])), FURNITURE[
-        FURNITUREID.__TOILET0__].impact = SOUNDID.__STONE_IMPACT__, FURNITURE[
-        FURNITUREID.__TOILET0__].destroy = SOUNDID.__STONE_DESTROY__, FURNITURE[
-        FURNITUREID.__TOILET0__].particles = PARTICLESID.__TOILET__, FURNITURE[
-        FURNITUREID.__TOILET0__].building.src = "img/day-toilet0.png",
-    FURNITURE[FURNITUREID.__TOILET0__].width = [50, 70, 50, 70], FURNITURE[
-        FURNITUREID.__TOILET0__].height = [70, 50, 70, 50], FURNITURE[
-        FURNITUREID.__TOILET0__]._x = [25, 30, 25, 0], FURNITURE[FURNITUREID
-        .__TOILET0__]._y = [0, 25, 30, 25], FURNITURE[FURNITUREID.__TOILET0__]
-    .particles = PARTICLESID.__TOILET__, FURNITURE[FURNITUREID.__TOILET0__]
-    .detail = new Detail("", "", -1, [
+        window.JSON.stringify(FURNITURE[FURNITUREID.__FRIDGE0__])),
+    FURNITURE[FURNITUREID.__TOILET0__].impact = SOUNDID.__STONE_IMPACT__,
+    FURNITURE[FURNITUREID.__TOILET0__].destroy = SOUNDID.__STONE_DESTROY__,
+    FURNITURE[FURNITUREID.__TOILET0__].particles = PARTICLESID.__TOILET__,
+    FURNITURE[FURNITUREID.__TOILET0__].building.src = "img/day-toilet0.png",
+    FURNITURE[FURNITUREID.__TOILET0__].width = [50, 70, 50, 70],
+    FURNITURE[FURNITUREID.__TOILET0__].height = [70, 50, 70, 50],
+    FURNITURE[FURNITUREID.__TOILET0__]._x = [25, 30, 25, 0],
+    FURNITURE[FURNITUREID.__TOILET0__]._y = [0, 25, 30, 25],
+    FURNITURE[FURNITUREID.__TOILET0__].particles = PARTICLESID.__TOILET__,
+    FURNITURE[FURNITUREID.__TOILET0__].detail = new Detail("", "", -1, [
         [IID.__SHAPED_METAL__, 4],
         [IID.__STONE__, 100]
     ]), FURNITURE[FURNITUREID.__TOILET0__].usable = 1, FURNITURE[FURNITUREID
@@ -30446,7 +30653,9 @@ try {
                 V: 19,
                 r: 2
             }, _WWWF],
-            [_EMP, _WWWF, _WWWF, _WWWF, _WWWF, _WWWF, _WWWF, _WWWF]
+            [_EMP, _WWWF, _WWWF, _WWWF, _WWWF, _WWWF,
+                _WWWF, _WWWF
+            ]
         ]
     }, HOUSE[HOUSEID.__HOUSE1__] = {
         width: 0,
@@ -30850,16 +31059,18 @@ try {
                 r: 2
             }, _SWLF],
             [_EMP, _WF, _WF, _SW, {
-                v: 62,
-                b: 71,
-                V: 3,
-                r: 3
-            }, _WF, _WF, {
-                v: 62,
-                b: 71,
-                V: 16,
-                r: 2
-            }, _SWWF, _SWLF, _SWLF, _SWLF, _SWLF, _SWLF, _SWLF],
+                    v: 62,
+                    b: 71,
+                    V: 3,
+                    r: 3
+                }, _WF, _WF, {
+                    v: 62,
+                    b: 71,
+                    V: 16,
+                    r: 2
+                }, _SWWF, _SWLF, _SWLF, _SWLF, _SWLF,
+                _SWLF, _SWLF
+            ],
             [_EMP, _WF, {
                 v: 62,
                 b: 71,
@@ -31003,16 +31214,18 @@ try {
                 r: 0
             }, _SWLF],
             [_EMP, _SWWF, _SWWF, {
-                v: 62,
-                b: 31,
-                V: -1,
-                r: 2
-            }, {
-                v: 62,
-                b: 31,
-                V: -1,
-                r: 2
-            }, _SWWF, _SWWF, _EMP, _SWLF, _LF, _LF, _SWLF],
+                    v: 62,
+                    b: 31,
+                    V: -1,
+                    r: 2
+                }, {
+                    v: 62,
+                    b: 31,
+                    V: -1,
+                    r: 2
+                }, _SWWF, _SWWF, _EMP, _SWLF, _LF, _LF,
+                _SWLF
+            ],
             [_EMP, _SWWF, {
                 v: 62,
                 b: 71,
@@ -31088,18 +31301,20 @@ try {
                 V: -1,
                 r: 3
             }, _LF, _LF, _SWLF],
-            [_EMP, _SWWF, _WF, _WF, _WF, _WF, _WF, _WF, _WF, _SWLF,
-            {
-                v: 67,
-                b: 71,
-                V: 25,
-                r: 3
-            }, {
-                v: 67,
-                b: 71,
-                V: 18,
-                r: 3
-            }, _SWLF],
+            [_EMP, _SWWF, _WF, _WF, _WF, _WF, _WF, _WF,
+                _WF, _SWLF, {
+                    v: 67,
+                    b: 71,
+                    V: 25,
+                    r: 3
+                }, {
+                    v: 67,
+                    b: 71,
+                    V: 18,
+                    r: 3
+                },
+                _SWLF
+            ],
             [_EMP, _SWWF, _SWWF, _SWWF, {
                 v: 62,
                 b: 31,
@@ -31149,31 +31364,33 @@ try {
                 r: 3
             }],
             [_EMP, {
-                v: 62,
-                b: 31,
-                V: -1,
-                r: 1
-            }, _WF, _WF, _WF, _WF, _SWWF, _SWWF, _SWWF, {
-                v: 0,
-                b: 69,
-                V: -1,
-                r: 2
-            }, {
-                v: 0,
-                b: 69,
-                V: -1,
-                r: 2
-            }, {
-                v: 0,
-                b: 69,
-                V: -1,
-                r: 2
-            }, {
-                v: 0,
-                b: 69,
-                V: -1,
-                r: 2
-            }],
+                    v: 62,
+                    b: 31,
+                    V: -1,
+                    r: 1
+                }, _WF, _WF, _WF, _WF, _SWWF, _SWWF,
+                _SWWF, {
+                    v: 0,
+                    b: 69,
+                    V: -1,
+                    r: 2
+                }, {
+                    v: 0,
+                    b: 69,
+                    V: -1,
+                    r: 2
+                }, {
+                    v: 0,
+                    b: 69,
+                    V: -1,
+                    r: 2
+                }, {
+                    v: 0,
+                    b: 69,
+                    V: -1,
+                    r: 2
+                }
+            ],
             [_EMP, _SWWF, {
                 v: 62,
                 b: 71,
@@ -31200,7 +31417,8 @@ try {
                 V: 12,
                 r: 2
             }, _SWWF],
-            [_EMP, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWLF, _SWWF,
+            [_EMP, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF,
+                _SWLF, _SWWF,
                 _SWWF
             ]
         ]
@@ -31289,7 +31507,8 @@ try {
                     b: 71,
                     V: 13,
                     r: 0
-                }, _LF, _LF, _LF, _LF, _SWLF, _LF, _SWLF, _SWLF,
+                }, _LF, _LF, _LF, _LF, _SWLF, _LF, _SWLF,
+                _SWLF,
                 _SWLF
             ],
             [_EMP, _SWLF, {
@@ -31352,8 +31571,10 @@ try {
         radiation: 0,
         building: [
             [_EMP],
-            [_EMP, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF,
-                _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF,
+            [_EMP, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF,
+                _SWWF, _SWWF,
+                _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF,
+                _SWWF,
                 _SWWF, _SWWF
             ],
             [_EMP, _SWWF, {
@@ -31602,7 +31823,8 @@ try {
                 V: 8,
                 r: 1
             }, _SWWF],
-            [_EMP, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF,
+            [_EMP, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF,
+                _SWWF, _SWWF,
                 _SWWF, _SWTF, {
                     v: 0,
                     b: 71,
@@ -31632,7 +31854,8 @@ try {
                 V: 16,
                 r: 0
             }],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
                 _SWTF, {
                     v: 85,
                     b: 71,
@@ -31647,7 +31870,8 @@ try {
                 },
                 _SWTF
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
                 _SWTF, _SWTF, _SWTF, _SWTF, _SWTF
             ]
         ]
@@ -31746,7 +31970,9 @@ try {
         radiation: 0,
         building: [
             [_EMP],
-            [_EMP, _SW, _SW, _SW, _SW, _SW, _SW, _SW, _SW],
+            [_EMP, _SW, _SW, _SW, _SW, _SW, _SW, _SW,
+                _SW
+            ],
             [_EMP, _SW, {
                 v: 62,
                 b: 148,
@@ -32584,7 +32810,8 @@ try {
                 V: -1,
                 r: 3
             }],
-            [_EMP, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF,
+            [_EMP, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF,
+                _MWTF, _MWTF,
                 _MWTF, {
                     v: 85,
                     b: 32,
@@ -32635,7 +32862,8 @@ try {
                 V: 18,
                 r: 3
             }, _MWTF],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _MWTF, _MWTF,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _MWTF,
+                _MWTF,
                 _MWTF, _MWTF, _MWTF
             ]
         ]
@@ -32645,7 +32873,8 @@ try {
         radiation: __RADIATION__,
         building: [
             [_EMP],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
                 _EMP, _EMP, _EMP, _EMP, _EMP, {
                     v: 0,
                     b: 111,
@@ -32698,9 +32927,12 @@ try {
                     r: 0
                 }
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
-                _EMP, _EMP, _EMP, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF,
-                _MWTF, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
+                _EMP, _EMP, _EMP, _MWTF, _MWTF, _MWTF,
+                _MWTF, _MWTF,
+                _MWTF, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF,
+                _EMP,
                 _EMP, _EMP, _EMP, _EMP, _EMP, {
                     v: 0,
                     b: 86,
@@ -32722,7 +32954,8 @@ try {
                     V: 22,
                     r: 0
                 },
-                _EMP, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF,
+                _EMP, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF,
+                _MWLF,
                 _MWLF, {
                     v: 0,
                     b: 71,
@@ -32730,7 +32963,8 @@ try {
                     r: 0
                 }
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
                 _EMP, _EMP, _EMP, _MWTF, {
                     v: 85,
                     b: 71,
@@ -32759,8 +32993,8 @@ try {
                     V: 37,
                     r: 1
                 },
-                _TF, _TF, _MWTF, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
-                {
+                _TF, _TF, _MWTF, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP, {
                     v: 0,
                     b: 86,
                     V: 23,
@@ -32795,8 +33029,10 @@ try {
                 },
                 _MWLF, _MWSF, _MWSF, _MWSF, _MWSF
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
-                _EMP, _EMP, _EMP, _MWTF, _TF, _TF, _TF, _TF, _TF,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
+                _EMP, _EMP, _EMP, _MWTF, _TF, _TF, _TF,
+                _TF, _TF,
                 _MWTF, _TF, _TF, {
                     v: 85,
                     b: 71,
@@ -32860,27 +33096,33 @@ try {
                 },
                 _SF, _MWSF
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, {
                     v: 0,
                     b: 71,
                     V: 16,
                     r: 0
-                }, _MWSF, _MWSF, {
+                },
+                _MWSF, _MWSF, {
                     v: 84,
                     b: 52,
                     V: -1,
                     r: 0
-                }, _MWSF, _MWSF, _MWTF, _MWTF, _MWSF, {
+                },
+                _MWSF, _MWSF, _MWTF, _MWTF, _MWSF, {
                     v: 85,
                     b: 71,
                     V: 41,
                     r: 0
-                }, _MWSF, {
+                },
+                _MWSF, {
                     v: 85,
                     b: 71,
                     V: 41,
                     r: 0
-                }, _MWTF, _MW, _MWTF, _MWTF, _MWTF, _MWTF, _MWTF,
+                },
+                _MWTF, _MW, _MWTF, _MWTF, _MWTF, _MWTF,
+                _MWTF,
                 _MWTF, _EMP, {
                     v: 0,
                     b: 86,
@@ -32920,7 +33162,8 @@ try {
                 },
                 _MWSF
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
                 _MWSF, _SF, _SF, _SF, _SF, {
                     v: 84,
                     b: 71,
@@ -32999,7 +33242,8 @@ try {
                 },
                 _MWSF
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
                 _MWSF, {
                     v: 84,
                     b: 71,
@@ -33096,7 +33340,8 @@ try {
                     r: 1
                 }
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
                 _MWSF, {
                     v: 84,
                     b: 71,
@@ -33124,7 +33369,8 @@ try {
                     V: -1,
                     r: 2
                 },
-                _MWSF, _MWSF, _SF, _SF, _MWTF, _MWSF, _MWTF, _MWTF,
+                _MWSF, _MWSF, _SF, _SF, _MWTF, _MWSF,
+                _MWTF, _MWTF,
                 _EMP, {
                     v: 0,
                     b: 86,
@@ -33154,7 +33400,8 @@ try {
                 },
                 _MWLF, _MWLF, _MWSF, _MWSF, _MWSF, _MWSF
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
                 _MWSF, _MWSF, _MWSF, {
                     v: 84,
                     b: 71,
@@ -33253,7 +33500,8 @@ try {
                     r: 0
                 }
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
                 _EMP, _EMP, _MWSF, {
                     v: 84,
                     b: 71,
@@ -33516,77 +33764,86 @@ try {
                 V: 31,
                 r: 0
             }],
-            [_EMP, _EMP, _EMP, _MWTF, _MWTF, _MWTF, _MWTF, _EMP, {
-                v: 0,
-                b: 86,
-                V: 23,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 22,
-                r: 0
-            }, _EMP, {
-                v: 0,
-                b: 70,
-                V: -1,
-                r: 3
-            }, _TF, _TF, _MWSF, {
-                v: 84,
-                b: 140,
-                V: -1,
-                r: 0
-            }, {
-                v: 84,
-                b: 71,
-                V: 34,
-                r: 1
-            }, {
-                v: 85,
-                b: 140,
-                V: -1,
-                r: 2
-            }, _TF, {
-                v: 84,
-                b: 71,
-                V: 34,
-                r: 1
-            }, {
-                v: 84,
-                b: 140,
-                V: -1,
-                r: 2
-            }, _MWSF, _TF, _TF, {
-                v: 0,
-                b: 70,
-                V: -1,
-                r: 1
-            }, _EMP, _EMP, _EMP, _EMP, {
-                v: 0,
-                b: 86,
-                V: 23,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 21,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 20,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 22,
-                r: 0
-            }, _EMP, _EMP, {
-                v: 0,
-                b: 71,
-                V: 23,
-                r: 0
-            }, _EMP, _EMP, _EMP, _WF],
+            [_EMP, _EMP, _EMP, _MWTF, _MWTF, _MWTF, _MWTF,
+                _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 23,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 22,
+                    r: 0
+                },
+                _EMP, {
+                    v: 0,
+                    b: 70,
+                    V: -1,
+                    r: 3
+                },
+                _TF, _TF, _MWSF, {
+                    v: 84,
+                    b: 140,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 84,
+                    b: 71,
+                    V: 34,
+                    r: 1
+                }, {
+                    v: 85,
+                    b: 140,
+                    V: -1,
+                    r: 2
+                },
+                _TF, {
+                    v: 84,
+                    b: 71,
+                    V: 34,
+                    r: 1
+                }, {
+                    v: 84,
+                    b: 140,
+                    V: -1,
+                    r: 2
+                },
+                _MWSF, _TF, _TF, {
+                    v: 0,
+                    b: 70,
+                    V: -1,
+                    r: 1
+                },
+                _EMP, _EMP, _EMP, _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 23,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 21,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 20,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 22,
+                    r: 0
+                },
+                _EMP, _EMP, {
+                    v: 0,
+                    b: 71,
+                    V: 23,
+                    r: 0
+                },
+                _EMP, _EMP, _EMP, _WF
+            ],
             [_EMP, _EMP, _EMP, _MWTF, {
                 v: 85,
                 b: 71,
@@ -33733,97 +33990,105 @@ try {
                 V: -1,
                 r: 0
             }],
-            [_EMP, _EMP, _EMP, _MWSF, _SF, _SF, _MWSF, _EMP, {
-                v: 0,
-                b: 86,
-                V: 23,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 22,
-                r: 0
-            }, {
-                v: 0,
-                b: 32,
-                V: -1,
-                r: 3
-            }, _TF, _TF, _TF, _MWSF, {
-                v: 0,
-                b: 149,
-                V: -1,
-                r: 0
-            }, {
-                v: 0,
-                b: 149,
-                V: -1,
-                r: 0
-            }, {
-                v: 85,
-                b: 70,
-                V: -1,
-                r: 0
-            }, {
-                v: 85,
-                b: 70,
-                V: -1,
-                r: 0
-            }, {
-                v: 0,
-                b: 149,
-                V: -1,
-                r: 0
-            }, {
-                v: 0,
-                b: 149,
-                V: -1,
-                r: 0
-            }, _MWSF, _TF, _TF, _TF, {
-                v: 0,
-                b: 32,
-                V: -1,
-                r: 1
-            }, _EMP, _EMP, _EMP, {
-                v: 0,
-                b: 86,
-                V: 23,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 21,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 20,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 22,
-                r: 0
-            }, {
-                v: 0,
-                b: 71,
-                V: 16,
-                r: 0
-            }, _WWLF, _LF, _LF, {
-                v: 67,
-                b: 71,
-                V: 6,
-                r: 1
-            }, _WWLF, _WF, {
-                v: 67,
-                b: 69,
-                V: -1,
-                r: 1
-            }, _LF, _LF, _EMP, _EMP, _EMP, _EMP, {
-                v: 0,
-                b: 69,
-                V: -1,
-                r: 3
-            }],
+            [_EMP, _EMP, _EMP, _MWSF, _SF, _SF, _MWSF,
+                _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 23,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 22,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 32,
+                    V: -1,
+                    r: 3
+                },
+                _TF, _TF, _TF, _MWSF, {
+                    v: 0,
+                    b: 149,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 149,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 85,
+                    b: 70,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 85,
+                    b: 70,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 149,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 149,
+                    V: -1,
+                    r: 0
+                },
+                _MWSF, _TF, _TF, _TF, {
+                    v: 0,
+                    b: 32,
+                    V: -1,
+                    r: 1
+                },
+                _EMP, _EMP, _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 23,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 21,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 20,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 22,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 71,
+                    V: 16,
+                    r: 0
+                },
+                _WWLF, _LF, _LF, {
+                    v: 67,
+                    b: 71,
+                    V: 6,
+                    r: 1
+                },
+                _WWLF, _WF, {
+                    v: 67,
+                    b: 69,
+                    V: -1,
+                    r: 1
+                },
+                _LF, _LF, _EMP, _EMP, _EMP, _EMP, {
+                    v: 0,
+                    b: 69,
+                    V: -1,
+                    r: 3
+                }
+            ],
             [_EMP, _EMP, _EMP, {
                 v: 84,
                 b: 71,
@@ -33926,97 +34191,103 @@ try {
                 r: 3
             }],
             [_EMP, _EMP, _EMP, _MWTF, {
-                v: 85,
-                b: 71,
-                V: 36,
-                r: 2
-            }, {
-                v: 85,
-                b: 71,
-                V: 37,
-                r: 3
-            }, _MWTF, _EMP, {
-                v: 0,
-                b: 86,
-                V: 23,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 22,
-                r: 0
-            }, _EMP, {
-                v: 0,
-                b: 70,
-                V: -1,
-                r: 3
-            }, {
-                v: 85,
-                b: 71,
-                V: 39,
-                r: 0
-            }, _TF, _TF, _TF, _TF, _TF, _TF, _TF, _TF, _TF, _TF,
-            {
-                v: 85,
-                b: 71,
-                V: 35,
-                r: 1
-            }, {
-                v: 0,
-                b: 70,
-                V: -1,
-                r: 1
-            }, _EMP, _EMP, _EMP, _EMP, {
-                v: 0,
-                b: 86,
-                V: 23,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 21,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 20,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 22,
-                r: 0
-            }, _EMP, _WWLF, {
-                v: 67,
-                b: 71,
-                V: 8,
-                r: 3
-            }, _LF, {
-                v: 67,
-                b: 71,
-                V: 0,
-                r: 1
-            }, _WWLF, _WF, {
-                v: 67,
-                b: 69,
-                V: -1,
-                r: 1
-            }, {
-                v: 67,
-                b: 71,
-                V: 23,
-                r: 1
-            }, {
-                v: 67,
-                b: 71,
-                V: 23,
-                r: 1
-            }, _EMP, _EMP, _EMP, _EMP, {
-                v: 0,
-                b: 69,
-                V: -1,
-                r: 3
-            }],
+                    v: 85,
+                    b: 71,
+                    V: 36,
+                    r: 2
+                }, {
+                    v: 85,
+                    b: 71,
+                    V: 37,
+                    r: 3
+                }, _MWTF, _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 23,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 22,
+                    r: 0
+                }, _EMP, {
+                    v: 0,
+                    b: 70,
+                    V: -1,
+                    r: 3
+                }, {
+                    v: 85,
+                    b: 71,
+                    V: 39,
+                    r: 0
+                }, _TF, _TF, _TF, _TF, _TF, _TF, _TF, _TF,
+                _TF, _TF, {
+                    v: 85,
+                    b: 71,
+                    V: 35,
+                    r: 1
+                }, {
+                    v: 0,
+                    b: 70,
+                    V: -1,
+                    r: 1
+                },
+                _EMP, _EMP, _EMP, _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 23,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 21,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 20,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 22,
+                    r: 0
+                },
+                _EMP, _WWLF, {
+                    v: 67,
+                    b: 71,
+                    V: 8,
+                    r: 3
+                },
+                _LF, {
+                    v: 67,
+                    b: 71,
+                    V: 0,
+                    r: 1
+                },
+                _WWLF, _WF, {
+                    v: 67,
+                    b: 69,
+                    V: -1,
+                    r: 1
+                }, {
+                    v: 67,
+                    b: 71,
+                    V: 23,
+                    r: 1
+                }, {
+                    v: 67,
+                    b: 71,
+                    V: 23,
+                    r: 1
+                },
+                _EMP, _EMP, _EMP, _EMP, {
+                    v: 0,
+                    b: 69,
+                    V: -1,
+                    r: 3
+                }
+            ],
             [_EMP, _EMP, {
                     v: 0,
                     b: 71,
@@ -34127,7 +34398,8 @@ try {
                     b: 71,
                     V: 23,
                     r: 0
-                }, _WWLF, _WWLF, _WWLF, _WWLF, _WWLF, _WF, _SWLF,
+                }, _WWLF, _WWLF, _WWLF, _WWLF, _WWLF, _WF,
+                _SWLF,
                 _SWLF, _SWLF, _SWLF, _EMP, _EMP, _EMP, {
                     v: 0,
                     b: 69,
@@ -34135,7 +34407,8 @@ try {
                     r: 3
                 }
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, {
                     v: 0,
                     b: 86,
                     V: 23,
@@ -34145,8 +34418,11 @@ try {
                     b: 86,
                     V: 22,
                     r: 0
-                }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
-                _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                },
+                _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP,
+                _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP,
                 _EMP, _EMP, _EMP, {
                     v: 0,
                     b: 86,
@@ -34168,7 +34444,8 @@ try {
                     V: 22,
                     r: 0
                 },
-                _WF, _WF, _WF, _WF, _WF, _WF, _WF, _SWLF, _WF, {
+                _WF, _WF, _WF, _WF, _WF, _WF, _WF, _SWLF,
+                _WF, {
                     v: 62,
                     b: 71,
                     V: 21,
@@ -34584,191 +34861,193 @@ try {
                 r: 3
             }],
             [{
-                v: 0,
-                b: 86,
-                V: 23,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 27,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 9,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 9,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 9,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 22,
-                r: 0
-            }, _EMP, _EMP, _WF, {
-                v: 67,
-                b: 31,
-                V: -1,
-                r: 1
-            }, _LF, _LF, _LF, _LF, _LF, _LF, _SWLF, _LF, _LF, {
-                v: 67,
-                b: 31,
-                V: -1,
-                r: 3
-            }],
+                    v: 0,
+                    b: 86,
+                    V: 23,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 27,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 9,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 9,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 9,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 22,
+                    r: 0
+                }, _EMP, _EMP, _WF, {
+                    v: 67,
+                    b: 31,
+                    V: -1,
+                    r: 1
+                }, _LF, _LF, _LF, _LF, _LF, _LF, _SWLF,
+                _LF, _LF, {
+                    v: 67,
+                    b: 31,
+                    V: -1,
+                    r: 3
+                }
+            ],
             [{
                 v: 0,
                 b: 86,
@@ -34985,7 +35264,8 @@ try {
                 V: 16,
                 r: 1
             }],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
                 _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
                     v: 0,
                     b: 86,
@@ -35083,212 +35363,221 @@ try {
                 }
             ],
             [_EMP, _EMP, _WWWF, {
-                v: 62,
-                b: 71,
-                V: 26,
-                r: 1
-            }, _WF, _WF, _WWWF, {
-                v: 62,
-                b: 71,
-                V: 16,
-                r: 2
-            }, _WF, _WF, _WWWF, {
-                v: 0,
-                b: 31,
-                V: -1,
-                r: 0
-            }, {
-                v: 0,
-                b: 31,
-                V: -1,
-                r: 0
-            }, {
-                v: 0,
-                b: 69,
-                V: -1,
-                r: 0
-            }, _EMP, {
-                v: 0,
-                b: 86,
-                V: 15,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 12,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 6,
-                r: 0
-            }, _EMP, _EMP, _EMP, _EMP, _MWWF, _MWWF, _MWWF, {
-                v: 62,
-                b: 150,
-                V: -1,
-                r: 3
-            }, _MWWF, _MWWF, _MWWF, {
-                v: 0,
-                b: 71,
-                V: 16,
-                r: 0
-            }, _EMP, {
-                v: 0,
-                b: 86,
-                V: 23,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 21,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 20,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 22,
-                r: 0
-            }, _EMP, _EMP, {
-                v: 0,
-                b: 71,
-                V: 23,
-                r: 0
-            }, _SWLF, {
-                v: 67,
-                b: 71,
-                V: 4,
-                r: 3
-            }, {
-                v: 67,
-                b: 71,
-                V: 7,
-                r: 3
-            }, {
-                v: 67,
-                b: 71,
-                V: 7,
-                r: 3
-            }, {
-                v: 67,
-                b: 71,
-                V: 3,
-                r: 1
-            }, _LF, _WF, _WF, _WF, _LF, {
-                v: 67,
-                b: 69,
-                V: -1,
-                r: 3
-            }],
+                    v: 62,
+                    b: 71,
+                    V: 26,
+                    r: 1
+                }, _WF, _WF, _WWWF, {
+                    v: 62,
+                    b: 71,
+                    V: 16,
+                    r: 2
+                }, _WF, _WF, _WWWF, {
+                    v: 0,
+                    b: 31,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 31,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 69,
+                    V: -1,
+                    r: 0
+                }, _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 15,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 12,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 6,
+                    r: 0
+                }, _EMP, _EMP, _EMP, _EMP, _MWWF, _MWWF,
+                _MWWF, {
+                    v: 62,
+                    b: 150,
+                    V: -1,
+                    r: 3
+                },
+                _MWWF, _MWWF, _MWWF, {
+                    v: 0,
+                    b: 71,
+                    V: 16,
+                    r: 0
+                },
+                _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 23,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 21,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 20,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 22,
+                    r: 0
+                },
+                _EMP, _EMP, {
+                    v: 0,
+                    b: 71,
+                    V: 23,
+                    r: 0
+                },
+                _SWLF, {
+                    v: 67,
+                    b: 71,
+                    V: 4,
+                    r: 3
+                }, {
+                    v: 67,
+                    b: 71,
+                    V: 7,
+                    r: 3
+                }, {
+                    v: 67,
+                    b: 71,
+                    V: 7,
+                    r: 3
+                }, {
+                    v: 67,
+                    b: 71,
+                    V: 3,
+                    r: 1
+                },
+                _LF, _WF, _WF, _WF, _LF, {
+                    v: 67,
+                    b: 69,
+                    V: -1,
+                    r: 3
+                }
+            ],
             [_EMP, {
-                v: 0,
-                b: 71,
-                V: 26,
-                r: 0
-            }, _WWWF, {
-                v: 62,
-                b: 71,
-                V: 17,
-                r: 1
-            }, _WF, {
-                v: 62,
-                b: 71,
-                V: 22,
-                r: 1
-            }, _WWWF, {
-                v: 62,
-                b: 71,
-                V: 17,
-                r: 2
-            }, _WF, {
-                v: 62,
-                b: 71,
-                V: 15,
-                r: 1
-            }, _WWWF, _EMP, _EMP, {
-                v: 0,
-                b: 69,
-                V: -1,
-                r: 3
-            }, _EMP, {
-                v: 0,
-                b: 86,
-                V: 14,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 12,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 6,
-                r: 0
-            }, _EMP, {
-                v: 0,
-                b: 71,
-                V: 26,
-                r: 0
-            }, _EMP, {
-                v: 0,
-                b: 71,
-                V: 24,
-                r: 0
-            }, _MWWF, {
-                v: 62,
-                b: 71,
-                V: 16,
-                r: 2
-            }, {
-                v: 62,
-                b: 71,
-                V: 39,
-                r: 1
-            }, _WF, _WF, _WF, _MWWF, {
-                v: 0,
-                b: 71,
-                V: 26,
-                r: 0
-            }, _EMP, {
-                v: 0,
-                b: 86,
-                V: 23,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 21,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 20,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 22,
-                r: 0
-            }, _EMP, _EMP, {
-                v: 0,
-                b: 148,
-                V: -1,
-                r: 3
-            }, {
-                v: 0,
-                b: 69,
-                V: -1,
-                r: 3
-            }, _LF, _LF, _LF, _LF, _LF, _WF, _WF, _WF, _LF, {
-                v: 67,
-                b: 69,
-                V: -1,
-                r: 3
-            }],
+                    v: 0,
+                    b: 71,
+                    V: 26,
+                    r: 0
+                }, _WWWF, {
+                    v: 62,
+                    b: 71,
+                    V: 17,
+                    r: 1
+                }, _WF, {
+                    v: 62,
+                    b: 71,
+                    V: 22,
+                    r: 1
+                }, _WWWF, {
+                    v: 62,
+                    b: 71,
+                    V: 17,
+                    r: 2
+                }, _WF, {
+                    v: 62,
+                    b: 71,
+                    V: 15,
+                    r: 1
+                }, _WWWF, _EMP, _EMP, {
+                    v: 0,
+                    b: 69,
+                    V: -1,
+                    r: 3
+                }, _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 14,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 12,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 6,
+                    r: 0
+                }, _EMP, {
+                    v: 0,
+                    b: 71,
+                    V: 26,
+                    r: 0
+                }, _EMP, {
+                    v: 0,
+                    b: 71,
+                    V: 24,
+                    r: 0
+                }, _MWWF, {
+                    v: 62,
+                    b: 71,
+                    V: 16,
+                    r: 2
+                }, {
+                    v: 62,
+                    b: 71,
+                    V: 39,
+                    r: 1
+                }, _WF, _WF, _WF, _MWWF, {
+                    v: 0,
+                    b: 71,
+                    V: 26,
+                    r: 0
+                }, _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 23,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 21,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 20,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 22,
+                    r: 0
+                }, _EMP, _EMP, {
+                    v: 0,
+                    b: 148,
+                    V: -1,
+                    r: 3
+                }, {
+                    v: 0,
+                    b: 69,
+                    V: -1,
+                    r: 3
+                }, _LF, _LF, _LF, _LF, _LF, _WF, _WF, _WF,
+                _LF, {
+                    v: 67,
+                    b: 69,
+                    V: -1,
+                    r: 3
+                }
+            ],
             [_EMP, _EMP, _WWWF, {
                     v: 62,
                     b: 71,
@@ -35329,7 +35618,8 @@ try {
                     b: 86,
                     V: 6,
                     r: 0
-                }, _EMP, _MW, _MWSF, _MWSF, _MWWF, _WF, _WF, _WF,
+                }, _EMP, _MW, _MWSF, _MWSF, _MWWF, _WF,
+                _WF, _WF,
                 _WF, {
                     v: 62,
                     b: 71,
@@ -35512,7 +35802,8 @@ try {
                     b: 71,
                     V: 17,
                     r: 0
-                }, _WW, _WWWF, _WWWF, _WWWF, _WWWF, _WWWF, _WWWF,
+                }, _WW, _WWWF, _WWWF, _WWWF, _WWWF, _WWWF,
+                _WWWF,
                 _WW, _WW, _EMP, _EMP, {
                     v: 0,
                     b: 69,
@@ -35608,7 +35899,8 @@ try {
                 },
                 _SWWF
             ],
-            [_EMP, _EMP, _EMP, _SWWF, _SWWF, _SWWF, _SWWF, _SWWF,
+            [_EMP, _EMP, _EMP, _SWWF, _SWWF, _SWWF, _SWWF,
+                _SWWF,
                 _SWWF, _WF, _WF, _WF, _WF, {
                     v: 62,
                     b: 69,
@@ -35829,7 +36121,8 @@ try {
                 V: -1,
                 r: 1
             }],
-            [_EMP, _EMP, _EMP, _SWWF, _WF, _WF, _WF, _WF, _SWWF,
+            [_EMP, _EMP, _EMP, _SWWF, _WF, _WF, _WF, _WF,
+                _SWWF,
                 _SWLF, {
                     v: 67,
                     b: 31,
@@ -36061,72 +36354,81 @@ try {
                 V: -1,
                 r: 3
             }],
-            [_EMP, _EMP, _EMP, _SWWF, _WF, _WF, _WF, _WF, _SWWF, {
-                v: 67,
-                b: 71,
-                V: 12,
-                r: 0
-            }, _LF, _LF, {
-                v: 67,
-                b: 71,
-                V: 12,
-                r: 2
-            }, _SWLF, _EMP, {
-                v: 0,
-                b: 86,
-                V: 14,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 12,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 6,
-                r: 0
-            }, _EMP, _EMP, _EMP, _EMP, _MWLF, _MWLF, _MWLF, {
-                v: 62,
-                b: 150,
-                V: -1,
-                r: 3
-            }, {
-                v: 62,
-                b: 150,
-                V: -1,
-                r: 3
-            }, _MWWF, _MWWF, _EMP, _EMP, {
-                v: 0,
-                b: 86,
-                V: 23,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 21,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 20,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 22,
-                r: 0
-            }, _EMP, _EMP, _EMP, _EMP, _WF, _WF, {
-                v: 67,
-                b: 31,
-                V: -1,
-                r: 1
-            }, _LF, _LF, _LF, _LF, _LF, _LF, {
-                v: 67,
-                b: 31,
-                V: -1,
-                r: 3
-            }],
+            [_EMP, _EMP, _EMP, _SWWF, _WF, _WF, _WF, _WF,
+                _SWWF, {
+                    v: 67,
+                    b: 71,
+                    V: 12,
+                    r: 0
+                },
+                _LF, _LF, {
+                    v: 67,
+                    b: 71,
+                    V: 12,
+                    r: 2
+                },
+                _SWLF, _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 14,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 12,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 6,
+                    r: 0
+                },
+                _EMP, _EMP, _EMP, _EMP, _MWLF, _MWLF,
+                _MWLF, {
+                    v: 62,
+                    b: 150,
+                    V: -1,
+                    r: 3
+                }, {
+                    v: 62,
+                    b: 150,
+                    V: -1,
+                    r: 3
+                },
+                _MWWF, _MWWF, _EMP, _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 23,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 21,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 20,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 22,
+                    r: 0
+                },
+                _EMP, _EMP, _EMP, _EMP, _WF, _WF, {
+                    v: 67,
+                    b: 31,
+                    V: -1,
+                    r: 1
+                },
+                _LF, _LF, _LF, _LF, _LF, _LF, {
+                    v: 67,
+                    b: 31,
+                    V: -1,
+                    r: 3
+                }
+            ],
             [_EMP, _EMP, {
                 v: 0,
                 b: 71,
@@ -36243,7 +36545,8 @@ try {
                     b: 86,
                     V: 6,
                     r: 0
-                }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _SF, _SF,
+                }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _SF, _SF,
                 _SF, _SF, _EMP, _EMP, _EMP, {
                     v: 0,
                     b: 86,
@@ -36307,7 +36610,8 @@ try {
                     r: 2
                 }
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
                 _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
                     v: 0,
                     b: 86,
@@ -36988,89 +37292,100 @@ try {
                 V: -1,
                 r: 1
             }],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
-                v: 0,
-                b: 71,
-                V: 26,
-                r: 1
-            }, {
-                v: 0,
-                b: 71,
-                V: 26,
-                r: 1
-            }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
-                v: 0,
-                b: 86,
-                V: 14,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 12,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 6,
-                r: 0
-            }, {
-                v: 67,
-                b: 69,
-                V: -1,
-                r: 1
-            }, _LF, _LF, _LF, _SWWF, {
-                v: 62,
-                b: 71,
-                V: 27,
-                r: 1
-            }, {
-                v: 62,
-                b: 71,
-                V: 27,
-                r: 1
-            }, _WF, _WF, _WF, {
-                v: 62,
-                b: 69,
-                V: -1,
-                r: 3
-            }, _EMP, {
-                v: 0,
-                b: 86,
-                V: 23,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 22,
-                r: 0
-            }, _EMP, {
-                v: 67,
-                b: 69,
-                V: -1,
-                r: 3
-            }, _EMP, {
-                v: 0,
-                b: 111,
-                V: -1,
-                r: 1
-            }, {
-                v: 0,
-                b: 140,
-                V: -1,
-                r: 2
-            }, {
-                v: 0,
-                b: 111,
-                V: -1,
-                r: 1
-            }, _EMP, {
-                v: 67,
-                b: 69,
-                V: -1,
-                r: 1
-            }],
-            [_EMP, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF,
-                _MWLF, _MWWF, _MWWF, _MWWF, _MWWF, _MWWF, _MWWF,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, {
+                    v: 0,
+                    b: 71,
+                    V: 26,
+                    r: 1
+                }, {
+                    v: 0,
+                    b: 71,
+                    V: 26,
+                    r: 1
+                },
+                _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 14,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 12,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 6,
+                    r: 0
+                }, {
+                    v: 67,
+                    b: 69,
+                    V: -1,
+                    r: 1
+                },
+                _LF, _LF, _LF, _SWWF, {
+                    v: 62,
+                    b: 71,
+                    V: 27,
+                    r: 1
+                }, {
+                    v: 62,
+                    b: 71,
+                    V: 27,
+                    r: 1
+                },
+                _WF, _WF, _WF, {
+                    v: 62,
+                    b: 69,
+                    V: -1,
+                    r: 3
+                },
+                _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 23,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 22,
+                    r: 0
+                },
+                _EMP, {
+                    v: 67,
+                    b: 69,
+                    V: -1,
+                    r: 3
+                },
+                _EMP, {
+                    v: 0,
+                    b: 111,
+                    V: -1,
+                    r: 1
+                }, {
+                    v: 0,
+                    b: 140,
+                    V: -1,
+                    r: 2
+                }, {
+                    v: 0,
+                    b: 111,
+                    V: -1,
+                    r: 1
+                },
+                _EMP, {
+                    v: 67,
+                    b: 69,
+                    V: -1,
+                    r: 1
+                }
+            ],
+            [_EMP, _MWLF, _MWLF, _MWLF, _MWLF, _MWLF,
+                _MWLF, _MWLF,
+                _MWLF, _MWWF, _MWWF, _MWWF, _MWWF, _MWWF,
+                _MWWF,
                 _EMP, {
                     v: 0,
                     b: 86,
@@ -37274,102 +37589,106 @@ try {
                 r: 1
             }],
             [_EMP, _MWLF, _LF, {
-                v: 67,
-                b: 70,
-                V: -1,
-                r: 3
-            }, {
-                v: 0,
-                b: 149,
-                V: -1,
-                r: 0
-            }, {
-                v: 0,
-                b: 149,
-                V: -1,
-                r: 2
-            }, {
-                v: 0,
-                b: 149,
-                V: -1,
-                r: 2
-            }, _MW, _MW, _MWWF, _WF, _WF, _WF, _WF, _MWWF, _EMP,
-            {
-                v: 0,
-                b: 86,
-                V: 14,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 12,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 6,
-                r: 0
-            }, {
-                v: 67,
-                b: 69,
-                V: -1,
-                r: 1
-            }, {
-                v: 67,
-                b: 71,
-                V: 23,
-                r: 3
-            }, _SWLF, _SWLF, _SWWF, _SWWF, _SWWF, _SWWF, {
-                v: 62,
-                b: 31,
-                V: -1,
-                r: 2
-            }, _SWWF, _EMP, _EMP, {
-                v: 0,
-                b: 86,
-                V: 23,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 22,
-                r: 0
-            }, _EMP, {
-                v: 67,
-                b: 69,
-                V: -1,
-                r: 3
-            }, {
-                v: 0,
-                b: 69,
-                V: -1,
-                r: 0
-            }, {
-                v: 0,
-                b: 69,
-                V: -1,
-                r: 0
-            }, {
-                v: 0,
-                b: 140,
-                V: -1,
-                r: 2
-            }, {
-                v: 0,
-                b: 69,
-                V: -1,
-                r: 0
-            }, {
-                v: 0,
-                b: 69,
-                V: -1,
-                r: 0
-            }, {
-                v: 67,
-                b: 69,
-                V: -1,
-                r: 1
-            }],
+                    v: 67,
+                    b: 70,
+                    V: -1,
+                    r: 3
+                }, {
+                    v: 0,
+                    b: 149,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 149,
+                    V: -1,
+                    r: 2
+                }, {
+                    v: 0,
+                    b: 149,
+                    V: -1,
+                    r: 2
+                }, _MW, _MW, _MWWF, _WF, _WF, _WF, _WF,
+                _MWWF, _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 14,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 12,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 6,
+                    r: 0
+                }, {
+                    v: 67,
+                    b: 69,
+                    V: -1,
+                    r: 1
+                }, {
+                    v: 67,
+                    b: 71,
+                    V: 23,
+                    r: 3
+                },
+                _SWLF, _SWLF, _SWWF, _SWWF, _SWWF, _SWWF, {
+                    v: 62,
+                    b: 31,
+                    V: -1,
+                    r: 2
+                },
+                _SWWF, _EMP, _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 23,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 22,
+                    r: 0
+                },
+                _EMP, {
+                    v: 67,
+                    b: 69,
+                    V: -1,
+                    r: 3
+                }, {
+                    v: 0,
+                    b: 69,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 69,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 140,
+                    V: -1,
+                    r: 2
+                }, {
+                    v: 0,
+                    b: 69,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 69,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 67,
+                    b: 69,
+                    V: -1,
+                    r: 1
+                }
+            ],
             [{
                 v: 0,
                 b: 71,
@@ -37745,71 +38064,74 @@ try {
                 r: 0
             }],
             [_EMP, _MWLF, _LF, _WF, _WF, {
-                v: 67,
-                b: 71,
-                V: 10,
-                r: 0
-            }, _MWLF, {
-                v: 67,
-                b: 71,
-                V: 14,
-                r: 3
-            }, {
-                v: 67,
-                b: 140,
-                V: -1,
-                r: 0
-            }, _MWWF, {
-                v: 62,
-                b: 149,
-                V: -1,
-                r: 0
-            }, _MWWF, {
-                v: 62,
-                b: 149,
-                V: -1,
-                r: 0
-            }, {
-                v: 62,
-                b: 149,
-                V: -1,
-                r: 0
-            }, _MWWF, {
-                v: 0,
-                b: 71,
-                V: 16,
-                r: 1
-            }, {
-                v: 0,
-                b: 86,
-                V: 14,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 12,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 6,
-                r: 0
-            }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
-                v: 0,
-                b: 71,
-                V: 24,
-                r: 1
-            }, _EMP, _EMP, _EMP, {
-                v: 0,
-                b: 86,
-                V: 30,
-                r: 0
-            }, {
-                v: 0,
-                b: 86,
-                V: 31,
-                r: 0
-            }],
+                    v: 67,
+                    b: 71,
+                    V: 10,
+                    r: 0
+                }, _MWLF, {
+                    v: 67,
+                    b: 71,
+                    V: 14,
+                    r: 3
+                }, {
+                    v: 67,
+                    b: 140,
+                    V: -1,
+                    r: 0
+                }, _MWWF, {
+                    v: 62,
+                    b: 149,
+                    V: -1,
+                    r: 0
+                }, _MWWF, {
+                    v: 62,
+                    b: 149,
+                    V: -1,
+                    r: 0
+                }, {
+                    v: 62,
+                    b: 149,
+                    V: -1,
+                    r: 0
+                }, _MWWF, {
+                    v: 0,
+                    b: 71,
+                    V: 16,
+                    r: 1
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 14,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 12,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 6,
+                    r: 0
+                }, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP, {
+                    v: 0,
+                    b: 71,
+                    V: 24,
+                    r: 1
+                },
+                _EMP, _EMP, _EMP, {
+                    v: 0,
+                    b: 86,
+                    V: 30,
+                    r: 0
+                }, {
+                    v: 0,
+                    b: 86,
+                    V: 31,
+                    r: 0
+                }
+            ],
             [_EMP, _MWLF, {
                 v: 67,
                 b: 71,
@@ -37957,7 +38279,8 @@ try {
                     b: 71,
                     V: 26,
                     r: 1
-                }, _MW, _MW, _MW, _MW, _MW, _MW, _MW, _MW, _MW,
+                }, _MW, _MW, _MW, _MW, _MW, _MW, _MW, _MW,
+                _MW,
                 _EMP, {
                     v: 0,
                     b: 86,
@@ -37975,7 +38298,8 @@ try {
                     r: 0
                 }
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP,
+                _EMP, _EMP,
                 _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, {
                     v: 0,
                     b: 86,
@@ -38000,45 +38324,63 @@ try {
         radiation: 0,
         building: [
             [_EMP],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC,
-                _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC
-            ],
-            [_EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC,
-                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _SC, _SC,
+                _SC,
+                _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
                 _SC
             ],
-            [_EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC,
-                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+            [_EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _SC,
+                _SC, _SC,
+                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC,
+                _SC
+            ],
+            [_EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _SC,
+                _SC, _SC,
+                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC,
                 _SC, _SC
             ],
-            [_EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
-                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+            [_EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC,
+                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC,
                 _SC, _SC, _SC
             ],
-            [_EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
-                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+            [_EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC,
+                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC,
                 _SC, _SC
             ],
-            [_EMP, _SC, _SC, _SC, _SC, _SC, _SC, _EMP, _EMP, _EMP,
-                _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC,
+            [_EMP, _SC, _SC, _SC, _SC, _SC, _SC, _EMP,
+                _EMP, _EMP,
+                _EMP, _EMP, _EMP, _EMP, _EMP, _EMP, _SC,
+                _SC, _SC,
                 _SC, _SC, _SC, _SC
             ],
-            [_EMP, _SC, _SC, _SC, _EMP, _EMP, _EMP, _EMP, _SC,
+            [_EMP, _SC, _SC, _SC, _EMP, _EMP, _EMP, _EMP,
+                _SC,
                 _BWTF, _BWTF, {
                     v: 85,
                     b: 52,
                     V: -1,
                     r: 2
                 },
-                _BWTF, _BWTF, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC,
+                _BWTF, _BWTF, _EMP, _EMP, _SC, _SC, _SC,
+                _SC, _SC,
                 _SC, _SC
             ],
-            [_EMP, _EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _SC,
-                _BWTF, _TF, _TF, _TF, _BWTF, _SC, _EMP, _EMP, _SC,
+            [_EMP, _EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC,
+                _SC,
+                _BWTF, _TF, _TF, _TF, _BWTF, _SC, _EMP,
+                _EMP, _SC,
                 _SC, _SC, _SC, _SC, _SC
             ],
-            [_EMP, _EMP, _SC, _SC, _SC, _SC, _BWTF, _BWTF, _BWTF,
-                _BWTF, _TF, _TF, _TF, _BWTF, _SC, _SC, _EMP, _SC,
+            [_EMP, _EMP, _SC, _SC, _SC, _SC, _BWTF, _BWTF,
+                _BWTF,
+                _BWTF, _TF, _TF, _TF, _BWTF, _SC, _SC,
+                _EMP, _SC,
                 _SC, _SC, _SC, _SC
             ],
             [_EMP, _SC, _SC, _SC, _SC, _SC, _BWTF, {
@@ -38061,7 +38403,8 @@ try {
                     b: 71,
                     V: 33,
                     r: 3
-                }, _BWTF, _SC, _SC, _EMP, _SC, _SC, _SC, _SC, _SC,
+                }, _BWTF, _SC, _SC, _EMP, _SC, _SC, _SC,
+                _SC, _SC,
                 _SC
             ],
             [_EMP, _SC, _SC, _SC, _SC, _SC, _BWTF, {
@@ -38069,27 +38412,35 @@ try {
                     b: 71,
                     V: 10,
                     r: 2
-                }, _TF, _BWTF, _BWTF, _SF, _BWSF, _BWSF, _BW, _SC,
+                }, _TF, _BWTF, _BWTF, _SF, _BWSF, _BWSF,
+                _BW, _SC,
                 _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC
             ],
-            [_EMP, _SC, _SC, _SC, _SC, _SC, _BWTF, _TF, _TF, _SF,
+            [_EMP, _SC, _SC, _SC, _SC, _SC, _BWTF, _TF,
+                _TF, _SF,
                 _SF, _SF, _SF, {
                     v: 84,
                     b: 71,
                     V: 51,
                     r: 1
                 },
-                _BWSF, _SC, _SC, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC
+                _BWSF, _SC, _SC, _EMP, _EMP, _SC, _SC,
+                _SC, _SC, _SC
             ],
-            [_EMP, _SC, _SC, _SC, _SC, _BWTF, _BWTF, _BWTF, _BWTF,
-                _BWTF, _SF, _SF, _SF, _SF, _BWSF, _BW, _SC, _SC,
+            [_EMP, _SC, _SC, _SC, _SC, _BWTF, _BWTF,
+                _BWTF, _BWTF,
+                _BWTF, _SF, _SF, _SF, _SF, _BWSF, _BW,
+                _SC, _SC,
                 _EMP, _SC, _SC, _SC, _SC, _SC
             ],
-            [_EMP, _SC, _SC, _SC, _SC, _BWTF, _SF, _SF, _SF, _BWTF,
-                _BWTF, _SF, _SF, _SF, _BWSF, _BWTF, _BWTF, _SC,
+            [_EMP, _SC, _SC, _SC, _SC, _BWTF, _SF, _SF,
+                _SF, _BWTF,
+                _BWTF, _SF, _SF, _SF, _BWSF, _BWTF, _BWTF,
+                _SC,
                 _EMP, _SC, _SC, _SC, _SC
             ],
-            [_EMP, _SC, _SC, _SC, _SC, _BWTF, _SF, _BWTF, _SF, _SF,
+            [_EMP, _SC, _SC, _SC, _SC, _BWTF, _SF, _BWTF,
+                _SF, _SF,
                 _SF, _SF, _BWTF, _TF, _TF, {
                     v: 85,
                     b: 71,
@@ -38098,7 +38449,8 @@ try {
                 },
                 _BWTF, _SC, _EMP, _SC, _SC, _SC, _SC
             ],
-            [_EMP, _SC, _SC, _SC, _SC, _BWTF, _SF, _BWTF, _BWTF,
+            [_EMP, _SC, _SC, _SC, _SC, _BWTF, _SF, _BWTF,
+                _BWTF,
                 _BWTF, _BWTF, _SF, _BWTF, {
                     v: 85,
                     b: 71,
@@ -38128,27 +38480,34 @@ try {
                     b: 71,
                     V: 56,
                     r: 2
-                }, _BWTF, _SF, _BWTF, _BWTF, _BWTF, _BWTF, _BWTF,
+                }, _BWTF, _SF, _BWTF, _BWTF, _BWTF, _BWTF,
+                _BWTF,
                 _SC, _EMP, _EMP, _SC, _SC, _SC
             ],
-            [_EMP, _EMP, _EMP, _SC, _SC, _BWTF, _TF, _TF, _TF, {
-                v: 85,
-                b: 71,
-                V: 53,
-                r: 2
-            }, _BWTF, _SF, _SF, _TF, {
-                v: 85,
-                b: 71,
-                V: 51,
-                r: 0
-            }, {
-                v: 85,
-                b: 71,
-                V: 48,
-                r: 0
-            }, _BWTF, _SC, _SC],
-            [_EMP, _SC, _SC, _SC, _SC, _BWTF, _TF, _TF, _TF, _TF,
-                _BWTF, _BWTF, _BWTF, _TF, _TF, _TF, _BWTF, _SC, _SC,
+            [_EMP, _EMP, _EMP, _SC, _SC, _BWTF, _TF, _TF,
+                _TF, {
+                    v: 85,
+                    b: 71,
+                    V: 53,
+                    r: 2
+                },
+                _BWTF, _SF, _SF, _TF, {
+                    v: 85,
+                    b: 71,
+                    V: 51,
+                    r: 0
+                }, {
+                    v: 85,
+                    b: 71,
+                    V: 48,
+                    r: 0
+                },
+                _BWTF, _SC, _SC
+            ],
+            [_EMP, _SC, _SC, _SC, _SC, _BWTF, _TF, _TF,
+                _TF, _TF,
+                _BWTF, _BWTF, _BWTF, _TF, _TF, _TF, _BWTF,
+                _SC, _SC,
                 _SC
             ],
             [_EMP, _SC, _SC, _SC, _SC, _BWTF, {
@@ -38187,29 +38546,41 @@ try {
                 V: 49,
                 r: 3
             }, _BWTF, _SC, _SC, _SC, _SC, _SC, _SC],
-            [_EMP, _EMP, _SC, _SC, _SC, _BWTF, _BWTF, _BWTF, _BWTF,
-                _BWTF, _BWTF, _BWTF, _BWTF, _BWTF, _BWTF, _BWTF,
+            [_EMP, _EMP, _SC, _SC, _SC, _BWTF, _BWTF,
+                _BWTF, _BWTF,
+                _BWTF, _BWTF, _BWTF, _BWTF, _BWTF, _BWTF,
+                _BWTF,
                 _BWTF, _SC, _SC, _SC, _SC, _SC, _SC
             ],
-            [_EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
-                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+            [_EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC,
+                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC,
                 _SC, _SC, _SC
             ],
-            [_EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
-                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+            [_EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC,
+                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC,
                 _SC, _SC
             ],
-            [_EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC,
-                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+            [_EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _SC,
+                _SC, _SC,
+                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC,
                 _SC
             ],
-            [_EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
-                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC
+            [_EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC,
+                _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC
             ],
-            [_EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC, _SC, _SC,
+            [_EMP, _EMP, _EMP, _SC, _SC, _SC, _SC, _SC,
+                _SC, _SC,
                 _SC, _SC, _SC, _SC, _SC, _SC, _SC, _SC
             ],
-            [_EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _EMP, _EMP,
+            [_EMP, _EMP, _EMP, _EMP, _SC, _SC, _SC, _EMP,
+                _EMP,
                 _EMP, _EMP, _SC, _SC, _SC, _SC, _SC
             ]
         ]
@@ -38225,11 +38596,12 @@ for (i = 0; i < HOUSE.length; i++) {
 var AREASTOITEM = [];
 AREASTOITEM[AREAS.__FIRE__] = IID.__CAMPFIRE__, AREASTOITEM[AREAS.__BBQ__] = IID
     .__CAMPFIRE_BBQ__, AREASTOITEM[AREAS.__WORKBENCH__] = IID.__WORKBENCH__,
-    AREASTOITEM[AREAS.__WORKBENCH2__] = IID.__WORKBENCH2__, AREASTOITEM[AREAS
-        .__TESLA__] = IID.__TESLA__, AREASTOITEM[AREAS.__SMELTER__] = IID
-    .__SMELTER__, AREASTOITEM[AREAS.__WEAVING__] = IID.__WEAVING__, AREASTOITEM[
-        AREAS.__COMPOST__] = IID.__COMPOST__, AREASTOITEM[AREAS.__AGITATOR__] =
-    IID.__AGITATOR__, AREASTOITEM[AREAS.__EXTRACTOR__] = IID.__EXTRACTOR__;
+    AREASTOITEM[AREAS.__WORKBENCH2__] = IID.__WORKBENCH2__,
+    AREASTOITEM[AREAS.__TESLA__] = IID.__TESLA__, AREASTOITEM[AREAS
+    .__SMELTER__] = IID.__SMELTER__, AREASTOITEM[AREAS.__WEAVING__] = IID
+    .__WEAVING__, AREASTOITEM[AREAS.__COMPOST__] = IID.__COMPOST__, AREASTOITEM[
+        AREAS.__AGITATOR__] = IID.__AGITATOR__, AREASTOITEM[AREAS
+    .__EXTRACTOR__] = IID.__EXTRACTOR__;
 var INVENTORY2 = null,
     ENTITIES2 = null,
     PARTICLES2 = null,
@@ -39748,9 +40120,10 @@ try {
         exports.IID = IID, exports.FURNITUREID = FURNITUREID, exports.HOUSE =
             HOUSE, exports.HOUSEID = HOUSEID, exports.INVENTORY = INVENTORY,
             exports.LOOT = LOOT, exports.LOOTID = LOOTID, exports.RESID = RESID,
-            exports.RESOURCES = RESOURCES, exports.AREAS = AREAS, exports
-            .SKILLS = SKILLS, exports.KIT = KIT, exports.BRKIT = BRKIT, exports
-            .AI = AI, exports.AIID = AIID, exports.BEHAVIOR = BEHAVIOR;
+            exports.RESOURCES = RESOURCES, exports.AREAS = AREAS,
+            exports.SKILLS = SKILLS, exports.KIT = KIT, exports.BRKIT = BRKIT,
+            exports.AI = AI, exports.AIID = AIID,
+            exports.BEHAVIOR = BEHAVIOR;
         for (var k = 0; k < 3; k++)
             for (i = 1; i < INVENTORY.length; i++) {
                 if ((recipe = (item = INVENTORY[i]).detail.recipe) !== window
@@ -39804,22 +40177,25 @@ try {
     }
     INVENTORY2 = window.JSON.parse(window.JSON.stringify(INVENTORY)),
         PARTICLES2 = window.JSON.parse(window.JSON.stringify(PARTICLES)),
-        LOOT2 = window.JSON.parse(window.JSON.stringify(LOOT)), ENTITIES2 =
-        window.JSON.parse(window.JSON.stringify(ENTITIES)), RESOURCES2 = window
-        .JSON.parse(window.JSON.stringify(RESOURCES)), LIGHTFIRE2 = window.JSON
-        .parse(window.JSON.stringify(LIGHTFIRE)), AI2 = window.JSON.parse(window
-            .JSON.stringify(AI)), replaceStringInObject(RESOURCES2, RESOURCES,
-            "day", "night"), replaceStringInObject(INVENTORY2, INVENTORY, "day",
-            "night"), replaceStringInObject(PARTICLES2, PARTICLES, "day",
-            "night"), replaceStringInObject(LOOT2, LOOT, "day", "night"),
+        LOOT2 = window.JSON.parse(window.JSON.stringify(LOOT)),
+        ENTITIES2 = window.JSON.parse(window.JSON.stringify(ENTITIES)),
+        RESOURCES2 = window.JSON.parse(window.JSON.stringify(RESOURCES)),
+        LIGHTFIRE2 = window.JSON.parse(window.JSON.stringify(LIGHTFIRE)), AI2 =
+        window.JSON.parse(window.JSON.stringify(AI)), replaceStringInObject(
+            RESOURCES2, RESOURCES, "day", "night"),
+        replaceStringInObject(INVENTORY2, INVENTORY, "day", "night"),
+        replaceStringInObject(PARTICLES2, PARTICLES, "day", "night"),
+        replaceStringInObject(LOOT2, LOOT, "day", "night"),
         replaceStringInObject(ENTITIES2, ENTITIES, "day", "night"),
         replaceStringInObject(LIGHTFIRE2, LIGHTFIRE, "day", "night"),
-        replaceStringInObject(AI2, AI, "day", "night"), updateClotheInfo(
-            INVENTORY)
+        replaceStringInObject(AI2, AI, "day", "night"),
+        updateClotheInfo(INVENTORY)
 }
 var AudioManager = function () {
-    var e = [237225, 303931, 166687, 229213, 217292, 205860, 182041,
-        273065],
+    var e = [237225, 303931, 166687, 229213, 217292, 205860,
+            182041,
+            273065
+        ],
         i = [],
         a = window.Math.floor(window.Math.random() * e.length),
         _ = 0,
@@ -39831,9 +40207,10 @@ var AudioManager = function () {
     AudioUtils.audio.end = new AudioUtils.Sound("audio/end.mp3", 0, !0),
         AudioUtils.audio.title = new AudioUtils.Sound("audio/title.mp3", 0,
             !0), AudioUtils.audio.geiger = new AudioUtils.Sound(
-            "audio/geiger.mp3", 0, !0), AudioUtils.audio.ambient1 =
-        new AudioUtils.Sound("audio/ambient1.mp3", 0, !0), AudioUtils.audio
-        .ambient2 = new AudioUtils.Sound("audio/ambient2.mp3", 0, !0),
+            "audio/geiger.mp3", 0, !0),
+        AudioUtils.audio.ambient1 = new AudioUtils.Sound(
+            "audio/ambient1.mp3", 0, !0), AudioUtils.audio.ambient2 =
+        new AudioUtils.Sound("audio/ambient2.mp3", 0, !0),
         AudioUtils.audio.ambient3 = new AudioUtils.Sound(
             "audio/ambient3.mp3", 0, !0), AudioUtils.audio.ambient4 =
         new AudioUtils.Sound("audio/ambient4.mp3", 0, !0), AudioUtils.audio
@@ -39846,16 +40223,19 @@ var AudioManager = function () {
         i.push(AudioUtils.audio.ambient3), i.push(AudioUtils.audio
         .ambient4), i.push(AudioUtils.audio.ambient5), i.push(AudioUtils
             .audio.ambient6), i.push(AudioUtils.audio.ambient7), i.push(
-            AudioUtils.audio.ambient8), AudioUtils._fx.open = new AudioUtils
-        .Sound("audio/open.mp3", 1, !1, 1), AudioUtils._fx.drag =
-        new AudioUtils.Sound("audio/drag.mp3", 1, !1, 1), AudioUtils._fx
-        .play = new AudioUtils.Sound("audio/play.mp3", 1, !1, 1), AudioUtils
-        ._fx.skill = new AudioUtils.Sound("audio/skill.mp3", 1, !1, 1),
+            AudioUtils.audio.ambient8),
+        AudioUtils._fx.open = new AudioUtils.Sound("audio/open.mp3", 1, !1,
+            1), AudioUtils._fx.drag = new AudioUtils.Sound("audio/drag.mp3",
+            1, !1, 1),
+        AudioUtils._fx.play = new AudioUtils.Sound("audio/play.mp3", 1, !1,
+            1), AudioUtils._fx.skill = new AudioUtils.Sound(
+            "audio/skill.mp3", 1, !1, 1),
         AudioUtils._fx.craft = new AudioUtils.Sound("audio/craft.mp3", 1, !
             1, 1), AudioUtils._fx.button = new AudioUtils.Sound(
-            "audio/button.mp3", 1, !1, 1), AudioUtils._fx.throwLoot =
-        new AudioUtils.Sound("audio/throwLoot.mp3", 1, !1, 1), AudioUtils
-        ._fx.levelup = new AudioUtils.Sound("audio/levelup.mp3", 1, !1, 1),
+            "audio/button.mp3", 1, !1, 1),
+        AudioUtils._fx.throwLoot = new AudioUtils.Sound(
+            "audio/throwLoot.mp3", 1, !1, 1), AudioUtils._fx.levelup =
+        new AudioUtils.Sound("audio/levelup.mp3", 1, !1, 1),
         AudioUtils._fx.explosion = new AudioUtils.Sound(
             "audio/explosion.mp3", 1, !1, 1), AudioUtils._fx.zipperOn =
         new AudioUtils.Sound("audio/zipper-on.mp3", .7, !1, 1), AudioUtils
@@ -39911,25 +40291,26 @@ var AudioManager = function () {
     }
     return {
         startGame: function () {
-            o = 1, I(), 0 === _ && (a = (a + 1) % i.length), _ = e[a] -
-                5e3, AudioUtils.fadeSound(i[a], 5e3, d)
+            o = 1, I(), 0 === _ && (a = (a + 1) % i.length),
+                _ = e[a] - 5e3, AudioUtils.fadeSound(i[a], 5e3, d)
         },
         quitGame: function () {
             o = 0, t = 1, AudioUtils.fadeSound(AudioUtils.audio.geiger,
-                    250, -r), r = 0, AudioManager.geiger = 0, AudioUtils
-                .fadeSound(i[a], 500, -d), AudioUtils.fadeSound(
-                    AudioUtils.audio.end, 1e3, AudioManager.musicVolume)
+                    250, -r), r = 0,
+                AudioManager.geiger = 0, AudioUtils.fadeSound(i[a], 500,
+                    -d), AudioUtils.fadeSound(AudioUtils.audio.end, 1e3,
+                    AudioManager.musicVolume)
         },
         scheduler: function () {
-            AudioUtils.playSound(AudioUtils.audio.title), AudioUtils
-                .playSound(AudioUtils.audio.end);
+            AudioUtils.playSound(AudioUtils.audio.title),
+                AudioUtils.playSound(AudioUtils.audio.end);
             for (var t = 0; t < i.length; t++) AudioUtils.playSound(i[
                 t]);
             if (1 === AudioUtils.options.isFx) {
                 var l = AudioUtils.options.isAudio;
                 AudioUtils.options.isAudio = 1, AudioUtils.playSound(
-                        AudioUtils.audio.geiger), AudioUtils.options
-                    .isAudio = l
+                        AudioUtils.audio.geiger),
+                    AudioUtils.options.isAudio = l
             }
             if (r !== AudioManager.geiger && 1 === o) {
                 if (0 === n) {
@@ -39968,7 +40349,7 @@ debugMode === window.undefined && (window.aiptag = window.aiptag || {}, window
     .aiptag.consented = !0, window.aiptag.cmd = window.aiptag.cmd || [],
     window.aiptag.cmd.display = window.aiptag.cmd.display || [], window
     .aiptag.cmd.player = window.aiptag.cmd.player || []), reloadIframe();
-var versionInf = [30, 1982];
+var versionInf = "v2024.2 · Join our new Discord: discord.gg/eWJzDYeuhG";
 try {
     debugMode
 } catch (r) {
