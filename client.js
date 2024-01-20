@@ -1624,11 +1624,12 @@ var Client = function () {
             },
             getServerList: function (e) {
                 let i = {
-                    Accept: "application/json"
-                };
-                i["X-Username"] = localStorage.getItem("nickname"), window
-                    .RIVET_TOKEN && (i.Authorization = "Bearer" + window
-                        .RIVET_TOKEN), fetch("https://moaning.zip/list", {
+                        Accept: "application/json"
+                    },
+                    a = localStorage.getItem("nickname");
+                null !== a && (i["X-Username"] = a), window.RIVET_TOKEN && (
+                        i.Authorization = "Bearer" + window.RIVET_TOKEN),
+                    fetch("https://moaning.zip/list", {
                         headers: i
                     }).then((e => {
                         if (e.ok) return e.json();
@@ -6576,26 +6577,26 @@ var Border = function () {
                 lobby_id: _
             });
             let o = {
-                Accept: "application/json",
-                "Content-Type": "application/json"
-            };
-            o["X-Username"] = document.getElementById("nicknameInput").value,
-                window.RIVET_TOKEN && (o.Authorization = "Bearer" + window
-                    .RIVET_TOKEN), fetch(i, {
-                    method: "POST",
-                    headers: o,
-                    body: JSON.stringify(a)
-                }).then((e => {
-                    if (e.ok) return e.json();
-                    throw "Failed to find lobby: " + e.status
-                })).then((e => {
-                    let i = e.lobby;
-                    Client.selectedServer = Client.serverList.findIndex(
-                            (e => e[0] == i.lobby_id)), Client
-                        .connectedLobby = i, Client.startConnection(
-                            document.getElementById("nicknameInput")
-                            .value, 0, i.player.token)
-                }))
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                },
+                t = document.getElementById("nicknameInput").value;
+            "" !== t && (o["X-Username"] = t), window.RIVET_TOKEN && (o
+                .Authorization = "Bearer" + window.RIVET_TOKEN), fetch(i, {
+                method: "POST",
+                headers: o,
+                body: JSON.stringify(a)
+            }).then((e => {
+                if (e.ok) return e.json();
+                throw "Failed to find lobby: " + e.status
+            })).then((e => {
+                let i = e.lobby;
+                Client.selectedServer = Client.serverList.findIndex(
+                        (e => e[0] == i.lobby_id)), Client
+                    .connectedLobby = i, Client.startConnection(
+                        document.getElementById("nicknameInput")
+                        .value, 0, i.player.token)
+            }))
         }
 
         function i(e) {}
