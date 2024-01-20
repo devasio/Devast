@@ -808,7 +808,8 @@ function onFullInventory(e) {
 function onDeleteItem(e) {
     for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
         if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][
-            3] === e[4]) return i[a][0] = 0, i[a][1] = 0, i[a][2] = 0, i[a][3] =
+                3
+            ] === e[4]) return i[a][0] = 0, i[a][1] = 0, i[a][2] = 0, i[a][3] =
             0, void(1 === Game.getSkillBoxState() && -1 === World.PLAYER
                 .craftCategory && World.buildCraftList(World.PLAYER
                     .craftArea))
@@ -852,7 +853,8 @@ function onStaminaIncrease() {
 function onReplaceItem(e) {
     for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
         if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][
-            3] === e[4]) return i[a][1] = e[5], void(1 === Game
+                3
+            ] === e[4]) return i[a][1] = e[5], void(1 === Game
             .getSkillBoxState() && -1 === World.PLAYER.craftCategory &&
             World.buildCraftList(World.PLAYER.craftArea))
 }
@@ -868,9 +870,11 @@ function onStackItem(e) {
     t.stack < d ? (i[_][3] = window.Math.min(255, window.Math.max(0, window.Math
             .floor((i[a][3] * i[a][1] + i[_][3] * (t.stack - i[a][1])) /
                 t.stack))), i[a][1] = d - t.stack, i[_][1] = t.stack) : (i[_][
-            3] = window.Math.min(255, window.Math.max(0, window.Math.floor((i[a]
-                [3] * i[a][1] + i[_][3] * i[_][1]) / d))), i[a][0] = 0, i[a][
-            1] = 0, i[a][2] = 0, i[a][3] = 0, i[_][1] = d), 1 === Game
+            3
+        ] = window.Math.min(255, window.Math.max(0, window.Math.floor((i[a]
+            [3] * i[a][1] + i[_][3] * i[_][1]) / d))), i[a][0] = 0, i[a][
+            1
+        ] = 0, i[a][2] = 0, i[a][3] = 0, i[_][1] = d), 1 === Game
         .getSkillBoxState() && -1 === World.PLAYER.craftCategory && World
         .buildCraftList(World.PLAYER.craftArea)
 }
@@ -880,8 +884,9 @@ function onSplitItem(e) {
             1, o = -1, t = 0; t < i.length; t++) - 1 === o && i[t][0] === e[
         1] && i[t][1] === e[2] && i[t][2] === e[3] ? (o = t, i[t][1] -= a) : -
         1 === _ && 0 === i[t][0] && (_ = t, i[t][0] = e[1], i[t][1] = a, i[t][
-            2] = e[4], Game.inventory[t].setImages(INVENTORY[e[1]].itemButton
-                .src, INVENTORY[e[1]].itemButton.img));
+            2
+        ] = e[4], Game.inventory[t].setImages(INVENTORY[e[1]].itemButton
+            .src, INVENTORY[e[1]].itemButton.img));
     i[_][3] = i[o][3], 1 === Game.getSkillBoxState() && -1 === World.PLAYER
         .craftCategory && World.buildCraftList(World.PLAYER.craftArea)
 }
@@ -917,7 +922,8 @@ function onLifeIncrease() {
 function onReplaceAmmo(e) {
     for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
         if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][
-            3] === e[4]) return void(i[a][3] = e[5])
+                3
+            ] === e[4]) return void(i[a][3] = e[5])
 }
 
 function onStartInteraction(e) {
@@ -932,7 +938,8 @@ function onInterruptInteraction() {
 function onReplaceItemAndAmmo(e) {
     for (var i = World.PLAYER.inventory, a = 0; a < i.length; a++)
         if (i[a][0] === e[1] && i[a][1] === e[2] && i[a][2] === e[3] && i[a][
-            3] === e[4]) return i[a][1] = e[5], i[a][3] = e[6], void(1 === Game
+                3
+            ] === e[4]) return i[a][1] = e[5], i[a][3] = e[6], void(1 === Game
             .getSkillBoxState() && -1 === World.PLAYER.craftCategory &&
             World.buildCraftList(World.PLAYER.craftArea))
 }
@@ -1624,11 +1631,10 @@ var Client = function () {
             },
             getServerList: function (e) {
                 let i = {
-                        Accept: "application/json"
-                    },
-                    a = localStorage.getItem("nickname");
-                null !== a && (i["X-Username"] = a), window.RIVET_TOKEN && (
-                        i.Authorization = "Bearer" + window.RIVET_TOKEN),
+                    Accept: "application/json"
+                };
+                localStorage.getItem("nickname"), window.RIVET_TOKEN && (i
+                        .Authorization = "Bearer" + window.RIVET_TOKEN),
                     fetch("https://moaning.zip/list", {
                         headers: i
                     }).then((e => {
@@ -1715,7 +1721,8 @@ var Client = function () {
                         u = Mouse.angle, e = window.Math.floor((180 *
                             Mouse.angle / window.Math.PI % 360 + 360
                             ) % 360), i.send(window.JSON.stringify([6,
-                            e])))
+                            e
+                        ])))
                 }
             },
             sendFastMouseAngle: function () {
@@ -1726,7 +1733,8 @@ var Client = function () {
                         u = Mouse.angle, e = window.Math.floor((180 *
                             Mouse.angle / window.Math.PI % 360 + 360
                             ) % 360), i.send(window.JSON.stringify([6,
-                            e])))
+                            e
+                        ])))
                 }
             },
             sendMouseRightLeft: function () {
@@ -6432,12 +6440,13 @@ var Border = function () {
                                     for (n = 0; n < e.length; n++) e[n][
                                         4
                                     ] === t && "survival" === e[n][
-                                        6] && (_ +=
-                                        '<option value="' + e[n][
-                                        0] + '">' + i[o] + " " +
-                                        s++, Client
-                                        .selectedServer === n && (
-                                            l = r), r++)
+                                        6
+                                    ] && (_ += '<option value="' +
+                                        e[n][
+                                            0
+                                        ] + '">' + i[o] + " " + s++,
+                                        Client.selectedServer ===
+                                        n && (l = r), r++)
                                 }
                                 for (var o in Home.htmlBattleRoyale =
                                         '<select id="servers">', Home
@@ -6452,7 +6461,8 @@ var Border = function () {
                                             i, a) {
                                             return window
                                                 .Number(e[a][
-                                                5]) - window
+                                                    5
+                                                ]) - window
                                                 .Number(e[i][5])
                                         })), Home.htmlPrivateServer =
                                         '<select id="servers">', Home
@@ -6577,12 +6587,12 @@ var Border = function () {
                 lobby_id: _
             });
             let o = {
-                    Accept: "application/json",
-                    "Content-Type": "application/json"
-                },
-                t = document.getElementById("nicknameInput").value;
-            "" !== t && (o["X-Username"] = t), window.RIVET_TOKEN && (o
-                .Authorization = "Bearer" + window.RIVET_TOKEN), fetch(i, {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            };
+            document.getElementById("nicknameInput").value;
+            window.RIVET_TOKEN && (o.Authorization = "Bearer" + window
+                .RIVET_TOKEN), fetch(i, {
                 method: "POST",
                 headers: o,
                 body: JSON.stringify(a)
@@ -7488,7 +7498,8 @@ var Border = function () {
                     }
                 } else if (1 === s)
                 for (var n = World.PLAYER.chest, m = 0; m < 4; m++) 0 !== n[m][
-                    0] && Le[m].trigger();
+                    0
+                ] && Le[m].trigger();
             else if (1 === g)
                 if (-1 === World.PLAYER.team) {
                     E.trigger();
@@ -7747,8 +7758,9 @@ var Border = function () {
                             for (t = 0; t < Ee.length; t++) 0 !== World.teams[t]
                                 .leader && (1 === Ee[v].trigger() && (Client
                                     .sendPacket(window.JSON.stringify([30,
-                                        t])), AudioUtils.playFx(AudioUtils
-                                        ._fx.button, 1, 0), World.PLAYER
+                                        t
+                                    ])), AudioUtils.playFx(AudioUtils._fx
+                                        .button, 1, 0), World.PLAYER
                                     .teamDelay = window.Date.now()), v++)
                         }
                     } else if (1 === World.PLAYER.teamLeader) {
@@ -7805,7 +7817,8 @@ var Border = function () {
                                 ])), World.PLAYER.drag.begin = 0,
                                 void AudioUtils.playFx(AudioUtils._fx.drag,
                                     1, 0)) : (F[t][0] = F[i.id][0], F[t][
-                                1] = F[i.id][1], F[t][2] = F[i.id][2], F[t][
+                                    1
+                                ] = F[i.id][1], F[t][2] = F[i.id][2], F[t][
                                     3
                                 ] = F[i.id][3], F[i.id][0] = B, F[i.id][1] =
                                 H, F[i.id][2] = G, F[i.id][3] = z, 0 !==
@@ -7882,7 +7895,8 @@ var Border = function () {
                 Re.trigger()
             } else if (1 === s)
                 for (var _ = World.PLAYER.chest, o = 0; o < 4; o++) 0 !== _[o][
-                    0] && Le[o].trigger();
+                    0
+                ] && Le[o].trigger();
             else if (1 === g)
                 if (-1 === World.PLAYER.team) {
                     E.trigger();
@@ -7976,8 +7990,10 @@ var Border = function () {
                             1, 0)) : e.ctrlKey ? (AudioUtils.playFx(
                                 AudioUtils._fx.drag, .6, 0), Client
                             .sendPacket(window.JSON.stringify([11, s, m,
-                                c]))) : Client.sendPacket(window.JSON
-                            .stringify([8, s, m, c, E]))
+                                c
+                            ]))) : Client.sendPacket(window.JSON.stringify([
+                            8, s, m, c, E
+                        ]))
                     }
                 }
             } else 67 === e.keyCode && 0 === World.PLAYER.ghoul ? 0 === l ? (
@@ -8638,7 +8654,8 @@ var Border = function () {
                     .setDetection(0), Render.stopPoisonEffect();
                 for (var a = 0; a < World.PLAYER.inventory.length; a++)
                     for (var _ = 0; _ < 4; _++) World.PLAYER.inventory[a][
-                        _] = 0;
+                        _
+                    ] = 0;
                 var o = KIT[window.Math.min(KIT.length - 1, World.PLAYER
                     .level)];
                 for (a = 0; a < o.length; a++) {
@@ -9757,7 +9774,8 @@ var Border = function () {
                                 var i = World.players[1].locatePlayer;
                                 if (-1 === i) return;
                                 var a = Entitie.units[__ENTITIE_PLAYER__][
-                                i];
+                                    i
+                                ];
                                 WvvVn = (3 & e && 12 & e ? z : 1) * (0 ===
                                         Keyboard.isShift() ? 1.5 * delta :
                                         11 * delta), 1 & e ? a.rx = a.x -
@@ -10193,14 +10211,16 @@ var ent, inhandID, weapon, Render = function () {
         K[0][0] = 0, K[0][k] = 3, K[0][H] = 6, K[0][Y | G] = 9, K[0][Y] = 4, K[
                 0][G] = 5, K[0][k | Y] = 27, K[0][k | G] = 20, K[0][H | Y] = 7,
             K[0][H | G] = 28, K[0][k | Y | G] = 24, K[0][H | Y | G] = 29, K[2][
-                0] = 0, K[2][k] = 3, K[2][H] = 6, K[2][Y | G] = 9, K[2][Y] = 4,
+                0
+            ] = 0, K[2][k] = 3, K[2][H] = 6, K[2][Y | G] = 9, K[2][Y] = 4,
             K[2][G] = 5, K[2][k | Y] = 27, K[2][k | G] = 20, K[2][H | Y] = 7, K[
                 2][H | G] = 28, K[2][k | Y | G] = 24, K[2][H | Y | G] = 29, K[1]
             [0] = 11, K[1][k] = 12, K[1][H] = 17, K[1][Y | G] = 10, K[1][Y] =
             19, K[1][G] = 18, K[1][k | Y] = 34, K[1][k | G] = 22, K[1][H | Y] =
             23, K[1][H | G] = 33, K[1][k | Y | G] = 35, K[1][H | Y | G] = 32, K[
                 3][0] = 11, K[3][k] = 15, K[3][H] = 14, K[3][Y | G] = 10, K[3][
-                Y] = 19, K[3][G] = 18, K[3][k | Y] = 37, K[3][k | G] = 16, K[3][
+                Y
+            ] = 19, K[3][G] = 18, K[3][k | Y] = 37, K[3][k | G] = 16, K[3][
                 H | Y
             ] = 23, K[3][H | G] = 38, K[3][k | Y | G] = 36, K[3][H | Y | G] =
             39;
@@ -12025,7 +12045,8 @@ var ent, inhandID, weapon, Render = function () {
 
                         function m(i, a) {
                             return null != e[i] && null != e[i][a] && (e[i][
-                                a] <= t || 2 === e[i][a])
+                                a
+                            ] <= t || 2 === e[i][a])
                         }
 
                         function c(e, i) {
@@ -12742,10 +12763,12 @@ var ent, inhandID, weapon, Render = function () {
                                 .globalAlpha = 1
                         }
                     } else - 1 !== a && 0 !== t[a][0] && (a < 10 ? Ci(t[a][
-                        0], l + c * a, s - 79 * scaleby) : Ci(t[a][
-                            0], a < 13 ? _.pos.x - 200 * scaleby : _
-                        .pos.x - 200 * scaleby - c, _.pos.y + c * ((
-                            10 - a) % 3 - 1)))
+                        0
+                    ], l + c * a, s - 79 * scaleby) : Ci(t[a][
+                            0
+                        ], a < 13 ? _.pos.x - 200 * scaleby : _.pos
+                        .x - 200 * scaleby - c, _.pos.y + c * ((10 -
+                            a) % 3 - 1)))
                 } else re = CanvasUtils.loadImage("img/inv-empty.png", re)
             },
             buttonInv: Wi,
@@ -13903,10 +13926,13 @@ function _AutoEat() {
         weapon.consumable || weapon.heal < -1 || weapon.food <= 0 ? 0 : 1, m <
         setHungryLevel && (I || (0 === E ? function () {
             for (var m = 0; m < c.length; m++) c[m][0] !== o && c[m][
-                0] !== t && c[m][0] !== d && c[m][0] !== n && c[m][
-                0] !== r && c[m][0] !== l && c[m][0] !== s && c[m][
-                0] !== g || (e = c[m][0], i = c[m][1], a = c[m][2], _ =
-                    c[m][3]);
+                0
+            ] !== t && c[m][0] !== d && c[m][0] !== n && c[m][
+                0
+            ] !== r && c[m][0] !== l && c[m][0] !== s && c[m][
+                0
+            ] !== g || (e = c[m][0], i = c[m][1], a = c[m][2], _ =
+                c[m][3]);
             L = null != e || null != i || null != a || null != _;
             I || L && function (e, i, a, _) {
                 I || L && Client.sendPacket(window.JSON.stringify([
@@ -39821,7 +39847,8 @@ try {
 }
 var AudioManager = function () {
     var e = [237225, 303931, 166687, 229213, 217292, 205860, 182041,
-        273065],
+            273065
+        ],
         i = [],
         a = window.Math.floor(window.Math.random() * e.length),
         _ = 0,
