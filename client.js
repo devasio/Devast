@@ -1630,7 +1630,7 @@ var Client = function () {
                     localStorage.getItem("nickname") && (i["X-Username"] =
                         localStorage.getItem("nickname")), window
                     .RIVET_TOKEN && (i.Authorization = "Bearer" + window
-                        .RIVET_TOKEN), fetch("http://localhost:8080/list", {
+                        .RIVET_TOKEN), fetch("https://moaning.zip/list", {
                         headers: i
                     }).then((e => {
                         if (403 !== e.status) {
@@ -6578,9 +6578,9 @@ var Border = function () {
                 e = "br"
             }
             var i, a, _ = document.getElementById("servers").value;
-            "auto" == _ ? (i = "http://localhost:8080/find", a = {
+            "auto" == _ ? (i = "https://moaning.zip/find", a = {
                 game_modes: [e]
-            }) : (i = "http://localhost:8080/join", a = {
+            }) : (i = "https://moaning.zip/join", a = {
                 lobby_id: _
             });
             let o = {
