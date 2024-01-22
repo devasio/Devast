@@ -39384,7 +39384,7 @@ debugMode === window.undefined && (window.aiptag = window.aiptag || {}, window.a
     .consented = !0, window.aiptag.cmd = window.aiptag.cmd || [], window.aiptag
     .cmd.display = window.aiptag.cmd.display || [], window.aiptag.cmd.player =
     window.aiptag.cmd.player || []), reloadIframe();
-var versionInf = "v2024.2 · Join our new Discord: discord.gg/eWJzDYeuhG";
+var versionInf = "v2024.4 · Join our new Discord: discord.gg/eWJzDYeuhG";
 try {
     debugMode
 } catch (r) {
