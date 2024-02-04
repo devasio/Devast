@@ -1410,7 +1410,7 @@ var Client = function() {
                 n = Client.connectedLobby.ports.default.port,
                 r = Client.connectedLobby.ports.default.is_tls ? 1 : 0;
             i = new window.WebSocket("ws" + (1 === r ? "s" : "") + "://" + o + ":" + n + "/?token=" + e), a = new window
-                .WebSocket("wss://wb.moaning.zip:8010"), _++, i.currentId = _;
+                .WebSocket("wss://wb.moaning.zip"), _++, i.currentId = _;
             var l = _;
             i.binaryType = "arraybuffer", i.onerror = function() {
                 this.currentId === _ && T()
@@ -1468,7 +1468,7 @@ var Client = function() {
                 null !== localStorage.getItem("nickname") && "" !== localStorage.getItem("nickname") && (i[
                     "X-Username"] = localStorage.getItem("nickname")), localStorage.getItem("token") && (i[
                     "X-Token"] = localStorage.getItem("token")), window.RIVET_TOKEN && (i.Authorization =
-                    "Bearer" + window.RIVET_TOKEN), fetch("https://moaning.zip:8080/list", {
+                    "Bearer" + window.RIVET_TOKEN), fetch("https://moaning.zip/list", {
                     headers: i
                 }).then((e => {
                     if (403 !== e.status) {
@@ -6203,9 +6203,9 @@ var Border = function() {
                 e = "br"
             }
             var i, a, _ = document.getElementById("servers").value;
-            "auto" == _ ? (i = "https://moaning.zip:8080/find", a = {
+            "auto" == _ ? (i = "https://moaning.zip/find", a = {
                 game_modes: [e]
-            }) : (i = "https://moaning.zip:8080/join", a = {
+            }) : (i = "https://moaning.zip/join", a = {
                 lobby_id: _
             });
             let o = {
