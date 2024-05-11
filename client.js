@@ -11175,10 +11175,6 @@ var Score = (function() {
             invtr[3] = item.life;
             invtr[0] = item.id;
         }
-        waitAds = 5000;
-        if (Loader.getURLData("admin") === null) {
-            window["YMPB"]["refresh"]();
-        }
         CanvasUtils.setRenderer(Score);
         MNw = Nmv;
         WwM = Nmv;
