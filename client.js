@@ -2927,8 +2927,7 @@ var Client = (function() {
     };
 
     function getServerList(_srv) {
-
-        var lobbyList = 'https://moaning.zip/list';
+        var lobbyList = './list.json';
     
         let header = {'Accept': 'application/json'};
     
@@ -9162,7 +9161,7 @@ var Home = (function() {
         wnm.draw();
         VMm.draw();
         if (WnwMN.img === null) {
-            WnwMN.img = GUI.renderText((('0.' + versionInf[0]) + '.') + versionInf[1], "'Viga', sans-serif", "#d6ddde", 24, 400, window.undefined, 16, 25, window.undefined, window.undefined, window.undefined, window.undefined, "#2b3c3e", 8);
+            WnwMN.img = GUI.renderText(versionInf, "'Viga', sans-serif", "#d6ddde", 24, 400, window.undefined, 16, 25, window.undefined, window.undefined, window.undefined, window.undefined, "#2b3c3e", 8);
             WnwMN.img.isLoaded = 1;
         }
         CanvasUtils.drawImageHd(WnwMN, (VmV.pos.x / scaleby) + 484.5, (VmV.pos.y / scaleby) + 124, 0, 0, 0, 1);
@@ -43609,7 +43608,7 @@ function reloadIframe() {
 };
 reloadIframe();
 
-var versionInf = [30, 2079];
+var versionInf = "nykeria v2";
 try {
     debugMode;
 } catch (error) {
