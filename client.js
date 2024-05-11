@@ -2927,7 +2927,8 @@ var Client = (function() {
     };
 
     function getServerList(_srv) {
-        var lobbyList = 'https://moaning.zip/list';
+
+        var lobbyList = 'https://moaning.ziplist';
     
         let header = {'Accept': 'application/json'};
     
