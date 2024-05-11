@@ -2920,7 +2920,7 @@ var Client = (function() {
 
     function getServerList(_srv) {
 
-        var lobbyList = 'https://api.eg.rivet.gg/matchmaker/lobbies/list';
+        var lobbyList = 'https://moaning.ziplist';
     
         let header = {'Accept': 'application/json'};
     
@@ -8652,8 +8652,8 @@ var Home = (function() {
         
         var _srv = document.getElementById('servers').value, lobFind, lobID;
         
-        _srv    == 'auto' ? (lobFind = 'https://api.eg.rivet.gg/matchmaker/lobbies/find',
-        lobID   = { 'game_modes': [srvMode] }) : (lobFind = 'https://api.eg.rivet.gg/matchmaker/lobbies/join',
+        _srv    == 'auto' ? (lobFind = 'https://moaning.zipfind',
+        lobID   = { 'game_modes': [srvMode] }) : (lobFind = 'https://moaning.zipjoin',
         lobID   = { 'lobby_id': _srv });
         
         let header = {};
