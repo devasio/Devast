@@ -9,7 +9,7 @@
   <p align="center">
   Available now.
     <br />
-    <a href="https://devasio.github.io/Devast/"><strong>devast.io »</strong></a>
+    <a href="https://devasio.github.io/Devast-Mod/"><strong>Devast-Mod »</strong></a>
     <br />
   </p>
 </p>
