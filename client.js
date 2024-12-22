@@ -2870,7 +2870,10 @@ var Client = (function() {
 
         var lobbyList = 'https://devastio.duckdns.org/list';
     
-        let header = {'Accept': 'application/json'};
+        let header = {
+            'Accept': 'application/json',
+            'X-Dir': 'Devast' 
+        };
     
         window.RIVET_TOKEN && (header['Authorization'] = 'Bearer' + window.RIVET_TOKEN),
     
@@ -8559,7 +8562,8 @@ var Home = (function() {
     async function findOrJoinLobby(url, body) {
         const headers = {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'X-Dir': 'Devast'
         };
         if (window.RIVET_TOKEN) {
             headers['Authorization'] = 'Bearer ' + window.RIVET_TOKEN;
